@@ -1,13 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-
-import '../../../views/drawer/app_bar.dart';
-import '../../../views/drawer/app_style.dart';
-import '../../../views/drawer/custom_textfield.dart';
-import '../../../views/drawer/custome_btn.dart';
-import '../../../views/drawer/reusable_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,20 +9,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // Initially password is obscure
+  bool _obscureText = true;
+
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
-  final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-    onPrimary: Colors.black87,
-    primary: Colors.grey[300],
-    minimumSize: Size(88, 36),
-    padding: EdgeInsets.symmetric(horizontal: 16),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(2)),
-    ),
-  );
 
   @override
-  void dispose() async {
+  void dispose() {
     email.dispose();
     password.dispose();
     super.dispose();
@@ -39,89 +25,135 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(50),
-        child: CustomAppBar(
-          text: "Login",
-          child: GestureDetector(
-            onTap: () {},
-            child: const Icon(CupertinoIcons.arrow_left),
-          ),
-        ),
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Form(
-          // key: loginNotifier.loginFormKey,
-          child: ListView(
-            padding: EdgeInsets.zero,
+      backgroundColor: Colors.grey[300],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 20),
-              const ReusableText(
-                text: "Welcome back",
+              // Hello again!
+              Text(
+                "Hello again!",
+                style: GoogleFonts.bebasNeue(
+                  fontSize: 50,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                "Welcome back, you\'ve been missed!",
                 style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
                 ),
               ),
-              const SizedBox(height: 20),
-              // CustomTextField(
-              //   controller: email,
-              //   keyboardType: TextInputType.emailAddress,
-              //   hintText: "Email",
-              //   validator: (email) {
-              //     if (email!.isEmpty || !email.contains("@")) {
-              //       return "Please enter a valid email";
-              //     } else {
-              //       return null;
-              //     }
-              //   },
-              // ),
-              TextField(
-                controller: email,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5),
+              const SizedBox(height: 50),
+
+              // email textfield
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  hintText: 'Enter your email',
-                ),
-              ),
-              const SizedBox(height: 20),
-              TextField(
-                controller: password,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  hintText: 'Enter your password',
-                ),
-              ),
-              const SizedBox(height: 20),
-              Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: ReusableText(
-                    text: "Register",
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w500,
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Enter your email',
+                      ),
                     ),
                   ),
                 ),
               ),
-              const Spacer(),
-              ElevatedButton(
-                style: raisedButtonStyle,
-                onPressed: () {
-                  print('you are pressed');
-                },
-                child: Text('Login'),
-              )
+              const SizedBox(height: 10),
+
+              //password textfield
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: TextFormField(
+                      controller: password,
+                      obscureText: _obscureText,
+                      validator: (password) {
+                        if (password!.isEmpty || password.length < 7) {
+                          return 'Please enter a valid password';
+                        } else {
+                          return null;
+                        }
+                      },
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Enter your password',
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            _obscureText = !_obscureText;
+                            setState(() {});
+                          },
+                          child: Icon(
+                            _obscureText
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Colors.black54,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+
+              // sign button
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  padding: const EdgeInsets.all(20.0),
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Sign In',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 25),
+
+              // not a member? register one
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Not a member?',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    'Register one',
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
