@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:insect_dection_app/views/drawer/app_style.dart';
+import 'package:insect_dection_app/core/core.dart';
 
-import 'package:insect_dection_app/views/drawer/reusable_text.dart';
+
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key, this.text, required this.child, this.actions});

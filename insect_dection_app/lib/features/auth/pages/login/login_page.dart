@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 10),
               const Text(
-                "Welcome back, you\'ve been missed!",
+                "Welcome back, you've been missed!",
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(left: 20.0),
+                    padding: const EdgeInsets.only(left: 20.0),
                     child: TextFormField(
                       controller: password,
                       obscureText: _obscureText,

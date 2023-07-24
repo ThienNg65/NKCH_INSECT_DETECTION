@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "159003680901",
+    "project_id": "nckh-insect",
+    "storage_bucket": "nckh-insect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159003680901:android:68a6ccefe6885ad7d009ec",
+        "android_client_info": {
+          "package_name": "com.example.insect_dection_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159003680901-9jm1rurbe2mi65hfruu805qfg7b7eiav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZnw6R7e-RE95b7oTVhLVbLZnBFCvCXqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159003680901-9jm1rurbe2mi65hfruu805qfg7b7eiav.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

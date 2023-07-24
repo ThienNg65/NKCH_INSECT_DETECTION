@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:insect_dection_app/views/drawer/app_style.dart';
-import 'package:insect_dection_app/views/drawer/reusable_text.dart';
+import 'package:insect_dection_app/core/core.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.text, this.color, this.onTap});
