@@ -29,6 +29,13 @@
             {
               "client_id": "159003680901-9jm1rurbe2mi65hfruu805qfg7b7eiav.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "159003680901-omv4i75avrhp5mjt3jofngd5k3a615tv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.insectDectionApp"
+              }
             }
           ]
         }
