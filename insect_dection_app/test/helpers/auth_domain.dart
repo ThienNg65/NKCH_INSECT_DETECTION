@@ -3,5 +3,6 @@ import 'package:mockito/annotations.dart';
 
 @GenerateMocks([
   AuthRepository,
+  AuthRemoteDatasource,
 ])
 void main() {}

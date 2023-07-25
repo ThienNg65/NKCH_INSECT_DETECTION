@@ -59,11 +59,11 @@ class MockAuthRepository extends _i1.Mock implements _i3.AuthRepository {
       ) as _i4.Future<_i2.Either<_i5.Failure, _i3.LoginSuccessEntity>>);
   @override
   _i4.Future<_i2.Either<_i5.Failure, _i3.SignUpSuccessEntity>> signUp(
-          _i3.SignUpParams? registerParams) =>
+          _i3.SignUpParams? signUpParams) =>
       (super.noSuchMethod(
         Invocation.method(
           #signUp,
-          [registerParams],
+          [signUpParams],
         ),
         returnValue:
             _i4.Future<_i2.Either<_i5.Failure, _i3.SignUpSuccessEntity>>.value(
@@ -71,8 +71,34 @@ class MockAuthRepository extends _i1.Mock implements _i3.AuthRepository {
           this,
           Invocation.method(
             #signUp,
-            [registerParams],
+            [signUpParams],
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i3.SignUpSuccessEntity>>);
+}
+
+/// A class which mocks [AuthRemoteDatasource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAuthRemoteDatasource extends _i1.Mock
+    implements _i3.AuthRemoteDatasource {
+  MockAuthRemoteDatasource() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i3.SignUpResponse>? signUp(_i3.SignUpParams? signUpParams) =>
+      (super.noSuchMethod(Invocation.method(
+        #signUp,
+        [signUpParams],
+      )) as _i4.Future<_i3.SignUpResponse>?);
+  @override
+  _i4.Future<_i3.LoginResponse?> logIn(_i3.LoginParams? loginParams) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #logIn,
+          [loginParams],
+        ),
+        returnValue: _i4.Future<_i3.LoginResponse?>.value(),
+      ) as _i4.Future<_i3.LoginResponse?>);
 }

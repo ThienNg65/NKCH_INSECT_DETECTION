@@ -6,5 +6,5 @@ abstract class AuthRepository {
   Future<Either<Failure, LoginSuccessEntity>> logIn(LoginParams loginParams);
 
   Future<Either<Failure, SignUpSuccessEntity>> signUp(
-      SignUpParams registerParams);
+      SignUpParams signUpParams);
 }

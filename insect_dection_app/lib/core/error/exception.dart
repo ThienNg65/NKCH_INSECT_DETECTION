@@ -1,15 +1,17 @@
-import 'package:equatable/equatable.dart';
+// TODO: add document
+class ServerException implements Exception {
+  final String? errorMesage;
 
-abstract class Failure extends Equatable {
-  const Failure({List properties = const <dynamic>[]}) : super();
+  ServerException({this.errorMesage});
 }
 
-class ServerFailure extends Failure {
-  @override
-  List<Object?> get props => [];
-}
+class CacheException implements Exception {}
 
-class CacheFailure extends Failure {
-  @override
-  List<Object?> get props => [];
+class UnhandledException implements Exception {}
+
+class EmptyCredentialException extends ServerException {}
+
+class FirebaseErrorException extends ServerException {
+  FirebaseErrorException({required String errorMesage})
+      : super(errorMesage: errorMesage);
 }
