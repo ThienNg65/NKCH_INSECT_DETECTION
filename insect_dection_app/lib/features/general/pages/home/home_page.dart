@@ -5,7 +5,9 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 
-import '../read data/get_user_name.dart';
+import '../../../user/pages/get_user_name.dart';
+
+
 
 // ignore: camel_case_types
 class HomePage extends StatefulWidget {
@@ -25,8 +27,9 @@ class _HomePageState extends State<HomePage> {
   // get the docIDs
   Future getDocId() async {
     await FirebaseFirestore.instance.collection('user').get().then(
+          // ignore: avoid_function_literals_in_foreach_calls
           (snapshot) => snapshot.docs.forEach((document) {
-            print(document.reference);
+            // print(document.reference);
             docID.add(document.reference.id);
           }),
         );
@@ -38,7 +41,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(
           user.email!,
-          style: TextStyle(fontSize: 16),
+          style: const TextStyle(fontSize: 16),
         ),
         actions: [
           Padding(
@@ -47,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 FirebaseAuth.instance.signOut();
               },
-              child: Icon(Icons.logout),
+              child: const Icon(Icons.logout),
             ),
           ),
         ],
