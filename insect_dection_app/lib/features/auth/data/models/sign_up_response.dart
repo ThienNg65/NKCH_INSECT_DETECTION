@@ -3,12 +3,12 @@ import 'package:insect_dection_app/features/auth/domain/domain.dart';
 
 class SignUpResponse extends Equatable {
   final String uid;
-  final String token;
+  final String? token;
   final String? error;
 
   const SignUpResponse({
     required this.uid,
-    required this.token,
+    this.token,
     this.error,
   });
   @override

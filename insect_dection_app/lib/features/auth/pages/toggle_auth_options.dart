@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
 
-class AuthPage extends StatefulWidget {
-  const AuthPage({super.key});
+class ToggleAuthOptions extends StatefulWidget {
+  const ToggleAuthOptions({super.key});
 
   @override
-  State<AuthPage> createState() => _AuthPageState();
+  State<ToggleAuthOptions> createState() => _ToggleAuthOptionsState();
 }
 
-class _AuthPageState extends State<AuthPage> {
+class _ToggleAuthOptionsState extends State<ToggleAuthOptions> {
   // initially, show the login page
   bool showLoginPage = true;
 

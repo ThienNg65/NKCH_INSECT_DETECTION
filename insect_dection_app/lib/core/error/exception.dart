@@ -1,8 +1,8 @@
 // TODO: add document
 class ServerException implements Exception {
-  final String? errorMesage;
+  final String? errorMessage;
 
-  ServerException({this.errorMesage});
+  ServerException({this.errorMessage});
 }
 
 class CacheException implements Exception {}
@@ -12,6 +12,6 @@ class UnhandledException implements Exception {}
 class EmptyCredentialException extends ServerException {}
 
 class FirebaseErrorException extends ServerException {
-  FirebaseErrorException({required String errorMesage})
-      : super(errorMesage: errorMesage);
+  FirebaseErrorException({required String errorMessage})
+      : super(errorMessage: errorMessage);
 }

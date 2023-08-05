@@ -4,13 +4,13 @@ import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../../../helpers/auth_domain.mocks.dart';
+import '../../../../helpers/auth/auth_domain.mocks.dart';
 
 void main() {
   late EmailSignUp emailSignUp;
   late MockAuthRepository mockAuthRepository;
 
-  late SignUpParams signUpParams;
+  late AuthenticationParams signUpParams;
   late SignUpSuccessEntity signUpSuccessEntity;
 
   const tEmail = "test_3@gmail.com";
@@ -20,9 +20,10 @@ void main() {
   const tUid = 'test-uid';
   setUp(() {
     mockAuthRepository = mockAuthRepository = MockAuthRepository();
-    emailSignUp = EmailSignUp(mockAuthRepository);
+    emailSignUp = EmailSignUp(repo: mockAuthRepository);
 
-    signUpParams = const SignUpParams(email: tEmail, password: tPasssword);
+    signUpParams =
+        const AuthenticationParams(email: tEmail, password: tPasssword);
     signUpSuccessEntity = const SignUpSuccessEntity(
       token: tToken,
       uid: tUid,
@@ -30,23 +31,25 @@ void main() {
   });
 
   group('Usecase: Test sign up with email and password', () {
-    test('Should get [SignUp Sucess] from repository', () async {
+    test('should get [SignUp Sucess] from repository', () async {
       // arrange
       when(mockAuthRepository.signUp(signUpParams))
           .thenAnswer((_) async => Right(signUpSuccessEntity));
       // act
       final result = await emailSignUp(signUpParams);
       // assert
+      verify(mockAuthRepository.signUp(any));
       expect(result, equals(Right(signUpSuccessEntity)));
     });
-    test('Should get [Failure] from repository', () async {
+    test('should get [Failure] from repository', () async {
       // arrange
       when(mockAuthRepository.signUp(any))
-          .thenAnswer((_) async => Left(ServerFailure()));
+          .thenAnswer((_) async => const Left(ServerFailure()));
       // act
       final result = await emailSignUp(signUpParams);
       // assert
-      expect(result, equals(Left(ServerFailure())));
+      verify(mockAuthRepository.signUp(any));
+      expect(result, equals(const Left(ServerFailure())));
     });
   });
 }

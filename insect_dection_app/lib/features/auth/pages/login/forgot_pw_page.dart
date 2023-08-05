@@ -33,7 +33,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         },
       );
     } on FirebaseAuthException catch (e) {
-      print(e);
+      // print(e);
       showDialog(
         context: context,
         builder: (context) {
@@ -57,7 +57,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
               'Enter your email for verification',
               textAlign: TextAlign.center,
@@ -92,8 +92,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
           MaterialButton(
             onPressed: passwordReset,
-            child: Text('Reset password'),
             color: Colors.blueAccent,
+            child:  Text('Reset password'),
           ),
         ],
       ),

@@ -72,7 +72,7 @@ class WindowClassRegistrar {
   // previously been registered.
   const wchar_t* GetWindowClass();
 
-  // Unregisters the window class. Should only be called if there are no
+  // Unregisters the window class. should only be called if there are no
   // instances of the window.
   void UnregisterWindowClass();
 
