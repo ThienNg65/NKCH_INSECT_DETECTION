@@ -1,103 +1,106 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:insect_dection_app/core/error/error.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
+import 'package:insect_dection_app/features/user/user.dart';
 
 abstract class AuthRemoteDatasource {
-  Future<SignUpResponse>? signUp(
-    SignUpParams signUpParams,
-  );
+  Stream<AuthUserInfo?> get getUserInfoState;
+  Future<SignUpResponse>? signUp(AuthenticationParams signUpParams);
 
-  Future<LoginResponse?> logIn(LoginParams loginParams);
+  Future<LoginResponse?> logIn(AuthenticationParams loginParams);
+
+  Future<void> logOut();
 }
 
 class AuthRemoteDatasourceIml implements AuthRemoteDatasource {
   final FirebaseAuth _auth;
 
-  AuthRemoteDatasourceIml(this._auth);
+  AuthRemoteDatasourceIml({FirebaseAuth? auth})
+      : _auth = auth ?? FirebaseAuth.instance;
 
   @override
-  Future<LoginResponse?> logIn(LoginParams loginParams) async {
+  Future<LoginResponse?> logIn(AuthenticationParams loginParams) async {
     try {
       final userCredential = await _auth.signInWithEmailAndPassword(
         email: loginParams.email,
         password: loginParams.password,
       );
-      final credential = userCredential.credential!;
-      final user = userCredential.user!;
 
-      final token = credential.accessToken!;
+      final user = userCredential.user;
+
+      final uid = user?.uid as String;
+      final token = await user?.getIdToken() as String;
+      final displayName = user?.displayName ?? user?.email;
 
       final loginResponse = LoginResponse(
-        uid: user.uid,
+        uid: uid,
         token: token,
-        displayName: user.displayName,
+        displayName: displayName,
       );
       return loginResponse;
     } on FirebaseAuthException catch (e) {
       // Handle FirebaseAuthException
       final errorMessage = e.logInFailureMessageFromCode;
       // Show error message to user
-      throw FirebaseErrorException(errorMesage: errorMessage);
+      throw FirebaseErrorException(errorMessage: errorMessage);
+    } catch (e) {
+      throw ServerException(errorMessage: e.toString());
     }
   }
 
   @override
-  Future<SignUpResponse>? signUp(SignUpParams signUpParams) async {
+  Future<SignUpResponse>? signUp(AuthenticationParams signUpParams) async {
     try {
       final userCredential = await _auth.createUserWithEmailAndPassword(
         email: signUpParams.email,
         password: signUpParams.password,
       );
-      final credential = userCredential.credential!;
-      final user = userCredential.user!;
+      final user = userCredential.user;
 
-      final token = credential.accessToken!;
+      final uid = user?.uid as String;
+      final token = await user?.getIdToken() as String;
 
       final signUpResponse = SignUpResponse(
-        uid: user.uid,
+        uid: uid,
         token: token,
       );
       return signUpResponse;
     } on FirebaseAuthException catch (e) {
       // Handle FirebaseAuthException
+      final errorMessage = e.signUpFailureMessageFromCode;
+      // Show error message to user
+      throw FirebaseErrorException(errorMessage: errorMessage);
+    } catch (e) {
+      throw ServerException(errorMessage: e.toString());
+    }
+  }
+
+  @override
+  Future<void> logOut() => _auth.signOut();
+
+  @override
+  Stream<AuthUserInfo?> get getUserInfoState {
+    try {
+      return _auth.authStateChanges().map((user) {
+        if (user == null) {
+          return null;
+        } else {
+          return AuthUserInfo(
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+            photoUrl: user.photoURL,
+            phoneNumber: user.phoneNumber,
+          );
+        }
+      });
+    } on FirebaseAuthException catch (e) {
+      // Handle FirebaseAuthException
       final errorMessage = e.logInFailureMessageFromCode;
       // Show error message to user
-      throw FirebaseErrorException(errorMesage: errorMessage);
-    }
-  }
-}
-
-extension MapFirebaseAuthException on FirebaseAuthException {
-  String get signUpFailureMessageFromCode {
-    switch (code) {
-      case 'invalid-email':
-        return 'Email is not valid or badly formatted.';
-      case 'user-disabled':
-        return 'This user has been disabled. Please contact support for help.';
-      case 'email-already-in-use':
-        return 'An account already exists for that email.';
-      case 'operation-not-allowed':
-        return 'Operation is not allowed. Please contact support.';
-      case 'weak-password':
-        return 'Please enter a stronger password.';
-      default:
-        return "An unknown error has occurred.";
-    }
-  }
-
-  String get logInFailureMessageFromCode {
-    switch (code) {
-      case 'invalid-email':
-        return 'Email is not valid or badly formatted.';
-      case 'user-disabled':
-        return 'This user has been disabled. Please contact support for help.';
-      case 'user-not-found':
-        return 'Email is not found, please create an account.';
-      case 'wrong-password':
-        return 'Incorrect password, please try again.';
-      default:
-        return "An unknown error has occurred.";
+      throw FirebaseErrorException(errorMessage: errorMessage);
+    } catch (e) {
+      throw ServerException(errorMessage: e.toString());
     }
   }
 }

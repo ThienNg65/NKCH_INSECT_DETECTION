@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class LoginSuccessEntity extends Equatable {
-  final String token;
+  final String? token;
   final String uid;
   final String displayName;
 

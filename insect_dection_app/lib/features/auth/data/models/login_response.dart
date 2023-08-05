@@ -3,13 +3,13 @@ import 'package:insect_dection_app/features/auth/domain/domain.dart';
 
 class LoginResponse extends Equatable {
   final String uid;
-  final String token;
+  final String? token;
   final String? displayName;
   final String? error;
 
   const LoginResponse({
     required this.uid,
-    required this.token,
+    this.token,
     this.displayName,
     this.error,
   });
@@ -22,7 +22,7 @@ class LoginResponse extends Equatable {
       ];
 
   LoginSuccessEntity toLoginSucces() => LoginSuccessEntity(
-        token: token,
+        token: token ?? '',
         uid: uid,
         displayName: displayName ?? '',
       );

@@ -1,10 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
+import 'package:insect_dection_app/features/user/user.dart';
 
 abstract class AuthRepository {
-  Future<Either<Failure, LoginSuccessEntity>> logIn(LoginParams loginParams);
+  Stream<Either<Failure, AuthUserInfo>> get userInfoState;
+
+  Future<Either<Failure, LoginSuccessEntity>> logIn(
+      AuthenticationParams loginParams);
 
   Future<Either<Failure, SignUpSuccessEntity>> signUp(
-      SignUpParams signUpParams);
+      AuthenticationParams signUpParams);
+  Future<Either<Failure, void>> logOut();
 }

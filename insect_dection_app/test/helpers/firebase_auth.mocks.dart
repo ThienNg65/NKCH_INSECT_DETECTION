@@ -607,34 +607,6 @@ class MockUserCredential extends _i1.Mock implements _i4.UserCredential {
   }
 }
 
-/// A class which mocks [AuthCredential].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockAuthCredential extends _i1.Mock implements _i3.AuthCredential {
-  MockAuthCredential() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  String get providerId => (super.noSuchMethod(
-        Invocation.getter(#providerId),
-        returnValue: '',
-      ) as String);
-  @override
-  String get signInMethod => (super.noSuchMethod(
-        Invocation.getter(#signInMethod),
-        returnValue: '',
-      ) as String);
-  @override
-  Map<String, dynamic> asMap() => (super.noSuchMethod(
-        Invocation.method(
-          #asMap,
-          [],
-        ),
-        returnValue: <String, dynamic>{},
-      ) as Map<String, dynamic>);
-}
-
 /// A class which mocks [User].
 ///
 /// See the documentation for Mockito's code generation for more information.

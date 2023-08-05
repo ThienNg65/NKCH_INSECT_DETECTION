@@ -4,5 +4,9 @@ import 'package:mockito/annotations.dart';
 @GenerateMocks([
   AuthRepository,
   AuthRemoteDatasource,
+  GetCurrentAuthUserInfoStream,
+  EmailLogin,
+  EmailSignUp,
+  LogOutRequested,
 ])
 void main() {}
