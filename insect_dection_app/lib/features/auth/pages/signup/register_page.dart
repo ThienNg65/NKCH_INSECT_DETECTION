@@ -66,62 +66,71 @@ class RegisterPageSate extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[300],
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Hello again!
-                Text(
-                  "Hello new pal!",
-                  style: GoogleFonts.bebasNeue(
-                    fontSize: 50,
+    return BlocListener<SignUpCubit, SignUpState>(
+      listener: (_, state) {
+        if (state.status == SignUpStatus.error) {
+          // TODO show snack bar
+        } else if (state.status == SignUpStatus.success) {
+          // TODO Show top snack bar welcome
+        }
+      },
+      child: Scaffold(
+        backgroundColor: Colors.grey[300],
+        body: SafeArea(
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Hello again!
+                  Text(
+                    "Hello new pal!",
+                    style: GoogleFonts.bebasNeue(
+                      fontSize: 50,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  // ignore: unnecessary_string_escapes
-                  "Please register to access further 🥰",
-                  style: TextStyle(
-                    fontSize: 20,
+                  const SizedBox(height: 10),
+                  const Text(
+                    // ignore: unnecessary_string_escapes
+                    "Please register to access further 🥰",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 50),
+                  const SizedBox(height: 50),
 
-                // // first name textfield
-                // _firstNameInput(),
-                // const SizedBox(height: 10),
+                  // // first name textfield
+                  // _firstNameInput(),
+                  // const SizedBox(height: 10),
 
-                // // last name textfield
-                // _lastNameInput(),
-                // const SizedBox(height: 10),
+                  // // last name textfield
+                  // _lastNameInput(),
+                  // const SizedBox(height: 10),
 
-                // // age textfield
-                // _ageInput(),
-                // const SizedBox(height: 10),
+                  // // age textfield
+                  // _ageInput(),
+                  // const SizedBox(height: 10),
 
-                // email textfield
-                _emailInput(),
-                const SizedBox(height: 10),
+                  // email textfield
+                  _emailInput(),
+                  const SizedBox(height: 10),
 
-                //password textfield
-                _passwordInput(),
-                const SizedBox(height: 10),
+                  //password textfield
+                  _passwordInput(),
+                  const SizedBox(height: 10),
 
-                // confirm password textfield
-                _comfirmPasswordInput(),
-                const SizedBox(height: 10),
+                  // confirm password textfield
+                  _comfirmPasswordInput(),
+                  const SizedBox(height: 10),
 
-                // sign up button
-                _signIn(),
-                const SizedBox(height: 25),
+                  // sign up button
+                  _signIn(),
+                  const SizedBox(height: 25),
 
-                // not a member? register one
-                _toggleRegsiterOption(),
-              ],
+                  // not a member? register one
+                  _toggleRegsiterOption(),
+                ],
+              ),
             ),
           ),
         ),
