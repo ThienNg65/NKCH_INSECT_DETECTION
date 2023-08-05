@@ -11,7 +11,7 @@ import 'package:mockito/mockito.dart';
 import '../../../../../helpers/auth/auth_domain.mocks.dart';
 
 void main() {
-  group('Authentication Bloc', () {
+  group('[Authentication Bloc]', () {
     late AuthBloc authBloc;
     late MockGetCurrentAuthUserInfoStream mockGetCurrentAuthUserInfoStream;
     late MockLogOutRequested mockLogOutRequested;

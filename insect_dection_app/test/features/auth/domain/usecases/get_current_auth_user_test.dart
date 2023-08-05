@@ -8,7 +8,8 @@ import 'package:mockito/mockito.dart';
 import '../../../../helpers/auth/auth_domain.mocks.dart';
 
 void main() {
-  late GetCurrentAuthUserInfoStream usecase;
+  group('[Usecase]: Get current authenticated user info Stream', () {
+late GetCurrentAuthUserInfoStream usecase;
   late MockAuthRepository mockAuthRepository;
 
   setUp(() {
@@ -56,4 +57,6 @@ void main() {
       verifyNoMoreInteractions(mockAuthRepository);
     },
   );
+  });
+  
 }
