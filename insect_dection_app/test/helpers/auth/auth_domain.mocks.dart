@@ -8,7 +8,6 @@ import 'dart:async' as _i4;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:insect_dection_app/core/core.dart' as _i5;
 import 'package:insect_dection_app/features/auth/auth.dart' as _i3;
-import 'package:insect_dection_app/features/user/user.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -52,12 +51,12 @@ class MockAuthRepository extends _i1.Mock implements _i3.AuthRepository {
   }
 
   @override
-  _i4.Stream<_i2.Either<_i5.Failure, _i6.AuthUserInfo>> get userInfoState =>
+  _i4.Stream<_i2.Either<_i5.Failure, _i3.AuthUserInfo>> get userInfoState =>
       (super.noSuchMethod(
         Invocation.getter(#userInfoState),
         returnValue:
-            _i4.Stream<_i2.Either<_i5.Failure, _i6.AuthUserInfo>>.empty(),
-      ) as _i4.Stream<_i2.Either<_i5.Failure, _i6.AuthUserInfo>>);
+            _i4.Stream<_i2.Either<_i5.Failure, _i3.AuthUserInfo>>.empty(),
+      ) as _i4.Stream<_i2.Either<_i5.Failure, _i3.AuthUserInfo>>);
   @override
   _i4.Future<_i2.Either<_i5.Failure, _i3.LoginSuccessEntity>> logIn(
           _i3.AuthenticationParams? loginParams) =>
@@ -121,10 +120,10 @@ class MockAuthRemoteDatasource extends _i1.Mock
   }
 
   @override
-  _i4.Stream<_i6.AuthUserInfo?> get getUserInfoState => (super.noSuchMethod(
+  _i4.Stream<_i3.AuthUserInfo?> get getUserInfoState => (super.noSuchMethod(
         Invocation.getter(#getUserInfoState),
-        returnValue: _i4.Stream<_i6.AuthUserInfo?>.empty(),
-      ) as _i4.Stream<_i6.AuthUserInfo?>);
+        returnValue: _i4.Stream<_i3.AuthUserInfo?>.empty(),
+      ) as _i4.Stream<_i3.AuthUserInfo?>);
   @override
   _i4.Future<_i3.SignUpResponse>? signUp(
           _i3.AuthenticationParams? signUpParams) =>
@@ -170,7 +169,7 @@ class MockGetCurrentAuthUserInfoStream extends _i1.Mock
         ),
       ) as _i3.AuthRepository);
   @override
-  _i4.Stream<_i2.Either<_i5.Failure, _i6.AuthUserInfo>> call(
+  _i4.Stream<_i2.Either<_i5.Failure, _i3.AuthUserInfo>> call(
           _i5.NoParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -178,8 +177,8 @@ class MockGetCurrentAuthUserInfoStream extends _i1.Mock
           [params],
         ),
         returnValue:
-            _i4.Stream<_i2.Either<_i5.Failure, _i6.AuthUserInfo>>.empty(),
-      ) as _i4.Stream<_i2.Either<_i5.Failure, _i6.AuthUserInfo>>);
+            _i4.Stream<_i2.Either<_i5.Failure, _i3.AuthUserInfo>>.empty(),
+      ) as _i4.Stream<_i2.Either<_i5.Failure, _i3.AuthUserInfo>>);
 }
 
 /// A class which mocks [EmailLogin].

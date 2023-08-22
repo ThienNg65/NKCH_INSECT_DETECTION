@@ -6,11 +6,13 @@ import 'package:insect_dection_app/features/auth/auth.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../../../helpers/auth/auth_domain.mocks.dart';
+import '../../../../../helpers/user/user_domain.mocks.dart';
 
 void main() {
   group('[SignIn Cubit]', () {
     late SignUpCubit signUpCubit;
     late MockEmailSignUp mockEmailSignUp;
+    late MockCreateUserProfile mockCreateUserProfile;
 
     late SignUpState signUpState;
     late SignUpSuccessEntity signUpSuccess;
@@ -18,7 +20,11 @@ void main() {
 
     setUp(() {
       mockEmailSignUp = MockEmailSignUp();
-      signUpCubit = SignUpCubit(signUp: mockEmailSignUp);
+      mockCreateUserProfile = MockCreateUserProfile();
+      signUpCubit = SignUpCubit(
+        signUp: mockEmailSignUp,
+        createUserProfile: mockCreateUserProfile,
+      );
 
       signUpState = SignUpState.initial();
       signUpSuccess = const SignUpSuccessEntity(
