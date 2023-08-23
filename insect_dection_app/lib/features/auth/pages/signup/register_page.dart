@@ -70,7 +70,7 @@ class RegisterPageSate extends State<RegisterPage> {
                     ),
                   ),
                   const SizedBox(height: 50),
-
+                  
                   // email textfield
                   _emailInput(),
                   const SizedBox(height: 10),
@@ -86,7 +86,7 @@ class RegisterPageSate extends State<RegisterPage> {
                   // sign up button
                   _signIn(),
                   const SizedBox(height: 25),
-
+                
                   // not a member? register one
                   _toggleRegsiterOption(),
                 ],
