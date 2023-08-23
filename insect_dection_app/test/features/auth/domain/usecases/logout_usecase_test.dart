@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import '../../../../helpers/auth/auth_domain.mocks.dart';
 
 void main() {
-  group('Usecase: Test log out', () {
+  group('[Usecase]: Log out', () {
     late MockAuthRepository mockAuthRepository;
     late LogOutRequested logOutRequested;
 

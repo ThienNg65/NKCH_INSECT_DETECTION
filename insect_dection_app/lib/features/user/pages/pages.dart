@@ -1,1 +1,1 @@
-export 'get_user_name.dart';
+export 'profile/profile.dart';

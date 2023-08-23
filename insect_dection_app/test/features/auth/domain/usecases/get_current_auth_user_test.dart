@@ -2,13 +2,13 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
-import 'package:insect_dection_app/features/user/user.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../../helpers/auth/auth_domain.mocks.dart';
 
 void main() {
-  late GetCurrentAuthUserInfoStream usecase;
+  group('[Usecase]: Get current authenticated user info Stream', () {
+late GetCurrentAuthUserInfoStream usecase;
   late MockAuthRepository mockAuthRepository;
 
   setUp(() {
@@ -56,4 +56,6 @@ void main() {
       verifyNoMoreInteractions(mockAuthRepository);
     },
   );
+  });
+  
 }

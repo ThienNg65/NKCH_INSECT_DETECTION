@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -16,24 +17,6 @@ class RegisterPageSate extends State<RegisterPage> {
   // Initially password is obscure
   bool _obscureText = true;
 
-  // TEXT CONTROLLER
-  // final TextEditingController email = TextEditingController();
-  // final TextEditingController password = TextEditingController();
-  // final TextEditingController confirmPassword = TextEditingController();
-  // final TextEditingController firstName = TextEditingController();
-  // final TextEditingController lastName = TextEditingController();
-  // final TextEditingController age = TextEditingController();
-
-  // check if the confirm password matches the password
-  bool passwordConfirmed() {
-    // if (confirmPassword.text.trim() == password.text.trim()) {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
-    return true;
-  }
-
   void onEmailChanged(String? value) {
     BlocProvider.of<SignUpCubit>(context).onEmailChanged(value);
   }
@@ -45,9 +28,6 @@ class RegisterPageSate extends State<RegisterPage> {
   void onConfirmChanged(String? value) {
     BlocProvider.of<SignUpCubit>(context).onConfirmChanged(value);
   }
-  // void onFirstNameChanged(String value) {}
-  // void onLasNameChanged(String value) {}
-  // void onAgeChanged(String value) {}
 
   Future signUp() async {
     BlocProvider.of<SignUpCubit>(context).signUpWithEmailCredential();
@@ -55,23 +35,15 @@ class RegisterPageSate extends State<RegisterPage> {
 
   @override
   void dispose() {
-    // email.dispose();
-    // password.dispose();
-    // confirmPassword.dispose();
-    // firstName.dispose();
-    // lastName.dispose();
-    // age.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
-      listener: (_, state) {
+      listener: (_, state) async {
         if (state.status == SignUpStatus.error) {
-          // TODO show snack bar
-        } else if (state.status == SignUpStatus.success) {
-          // TODO Show top snack bar welcome
+          await displayMessageDialog(context: context, message: state.message);
         }
       },
       child: Scaffold(
@@ -98,19 +70,7 @@ class RegisterPageSate extends State<RegisterPage> {
                     ),
                   ),
                   const SizedBox(height: 50),
-
-                  // // first name textfield
-                  // _firstNameInput(),
-                  // const SizedBox(height: 10),
-
-                  // // last name textfield
-                  // _lastNameInput(),
-                  // const SizedBox(height: 10),
-
-                  // // age textfield
-                  // _ageInput(),
-                  // const SizedBox(height: 10),
-
+                  
                   // email textfield
                   _emailInput(),
                   const SizedBox(height: 10),
@@ -126,7 +86,7 @@ class RegisterPageSate extends State<RegisterPage> {
                   // sign up button
                   _signIn(),
                   const SizedBox(height: 25),
-
+                
                   // not a member? register one
                   _toggleRegsiterOption(),
                 ],
@@ -137,78 +97,6 @@ class RegisterPageSate extends State<RegisterPage> {
       ),
     );
   }
-
-  // Padding _firstNameInput() {
-  //   return Padding(
-  //     padding: const EdgeInsets.symmetric(horizontal: 25.0),
-  //     child: TextFormField(
-  //       key: const Key('registerForm_firstNameInput_textField'),
-  //       controller: firstName,
-  //       keyboardType: TextInputType.text,
-  //       decoration: InputDecoration(
-  //         enabledBorder: OutlineInputBorder(
-  //           borderSide: BorderSide(color: Colors.white),
-  //           borderRadius: BorderRadius.circular(12.0),
-  //         ),
-  //         focusedBorder: OutlineInputBorder(
-  //           borderSide: BorderSide(color: Colors.blueAccent),
-  //           borderRadius: BorderRadius.circular(12.0),
-  //         ),
-  //         hintText: 'First Name',
-  //         fillColor: Colors.grey[100],
-  //         filled: true,
-  //       ),
-  //     ),
-  //   );
-  // }
-
-  // Padding _lastNameInput() {
-  //   return Padding(
-  //     padding: const EdgeInsets.symmetric(horizontal: 25.0),
-  //     child: TextFormField(
-  //       key: const Key('registerForm_lastNameInput_textField'),
-  //       controller: lastName,
-  //       keyboardType: TextInputType.text,
-  //       decoration: InputDecoration(
-  //         enabledBorder: OutlineInputBorder(
-  //           borderSide: BorderSide(color: Colors.white),
-  //           borderRadius: BorderRadius.circular(12.0),
-  //         ),
-  //         focusedBorder: OutlineInputBorder(
-  //           borderSide: BorderSide(color: Colors.blueAccent),
-  //           borderRadius: BorderRadius.circular(12.0),
-  //         ),
-  //         hintText: 'Last name',
-  //         fillColor: Colors.grey[100],
-  //         filled: true,
-  //       ),
-  //     ),
-  //   );
-  // }
-
-  // Padding _ageInput() {
-  //   return Padding(
-  //     padding: const EdgeInsets.symmetric(horizontal: 25.0),
-  //     child: TextFormField(
-  //       key: const Key('registerForm_ageInput_textField'),
-  //       controller: age,
-  //       keyboardType: TextInputType.number,
-  //       decoration: InputDecoration(
-  //         enabledBorder: OutlineInputBorder(
-  //           borderSide: BorderSide(color: Colors.white),
-  //           borderRadius: BorderRadius.circular(12.0),
-  //         ),
-  //         focusedBorder: OutlineInputBorder(
-  //           borderSide: BorderSide(color: Colors.blueAccent),
-  //           borderRadius: BorderRadius.circular(12.0),
-  //         ),
-  //         hintText: 'Age',
-  //         fillColor: Colors.grey[100],
-  //         filled: true,
-  //       ),
-  //     ),
-  //   );
-  // }
 
   _emailInput() {
     return BlocBuilder<SignUpCubit, SignUpState>(

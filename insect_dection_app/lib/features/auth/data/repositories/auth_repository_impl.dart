@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
-import 'package:insect_dection_app/features/user/user.dart';
+
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDatasource remoteDatasource;

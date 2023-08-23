@@ -4,14 +4,15 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:insect_dection_app/core/core.dart';
-import 'package:insect_dection_app/features/auth/pages/auth_warpper/bloc/auth_bloc.dart';
-import 'package:insect_dection_app/features/user/user.dart';
+import 'package:insect_dection_app/features/auth/auth.dart';
+
+
 import 'package:mockito/mockito.dart';
 
 import '../../../../../helpers/auth/auth_domain.mocks.dart';
 
 void main() {
-  group('Authentication Bloc', () {
+  group('[Authentication Bloc]', () {
     late AuthBloc authBloc;
     late MockGetCurrentAuthUserInfoStream mockGetCurrentAuthUserInfoStream;
     late MockLogOutRequested mockLogOutRequested;

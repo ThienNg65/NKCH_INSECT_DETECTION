@@ -1,4 +1,4 @@
-import 'package:insect_dection_app/features/user/user.dart';
+import 'package:insect_dection_app/features/auth/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 extension MapFromFirebaseToAuthUser on User {

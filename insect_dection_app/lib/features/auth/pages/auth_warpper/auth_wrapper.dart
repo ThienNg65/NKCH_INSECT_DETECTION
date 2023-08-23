@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
-import 'package:insect_dection_app/features/general/general.dart';
 
 import 'package:insect_dection_app/injection_container.dart' as di;
 
@@ -18,7 +18,7 @@ class AuthenticationWrapper extends StatelessWidget {
       child: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, authState) {
           if (authState.status == AuthStatus.authenticated) {
-            return const HomePage();
+            return const MyBottomNavBar();
           } else {
             if (authState.status == AuthStatus.unauthenticated) {
               return const ToggleAuthOptions();

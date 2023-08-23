@@ -29,7 +29,7 @@ void main() {
     );
   });
 
-  group('Usecase: Test login with email and password', () {
+  group('[Usecase]: Login with email and password', () {
     test('should get [Login Sucess] from repository', () async {
       // arrange
       when(mockAuthRepository.logIn(loginParams))

@@ -48,9 +48,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocListener<LoginCubit, LoginState>(
       listener: (_, state) {
         if (state.status == LoginStatus.error) {
-          // TODO show snack bar
-        } else if (state.status == LoginStatus.success) {
-          // TODO Show top snack bar welcome
+          //TODO : create snackbar
         }
       },
       child: Scaffold(

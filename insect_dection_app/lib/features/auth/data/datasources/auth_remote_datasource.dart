@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:insect_dection_app/core/error/error.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
-import 'package:insect_dection_app/features/user/user.dart';
+
 
 abstract class AuthRemoteDatasource {
   Stream<AuthUserInfo?> get getUserInfoState;
