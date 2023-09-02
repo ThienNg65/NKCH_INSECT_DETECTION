@@ -1,0 +1,142 @@
+{
+   "insects" : [
+        {
+            "modelId": 0,
+            "nomenclature": {
+                "commonName": "rice leaf roller",
+                "scientificName": "Marasmia exigua / Cnaphalocrocis medinalis",
+                "other_name": "It is also known as Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae"
+            },
+            "taxonomy": {
+                "species": "C. medinalis",
+                "genus": "Cnaphalococis",
+                "family": "Crambidae",
+                "order": "Lepidoptera",
+                "class": "Insecta"
+            },
+            "impacts": {
+                "benefits": "",
+                "harms": "Sâu cuốn lá gây hại ở giai đoạn sâu non. Một ấu trùng có thể ăn khoảng 25 cm vuông (4 in2) mô lá, chiếm chưa đến 40% lá lúa bình thường."
+            },
+            "predators": "",
+            "origin": "tìm thấy ở Đông Nam Á , bao gồm Hồng Kông , Sri Lanka , Đài Loan , Thái Lan và hầu hết Australia",
+            "identificationFeatures": "Ấu trùng thường có 5 tuổi, chiều dài cơ thể ấu trùng ở giai đoạn trưởng thành khoảng 15–18mm(19⁄32–23⁄32 in). Chúng có đầu màu nâu, ngực và bụng lúc đầu có màu xanh lục, sau chuyển sang màu xanh vàng và khi trưởng thành có màu đỏ nâu. Có hai đường màu đen hình xoắn ốc ở mép sau của đỉnh ngực trước và 8 vòng tròn nhỏ màu đen rõ rệt ở đầu ngực giữa và ngực sau, trong đó có sáu mép trước và hai mép sau.",
+            "lifeCycle": ""
+        },
+        {
+            "modelId": 1,
+            "nomenclature": {
+                "commonName": "rice leaf caterpillar",
+                "scientificName": "Cnaphalocrocis medinalis",
+                "other_name": "Rice leaf folder"
+            },
+            "taxonomy": {
+                "species": "",
+                "genus": "",
+                "family": "",
+                "order": "",
+                "class": ""
+            },
+            "impacts": {
+                "benefits": "",
+                "harms": ""
+            },
+            "predators": "",
+            "origin": "",
+            "identificationFeatures": "",
+            "lifeCycle": ""
+        },
+        {
+            "modelId": 2,
+            "nomenclature": {
+                "commonName": "paddy stem maggot",
+                "scientificName": "Scirpophaga incertulas",
+                "other_name": "Giòi đục lá lúa/yellow stem borer"
+            },
+            "taxonomy": {
+                "species": "S. incertulas",
+                "genus": "Scirpophaga",
+                "family": "Crambidae",
+                "order": "Lepidoptera",
+                "class": "Insecta"
+            },
+            "impacts": {
+                "benefits": "",
+                "harms": "Ấu trùng ăn Oryza sativa. Nó được coi là loài gây hại lúa chính trên khắp Ấn Độ, Sri Lanka cũng như ở nhiều vùng khác nhau của Nepal, và nó tàn phá mùa màng hàng năm. Chúng mang thân của cây chủ. "
+            },
+            "predators": "Các loài thuộc ba chi Telenomus, Tetrastichus và Trichogramma có tác dụng diệt trứng, ấu trùng và bướm trưởng thành rất hiệu quả.",
+            "origin": "It is found in Afghanistan, Nepal, north-eastern India, Sri Lanka, Bangladesh, Myanmar, Vietnam, Thailand, Malaysia, Singapore, Sumatra, Java, Borneo, Sumba, Sulawesi, the Philippines, Taiwan, China and Japan.",
+            "identificationFeatures": "Ấu trùng trưởng thành có màu vàng nhạt đến xanh vàng với đầu màu nâu và đạt chiều dài 20 mm. Nhộng diễn ra trong một cái kén lụa trắng.",
+            "lifeCycle": ""
+        },
+        {
+            "modelId": 3,
+            "nomenclature": {
+                "commonName": "asiatic rice borer",
+                "scientificName": "Chilo suppressalis",
+                "other_name": "Striped rice stemborer/  \nSâu đục thân lúa châu Á hoặc sâu đục thân 5 vạch đầu nâu"
+            },
+            "taxonomy": {
+                "species": "C. suppressalis",
+                "genus": "Chilo",
+                "family": "Crambidae",
+                "order": "Lepidoptera",
+                "class": "Insecta"
+            },
+            "impacts": {
+                "benefits": "",
+                "harms": "Đây là loài sâu hại lúa nghiêm trọng. Chúng chịu trách nhiệm chính cho sự sụt giảm lớn trong việc trồng lúa ở Đông Á, Ấn Độ và Indonesia. "
+            },
+            "predators": "",
+            "origin": "It is a widespread species, known from Iran,[2] India, Sri Lanka, China, eastern Asia, Japan, Taiwan, Malaysia to the Pacific.",
+            "identificationFeatures": "Sải cánh dài 25 mm. Con cái lớn hơn con đực. Con trưởng thành có cánh trước màu vàng nạt, mỗi cánh có một hoặc nhiều hơn đốm đậm. Cánh sau màu trắng.\nẤu trùng ăn Chaetochloa verticellata, Echinochloa crusgalli cruspavonis, Echinochloa stagnina, Eleusine indica, Panicum barbinode, Paspalum conjugatum và lúa. Chúng đục thân cây chủ. Ấu trùng màu vàng.",
+            "lifeCycle": "Sâu đục thân lúa là loài côn trùng đẻ trứng thành đám, dạng vảy, có màu trắng mờ đến vàng sẫm. Ấu trùng bắt đầu có màu trắng xám với đầu đen và dài khoảng 25 mm, chuyển sang màu vàng với 5 đường mờ. Chúng ăn nhiều loại cây khác nhau, bao gồm cả lúa và làm nhộng bên trong thân cây. Có hai quần thể liên quan đến gạo và Yến mạch nước, cho thấy sự khác biệt về mặt sinh học, nhưng phân tích di truyền cho thấy dòng gen giữa chúng."
+        },
+        {
+            "modelId": 4,
+            "nomenclature": {
+                "commonName": "yellow rice borer",
+                "scientificName": "Scirpophaga incertulas",
+                "other_name": "Bướm hai chấm. Giai đoạn ngày của nó được gọi là Sâu đục thân hai chấm là một loài bướm đêm trong họ Crambidae."
+            },
+            "taxonomy": {
+                "species": "S. incertulas",
+                "genus": "Scirpophaga",
+                "family": "Crambidae",
+                "order": "Lepidoptera",
+                "class": "Insecta"
+            },
+            "impacts": {
+                "benefits": "",
+                "harms": "Sâu non xâm nhập vào bẹ lá vào thân cắt đứt đường vận chuyển dinh dưỡng làm dảnh vô hiệu và bông bạc, ảnh hưởng đến cây lúa và năng suất lúa. Nhộng làm ổ bên trong thân lúa và bướm vũ hóa từ đấy.\n\nSâu đục thân bướm hai chấm thường phát sinh gây hại nặng ở vụ lúa xuân muộn và mùa chính vụ. Các tỉnh Miền Nam và Miền Trung gây hại ở tất cả các vụ lúa, còn các tỉnh Miền Bắc thi những năm mùa đông rét đậm kéo dài, vụ mùa khô hạn thì thường phát sinh nặng. Sâu phân bố khắp các vùng trồng lúa trong nước và trên thế giới."
+            },
+            "predators": "",
+            "origin": "Nó được tìm thấy ở Afghanistan, Nepal, đông bắc Ấn Độ, Sri Lanka, Bangladesh, Burma, Việt Nam, Thái Lan, Malaysia, Singapore, Sumatra, Java, Borneo, Sumba, Sulawesi, Philippines, Đài Loan, Trung Quốc và Nhật Bản.",
+            "identificationFeatures": "Đặc điểm hình thái:\n\n- Trứng hình đẻ thành ổ hình bầu dục, trên mặt phủ lớp lông màu vàng nhạt, ở giữa nhô lên. Mới đẻ trứng có màu trắng, sau chuyển ngà vàng, sắp nở màu đen.\n\n- Sâu non đẫy sức màu trắng sữa, đầu màu nâu vàng. Chân bụng ít phát triển, móc bàn chân bụng có 28 cái xếp thành hình elip.\n\n- Nhộng: con cái có chân sau dài hết đốt bụng 5, còn con đực có chân sau dài tới đốt bụng 8. Nhộng mới hóa có màu trắng sữa, sau chuyển màu vàng nhạt.\n\n- Con trưởng thành:\n\n+ Ngài đực có đầu ngực và cánh trước màu nâu vàng nhạt hình tam giác; giữa cánh có một chấm đen; từ đỉnh cánh đến mép sau có một vệt xiên màu nâu đen, mép ngoài cánh có 9 chấm đen nhỏ; mắt kép, to đen.\n\n+ Ngài cái có thân màu trắng vàng hoặc vàng nhạt, cuối bụng có chùm lông màu vàng nhạt, giữa cánh trước có một chấm đen.",
+            "lifeCycle": "Đặc điểm sinh học, sinh thái và gây hại:\n\nVòng đời của sâu đục thân bướm 2 chấm từ 54-66 ngày. Nhiệt độ từ 19-25 độ C có:\n\n+ Thời gian trứng: 8-13 ngày.\n\n+ Thời gian sâu non: 36-39 ngày.\n\n+ Thời gian nhộng: 12-16 ngày.\n\n+ Thời gian ngài vũ hóa đến đẻ trứng: 3 ngày.\n\nNgài của sâu đục thân bướm 2 chấm có tính hướng sáng mạnh, vũ hóa về đêm và sau đó giao phối ngay trong đêm đó và đêm sau có thể đẻ trứng, ban ngày ẩn nấp, bị khua động thì bay sang cây khác. Ngài cái hoạt động mạnh từ 19-20 h, ngài đực từ 23-1 h sáng. Mỗi ngài cái đẻ từ 1-5 ổ trứng (có 100-150 quả trứng/ổ). Một năm sâu đục thân bướm 2 chấm phát sinh 6-7 lứa. Điều kiện nhiệt độ ấm nóng và ẩm độ cao thích hợp cho sâu phát sinh gây hại."
+        },
+        {
+            "modelId": 5,
+            "nomenclature": {
+                "commonName": "rice gall midge ",
+                "scientificName": "Orseolia oryzae.",
+                "other_name": "Sâu năn hay muỗi hành "
+            },
+            "taxonomy": {
+                "species": "O. oryzae",
+                "genus": "Orseolia",
+                "family": "Cecidomyiidae",
+                "order": "Diptera",
+                "class": "Insecta"
+            },
+            "impacts": {
+                "benefits": "",
+                "harms": "Triệu chứng gây hại:\n- Ấu trùng mới xâm nhập vào điểm sinh trưởng làm cho gốc dảnh lúa tròn và to lên. Ấu trùng ăn tại điểm sinh trưởng làm cho đọt lúa phát triển thành ống như lá hành, có màu xanh nhạt, phía đầu ống tròn được bịt kín bắng một nút cứng do mô lá tạo thành. Ống tròn có thể dài bằng lá dễ nhận hoặc rất ngắn khó phát hiện.\n\n- Dảnh lúa bị biến thành ống hành sẽ không trỗ bông được nhưng có thể mọc thêm chồi mới để bù lại. Nếu bị nhiễm sớm khả năng đền bù cao, ít thiệt hại. Sâu chỉ gây hại lúa ở giai đoạn trước khi có đòng."
+            },
+            "predators": "Sâu năn có nhiều loại thiên địch, nhất là loài ong ký sinh trên sâu non. ",
+            "origin": "",
+            "identificationFeatures": "- Trưởng thành là loài muỗi nhỏ, dài khoảng 3 - 5mm, bụng màu hồng nhạt.\n\n- Trứng đẻ rãi rác từng quả , rất nhỏ, màu trắng, trước khi nở có màu vàng.\n\n- Ấu trùng giống như con dòi, mình dẹt, màu trắng sữa, dài 4-5mm.\n\n- Nhộng màu hồng, dài 4-5mm, nằm trong ống hành.",
+            "lifeCycle": "* Vòng đời: 25-30 ngày\n\n- Trứng: 3-4 ngày\n\n- Sâu non: 15-18 ngày\n\n- Nhộng: 4-5 ngày\n\n- Trưởng thành: 2-3 ngày\n\n* Đặc điểm sinh thái và gây hại\nMuỗi hoạt động về đêm, có xu tính rất mạnh với ánh sáng. Sức bay yếu nên sự phân bố thường có tính khu vực. Trứng đẻ riêng lẻ hoặc từng nhóm 3-4 cái ở phía dưới mặt lá gần gốc lúa. Mỗi con cái đẻ hàng trăm trừng. Trứng cần có ẩm độ cao (trên 80%) để phát triển và nở.\n\nẤu trùng mới nở có một thời gian ngắn khoảng 1-2 ngày sống trong nước, nếu không có nước trong vòng 24giờ ấu trùng sẽ chết, sau đó chui qua bẹ lá đục vào điểm sinh trưởng làm cho lá lúa mới mọc cuốn lại như lá hành, ấu trùng sống trong đó. Khi sắp hoá nhộng ấu trùng bò lên ngọn lá hành đục một lỗ nhỏ nằm ở đó và hoá muỗi.\n\nSâu năn phát triển thích hợp trong điều kiện thời tiết tương đối ẩm, có mưa và trời ít nắng. Thường phát sinh cục bộ trên một cánh đồng hoặc một vùng hẹp do khả năng di chuyển yếu của muỗi."
+        }
+    ]
+}

@@ -36,12 +36,11 @@ class _HomePageState extends State<HomePage> {
 
   // user selected a insects, go to the insect page
   void goToInsectPage(UIInsects insects) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => InsectPage(
-          insects: insects,
-        ),
+    Navigator.of(context).push(
+      InsectPage.route(
+        context,
+        currentUserId: currentUser.uid,
+        modelId: insects.name,
       ),
     );
   }
@@ -50,8 +49,9 @@ class _HomePageState extends State<HomePage> {
 
   getUserStream() async {
     var data = await FirebaseFirestore.instance
-        .collection("Insects")
-        .orderBy('name')
+        .collection("insect_import_test")
+        .orderBy('model_id')
+        .limit(11)
         .get();
     setState(() {
       _allResult = data.docs;
@@ -103,11 +103,10 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   //create a insect
                   UIInsects insects = UIInsects(
-                    name: _allResult[index]['name'],
-                    image: _allResult[index]['image'],
-                    description: _allResult[index]['description'],
+                    id: _allResult[index]['model_id'],
+                    name: _allResult[index]['nomenclature']['common_name'],
+                    description: _allResult[index]['identification_features'],
                   );
-                  //Insects insects = recentlySearchedInsects[index];
                   return InsectTile(
                     insects: insects,
                     onTap: () => goToInsectPage(insects),
@@ -125,30 +124,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-    // // Recently Search Box
-    // Expanded(
-    //   child: ListView.builder(
-    //     itemCount: 4,
-    //     scrollDirection: Axis.horizontal,
-    //     itemBuilder: (context, index) {
-    //       //create a insect
-    //       Insects insects = Insects(
-    //           name: "Brown",
-    //           imagePath: "assets/images/browns_tails.jpg",
-    //           description: "Looks Brown");
-    //       //Insects insects = recentlySearchedInsects[index];
-    //       return InsectTile(
-    //         insects: insects,
-    //       );
-    //     },
-    //   ),
-    // ),
-
-    // Padding(
-    //   padding: const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
-    //   child: Divider(
-    //     color: Colors.white,
-    //   ),
-    // ),
   }
 }

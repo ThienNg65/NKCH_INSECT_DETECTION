@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'sign_up_cubit.dart';
 
-enum SignUpStatus { intial, loading, success, error }
+enum SignUpStatus { initial, loading, success, error }
 
 class SignUpState extends Equatable {
   final String email;
@@ -21,7 +21,7 @@ class SignUpState extends Equatable {
         email: '',
         password: '',
         confirmPassword: '',
-        status: SignUpStatus.intial,
+        status: SignUpStatus.initial,
         message: '',
       );
   @override

@@ -10,6 +10,10 @@ class Impacts extends Equatable {
     this.harms,
   });
 
+  static get empty => const Impacts(
+        benefits: '',
+        harms: '',
+      );
   @override
   List<Object?> get props => [
         benefits,

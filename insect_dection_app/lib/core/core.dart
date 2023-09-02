@@ -3,3 +3,4 @@ export 'services/services.dart';
 export 'usecase/usecase.dart';
 export 'utils/utils.dart';
 export 'uis/uis.dart';
+export 'model/models.dart';

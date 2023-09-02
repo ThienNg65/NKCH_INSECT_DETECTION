@@ -57,7 +57,7 @@ void main() {
   });
 
   test('initial statua is [initial]', () async {
-    expect(userProfileBloc.state, equals(UserProfileState.intial()));
+    expect(userProfileBloc.state, equals(UserProfileState.initial()));
   });
   group('[OnLoadUserProfileEvent]', () {
     blocTest<UserProfileBloc, UserProfileState>(
@@ -72,10 +72,10 @@ void main() {
         username: username,
       )),
       expect: () => <UserProfileState>[
-        UserProfileState.intial().copyWith(
+        UserProfileState.initial().copyWith(
           status: UserProfileStatus.loading,
         ),
-        UserProfileState.intial().fromEntity(entity: userProfileEntity),
+        UserProfileState.initial().fromEntity(entity: userProfileEntity),
       ],
     );
     blocTest<UserProfileBloc, UserProfileState>(
@@ -90,10 +90,10 @@ void main() {
         username: username,
       )),
       expect: () => <UserProfileState>[
-        UserProfileState.intial().copyWith(
+        UserProfileState.initial().copyWith(
           status: UserProfileStatus.loading,
         ),
-        UserProfileState.intial().copyWith(
+        UserProfileState.initial().copyWith(
           status: UserProfileStatus.error,
           message: 'Something wrong occurs to server!',
         )
@@ -114,14 +114,14 @@ void main() {
         return userProfileBloc;
       },
       act: (bloc) => bloc.add(UpdateUserProfileEvent(
-        feild: 'firstName',
+        felid: 'firstName',
         value: 'New first name',
       )),
       expect: () => <UserProfileState>[
-        UserProfileState.intial().copyWith(
+        UserProfileState.initial().copyWith(
           status: UserProfileStatus.loading,
         ),
-        UserProfileState.intial().fromEntity(
+        UserProfileState.initial().fromEntity(
           entity: userProfileEntity.copyWith(firstName: 'New first name'),
         ),
       ],
@@ -134,14 +134,14 @@ void main() {
         return userProfileBloc;
       },
       act: (bloc) => bloc.add(UpdateUserProfileEvent(
-        feild: uid,
+        felid: uid,
         value: username,
       )),
       expect: () => <UserProfileState>[
-        UserProfileState.intial().copyWith(
+        UserProfileState.initial().copyWith(
           status: UserProfileStatus.loading,
         ),
-        UserProfileState.intial().copyWith(
+        UserProfileState.initial().copyWith(
           status: UserProfileStatus.error,
           message: 'Something wrong occurs to server!',
         )

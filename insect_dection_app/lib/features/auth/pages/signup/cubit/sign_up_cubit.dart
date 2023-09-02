@@ -28,21 +28,21 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   void onEmailChanged(String? value) {
     emit(state.copyWith(
-      status: SignUpStatus.intial,
+      status: SignUpStatus.initial,
       email: value,
     ));
   }
 
   void onPasswordChanged(String? value) {
     emit(state.copyWith(
-      status: SignUpStatus.intial,
+      status: SignUpStatus.initial,
       password: value,
     ));
   }
 
   void onConfirmChanged(String? value) {
     emit(state.copyWith(
-      status: SignUpStatus.intial,
+      status: SignUpStatus.initial,
       confirmPassword: value,
     ));
   }

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:insect_dection_app/core/error/failure.dart';
+import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
 class InsectRepositoryImpl extends InsectRepository {
@@ -9,65 +9,33 @@ class InsectRepositoryImpl extends InsectRepository {
       : _remoteDatasource = remoteDatasource;
 
   @override
-  Future<Either<Failure, Insect>> addFavoriteInsect(
-      InsectParams insectParams) async {
-    final response =
-        await _remoteDatasource.addRecentlySearchInsect(insectParams);
-    return response.fold(
-      (failure) => Left(failure),
-      (model) => Right(model.toEntity()),
-    );
-  }
-
-  @override
-  Future<Either<Failure, Insect>> addRecentlySearchInsect(
-      InsectParams insectParams) async {
-    final response =
-        await _remoteDatasource.addRecentlySearchInsect(insectParams);
-    return response.fold(
-      (failure) => Left(failure),
-      (model) => Right(model.toEntity()),
-    );
-  }
-
-  @override
   Future<Either<Failure, Insect>> getInsectByModelId(String modelId) async {
     final response = await _remoteDatasource.getInsectByModelId(modelId);
     return response.fold(
-      (failure) => Left(failure),
-      (model) => Right(model.toEntity()),
+      (Failure failure) => Left(failure),
+      (InsectModel model) => Right(model.toEntity()),
     );
   }
 
   @override
-  Future<Either<Failure, InsectList>> getInsectList(
-      InsectListParams insectsParams) async {
-    final response = await _remoteDatasource.getInsectList(insectsParams);
-    return response.fold(
-      (failure) => Left(failure),
-      (models) => Right(models.toEntity()),
-    );
-  }
-
-  @override
-  Future<Either<Failure, InsectList>> getRecentlySearchInsectList(
-      InsectListParams insectsParams) async {
+  Future<Either<Failure, InsectList>> getInitialInsectList(
+      InsectListParams insectListParams) async {
     final response =
-        await _remoteDatasource.getRecentlySearchInsectList(insectsParams);
+        await _remoteDatasource.getInitialInsectList(insectListParams);
     return response.fold(
-      (failure) => Left(failure),
-      (models) => Right(models.toEntity()),
+      (Failure failure) => Left(failure),
+      (InsectListModel models) => Right(models.toEntity()),
     );
   }
 
   @override
-  Future<Either<Failure, Insect>> removeFavoriteInsect(
-      InsectParams insectParams) async {
+  Future<Either<Failure, InsectList>> getMoreInsectList(
+      InsectListParams insectListParams) async {
     final response =
-        await _remoteDatasource.removeFavoriteInsect(insectParams);
+        await _remoteDatasource.getMoreInsectList(insectListParams);
     return response.fold(
-      (failure) => Left(failure),
-      (models) => Right(models.toEntity()),
+      (Failure failure) => Left(failure),
+      (InsectListModel models) => Right(models.toEntity()),
     );
   }
 }

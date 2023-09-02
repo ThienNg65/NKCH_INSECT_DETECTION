@@ -27,7 +27,7 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   _onSearchChanged() {
-    print(_searchController.text);
+    debugPrint(_searchController.text);
     searchResultList();
   }
 
@@ -93,17 +93,11 @@ class _SearchPageState extends State<SearchPage> {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
-                // Go to insect page
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => InsectPage(
-                      insects: UIInsects(
-                        name: _resultList[index]['name'],
-                        image: _resultList[index]['image'],
-                        description: _resultList[index]['description'],
-                      ),
-                    ),
+                Navigator.of(context).push(
+                  InsectPage.route(
+                    context,
+                    currentUserId: currentUser.uid,
+                    modelId: _resultList[index]['model_id'],
                   ),
                 );
               },

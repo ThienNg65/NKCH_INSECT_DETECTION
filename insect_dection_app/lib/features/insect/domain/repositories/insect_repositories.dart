@@ -7,23 +7,39 @@ abstract class InsectRepository {
   Future<Either<Failure, Insect>> getInsectByModelId(
     String modelId,
   );
-  Future<Either<Failure, InsectList>> getInsectList(
-    InsectListParams insectsParams,
+  Future<Either<Failure, InsectList>> getInitialInsectList(
+    InsectListParams insectListParams,
   );
+  Future<Either<Failure, InsectList>> getMoreInsectList(
+    InsectListParams insectListParams,
+  );
+}
 
+abstract class UserInsectDataRepository {
   // Recent search
   Future<Either<Failure, Insect>> addRecentlySearchInsect(
+    UserBucketParams userBucketParams,
     InsectParams insectParams,
   );
   Future<Either<Failure, InsectList>> getRecentlySearchInsectList(
-    InsectListParams insectsParams,
+    UserBucketParams userBucketParams,
+    InsectListParams insectListParams,
   );
 
-  // Favorite
-  Future<Either<Failure, Insect>> addFavoriteInsect(
+  // Bookmarked
+  Future<Either<Failure, bool>> isBookmarkedInsect(
+    UserBucketParams userBucketParams,
+    String modelId,
+  );
+  Future<Either<Failure, Insect>> addBookmarkedInsect(
+    UserBucketParams userBucketParams,
     InsectParams insectParams,
   );
-  Future<Either<Failure, Insect>> removeFavoriteInsect(
+  Future<Either<Failure, Insect>> removeBookmarkedInsect(
+    UserBucketParams userBucketParams,
     InsectParams insectParams,
+  );
+  Future<Either<Failure, InsectList>> getBookmarkedInsectList(
+    UserBucketParams userBucketParams,
   );
 }

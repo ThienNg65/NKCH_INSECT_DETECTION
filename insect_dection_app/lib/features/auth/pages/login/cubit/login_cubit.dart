@@ -15,14 +15,14 @@ class LoginCubit extends Cubit<LoginState> {
 
   void onEmailChanged(String value) {
     emit(state.copyWith(
-      status: LoginStatus.intial,
+      status: LoginStatus.initial,
       email: value,
     ));
   }
 
   void onPasswordChanged(String value) {
     emit(state.copyWith(
-      status: LoginStatus.intial,
+      status: LoginStatus.initial,
       password: value,
     ));
   }

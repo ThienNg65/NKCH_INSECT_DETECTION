@@ -28,7 +28,8 @@ class InsectTile extends StatelessWidget {
           leading: CircleAvatar(
             backgroundColor: Colors.black,
             radius: 35,
-            backgroundImage: NetworkImage(insects.image),
+            backgroundImage:
+                insects.image != null ? NetworkImage(insects.image!) : null,
           ),
           trailing: const Icon(Icons.arrow_forward),
         ),

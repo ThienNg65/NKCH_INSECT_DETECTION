@@ -14,13 +14,13 @@ class TaxonomyModel extends Taxonomy {
   });
   factory TaxonomyModel.fromMap(Map<String, dynamic> map) {
     return TaxonomyModel(
-      species: map['species'] as String,
-      genus: map['genus'] as String,
-      family: map['family'] as String,
-      order: map['order'] as String,
-      classic: map['classic'] as String,
-      phylum: map['phylum'] as String,
-      regnum: map['regnum'] as String,
+      species: map['species'] as String?,
+      genus: map['genus'] as String?,
+      family: map['family'] as String?,
+      order: map['order'] as String?,
+      classic: map['classic'] as String?,
+      phylum: map['phylum'] as String?,
+      regnum: map['regnum'] as String?,
     );
   }
 
@@ -49,5 +49,14 @@ class TaxonomyModel extends Taxonomy {
         classic: classic,
         phylum: phylum,
         regnum: regnum,
+      );
+  factory TaxonomyModel.fromEntity(Taxonomy entity) => TaxonomyModel(
+        species: entity.species,
+        genus: entity.genus,
+        family: entity.family,
+        order: entity.order,
+        classic: entity.classic,
+        phylum: entity.phylum,
+        regnum: entity.regnum,
       );
 }

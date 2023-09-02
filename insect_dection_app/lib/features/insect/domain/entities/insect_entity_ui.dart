@@ -2,18 +2,20 @@
 import 'package:equatable/equatable.dart';
 
 class UIInsects extends Equatable {
+  final String id;
   final String name;
-  final String image;
+  final String? image;
   final String description;
   final int? timestamp;
 
   const UIInsects({
+    required this.id,
     required this.name,
-    required this.image,
+    this.image,
     required this.description,
     this.timestamp,
   });
 
   @override
-  List<Object?> get props => [name, image, description, timestamp];
+  List<Object?> get props => [id, name, image, description, timestamp];
 }

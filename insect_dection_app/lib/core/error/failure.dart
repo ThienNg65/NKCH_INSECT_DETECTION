@@ -9,7 +9,8 @@ abstract class Failure extends Equatable {
 }
 
 class ServerFailure extends Failure {
-  const ServerFailure({super.errorMessage = 'Something wrong occurs to server!'});
+  const ServerFailure(
+      {super.errorMessage = 'Something wrong occurs to server!'});
   @override
   List<Object?> get props => [errorMessage];
 }
@@ -26,8 +27,14 @@ class AuthenticatedFailure extends Failure {}
 
 class NoResponse extends Failure {}
 
-class NotFoundFailure extends Failure {
-  const NotFoundFailure({super.errorMessage = 'User not found'});
+class UserNotFoundFailure extends Failure {
+  const UserNotFoundFailure({super.errorMessage = 'User not found'});
+  @override
+  List<Object?> get props => [errorMessage];
+}
+
+class DataNotFoundFailure extends Failure {
+  const DataNotFoundFailure({super.errorMessage = 'Data not found'});
   @override
   List<Object?> get props => [errorMessage];
 }

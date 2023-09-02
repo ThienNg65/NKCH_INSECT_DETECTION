@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 
 class Taxonomy extends Equatable {
-  final String species;
-  final String genus;
-  final String family;
-  final String order;
-  final String classic;
-  final String phylum;
-  final String regnum;
+  final String? species;
+  final String? genus;
+  final String? family;
+  final String? order;
+  final String? classic;
+  final String? phylum;
+  final String? regnum;
 
   const Taxonomy({
     required this.species,
@@ -31,6 +31,16 @@ class Taxonomy extends Equatable {
       regnum,
     ];
   }
+
+  static get empty => const Taxonomy(
+        species: '',
+        genus: '',
+        family: '',
+        order: '',
+        classic: '',
+        phylum: '',
+        regnum: '',
+      );
 
   Taxonomy copyWith({
     String? species,

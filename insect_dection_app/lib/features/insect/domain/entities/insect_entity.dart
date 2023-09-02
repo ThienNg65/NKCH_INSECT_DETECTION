@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:equatable/equatable.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
@@ -24,7 +25,7 @@ class Insect extends Equatable {
     this.predators,
     this.photoUrl,
     this.identificationFeatures,
-    required this.lifeCycle,
+    this.lifeCycle,
     this.pestControl,
   });
 
@@ -43,6 +44,12 @@ class Insect extends Equatable {
       pestControl,
     ];
   }
+
+  static get empty => Insect(
+      modelId: '',
+      taxonomy: Taxonomy.empty,
+      nomenclature: Nomenclature.empty,
+      impacts: Impacts.empty);
 
   Insect copyWith({
     String? modelId,
@@ -70,4 +77,7 @@ class Insect extends Equatable {
       pestControl: pestControl ?? this.pestControl,
     );
   }
+
+  @override
+  String toString() => identificationFeatures ?? '';
 }

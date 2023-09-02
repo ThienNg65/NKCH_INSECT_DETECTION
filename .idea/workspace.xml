@@ -6,7 +6,57 @@
   <component name="ChangeListManager">
     <list default="true" id="e411b21f-f54f-4353-a5f5-83ec28199ae9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/core/core.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/core/core.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/core/error/failure.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/core/error/failure.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/core/usecase/usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/core/usecase/usecase.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/core/utils/entities/address_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/core/utils/entities/address_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/core/utils/entities/entities.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/core/utils/entities/entities.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/camera_detection/camera_detection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/camera_detection/camera_detection.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/datasources/datasources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/datasources/datasources.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/datasources/insect_remote_datasources.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/impact_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/impact_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/insect_list_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/insect_list_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/insect_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/insect_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/nomenclature_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/nomenclature_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/taxonomy_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/models/taxonomy_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/repositories/insect_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/repositories/insect_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/repositories/repositories.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/data/repositories/repositories.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/domain.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/domain.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/impact_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/impact_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/insect_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/insect_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/insect_list_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/insect_list_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/nomenclature_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/nomenclature_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/taxonomy_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/entities/taxonomy_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/repositories/insect_repositories.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/repositories/insect_repositories.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/services/services.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/add_favorite_insect.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/add_favorite_insect.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/add_recently_search_insect.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/add_recently_search_insect.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/get_favorite_insect_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/get_favorite_insect_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/get_insect_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/get_insect_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/get_recently_search_insect_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/get_recently_search_insect_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/insect_list_params.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/insect_list_params.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/insect_params.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/insect_params.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/remove_favorite_insect.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/remove_favorite_insect.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/usecases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/domain/usecases/usecases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/pages/search/search_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/insect/pages/search/search_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/user/data/datasources/user_remote_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/user/data/datasources/user_remote_datasource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/user/data/models/user_profile_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/user/data/models/user_profile_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/user/pages/profile/bloc/user_profile_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/user/pages/profile/bloc/user_profile_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/user/pages/profile/bloc/user_profile_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/user/pages/profile/bloc/user_profile_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/lib/features/user/pages/profile/user_profie_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/lib/features/user/pages/profile/user_profie_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/test/helpers/auth/auth_domain.mocks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/test/helpers/auth/auth_domain.mocks.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/test/helpers/services/firebase_auth.mocks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/test/helpers/services/firebase_auth.mocks.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/test/helpers/services/firebase_firestore.mocks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/test/helpers/services/firebase_firestore.mocks.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/test/helpers/user/user_domain.mocks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/test/helpers/user/user_domain.mocks.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insect_dection_app/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/insect_dection_app/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +85,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "D:/Learn/Flutter/number_trivia_tdd"
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "D:/Project/NKCH_INSECT_DETECTION/insect_dection_app",
+    "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

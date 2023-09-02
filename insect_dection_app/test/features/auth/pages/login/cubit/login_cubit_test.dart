@@ -32,7 +32,7 @@ void main() {
     tearDown(() {
       loginCubit.close();
     });
-    test('the status of the intial state is [Intial]', () async {
+    test('the status of the initial state is [Intial]', () async {
       expect(loginCubit.state, equals(loginState));
     });
 

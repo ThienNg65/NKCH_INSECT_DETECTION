@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
@@ -17,12 +18,11 @@ class _FavouritePageState extends State<FavouritePage> {
 
   // user selected a insects, go to the insect page
   void goToInsectPage(UIInsects insects) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => InsectPage(
-          insects: insects,
-        ),
+    Navigator.of(context).push(
+      InsectPage.route(
+        context,
+        currentUserId: currentUser.uid,
+        modelId: insects.name,
       ),
     );
   }
@@ -110,9 +110,10 @@ class _FavouritePageState extends State<FavouritePage> {
                 itemBuilder: (context, index) {
                   //create a insect
                   UIInsects insects = UIInsects(
-                    name: starredInsects[index]['name'],
-                    image: starredInsects[index]['image'],
-                    description: starredInsects[index]['description'],
+                    id: starredInsects[index]['model_id'],
+                    name: starredInsects[index]['nomenclature']['common_name'],
+                    description: starredInsects[index]
+                        ['identification_features'],
                   );
                   //Insects insects = recentlySearchedInsects[index];
                   return InsectTile(

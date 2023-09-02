@@ -4,25 +4,29 @@ import 'package:insect_dection_app/features/insect/insect.dart';
 
 class InsectList extends Equatable {
   final int? currentPage;
-  final int? nextPage;
+  final bool? hasNextPage;
+  final int? size;
   final List<Insect>? insects;
   const InsectList({
     this.currentPage,
-    this.nextPage,
+    this.hasNextPage,
+    this.size,
     this.insects,
   });
 
   @override
-  List<Object?> get props => [currentPage, nextPage, insects];
+  List<Object?> get props => [currentPage, hasNextPage, size, insects];
 
   InsectList copyWith({
     int? currentPage,
-    int? nextPage,
+    bool? hasNextPage,
+    int? size,
     List<Insect>? insects,
   }) {
     return InsectList(
       currentPage: currentPage ?? this.currentPage,
-      nextPage: nextPage ?? this.nextPage,
+      hasNextPage: hasNextPage ?? this.hasNextPage,
+      size: size ?? this.size,
       insects: insects ?? this.insects,
     );
   }

@@ -49,7 +49,7 @@ class UserProfileRemoteDatasourceImpl extends UserProfileRemoteDataSource {
 
       // Check if the document exists.
       if (!document.exists) {
-        return const Left(NotFoundFailure());
+        return const Left(UserNotFoundFailure());
       }
       // Take data from document
       final data = document.data()!;

@@ -2,9 +2,9 @@
 import 'package:equatable/equatable.dart';
 
 class Nomenclature extends Equatable {
-  final String commonName;
-  final String otherName;
-  final String scientificName;
+  final String? commonName;
+  final String? otherName;
+  final String? scientificName;
 
   const Nomenclature({
     required this.commonName,
@@ -12,6 +12,11 @@ class Nomenclature extends Equatable {
     required this.scientificName,
   });
 
+  static get empty => const Nomenclature(
+        commonName: '',
+        otherName: '',
+        scientificName: '',
+      );
   @override
   List<Object?> get props => [commonName, otherName, scientificName];
 

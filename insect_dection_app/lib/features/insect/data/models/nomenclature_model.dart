@@ -4,9 +4,9 @@ import 'package:insect_dection_app/features/insect/insect.dart';
 
 class NomenclatureModel extends Nomenclature {
   const NomenclatureModel({
-    required super.commonName,
-    required super.otherName,
-    required super.scientificName,
+    super.commonName = '',
+    super.otherName = '',
+    super.scientificName = '',
   });
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -18,9 +18,9 @@ class NomenclatureModel extends Nomenclature {
 
   factory NomenclatureModel.fromMap(Map<String, dynamic> map) {
     return NomenclatureModel(
-      commonName: map['commonName'] as String,
-      otherName: map['otherName'] as String,
-      scientificName: map['scientificName'] as String,
+      commonName: map['commonName'] as String?,
+      otherName: map['otherName'] as String?,
+      scientificName: map['scientificName'] as String?,
     );
   }
 
@@ -33,5 +33,11 @@ class NomenclatureModel extends Nomenclature {
         commonName: commonName,
         otherName: otherName,
         scientificName: scientificName,
+      );
+  factory NomenclatureModel.fromEntity(Nomenclature enitity) =>
+      NomenclatureModel(
+        commonName: enitity.commonName,
+        otherName: enitity.otherName,
+        scientificName: enitity.scientificName,
       );
 }

@@ -26,16 +26,16 @@ class UserProfileModel extends UserProfileEntity {
 
   factory UserProfileModel.fromMap(Map<String, dynamic> map) {
     return UserProfileModel(
-      uid: map['uid'] as String,
-      username: map['username'] != null ? map['username'] as String : null,
+      uid: map['uid'] ,
+      username: map['username'],
       phoneNumber:
-          map['phoneNumber'] != null ? map['phoneNumber'] as String : null,
-      firstName: map['firstName'] != null ? map['firstName'] as String : null,
-      lastName: map['lastName'] != null ? map['lastName'] as String : null,
+          map['phoneNumber'],
+      firstName: map['firstName'],
+      lastName: map['lastName'],
       address: map['address'] != null
           ? Address.fromMap(map['address'] as Map<String, dynamic>)
           : null,
-      photoUrl: map['photoUrl'] != null ? map['photoUrl'] as String : null,
+      photoUrl: map['photoUrl'],
     );
   }
 

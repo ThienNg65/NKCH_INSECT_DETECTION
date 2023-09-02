@@ -6,6 +6,13 @@ abstract class UseCase<Type, Params> {
   Future<Either<Failure, Type>?> call(Params params);
 }
 
+abstract class UseCaseDoubleParams<Type, FirstParam, SecondParam> {
+  Future<Either<Failure, Type>?> call(
+    FirstParam firstParam,
+    SecondParam secondParam,
+  );
+}
+
 abstract class StreamUseCase<Type, Params> {
   Stream<Either<Failure, Type>> call(Params params);
 }

@@ -1,3 +1,4 @@
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,6 +10,7 @@ Future<void> init() async {
   /// Features
   initAuthentication();
   initUserProfile();
+  initInsectDetail();
 
   /// Externals
   initExternalServices();
@@ -73,11 +75,79 @@ void initUserProfile() {
       () => UserProfileRepositoryImpl(remoteDataSource: sl.call()));
 }
 
+void initInsectDetail() {
+  /// Bloc
+  sl.registerFactory<InsectDetailBloc>(
+    () => InsectDetailBloc(
+      getInsectByModelId: sl<GetInsectByModelId>(),
+      addBookmarkedInsect: sl<AddBookmarkedInsect>(),
+      addRecentlySearchInsect: sl<AddRecentlySearchInsect>(),
+      getInsectBookmarkedState: sl<GetInsectBookmarkedState>(),
+    ),
+  );
+
+  /// Usecases
+  /// Favorites
+  sl.registerLazySingleton<AddBookmarkedInsect>(
+    () => AddBookmarkedInsect(repo: sl.call()),
+  );
+  sl.registerLazySingleton<GetBookmarkedInsectList>(
+    () => GetBookmarkedInsectList(repo: sl.call()),
+  );
+  sl.registerLazySingleton<GetInsectBookmarkedState>(
+    () => GetInsectBookmarkedState(repo: sl.call()),
+  );
+  sl.registerLazySingleton<RemoveBookmarkedInsect>(
+    () => RemoveBookmarkedInsect(repo: sl.call()),
+  );
+
+  /// Infos
+  sl.registerLazySingleton<GetInsectByModelId>(
+    () => GetInsectByModelId(repo: sl.call()),
+  );
+  sl.registerLazySingleton<GetInitialInsectList>(
+    () => GetInitialInsectList(repo: sl.call()),
+  );
+  sl.registerLazySingleton<GetMoreInsectList>(
+    () => GetMoreInsectList(repo: sl.call()),
+  );
+
+  /// Recently search
+  sl.registerLazySingleton<AddRecentlySearchInsect>(
+    () => AddRecentlySearchInsect(repo: sl.call()),
+  );
+  sl.registerLazySingleton<GetRecentlySearchInsectList>(
+    () => GetRecentlySearchInsectList(repo: sl.call()),
+  );
+
+  /// Data Sources
+  // Info
+  sl.registerLazySingleton<InsectRemoteDatasource>(
+    () => InsectRemoteDatasourceImpl(data: sl.call(), storage: sl.call()),
+  );
+  // User Insect Info
+  sl.registerLazySingleton<UserInsectRemoteDatasource>(
+    () => UserInsectRemoteDatasourceImpl(data: sl.call(), storage: sl.call()),
+  );
+
+  /// Repositories
+  // Info
+  sl.registerLazySingleton<InsectRepository>(
+    () => InsectRepositoryImpl(remoteDatasource: sl.call()),
+  );
+  // User Insect Info
+  sl.registerLazySingleton<UserInsectDataRepository>(
+    () => UserInsectDataRepositoryImpl(remoteDatasource: sl.call()),
+  );
+}
+
 void initExternalServices() {
   /// External
   final auth = FirebaseAuth.instance;
   final fireStore = FirebaseFirestore.instance;
+  final firestorage = FirebaseStorage.instance;
 
   sl.registerLazySingleton(() => auth);
   sl.registerLazySingleton(() => fireStore);
+  sl.registerLazySingleton(() => firestorage);
 }

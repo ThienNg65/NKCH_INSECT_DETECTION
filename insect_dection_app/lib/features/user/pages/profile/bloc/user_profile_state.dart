@@ -1,6 +1,7 @@
 part of 'user_profile_bloc.dart';
+// TODO: spereate each process of updating feilds insead of using big state
 
-enum UserProfileStatus { intial, loading, succes, error }
+enum UserProfileStatus { initial, loading, succes, error }
 
 class UserProfileState extends Equatable {
   // UID
@@ -35,7 +36,7 @@ class UserProfileState extends Equatable {
     required this.status,
     this.message,
   });
-  factory UserProfileState.intial() => const UserProfileState(
+  factory UserProfileState.initial() => const UserProfileState(
         uid: '',
         username: '',
         phoneNumber: '',
@@ -45,7 +46,7 @@ class UserProfileState extends Equatable {
         city: '',
         country: '',
         photoUrl: '',
-        status: UserProfileStatus.intial,
+        status: UserProfileStatus.initial,
       );
 
   @override

@@ -74,9 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
 
     // Update Profile
-    if (bloc.isEmptyOrNull(newValue)) {
-      bloc.add(UpdateUserProfileEvent(feild: field, value: newValue));
-    }
+    bloc.add(UpdateUserProfileEvent(felid: field, value: newValue));
   }
 
   @override
@@ -101,7 +99,7 @@ class _ProfilePageState extends State<ProfilePage> {
           }
         },
         builder: (_, state) {
-          if (state.status == UserProfileStatus.intial ||
+          if (state.status == UserProfileStatus.initial ||
               state.status != UserProfileStatus.loading) {
             return ListView(
               children: [

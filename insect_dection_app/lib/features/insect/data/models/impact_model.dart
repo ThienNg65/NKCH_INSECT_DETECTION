@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:insect_dection_app/features/insect/insect.dart';
 
-class ImpactModel extends Impacts {
-  const ImpactModel({
+class ImpactsModel extends Impacts {
+  const ImpactsModel({
     super.benefits,
     super.harms,
   });
@@ -30,17 +30,17 @@ class ImpactModel extends Impacts {
         harms,
       ];
 
-  factory ImpactModel.fromMap(Map<String, dynamic> map) {
-    return ImpactModel(
-      benefits: map['benefits'] != null ? map['benefits'] as String : null,
-      harms: map['harms'] != null ? map['harms'] as String : null,
+  factory ImpactsModel.fromMap(Map<String, dynamic> map) {
+    return ImpactsModel(
+      benefits: map['benefits'] as String?,
+      harms: map['harms'] as String?,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory ImpactModel.fromJson(String source) =>
-      ImpactModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ImpactsModel.fromJson(String source) =>
+      ImpactsModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   Impacts toEntity() {
     return Impacts(
@@ -48,4 +48,9 @@ class ImpactModel extends Impacts {
       harms: harms,
     );
   }
+
+  factory ImpactsModel.fromEntity(Impacts entity) => ImpactsModel(
+        benefits: entity.benefits,
+        harms: entity.harms,
+      );
 }

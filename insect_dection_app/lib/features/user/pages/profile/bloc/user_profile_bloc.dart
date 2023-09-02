@@ -17,7 +17,7 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
   })  : _getUserProfile = getUserProfile,
         _updateUserProfile = updateUserProfile,
         super(
-          UserProfileState.intial(),
+          UserProfileState.initial(),
         ) {
     on<OnLoadUserProfileEvent>(_onLoad);
     on<UpdateUserProfileEvent>(_onUpdate);
@@ -57,7 +57,7 @@ class UserProfileBloc extends Bloc<UserProfileEvent, UserProfileState> {
 
     // Map feild into state then into enity
     final userParams = mapUserProfileData(
-      fieldName: event.feild,
+      fieldName: event.felid,
       value: event.value,
     ).toParams();
 
