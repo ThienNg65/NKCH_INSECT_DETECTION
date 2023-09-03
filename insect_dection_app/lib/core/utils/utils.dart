@@ -1,2 +1,3 @@
 export 'entities/entities.dart';
-export 'method_constants/method_constants.dart';
+export 'constants/method_constants.dart';
+export 'images_processing/images_processing.dart';

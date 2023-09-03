@@ -1,70 +1,77 @@
-import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:camera/camera.dart';
 
-class CameraPage extends StatefulWidget {
-  const CameraPage({super.key});
+// import 'package:flutter/material.dart';
 
-  @override
-  State<CameraPage> createState() => _CameraPageState();
-}
 
-class _CameraPageState extends State<CameraPage> {
-  File? image;
+// class CameraPage extends StatefulWidget {
+//   const CameraPage({super.key});
 
-  Future pickImage(ImageSource source) async {
-    try {
-      final image = await ImagePicker().pickImage(source: source);
-      if (image == null) return;
+//   @override
+//   State<CameraPage> createState() => _CameraPageState();
+// }
 
-      final tempImage = File(image.path);
-      setState(() {
-        this.image = tempImage;
-      });
-    } on PlatformException catch (e) {
-      debugPrint("Failed to catch your image: $e");
-    }
-  }
+// class _CameraPageState extends State<CameraPage> {
+//   late CameraDescription cameraDescription;
+//   // int _selectedIndex = 0;
+//   // List<Widget>? _widgetOptions;
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Camera Page"),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      backgroundColor: Colors.grey[300],
-      body: SizedBox(
-        height: 500,
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Spacer(),
-            image != null
-                ? Image.file(
-                    image!,
-                    width: 160,
-                    height: 160,
-                    fit: BoxFit.cover,
-                  )
-                : const FlutterLogo(
-                    size: 160,
-                  ),
-            ElevatedButton(
-              onPressed: () => pickImage(ImageSource.gallery),
-              child: const Text("Pick gallery"),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () => pickImage(ImageSource.camera),
-              child: const Text("Pick Camera"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   // @override
+//   // void initState() {
+//   //   super.initState();
+//   //   WidgetsBinding.instance.addPostFrameCallback((_) {
+//   //     initPages();
+//   //   });
+//   // }
+
+//   // initPages() async {
+//   //   // get list available camera
+//   //   List<CameraDescription> availableCamera = await availableCameras();
+//   //   cameraDescription = availableCamera.first;
+
+//   //   setState(() {
+//   //     _widgetOptions = <Widget>[
+//   //       const GalleryScreen(),
+//   //       CameraScreen(
+//   //         camera: cameraDescription,
+//   //       )
+//   //     ];
+//   //   });
+//   // }
+
+//   // void _onItemTapped(int index) {
+//   //   setState(() {
+//   //     _selectedIndex = index;
+//   //   });
+//   // }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.grey[300],
+//       // appBar: AppBar(
+//       //   title: const Text("Camera"),
+//       //   backgroundColor: Colors.transparent,
+//       //   elevation: 0,
+//       // ),
+//       body: const Center(
+//         // child: _widgetOptions?.elementAt(_selectedIndex),
+//         child: GalleryScreen(),
+//       ),
+//       // bottomNavigationBar: BottomNavigationBar(
+//       //   items: const <BottomNavigationBarItem>[
+//       //     BottomNavigationBarItem(
+//       //       icon: Icon(Icons.image),
+//       //       label: 'Gallery screen',
+//       //     ),
+//       //     BottomNavigationBarItem(
+//       //       icon: Icon(Icons.camera),
+//       //       label: 'Live Camera',
+//       //     ),
+//       //   ],
+//       //   currentIndex: _selectedIndex,
+//       //   selectedItemColor: Colors.amber[800],
+//       //   onTap: _onItemTapped,
+//       // ),
+//     );
+//   }
+// }
