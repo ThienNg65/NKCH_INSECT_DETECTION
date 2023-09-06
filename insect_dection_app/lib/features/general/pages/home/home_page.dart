@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
       InsectPage.route(
         context,
         currentUserId: currentUser.uid,
-        modelId: insects.name,
+        modelId: insects.id,
       ),
     );
   }

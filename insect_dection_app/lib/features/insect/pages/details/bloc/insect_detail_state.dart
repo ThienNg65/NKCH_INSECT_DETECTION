@@ -25,12 +25,13 @@ class InsectDetailState extends Equatable {
   });
   factory InsectDetailState.initial() {
     return InsectDetailState._internal(
-        insect: Insect.empty,
-        isBookmarked: false,
-        getDetailInsectProcess: Process.initial(),
-        getUserInsectBookmarkStateProcess: Process.initial(),
-        toggleBookmarkInsectProcess: Process.initial(),
-        addRecentlySearchInsectProcess: Process.initial());
+      insect: Insect.empty,
+      isBookmarked: false,
+      getDetailInsectProcess: const Initial(),
+      getUserInsectBookmarkStateProcess: const Initial(),
+      toggleBookmarkInsectProcess: const Initial(),
+      addRecentlySearchInsectProcess: const Initial(),
+    );
   }
 
   @override

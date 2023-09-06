@@ -10,7 +10,7 @@ class RemoveBookmarkedInsect
       : _repo = repo;
 
   @override
-  Future<Either<Failure, Insect>?> call(
+  Future<Either<Failure, Insect>> call(
     UserBucketParams firstParam,
     InsectParams secondParam,
   ) =>

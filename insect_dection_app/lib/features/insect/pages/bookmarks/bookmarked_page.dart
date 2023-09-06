@@ -79,52 +79,48 @@ class _FavouritePageState extends State<FavouritePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: const CustomAppbar(),
-        drawer: const MyDrawer(),
-        backgroundColor: Colors.grey[300],
-        body: Column(
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 25.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Library",
-                    style: TextStyle(
-                      color: Colors.grey[800],
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                    ),
+    return Scaffold(
+      appBar: const CustomAppbar(),
+      drawer: const MyDrawer(),
+      backgroundColor: Colors.grey[300],
+      body: Column(
+        children: [
+          Padding(
+            padding:
+                const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Library",
+                  style: TextStyle(
+                    color: Colors.grey[800],
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: starredInsects.length,
-                itemBuilder: (context, index) {
-                  //create a insect
-                  UIInsects insects = UIInsects(
-                    id: starredInsects[index]['model_id'],
-                    name: starredInsects[index]['nomenclature']['common_name'],
-                    description: starredInsects[index]
-                        ['identification_features'],
-                  );
-                  //Insects insects = recentlySearchedInsects[index];
-                  return InsectTile(
-                    insects: insects,
-                    onTap: () => goToInsectPage(insects),
-                  );
-                },
-              ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: starredInsects.length,
+              itemBuilder: (context, index) {
+                //create a insect
+                UIInsects insects = UIInsects(
+                  id: starredInsects[index]['model_id'],
+                  name: starredInsects[index]['nomenclature']['common_name'],
+                  description: starredInsects[index]['identification_features'],
+                );
+                //Insects insects = recentlySearchedInsects[index];
+                return InsectTile(
+                  insects: insects,
+                  onTap: () => goToInsectPage(insects),
+                );
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

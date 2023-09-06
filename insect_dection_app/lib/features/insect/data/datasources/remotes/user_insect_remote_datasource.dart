@@ -158,7 +158,8 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
           .collection(InsectCollectionName.bookmarkedInsects)
           .doc(modelId)
           .get();
-      return Right(doc.exists);
+      final isExit = doc.exists;
+      return Right(isExit);
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));

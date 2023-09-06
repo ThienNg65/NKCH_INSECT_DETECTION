@@ -154,6 +154,31 @@ class MockUserInsectDataRepository extends _i1.Mock
             )),
           ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
   @override
+  _i4.Future<_i2.Either<_i5.Failure, bool>> isBookmarkedInsect(
+    _i5.UserBucketParams? userBucketParams,
+    String? modelId,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #isBookmarkedInsect,
+          [
+            userBucketParams,
+            modelId,
+          ],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
+            _FakeEither_0<_i5.Failure, bool>(
+          this,
+          Invocation.method(
+            #isBookmarkedInsect,
+            [
+              userBucketParams,
+              modelId,
+            ],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
+  @override
   _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>> addBookmarkedInsect(
     _i5.UserBucketParams? userBucketParams,
     _i3.InsectParams? insectParams,
@@ -348,6 +373,31 @@ class MockUserInsectRemoteDatasource extends _i1.Mock
             )),
           ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>>);
   @override
+  _i4.Future<_i2.Either<_i5.Failure, bool>> isBookmarkedInsect(
+    _i5.UserBucketParams? userBucketParams,
+    String? modelId,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #isBookmarkedInsect,
+          [
+            userBucketParams,
+            modelId,
+          ],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
+            _FakeEither_0<_i5.Failure, bool>(
+          this,
+          Invocation.method(
+            #isBookmarkedInsect,
+            [
+              userBucketParams,
+              modelId,
+            ],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
+  @override
   _i4.Future<_i2.Either<_i5.Failure, _i3.InsectModel>> addBookmarkedInsect(
     _i5.UserBucketParams? userBucketParams,
     _i3.InsectParams? insectParams,
@@ -415,4 +465,285 @@ class MockUserInsectRemoteDatasource extends _i1.Mock
               ),
             )),
           ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>>);
+}
+
+/// A class which mocks [GetInsectByModelId].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetInsectByModelId extends _i1.Mock
+    implements _i3.GetInsectByModelId {
+  MockGetInsectByModelId() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>> call(String? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>.value(
+            _FakeEither_0<_i5.Failure, _i3.Insect>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>);
+}
+
+/// A class which mocks [GetInitialInsectList].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetInitialInsectList extends _i1.Mock
+    implements _i3.GetInitialInsectList {
+  MockGetInitialInsectList() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>> call(
+          _i3.InsectListParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>.value(
+            _FakeEither_0<_i5.Failure, _i3.InsectList>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
+}
+
+/// A class which mocks [GetMoreInsectList].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetMoreInsectList extends _i1.Mock implements _i3.GetMoreInsectList {
+  MockGetMoreInsectList() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>> call(
+          _i3.InsectListParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>.value(
+            _FakeEither_0<_i5.Failure, _i3.InsectList>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
+}
+
+/// A class which mocks [AddRecentlySearchInsect].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAddRecentlySearchInsect extends _i1.Mock
+    implements _i3.AddRecentlySearchInsect {
+  MockAddRecentlySearchInsect() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>> call(
+    _i5.UserBucketParams? firstParam,
+    _i3.InsectParams? secondParam,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [
+            firstParam,
+            secondParam,
+          ],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>.value(
+            _FakeEither_0<_i5.Failure, _i3.Insect>(
+          this,
+          Invocation.method(
+            #call,
+            [
+              firstParam,
+              secondParam,
+            ],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>);
+}
+
+/// A class which mocks [GetRecentlySearchInsectList].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetRecentlySearchInsectList extends _i1.Mock
+    implements _i3.GetRecentlySearchInsectList {
+  MockGetRecentlySearchInsectList() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>?> call(
+    _i5.UserBucketParams? firstParam,
+    _i3.InsectListParams? secondParam,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [
+            firstParam,
+            secondParam,
+          ],
+        ),
+        returnValue:
+            _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>?>.value(),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>?>);
+}
+
+/// A class which mocks [AddBookmarkedInsect].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAddBookmarkedInsect extends _i1.Mock
+    implements _i3.AddBookmarkedInsect {
+  MockAddBookmarkedInsect() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>> call(
+    _i5.UserBucketParams? firstParam,
+    _i3.InsectParams? secondParam,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [
+            firstParam,
+            secondParam,
+          ],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>.value(
+            _FakeEither_0<_i5.Failure, _i3.Insect>(
+          this,
+          Invocation.method(
+            #call,
+            [
+              firstParam,
+              secondParam,
+            ],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>);
+}
+
+/// A class which mocks [GetInsectBookmarkedState].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetInsectBookmarkedState extends _i1.Mock
+    implements _i3.GetInsectBookmarkedState {
+  MockGetInsectBookmarkedState() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, bool>> call(
+    _i5.UserBucketParams? firstParam,
+    String? secondParam,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [
+            firstParam,
+            secondParam,
+          ],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
+            _FakeEither_0<_i5.Failure, bool>(
+          this,
+          Invocation.method(
+            #call,
+            [
+              firstParam,
+              secondParam,
+            ],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
+}
+
+/// A class which mocks [RemoveBookmarkedInsect].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockRemoveBookmarkedInsect extends _i1.Mock
+    implements _i3.RemoveBookmarkedInsect {
+  MockRemoveBookmarkedInsect() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>> call(
+    _i5.UserBucketParams? firstParam,
+    _i3.InsectParams? secondParam,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [
+            firstParam,
+            secondParam,
+          ],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>.value(
+            _FakeEither_0<_i5.Failure, _i3.Insect>(
+          this,
+          Invocation.method(
+            #call,
+            [
+              firstParam,
+              secondParam,
+            ],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>);
+}
+
+/// A class which mocks [GetBookmarkedInsectList].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetBookmarkedInsectList extends _i1.Mock
+    implements _i3.GetBookmarkedInsectList {
+  MockGetBookmarkedInsectList() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>> call(
+          _i5.UserBucketParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>.value(
+            _FakeEither_0<_i5.Failure, _i3.InsectList>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
 }

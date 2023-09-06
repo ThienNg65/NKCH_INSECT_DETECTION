@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/features.dart';
-import 'package:insect_dection_app/features/user/pages/profile/bloc/user_profile_bloc.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../../../helpers/user/user_domain.mocks.dart';

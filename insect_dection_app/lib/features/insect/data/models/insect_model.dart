@@ -77,6 +77,7 @@ class InsectModel extends Equatable {
           map['pestControl'],
     );
   }
+  
 
   String toJson() => json.encode(toMap());
 

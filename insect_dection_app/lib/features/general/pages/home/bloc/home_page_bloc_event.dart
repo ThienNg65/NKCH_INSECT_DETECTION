@@ -1,0 +1,4 @@
+part of 'home_page_bloc_bloc.dart';
+
+@immutable
+sealed class HomePageBlocEvent {}

@@ -83,6 +83,7 @@ void initInsectDetail() {
       addBookmarkedInsect: sl<AddBookmarkedInsect>(),
       addRecentlySearchInsect: sl<AddRecentlySearchInsect>(),
       getInsectBookmarkedState: sl<GetInsectBookmarkedState>(),
+      removeBookmarkedInsect: sl<RemoveBookmarkedInsect>(),
     ),
   );
 

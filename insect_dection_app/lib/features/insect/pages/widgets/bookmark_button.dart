@@ -12,7 +12,7 @@ class BookmarkButton extends StatelessWidget {
       onTap: onTap,
       child: Icon(
         isBookmarked ? Icons.bookmark : Icons.bookmark_border,
-        color: isBookmarked ? Colors.yellowAccent : Colors.grey[600],
+        color: isBookmarked ? Colors.black : Colors.grey[600],
       ),
     );
   }

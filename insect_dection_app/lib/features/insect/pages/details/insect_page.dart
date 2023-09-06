@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/core/core.dart';
+import 'package:insect_dection_app/features/auth/auth.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 import 'package:insect_dection_app/injection_container.dart';
 
@@ -19,7 +20,8 @@ class InsectPage extends StatefulWidget {
             value: sl<InsectDetailBloc>.call()
               ..add(
                 LoadInsectDetailEvent(
-                  modelId: modelId,
+                  // TODO: REPLACE THIS ONE FOR REAL PASSING ID
+                  modelId: 'IP000000001',
                   userBucketParams: UserBucketParams(uid: currentUserId),
                 ),
               ),
@@ -38,8 +40,11 @@ class _InsectPageState extends State<InsectPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<InsectDetailBloc, InsectDetailState>(
-      listener: (context, state) {
-        
+      listener: (_, state) {
+        if (state.getDetailInsectProcess is Success &&
+            state.getUserInsectBookmarkStateProcess is Initial) {
+          _onLoadDetailCompleted();
+        }
       },
       child: Scaffold(
         appBar: AppBar(
@@ -47,10 +52,7 @@ class _InsectPageState extends State<InsectPage> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20),
-              child: _appbarBookmarkButton(),
-            ),
+            _appbarBookmarkButton(),
           ],
           iconTheme: IconThemeData(color: Colors.grey[800]),
         ),
@@ -119,15 +121,22 @@ class _InsectPageState extends State<InsectPage> {
     );
   }
 
-  _appbarBookmarkButton() {
-    return BlocBuilder<InsectDetailBloc, InsectDetailState>(
-      builder: (context, state) {
-        return BookmarkButton(
-          key: const Key('insectDetail_isBookmarkedInsect_bookmarkButton'),
-          onTap: () => _toggleBookmarked(),
-          isBookmarked: state.isBookmarked,
-        );
-      },
+  Widget _appbarBookmarkButton() {
+    return Padding(
+      padding: const EdgeInsets.only(right: 1.0),
+      child: BlocBuilder<InsectDetailBloc, InsectDetailState>(
+        builder: (context, state) {
+          if (state.getUserInsectBookmarkStateProcess is Success) {
+            return BookmarkButton(
+              key: const Key('insectDetail_isBookmarkedInsect_bookmarkButton'),
+              onTap: () => _toggleBookmarked(),
+              isBookmarked: state.isBookmarked,
+            );
+          } else {
+            return LoadingWigget();
+          }
+        },
+      ),
     );
   }
 
@@ -135,15 +144,21 @@ class _InsectPageState extends State<InsectPage> {
     return Padding(
       padding: const EdgeInsets.all(1.0),
       child: BlocBuilder<InsectDetailBloc, InsectDetailState>(
-        builder: (_, state) {
-          return Text(
-            key: const Key('insectDetail_insectDescription_textField'),
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w400,
-            ),
-            state.insect.toString(),
-          );
+        buildWhen: (previous, current) =>
+            previous.getDetailInsectProcess != current.getDetailInsectProcess,
+        builder: (context, state) {
+          if (state.getDetailInsectProcess is Success) {
+            return Text(
+              key: const Key('insectDetail_insectDescription_textField'),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+              ),
+              state.insect.toString(),
+            );
+          } else {
+            return Center(child: Text("Loading..."));
+          }
         },
       ),
     );
@@ -151,21 +166,25 @@ class _InsectPageState extends State<InsectPage> {
 
   Widget _insectName() {
     return Padding(
-      padding: const EdgeInsets.all(1.0),
+      padding: const EdgeInsets.only(
+          top: 25.0, left: 30.0, right: 25.0, bottom: 10.0),
+      //Center(
       child: BlocBuilder<InsectDetailBloc, InsectDetailState>(
+        buildWhen: (previous, current) =>
+            previous.getDetailInsectProcess != current.getDetailInsectProcess,
         builder: (context, state) {
-          return Padding(
-            padding: const EdgeInsets.only(
-                top: 25.0, left: 30.0, right: 25.0, bottom: 10.0),
-            child: Text(
+          if (state.getDetailInsectProcess is Loading) {
+            return Text(
               key: const Key('insectDetail_insectName_textField'),
               state.insect.nomenclature.commonName!,
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
-            ),
-          );
+            );
+          } else {
+            return Center(child: Text("Loading..."));
+          }
         },
       ),
     );
@@ -175,19 +194,25 @@ class _InsectPageState extends State<InsectPage> {
     return Padding(
       padding: const EdgeInsets.all(1.0),
       child: BlocBuilder<InsectDetailBloc, InsectDetailState>(
+        buildWhen: (previous, current) =>
+            previous.getDetailInsectProcess != current.getDetailInsectProcess,
         builder: (context, state) {
-          return Center(
-            key: const Key('insectDetail_imageBox_imageNetwork'),
-            //return default image from asset if null
-            child: state.insect.photoUrl != null
-                ? Image.network(
-                    state.insect.photoUrl!,
-                    fit: BoxFit.fill,
-                  )
-                : Image.asset(
-                    'assets/images/default-insect-image.png',
-                  ),
-          );
+          if (state.getDetailInsectProcess is Success) {
+            return Center(
+              //return default image from asset if null
+              child: state.insect.photoUrl != null
+                  ? Image.network(
+                      key: const Key('insectDetail_imageBox_imageNetwork'),
+                      state.insect.photoUrl!,
+                      fit: BoxFit.fill,
+                    )
+                  : Image.asset(
+                      'assets/images/default-insect-image.png',
+                    ),
+            );
+          } else {
+            return LoadingWigget();
+          }
         },
       ),
     );
@@ -195,21 +220,58 @@ class _InsectPageState extends State<InsectPage> {
 
   Widget _appbarTitle() {
     return BlocBuilder<InsectDetailBloc, InsectDetailState>(
+      buildWhen: (previous, current) =>
+          previous.getDetailInsectProcess != current.getDetailInsectProcess,
       builder: (context, state) {
-        return Text(
-          key: const Key('insectDetail_insectName_appBarTextField'),
-          state.insect.nomenclature.commonName ?? 'unknown',
-          style: TextStyle(color: Colors.grey[800]),
-        );
+        if (state.getDetailInsectProcess == Success()) {
+          return Text(
+            key: const Key('insectDetail_insectName_appBarTextField'),
+            state.insect.nomenclature.commonName ?? 'unknown',
+            style: TextStyle(color: Colors.grey[800]),
+          );
+        } else {
+          return Center(child: Text("Loading..."));
+        }
       },
     );
   }
 
-  _toggleBookmarked() {
+  void _toggleBookmarked() {
+    final currentUser = BlocProvider.of<AuthBloc>(context).state.user;
     final state = BlocProvider.of<InsectDetailBloc>(context).state;
-    BlocProvider.of<InsectDetailBloc>(context).add(ToggleBookmarkedInsectEvent(
-      insect: state.insect,
-      isBookmarked: !state.isBookmarked,
-    ));
+    BlocProvider.of<InsectDetailBloc>(context).add(
+      ToggleBookmarkedInsectEvent(
+        userBucketParams: UserBucketParams(
+          uid: currentUser.uid,
+        ),
+        insect: state.insect,
+        isBookmarked: state.isBookmarked,
+      ),
+    );
+  }
+
+  void _onLoadDetailCompleted() {
+    final currentUser = BlocProvider.of<AuthBloc>(context).state.user;
+    final state = BlocProvider.of<InsectDetailBloc>(context).state;
+
+    /// Load the bookmarked state
+    BlocProvider.of<InsectDetailBloc>(context).add(
+      LoadUserInsectBookmarkStateProcessEvent(
+        userBucketParams: UserBucketParams(
+          uid: currentUser.uid,
+        ),
+        modelId: state.insect.modelId,
+      ),
+    );
+
+    /// Add recent search
+    BlocProvider.of<InsectDetailBloc>(context).add(
+      AddRecentlySearchInsectEvent(
+        userBucketParams: UserBucketParams(
+          uid: currentUser.uid,
+        ),
+        insect: state.insect,
+      ),
+    );
   }
 }
