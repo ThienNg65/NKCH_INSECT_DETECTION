@@ -10,9 +10,13 @@ class InsectPage extends StatefulWidget {
   const InsectPage({super.key});
   static MaterialPageRoute<InsectPage> route(
     BuildContext context, {
-    required String currentUserId,
+    UserBucketParams? userBucketParams,
     required String modelId,
   }) {
+    final userParams = userBucketParams ??
+        UserBucketParams.fromAuthUserInfo(
+          BlocProvider.of<AuthBloc>(context).state.user,
+        );
     return MaterialPageRoute<InsectPage>(
       builder: (_) => MultiBlocProvider(
         providers: [
@@ -22,7 +26,7 @@ class InsectPage extends StatefulWidget {
                 LoadInsectDetailEvent(
                   // TODO: REPLACE THIS ONE FOR REAL PASSING ID
                   modelId: 'IP000000001',
-                  userBucketParams: UserBucketParams(uid: currentUserId),
+                  userBucketParams: userParams,
                 ),
               ),
           ),
@@ -176,7 +180,7 @@ class _InsectPageState extends State<InsectPage> {
           if (state.getDetailInsectProcess is Loading) {
             return Text(
               key: const Key('insectDetail_insectName_textField'),
-              state.insect.nomenclature.commonName!,
+              state.insect.nomenclature.commonName,
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -198,12 +202,13 @@ class _InsectPageState extends State<InsectPage> {
             previous.getDetailInsectProcess != current.getDetailInsectProcess,
         builder: (context, state) {
           if (state.getDetailInsectProcess is Success) {
+            final insect = state.insect;
             return Center(
               //return default image from asset if null
-              child: state.insect.photoUrl != null
+              child: insect.photoUrl.isNotEmpty
                   ? Image.network(
                       key: const Key('insectDetail_imageBox_imageNetwork'),
-                      state.insect.photoUrl!,
+                      state.insect.photoUrl,
                       fit: BoxFit.fill,
                     )
                   : Image.asset(
@@ -226,7 +231,7 @@ class _InsectPageState extends State<InsectPage> {
         if (state.getDetailInsectProcess == Success()) {
           return Text(
             key: const Key('insectDetail_insectName_appBarTextField'),
-            state.insect.nomenclature.commonName ?? 'unknown',
+            state.insect.nomenclature.commonName,
             style: TextStyle(color: Colors.grey[800]),
           );
         } else {
@@ -251,15 +256,15 @@ class _InsectPageState extends State<InsectPage> {
   }
 
   void _onLoadDetailCompleted() {
-    final currentUser = BlocProvider.of<AuthBloc>(context).state.user;
+    final userBucketParams = UserBucketParams.fromAuthUserInfo(
+      BlocProvider.of<AuthBloc>(context).state.user,
+    );
     final state = BlocProvider.of<InsectDetailBloc>(context).state;
 
     /// Load the bookmarked state
     BlocProvider.of<InsectDetailBloc>(context).add(
-      LoadUserInsectBookmarkStateProcessEvent(
-        userBucketParams: UserBucketParams(
-          uid: currentUser.uid,
-        ),
+      LoadUserInsectBookmarkStateEvent(
+        userBucketParams: userBucketParams,
         modelId: state.insect.modelId,
       ),
     );
@@ -267,9 +272,7 @@ class _InsectPageState extends State<InsectPage> {
     /// Add recent search
     BlocProvider.of<InsectDetailBloc>(context).add(
       AddRecentlySearchInsectEvent(
-        userBucketParams: UserBucketParams(
-          uid: currentUser.uid,
-        ),
+        userBucketParams: userBucketParams,
         insect: state.insect,
       ),
     );

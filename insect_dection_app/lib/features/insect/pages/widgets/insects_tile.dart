@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
 class InsectTile extends StatelessWidget {
-  final UIInsects insects;
+  final Insect insect;
   final void Function()? onTap;
   const InsectTile({
     super.key,
-    required this.insects,
+    required this.insect,
     this.onTap,
   });
 
@@ -23,13 +23,15 @@ class InsectTile extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 15, right: 20, left: 20),
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         child: ListTile(
-          title: Text(insects.name),
-          subtitle: Text(insects.description),
+          key: key,
+          title: Text(insect.nomenclature.commonName),
+          subtitle: Text(insect.identificationFeatures),
           leading: CircleAvatar(
             backgroundColor: Colors.black,
             radius: 35,
-            backgroundImage:
-                insects.image != null ? NetworkImage(insects.image!) : null,
+            backgroundImage: insect.photoUrl.isNotEmpty
+                ? NetworkImage(insect.photoUrl)
+                : null,
           ),
           trailing: const Icon(Icons.arrow_forward),
         ),

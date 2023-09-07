@@ -2,7 +2,6 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:insect_dection_app/core/core.dart';
-import 'package:insect_dection_app/core/utils/utils.dart';
 import 'package:insect_dection_app/features/features.dart';
 import 'package:mockito/mockito.dart';
 

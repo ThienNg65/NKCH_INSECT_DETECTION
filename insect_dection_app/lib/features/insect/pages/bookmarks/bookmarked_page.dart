@@ -1,80 +1,50 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
+import 'package:insect_dection_app/features/insect/pages/bookmarks/bloc/bookmarked_insects_bloc.dart';
+import 'package:insect_dection_app/injection_container.dart';
 
-class FavouritePage extends StatefulWidget {
-  const FavouritePage({super.key});
-
-  @override
-  State<FavouritePage> createState() => _FavouritePageState();
-}
-
-class _FavouritePageState extends State<FavouritePage> {
-  // User
-  final currentUser = FirebaseAuth.instance.currentUser!;
-
-  // user selected a insects, go to the insect page
-  void goToInsectPage(UIInsects insects) {
-    Navigator.of(context).push(
-      InsectPage.route(
-        context,
-        currentUserId: currentUser.uid,
-        modelId: insects.name,
+class BookmarkedInsectsPage extends StatefulWidget {
+  const BookmarkedInsectsPage({super.key});
+  static MaterialPageRoute<InsectPage> route(
+    BuildContext context, {
+    required UserBucketParams userBucketParams,
+  }) {
+    // final userBucketParams = UserBucketParams.fromEntity(
+    //   BlocProvider.of<AuthBloc>(context).state.user,
+    // );
+    return MaterialPageRoute<InsectPage>(
+      builder: (_) => MultiBlocProvider(
+        providers: [
+          BlocProvider.value(
+            value: sl<BookmarkedInsectsBloc>.call()
+              ..add(
+                LoadBookmaredInsectsEvent(
+                  userBucketParams: userBucketParams,
+                ),
+              ),
+          ),
+        ],
+        child: const BookmarkedInsectsPage(),
       ),
     );
   }
 
-  List categories = [
-    "Library",
-    "Starred",
-    "Recently",
-  ];
-
-  List insectsLibrary = [];
-  List starredInsects = [];
-  List recentlySearchedInsects = [];
-
-  getInsectsLibrary() async {
-    var data = await FirebaseFirestore.instance
-        .collection("Insects")
-        .orderBy('name')
-        .get();
-    setState(() {
-      insectsLibrary = data.docs;
-    });
-  }
-
-  getStarredInsects() async {
-    var data = await FirebaseFirestore.instance
-        .collection('Users')
-        .doc(currentUser.email)
-        .collection('favorites')
-        .get();
-    setState(() {
-      starredInsects = data.docs;
-    });
-  }
-
-  getRecentlySearchedInsects() async {
-    var data = await FirebaseFirestore.instance
-        .collection('Users')
-        .doc(currentUser.email)
-        .collection('RecentlySearched')
-        .get();
-    setState(() {
-      recentlySearchedInsects = data.docs;
-    });
-  }
-
   @override
-  void didChangeDependencies() {
-    getInsectsLibrary();
-    getStarredInsects();
-    getRecentlySearchedInsects();
-    super.didChangeDependencies();
+  State<BookmarkedInsectsPage> createState() => _BookmarkedInsectsPageState();
+}
+
+class _BookmarkedInsectsPageState extends State<BookmarkedInsectsPage> {
+  // user selected a insects, go to the insect page
+  void goToInsectPage(Insect insects) {
+    Navigator.of(context).push(
+      InsectPage.route(
+        context,
+        modelId: insects.modelId,
+      ),
+    );
   }
 
   @override
@@ -102,26 +72,39 @@ class _FavouritePageState extends State<FavouritePage> {
               ],
             ),
           ),
-          Expanded(
+          _bookmarkedInsectList(),
+        ],
+      ),
+    );
+  }
+
+  Widget _bookmarkedInsectList() {
+    return BlocBuilder<BookmarkedInsectsBloc, BookmarkedInsectsState>(
+      buildWhen: (previous, current) =>
+          (current.getBookmarkedInsectListProcess !=
+              previous.getBookmarkedInsectListProcess),
+      builder: (context, state) {
+        if (state.getBookmarkedInsectListProcess == const Success()) {
+          final insects = state.bookmarkedInsectList.insects;
+          return Expanded(
             child: ListView.builder(
-              itemCount: starredInsects.length,
-              itemBuilder: (context, index) {
-                //create a insect
-                UIInsects insects = UIInsects(
-                  id: starredInsects[index]['model_id'],
-                  name: starredInsects[index]['nomenclature']['common_name'],
-                  description: starredInsects[index]['identification_features'],
-                );
-                //Insects insects = recentlySearchedInsects[index];
+              itemCount: state.bookmarkedInsectList.insects.length,
+              itemBuilder: (_, index) {
+                final insect = insects[index];
                 return InsectTile(
-                  insects: insects,
-                  onTap: () => goToInsectPage(insects),
+                  key: Key(
+                    'booKmarkedInsectsPage_insectTile${insect.nomenclature.commonName}_listTile',
+                  ),
+                  insect: insect,
+                  onTap: () => goToInsectPage(insect),
                 );
               },
             ),
-          ),
-        ],
-      ),
+          );
+        } else {
+          return const LoadingWigget();
+        }
+      },
     );
   }
 }

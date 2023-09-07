@@ -3,15 +3,15 @@ import 'package:equatable/equatable.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
 class InsectList extends Equatable {
-  final int? currentPage;
-  final bool? hasNextPage;
-  final int? size;
-  final List<Insect>? insects;
+  final int currentPage;
+  final bool hasNextPage;
+  final int size;
+  final List<Insect> insects;
   const InsectList({
-    this.currentPage,
-    this.hasNextPage,
-    this.size,
-    this.insects,
+    required this.currentPage,
+    required this.hasNextPage,
+    required this.size,
+    required this.insects,
   });
 
   @override
@@ -30,4 +30,12 @@ class InsectList extends Equatable {
       insects: insects ?? this.insects,
     );
   }
+
+  factory InsectList.empty() => const InsectList(
+        insects: <Insect>[],
+        currentPage: 0,
+        hasNextPage: true,
+        size: 0,
+      );
+  bool get isNotEmpty => this != InsectList.empty();
 }

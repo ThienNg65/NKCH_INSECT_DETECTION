@@ -32,7 +32,7 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
     on<LoadInsectDetailEvent>(
       _onLoadInsectDetailEvent,
     );
-    on<LoadUserInsectBookmarkStateProcessEvent>(
+    on<LoadUserInsectBookmarkStateEvent>(
       _onLoadUserInsectBookmarkStateProcessEvent,
     );
     on<AddRecentlySearchInsectEvent>(
@@ -137,7 +137,7 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
   }
 
   Future<void> _onLoadUserInsectBookmarkStateProcessEvent(
-      LoadUserInsectBookmarkStateProcessEvent event,
+      LoadUserInsectBookmarkStateEvent event,
       Emitter<InsectDetailState> emit) async {
     try {
       emit(state.copyWith(getUserInsectBookmarkStateProcess: const Loading()));

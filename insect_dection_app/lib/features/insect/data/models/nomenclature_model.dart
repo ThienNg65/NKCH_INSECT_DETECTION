@@ -18,9 +18,9 @@ class NomenclatureModel extends Nomenclature {
 
   factory NomenclatureModel.fromMap(Map<String, dynamic> map) {
     return NomenclatureModel(
-      commonName: map['commonName'] as String?,
-      otherName: map['otherName'] as String?,
-      scientificName: map['scientificName'] as String?,
+      commonName: map['commonName'] as String,
+      otherName: map['otherName'] as String,
+      scientificName: map['scientificName'] as String,
     );
   }
 

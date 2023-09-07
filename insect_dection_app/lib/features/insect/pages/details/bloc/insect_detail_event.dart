@@ -19,12 +19,12 @@ final class LoadInsectDetailEvent extends InsectDetailEvent {
   List<Object?> get props => [modelId, userBucketParams];
 }
 
-final class LoadUserInsectBookmarkStateProcessEvent extends InsectDetailEvent {
+final class LoadUserInsectBookmarkStateEvent extends InsectDetailEvent {
   final UserBucketParams userBucketParams;
 
   final String modelId;
 
-  LoadUserInsectBookmarkStateProcessEvent({
+  LoadUserInsectBookmarkStateEvent({
     required this.modelId,
     required this.userBucketParams,
   });

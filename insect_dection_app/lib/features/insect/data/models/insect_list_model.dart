@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
@@ -65,10 +64,12 @@ class InsectListModel extends Equatable {
   }
 
   InsectList toEntity() => InsectList(
-        currentPage: currentPage,
-        hasNextPage: hasNextPage,
-        size: size,
-        insects: insects?.map<Insect>((model) => model.toEntity()).toList(),
+        currentPage: currentPage ?? 0,
+        hasNextPage: hasNextPage ?? true,
+        size: size ?? 0,
+        insects: insects == null
+            ? <Insect>[]
+            : insects!.map<Insect>((model) => model.toEntity()).toList(),
       );
 
   @override

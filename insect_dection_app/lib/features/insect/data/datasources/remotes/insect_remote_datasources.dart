@@ -11,7 +11,7 @@ final class InsectCollectionName {
   static String users = 'users';
   static String insects = 'insects';
   static String bookmarkedInsects = 'favorite_insects';
-  static String recentSearches = 'recent_searches';
+  static String recentSearches = 'recent_searchs';
 }
 
 abstract class InsectRemoteDatasource {

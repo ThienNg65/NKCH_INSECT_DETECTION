@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/features.dart';
 
@@ -48,13 +49,14 @@ class _MyDrawerState extends State<MyDrawer> {
   // to the RecentPage page
   void goToFavouritePage() {
     // pop menu drawer
+    final AuthUserInfo userInfo = BlocProvider.of<AuthBloc>(context).state.user;
+    // go to the profile page
     Navigator.pop(context);
 
-    // go to the profile page
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const FavouritePage(),
+    Navigator.of(context).push(
+      BookmarkedInsectsPage.route(
+        context,
+        userBucketParams: UserBucketParams.fromAuthUserInfo(userInfo),
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:insect_dection_app/features/features.dart';
+import 'package:insect_dection_app/features/insect/pages/bookmarks/bloc/bookmarked_insects_bloc.dart';
 
 GetIt sl = GetIt.instance;
 
@@ -83,6 +84,12 @@ void initInsectDetail() {
       addBookmarkedInsect: sl<AddBookmarkedInsect>(),
       addRecentlySearchInsect: sl<AddRecentlySearchInsect>(),
       getInsectBookmarkedState: sl<GetInsectBookmarkedState>(),
+      removeBookmarkedInsect: sl<RemoveBookmarkedInsect>(),
+    ),
+  );
+  sl.registerFactory<BookmarkedInsectsBloc>(
+    () => BookmarkedInsectsBloc(
+      getBookmarkedInsectList: sl<GetBookmarkedInsectList>(),
       removeBookmarkedInsect: sl<RemoveBookmarkedInsect>(),
     ),
   );

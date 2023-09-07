@@ -96,7 +96,6 @@ class _SearchPageState extends State<SearchPage> {
                 Navigator.of(context).push(
                   InsectPage.route(
                     context,
-                    currentUserId: currentUser.uid,
                     modelId: _resultList[index]['model_id'],
                   ),
                 );

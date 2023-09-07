@@ -35,26 +35,27 @@ class _HomePageState extends State<HomePage> {
   }
 
   // user selected a insects, go to the insect page
-  void goToInsectPage(UIInsects insects) {
+  void goToInsectPage(Insect insects) {
     Navigator.of(context).push(
       InsectPage.route(
         context,
-        currentUserId: currentUser.uid,
-        modelId: insects.id,
+        modelId: insects.modelId,
       ),
     );
   }
 
-  List _allResult = [];
+  List insects = [];
 
   getUserStream() async {
     var data = await FirebaseFirestore.instance
-        .collection("insect_import_test")
-        .orderBy('model_id')
+        .collection("insects")
+        .orderBy('modelId')
         .limit(11)
         .get();
     setState(() {
-      _allResult = data.docs;
+      insects = data.docs
+          .map<Insect>((e) => InsectModel.fromMap(e.data()).toEntity())
+          .toList();
     });
   }
 
@@ -99,17 +100,13 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: _allResult.length,
+                itemCount: insects.length,
                 itemBuilder: (context, index) {
                   //create a insect
-                  UIInsects insects = UIInsects(
-                    id: _allResult[index]['model_id'],
-                    name: _allResult[index]['nomenclature']['common_name'],
-                    description: _allResult[index]['identification_features'],
-                  );
+                  final insect = insects[index];
                   return InsectTile(
-                    insects: insects,
-                    onTap: () => goToInsectPage(insects),
+                    insect: insect,
+                    onTap: () => goToInsectPage(insect),
                   );
                 },
               ),

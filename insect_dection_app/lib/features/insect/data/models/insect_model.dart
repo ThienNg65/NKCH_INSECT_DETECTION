@@ -73,11 +73,9 @@ class InsectModel extends Equatable {
       photoUrl: map['photoUrl'],
       identificationFeatures: map['identificationFeatures'],
       lifeCycle: map['lifeCycle'],
-      pestControl:
-          map['pestControl'],
+      pestControl: map['pestControl'],
     );
   }
-  
 
   String toJson() => json.encode(toMap());
 
@@ -128,12 +126,12 @@ class InsectModel extends Equatable {
         taxonomy: taxonomy,
         nomenclature: nomenclature,
         impacts: impacts,
-        origin: origin ?? origin,
-        predators: predators ?? predators,
-        photoUrl: photoUrl ?? photoUrl,
-        identificationFeatures: identificationFeatures,
-        lifeCycle: lifeCycle,
-        pestControl: pestControl,
+        origin: origin ?? '',
+        predators: predators ?? '',
+        photoUrl: photoUrl ?? '',
+        identificationFeatures: identificationFeatures ?? '',
+        lifeCycle: lifeCycle ?? '',
+        pestControl: pestControl ?? '',
       );
   static InsectModel fromEntity(Insect enity) => InsectModel(
         modelId: enity.modelId,

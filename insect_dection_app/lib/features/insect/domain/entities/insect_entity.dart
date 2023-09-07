@@ -8,25 +8,25 @@ class Insect extends Equatable {
   final Taxonomy taxonomy;
   final Nomenclature nomenclature;
   final Impacts impacts;
-  final String? origin;
-  final String? predators;
-  final String? photoUrl;
+  final String origin;
+  final String predators;
+  final String photoUrl;
 
-  final String? identificationFeatures;
-  final String? lifeCycle;
-  final String? pestControl;
+  final String identificationFeatures;
+  final String lifeCycle;
+  final String pestControl;
 
   const Insect({
     required this.modelId,
     required this.taxonomy,
     required this.nomenclature,
     required this.impacts,
-    this.origin,
-    this.predators,
-    this.photoUrl,
-    this.identificationFeatures,
-    this.lifeCycle,
-    this.pestControl,
+    this.origin = '',
+    this.predators = '',
+    this.photoUrl = '',
+    this.identificationFeatures = '',
+    this.lifeCycle = '',
+    this.pestControl = '',
   });
 
   @override
@@ -79,5 +79,5 @@ class Insect extends Equatable {
   }
 
   @override
-  String toString() => identificationFeatures ?? '';
+  String toString() => identificationFeatures;
 }
