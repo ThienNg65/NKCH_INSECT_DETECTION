@@ -4,7 +4,7 @@
         "nomenclature": {
             "commonName": "rice leaf roller",
             "scientificName": "Marasmia exigua / Cnaphalocrocis medinalis",
-            "other_name": "It is also known as Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae"
+            "otherName": "It is also known as Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae"
         },
         "taxonomy": {
             "species": "C. medinalis",
@@ -27,7 +27,7 @@
         "nomenclature": {
             "commonName": "rice leaf caterpillar",
             "scientificName": "Cnaphalocrocis medinalis",
-            "other_name": "Rice leaf folder"
+            "otherName": "Rice leaf folder"
         },
         "taxonomy": {
             "species": "",
@@ -50,7 +50,7 @@
         "nomenclature": {
             "commonName": "paddy stem maggot",
             "scientificName": "Scirpophaga incertulas",
-            "other_name": "Giòi đục lá lúa/yellow stem borer"
+            "otherName": "Giòi đục lá lúa/yellow stem borer"
         },
         "taxonomy": {
             "species": "S. incertulas",
@@ -73,7 +73,7 @@
         "nomenclature": {
             "commonName": "asiatic rice borer",
             "scientificName": "Chilo suppressalis",
-            "other_name": "Striped rice stemborer/  \nSâu đục thân lúa châu Á hoặc sâu đục thân 5 vạch đầu nâu"
+            "otherName": "Striped rice stemborer/  \nSâu đục thân lúa châu Á hoặc sâu đục thân 5 vạch đầu nâu"
         },
         "taxonomy": {
             "species": "C. suppressalis",
@@ -96,7 +96,7 @@
         "nomenclature": {
             "commonName": "yellow rice borer",
             "scientificName": "Scirpophaga incertulas",
-            "other_name": "Bướm hai chấm. Giai đoạn ngày của nó được gọi là Sâu đục thân hai chấm là một loài bướm đêm trong họ Crambidae."
+            "otherName": "Bướm hai chấm. Giai đoạn ngày của nó được gọi là Sâu đục thân hai chấm là một loài bướm đêm trong họ Crambidae."
         },
         "taxonomy": {
             "species": "S. incertulas",
@@ -119,7 +119,7 @@
         "nomenclature": {
             "commonName": "rice gall midge ",
             "scientificName": "Orseolia oryzae.",
-            "other_name": "Sâu năn hay muỗi hành "
+            "otherName": "Sâu năn hay muỗi hành "
         },
         "taxonomy": {
             "species": "O. oryzae",
@@ -142,7 +142,7 @@
         "nomenclature": {
             "commonName": "Rice Stemfly",
             "scientificName": "Pachydiplosis oryzae",
-            "other_name": "Đây là loài gây hại chính trên lúa ở nhiều vùng khác nhau của Ấn Độ và thường được gọi là “Kharika hoặc Kane”."
+            "otherName": "Đây là loài gây hại chính trên lúa ở nhiều vùng khác nhau của Ấn Độ và thường được gọi là “Kharika hoặc Kane”."
         },
         "taxonomy": {
             "species": "Oryzae",
@@ -165,7 +165,7 @@
         "nomenclature": {
             "commonName": "brown plant hopper",
             "scientificName": "Nilaparvata lugens",
-            "other_name": "Rầy nâu, là một loại côn trùng ăn cây lúa. Có nhiều đợt bùng phát rầy nâu ở Đông Nam Á vào thập niên 1980, 2005-2008, và dự kiến còn có các đợt bùng phát khác nữa."
+            "otherName": "Rầy nâu, là một loại côn trùng ăn cây lúa. Có nhiều đợt bùng phát rầy nâu ở Đông Nam Á vào thập niên 1980, 2005-2008, và dự kiến còn có các đợt bùng phát khác nữa."
         },
         "taxonomy": {
             "species": "N. lugens",
@@ -188,7 +188,7 @@
         "nomenclature": {
             "commonName": "white backed plant hopper ",
             "scientificName": "Sogatella furcifera",
-            "other_name": "Rầy lưng trắng"
+            "otherName": "Rầy lưng trắng"
         },
         "taxonomy": {
             "species": "S. furcifera",
@@ -211,7 +211,7 @@
         "nomenclature": {
             "commonName": "small brown plant hopper ",
             "scientificName": "Laodelphax striatellus",
-            "other_name": "Rầy nâu nhỏ"
+            "otherName": "Rầy nâu nhỏ"
         },
         "taxonomy": {
             "species": "L. striatellus",
@@ -234,7 +234,7 @@
         "nomenclature": {
             "commonName": "rice water weevil ",
             "scientificName": "Lissorhoptrus oryzophilus",
-            "other_name": "Mọt nước gây hại trên cây lúa, mọt vòi voi"
+            "otherName": "Mọt nước gây hại trên cây lúa, mọt vòi voi"
         },
         "taxonomy": {
             "species": "L. oryzophilus",
@@ -257,7 +257,7 @@
         "nomenclature": {
             "commonName": "rice leafhopper",
             "scientificName": "Nephotettix nigropictus",
-            "other_name": "Rầy xanh"
+            "otherName": "Rầy xanh"
         },
         "taxonomy": {
             "species": "N. nigropictus",
@@ -280,7 +280,7 @@
         "nomenclature": {
             "commonName": "grain spreader thrips ",
             "scientificName": "Stenchaetothrips biformis",
-            "other_name": "Bọ trĩ hay còn gọi là bù lạch"
+            "otherName": "Bọ trĩ hay còn gọi là bù lạch"
         },
         "taxonomy": {
             "species": "S. biformis",
@@ -303,7 +303,7 @@
         "nomenclature": {
             "commonName": "rice shell pest ",
             "scientificName": "Pelopidas mathias",
-            "other_name": "the dark small-branded swift, small branded swift, lesser millet skipper or black branded swift"
+            "otherName": "the dark small-branded swift, small branded swift, lesser millet skipper or black branded swift"
         },
         "taxonomy": {
             "species": "S. mathias",
@@ -326,7 +326,7 @@
         "nomenclature": {
             "commonName": "grub",
             "scientificName": "",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "",
@@ -349,7 +349,7 @@
         "nomenclature": {
             "commonName": "mole cricket",
             "scientificName": "Gryllotalpa brachyptera",
-            "other_name": "Dế trũi, dế giũi, dế nhũi"
+            "otherName": "Dế trũi, dế giũi, dế nhũi"
         },
         "taxonomy": {
             "species": "G. brachyptera",
@@ -372,7 +372,7 @@
         "nomenclature": {
             "commonName": "wireworm ",
             "scientificName": "Elateridae",
-            "other_name": "họ bổ cũi"
+            "otherName": "họ bổ cũi"
         },
         "taxonomy": {
             "species": "",
@@ -395,7 +395,7 @@
         "nomenclature": {
             "commonName": "white margined moth ",
             "scientificName": "",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "",
@@ -418,7 +418,7 @@
         "nomenclature": {
             "commonName": "black cutworm ",
             "scientificName": "Agrotis ipsilon",
-            "other_name": "The dark sword-grass, greasy cutworm, floodplain cutworm, ipsilon dart"
+            "otherName": "The dark sword-grass, greasy cutworm, floodplain cutworm, ipsilon dart"
         },
         "taxonomy": {
             "species": "A. ipsilon",
@@ -441,7 +441,7 @@
         "nomenclature": {
             "commonName": "large cutworm ",
             "scientificName": "",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "",
@@ -464,7 +464,7 @@
         "nomenclature": {
             "commonName": "yellow cutworm ",
             "scientificName": "Agrotis segetum",
-            "other_name": "turnip moth"
+            "otherName": "turnip moth"
         },
         "taxonomy": {
             "species": "A. segetum",
@@ -487,7 +487,7 @@
         "nomenclature": {
             "commonName": "red spider ",
             "scientificName": "Trombidium grandissimum",
-            "other_name": "ve nhung đỏ , ve nhung thật hoặc bọ mưa"
+            "otherName": "ve nhung đỏ , ve nhung thật hoặc bọ mưa"
         },
         "taxonomy": {
             "species": "T. holosericeum",
@@ -510,7 +510,7 @@
         "nomenclature": {
             "commonName": "corn borer ",
             "scientificName": "Ostrinia nubilalis",
-            "other_name": "European corn borer"
+            "otherName": "European corn borer"
         },
         "taxonomy": {
             "species": "O. nubilalis",
@@ -533,7 +533,7 @@
         "nomenclature": {
             "commonName": "army worm",
             "scientificName": "Spodoptera frugiperda",
-            "other_name": "Sâu keo mùa thu, Fall Armyworm"
+            "otherName": "Sâu keo mùa thu, Fall Armyworm"
         },
         "taxonomy": {
             "species": "S. frugiperda",
@@ -556,7 +556,7 @@
         "nomenclature": {
             "commonName": "aphids",
             "scientificName": "Aphidoidea",
-            "other_name": "là một siêu họ gồm những loài côn trùng nhỏ chích hút dịch cây, gọi chung là rệp cây, cũng gọi là rệp vừng, con muội cây, con rầy mềm"
+            "otherName": "là một siêu họ gồm những loài côn trùng nhỏ chích hút dịch cây, gọi chung là rệp cây, cũng gọi là rệp vừng, con muội cây, con rầy mềm"
         },
         "taxonomy": {
             "species": "",
@@ -579,7 +579,7 @@
         "nomenclature": {
             "commonName": "Potosiabre vitarsis ",
             "scientificName": "Protaetia brevitarsis",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "P. brevitarsis",
@@ -602,7 +602,7 @@
         "nomenclature": {
             "commonName": "peach borer",
             "scientificName": "Conogethes punctiferalis",
-            "other_name": "Durian fruit borer, Yellow peach moth"
+            "otherName": "Durian fruit borer, Yellow peach moth"
         },
         "taxonomy": {
             "species": "C. Punctiferalis",
@@ -625,7 +625,7 @@
         "nomenclature": {
             "commonName": "english grain aphid ",
             "scientificName": "Sitobion Avenae",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "S. Avenae",
@@ -648,7 +648,7 @@
         "nomenclature": {
             "commonName": "green bug",
             "scientificName": "Schizaphis Graminum",
-            "other_name": "Greenbug(bọ xanh), Wheat Aphid"
+            "otherName": "Greenbug(bọ xanh), Wheat Aphid"
         },
         "taxonomy": {
             "species": "S.graminum",
@@ -671,7 +671,7 @@
         "nomenclature": {
             "commonName": "bird cherry-oataphid",
             "scientificName": "Rhopalosiuphum padi",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "R. padi",
@@ -694,7 +694,7 @@
         "nomenclature": {
             "commonName": "wheat blossom midge",
             "scientificName": "Sitodiplosis mosellana",
-            "other_name": "Wheat Midge"
+            "otherName": "Wheat Midge"
         },
         "taxonomy": {
             "species": "S. mosellana",
@@ -717,7 +717,7 @@
         "nomenclature": {
             "commonName": "penthaleus major",
             "scientificName": "",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "",
@@ -740,7 +740,7 @@
         "nomenclature": {
             "commonName": "longlegged spider mite",
             "scientificName": "Petrobia Latens",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "Petrobia Latens",
@@ -763,7 +763,7 @@
         "nomenclature": {
             "commonName": "wheat phloeothrips ",
             "scientificName": "Haplothrips tritici",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "H. Tritici",
@@ -786,7 +786,7 @@
         "nomenclature": {
             "commonName": "wheat sawfly",
             "scientificName": "Dolerus Tritici",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "Dolerus Tritici",
@@ -809,7 +809,7 @@
         "nomenclature": {
             "commonName": "cerodonta denticornis",
             "scientificName": "Cerodonta denticornis",
-            "other_name": "Leaf-miner flies (Ruồi đục lá)"
+            "otherName": "Leaf-miner flies (Ruồi đục lá)"
         },
         "taxonomy": {
             "species": "Cerodonta denticornis",
@@ -832,7 +832,7 @@
         "nomenclature": {
             "commonName": "beet fly",
             "scientificName": "Pegomya Hyoscyami",
-            "other_name": "beet leafminer or spinach leafminer"
+            "otherName": "beet leafminer or spinach leafminer"
         },
         "taxonomy": {
             "species": "P. hyoscyami",
@@ -855,7 +855,7 @@
         "nomenclature": {
             "commonName": "flea beetle",
             "scientificName": "Alticini",
-            "other_name": "bọ chét"
+            "otherName": "bọ chét"
         },
         "taxonomy": {
             "species": "",
@@ -878,7 +878,7 @@
         "nomenclature": {
             "commonName": "cabbage army worm",
             "scientificName": "Mamestra brassicae",
-            "other_name": "cabbage moth"
+            "otherName": "cabbage moth"
         },
         "taxonomy": {
             "species": "M. brassicae",
@@ -901,7 +901,7 @@
         "nomenclature": {
             "commonName": "beet army worm",
             "scientificName": "Spodoptera exigua",
-            "other_name": "small mottled willow moth, asparagus fern caterpillar"
+            "otherName": "small mottled willow moth, asparagus fern caterpillar"
         },
         "taxonomy": {
             "species": "S. exigua",
@@ -924,7 +924,7 @@
         "nomenclature": {
             "commonName": "Beet spot flies",
             "scientificName": "Tetanopssp",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "",
@@ -947,7 +947,7 @@
         "nomenclature": {
             "commonName": "meadow moth",
             "scientificName": "Loxostege Sticticalis",
-            "other_name": "Beet Webworm Moth"
+            "otherName": "Beet Webworm Moth"
         },
         "taxonomy": {
             "species": "L. sticticalis",
@@ -970,7 +970,7 @@
         "nomenclature": {
             "commonName": "beet weevil",
             "scientificName": "Bothynoderes punctiremtris Germar",
-            "other_name": "Mọt củ cải"
+            "otherName": "Mọt củ cải"
         },
         "taxonomy": {
             "species": "Bothynoderes punctiremtris Germar",
@@ -993,7 +993,7 @@
         "nomenclature": {
             "commonName": "sericaorient alismots chulsky",
             "scientificName": "Maladera orientalis",
-            "other_name": "Lụa kim bọ cánh cứng"
+            "otherName": "Lụa kim bọ cánh cứng"
         },
         "taxonomy": {
             "species": "Maladera orientalis",
@@ -1016,7 +1016,7 @@
         "nomenclature": {
             "commonName": "alfalfa weevil",
             "scientificName": "Hypera Postica",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "H.postica",
@@ -1039,7 +1039,7 @@
         "nomenclature": {
             "commonName": "flax budworm",
             "scientificName": "Heliothis viriplaca",
-            "other_name": "Marbled clover"
+            "otherName": "Marbled clover"
         },
         "taxonomy": {
             "species": "H. viriplaca",
@@ -1062,7 +1062,7 @@
         "nomenclature": {
             "commonName": "alfalfa plant bug",
             "scientificName": "Adelphocoris lineolatus",
-            "other_name": "Lucerne bug"
+            "otherName": "Lucerne bug"
         },
         "taxonomy": {
             "species": "A. lineolatus",
@@ -1085,7 +1085,7 @@
         "nomenclature": {
             "commonName": "tarnished plant bug",
             "scientificName": "Lygus lineolaris",
-            "other_name": ""
+            "otherName": ""
         },
         "taxonomy": {
             "species": "L. lineolaris",
@@ -1108,7 +1108,7 @@
         "nomenclature": {
             "commonName": "Locustoidea",
             "scientificName": "Locusta",
-            "other_name": "Grasshopper(Châu Chấu)"
+            "otherName": "Grasshopper(Châu Chấu)"
         },
         "taxonomy": {
             "species": "",
@@ -1131,7 +1131,7 @@
         "nomenclature": {
             "commonName": "lytta polita",
             "scientificName": "Lytta polita",
-            "other_name": "Bronze blister beetle"
+            "otherName": "Bronze blister beetle"
         },
         "taxonomy": {
             "species": "L. Polita",
@@ -1154,7 +1154,7 @@
         "nomenclature": {
             "commonName": "legume blister beetle",
             "scientificName": "Epicauta funebris",
-            "other_name": "Bọ cánh cứng vỉ"
+            "otherName": "Bọ cánh cứng vỉ"
         },
         "taxonomy": {
             "species": "Funebris",

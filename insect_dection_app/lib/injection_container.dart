@@ -3,7 +3,6 @@ import 'package:get_it/get_it.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:insect_dection_app/features/features.dart';
-import 'package:insect_dection_app/features/insect/pages/bookmarks/bloc/bookmarked_insects_bloc.dart';
 
 GetIt sl = GetIt.instance;
 
@@ -93,6 +92,12 @@ void initInsectDetail() {
       removeBookmarkedInsect: sl<RemoveBookmarkedInsect>(),
     ),
   );
+  sl.registerFactory<SearchInsectBloc>(
+    () => SearchInsectBloc(
+      getInitialInsectList: sl<GetInitialInsectList>(),
+      getInsectByKeyword: sl<GetInsectByKeyword>(),
+    ),
+  );
 
   /// Usecases
   /// Favorites
@@ -118,6 +123,9 @@ void initInsectDetail() {
   );
   sl.registerLazySingleton<GetMoreInsectList>(
     () => GetMoreInsectList(repo: sl.call()),
+  );
+  sl.registerLazySingleton<GetInsectByKeyword>(
+    () => GetInsectByKeyword(repo: sl.call()),
   );
 
   /// Recently search

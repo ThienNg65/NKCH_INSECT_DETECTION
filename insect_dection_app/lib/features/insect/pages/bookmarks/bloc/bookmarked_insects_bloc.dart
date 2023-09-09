@@ -20,7 +20,7 @@ class BookmarkedInsectsBloc
         _removeBookmarkedInsect = removeBookmarkedInsect,
         super(BookmarkedInsectsState.initial()) {
     on<LoadBookmaredInsectsEvent>(_onLoadBookmaredInsectsEvent);
-    on<ToggleBookmarkedInsectEvent>(_onToggleBookmarkedInsectEvent);
+    on<RemoveBookmarkedInsectEvent>(_onToggleBookmarkedInsectEvent);
   }
 
   Future<void> _onLoadBookmaredInsectsEvent(
@@ -50,7 +50,7 @@ class BookmarkedInsectsBloc
     }
   }
 
-  Future<void> _onToggleBookmarkedInsectEvent(ToggleBookmarkedInsectEvent event,
+  Future<void> _onToggleBookmarkedInsectEvent(RemoveBookmarkedInsectEvent event,
       Emitter<BookmarkedInsectsState> emit) async {
     emit(state.copyWith(toggleBookmarkedInsectProcess: const Loading()));
     try {

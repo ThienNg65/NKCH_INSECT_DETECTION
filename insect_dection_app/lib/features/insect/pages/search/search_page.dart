@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
-import 'package:insect_dection_app/features/insect/pages/search/search.dart';
 import 'package:insect_dection_app/injection_container.dart';
 
 class SearchPage extends StatefulWidget {
@@ -22,7 +21,7 @@ class SearchPage extends StatefulWidget {
               ),
           ),
         ],
-        child: const BookmarkedInsectsPage(),
+        child: const SearchPage(),
       ),
     );
   }
@@ -32,21 +31,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  // final currentUser = FirebaseAuth.instance.currentUser!;
-
-  // final TextEditingController _searchController = TextEditingController();
-
-  // @override
-  // void initState() {
-  //   // _searchController.addListener(_onSearchChanged);
-  //   super.initState();
-  // }
-
-  // _onSearchChanged() {
-  //   debugPrint(_searchController.text);
-
-  // }
-
   void goToInsectPage(Insect insects) {
     Navigator.of(context).push(
       InsectPage.route(
@@ -115,7 +99,8 @@ class _SearchPageState extends State<SearchPage> {
         leading: CircleAvatar(
           backgroundColor: Colors.black,
           radius: 35,
-          backgroundImage: NetworkImage(insect.photoUrl),
+          backgroundImage:
+              insect.photoUrl.isEmpty ? NetworkImage(insect.photoUrl) : null,
         ),
         trailing: const Icon(Icons.arrow_forward),
       ),

@@ -5,7 +5,7 @@
             "nomenclature": {
                 "commonName": "rice leafhopper",
                 "scientificName": "Nephotettix nigropictus",
-                "other_name": "Rầy xanh"
+                "otherName": "Rầy xanh"
             },
             "taxonomy": {
                 "species": "N. nigropictus",
@@ -28,7 +28,7 @@
             "nomenclature": {
                 "commonName": "grain spreader thrips ",
                 "scientificName": "Stenchaetothrips biformis",
-                "other_name": "Bọ trĩ hay còn gọi là bù lạch"
+                "otherName": "Bọ trĩ hay còn gọi là bù lạch"
             },
             "taxonomy": {
                 "species": "S. biformis",
@@ -51,7 +51,7 @@
             "nomenclature": {
                 "commonName": "rice shell pest ",
                 "scientificName": "Pelopidas mathias",
-                "other_name": "the dark small-branded swift, small branded swift, lesser millet skipper or black branded swift"
+                "otherName": "the dark small-branded swift, small branded swift, lesser millet skipper or black branded swift"
             },
             "taxonomy": {
                 "species": "S. mathias",
@@ -74,7 +74,7 @@
             "nomenclature": {
                 "commonName": "grub",
                 "scientificName": "",
-                "other_name": ""
+                "otherName": ""
             },
             "taxonomy": {
                 "species": "",
@@ -97,7 +97,7 @@
             "nomenclature": {
                 "commonName": "mole cricket",
                 "scientificName": "Gryllotalpa brachyptera",
-                "other_name": "Dế trũi, dế giũi, dế nhũi"
+                "otherName": "Dế trũi, dế giũi, dế nhũi"
             },
             "taxonomy": {
                 "species": "G. brachyptera",
@@ -120,7 +120,7 @@
             "nomenclature": {
                 "commonName": "wireworm ",
                 "scientificName": "Elateridae",
-                "other_name": "họ bổ cũi"
+                "otherName": "họ bổ cũi"
             },
             "taxonomy": {
                 "species": "",
@@ -143,7 +143,7 @@
             "nomenclature": {
                 "commonName": "white margined moth ",
                 "scientificName": "",
-                "other_name": ""
+                "otherName": ""
             },
             "taxonomy": {
                 "species": "",
@@ -166,7 +166,7 @@
             "nomenclature": {
                 "commonName": "black cutworm ",
                 "scientificName": "Agrotis ipsilon",
-                "other_name": "The dark sword-grass, greasy cutworm, floodplain cutworm, ipsilon dart"
+                "otherName": "The dark sword-grass, greasy cutworm, floodplain cutworm, ipsilon dart"
             },
             "taxonomy": {
                 "species": "A. ipsilon",
@@ -189,7 +189,7 @@
             "nomenclature": {
                 "commonName": "large cutworm ",
                 "scientificName": "",
-                "other_name": ""
+                "otherName": ""
             },
             "taxonomy": {
                 "species": "",
@@ -212,7 +212,7 @@
             "nomenclature": {
                 "commonName": "yellow cutworm ",
                 "scientificName": "Agrotis segetum",
-                "other_name": "turnip moth"
+                "otherName": "turnip moth"
             },
             "taxonomy": {
                 "species": "A. segetum",
@@ -235,7 +235,7 @@
             "nomenclature": {
                 "commonName": "red spider ",
                 "scientificName": "Trombidium grandissimum",
-                "other_name": "ve nhung đỏ , ve nhung thật hoặc bọ mưa"
+                "otherName": "ve nhung đỏ , ve nhung thật hoặc bọ mưa"
             },
             "taxonomy": {
                 "species": "T. holosericeum",
@@ -258,7 +258,7 @@
             "nomenclature": {
                 "commonName": "corn borer ",
                 "scientificName": "Ostrinia nubilalis",
-                "other_name": "European corn borer"
+                "otherName": "European corn borer"
             },
             "taxonomy": {
                 "species": "O. nubilalis",
@@ -281,7 +281,7 @@
             "nomenclature": {
                 "commonName": "army worm",
                 "scientificName": "Spodoptera frugiperda",
-                "other_name": "Sâu keo mùa thu, Fall Armyworm"
+                "otherName": "Sâu keo mùa thu, Fall Armyworm"
             },
             "taxonomy": {
                 "species": "S. frugiperda",
@@ -304,7 +304,7 @@
             "nomenclature": {
                 "commonName": "aphids",
                 "scientificName": "Aphidoidea",
-                "other_name": "là một siêu họ gồm những loài côn trùng nhỏ chích hút dịch cây, gọi chung là rệp cây, cũng gọi là rệp vừng, con muội cây, con rầy mềm"
+                "otherName": "là một siêu họ gồm những loài côn trùng nhỏ chích hút dịch cây, gọi chung là rệp cây, cũng gọi là rệp vừng, con muội cây, con rầy mềm"
             },
             "taxonomy": {
                 "species": "",

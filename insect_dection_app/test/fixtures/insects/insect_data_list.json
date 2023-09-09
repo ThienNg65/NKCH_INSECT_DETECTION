@@ -5,7 +5,7 @@
             "nomenclature": {
                 "commonName": "rice leaf roller",
                 "scientificName": "Marasmia exigua / Cnaphalocrocis medinalis",
-                "other_name": "It is also known as Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae"
+                "otherName": "It is also known as Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae"
             },
             "taxonomy": {
                 "species": "C. medinalis",
@@ -28,7 +28,7 @@
             "nomenclature": {
                 "commonName": "rice leaf caterpillar",
                 "scientificName": "Cnaphalocrocis medinalis",
-                "other_name": "Rice leaf folder"
+                "otherName": "Rice leaf folder"
             },
             "taxonomy": {
                 "species": "",
@@ -51,7 +51,7 @@
             "nomenclature": {
                 "commonName": "paddy stem maggot",
                 "scientificName": "Scirpophaga incertulas",
-                "other_name": "Giòi đục lá lúa/yellow stem borer"
+                "otherName": "Giòi đục lá lúa/yellow stem borer"
             },
             "taxonomy": {
                 "species": "S. incertulas",
@@ -74,7 +74,7 @@
             "nomenclature": {
                 "commonName": "asiatic rice borer",
                 "scientificName": "Chilo suppressalis",
-                "other_name": "Striped rice stemborer/  \nSâu đục thân lúa châu Á hoặc sâu đục thân 5 vạch đầu nâu"
+                "otherName": "Striped rice stemborer/  \nSâu đục thân lúa châu Á hoặc sâu đục thân 5 vạch đầu nâu"
             },
             "taxonomy": {
                 "species": "C. suppressalis",
@@ -97,7 +97,7 @@
             "nomenclature": {
                 "commonName": "yellow rice borer",
                 "scientificName": "Scirpophaga incertulas",
-                "other_name": "Bướm hai chấm. Giai đoạn ngày của nó được gọi là Sâu đục thân hai chấm là một loài bướm đêm trong họ Crambidae."
+                "otherName": "Bướm hai chấm. Giai đoạn ngày của nó được gọi là Sâu đục thân hai chấm là một loài bướm đêm trong họ Crambidae."
             },
             "taxonomy": {
                 "species": "S. incertulas",
@@ -120,7 +120,7 @@
             "nomenclature": {
                 "commonName": "rice gall midge ",
                 "scientificName": "Orseolia oryzae.",
-                "other_name": "Sâu năn hay muỗi hành "
+                "otherName": "Sâu năn hay muỗi hành "
             },
             "taxonomy": {
                 "species": "O. oryzae",

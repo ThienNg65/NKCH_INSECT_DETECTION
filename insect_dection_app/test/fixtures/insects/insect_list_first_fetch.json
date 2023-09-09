@@ -4,7 +4,7 @@
         "nomenclature": {
             "commonName": "rice leaf roller",
             "scientificName": "Marasmia exigua / Cnaphalocrocis medinalis",
-            "other_name": "It is also known as Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae"
+            "otherName": "It is also known as Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae"
         },
         "taxonomy": {
             "species": "C. medinalis",
@@ -27,7 +27,7 @@
         "nomenclature": {
             "commonName": "rice leaf caterpillar",
             "scientificName": "Cnaphalocrocis medinalis",
-            "other_name": "Rice leaf folder"
+            "otherName": "Rice leaf folder"
         },
         "taxonomy": {
             "species": "",
@@ -50,7 +50,7 @@
         "nomenclature": {
             "commonName": "paddy stem maggot",
             "scientificName": "Scirpophaga incertulas",
-            "other_name": "Giòi đục lá lúa/yellow stem borer"
+            "otherName": "Giòi đục lá lúa/yellow stem borer"
         },
         "taxonomy": {
             "species": "S. incertulas",
@@ -73,7 +73,7 @@
         "nomenclature": {
             "commonName": "asiatic rice borer",
             "scientificName": "Chilo suppressalis",
-            "other_name": "Striped rice stemborer/  \nSâu đục thân lúa châu Á hoặc sâu đục thân 5 vạch đầu nâu"
+            "otherName": "Striped rice stemborer/  \nSâu đục thân lúa châu Á hoặc sâu đục thân 5 vạch đầu nâu"
         },
         "taxonomy": {
             "species": "C. suppressalis",
@@ -96,7 +96,7 @@
         "nomenclature": {
             "commonName": "yellow rice borer",
             "scientificName": "Scirpophaga incertulas",
-            "other_name": "Bướm hai chấm. Giai đoạn ngày của nó được gọi là Sâu đục thân hai chấm là một loài bướm đêm trong họ Crambidae."
+            "otherName": "Bướm hai chấm. Giai đoạn ngày của nó được gọi là Sâu đục thân hai chấm là một loài bướm đêm trong họ Crambidae."
         },
         "taxonomy": {
             "species": "S. incertulas",
@@ -119,7 +119,7 @@
         "nomenclature": {
             "commonName": "rice gall midge ",
             "scientificName": "Orseolia oryzae.",
-            "other_name": "Sâu năn hay muỗi hành "
+            "otherName": "Sâu năn hay muỗi hành "
         },
         "taxonomy": {
             "species": "O. oryzae",
@@ -142,7 +142,7 @@
         "nomenclature": {
             "commonName": "Rice Stemfly",
             "scientificName": "Pachydiplosis oryzae",
-            "other_name": "Đây là loài gây hại chính trên lúa ở nhiều vùng khác nhau của Ấn Độ và thường được gọi là “Kharika hoặc Kane”."
+            "otherName": "Đây là loài gây hại chính trên lúa ở nhiều vùng khác nhau của Ấn Độ và thường được gọi là “Kharika hoặc Kane”."
         },
         "taxonomy": {
             "species": "Oryzae",
@@ -165,7 +165,7 @@
         "nomenclature": {
             "commonName": "brown plant hopper",
             "scientificName": "Nilaparvata lugens",
-            "other_name": "Rầy nâu, là một loại côn trùng ăn cây lúa. Có nhiều đợt bùng phát rầy nâu ở Đông Nam Á vào thập niên 1980, 2005-2008, và dự kiến còn có các đợt bùng phát khác nữa."
+            "otherName": "Rầy nâu, là một loại côn trùng ăn cây lúa. Có nhiều đợt bùng phát rầy nâu ở Đông Nam Á vào thập niên 1980, 2005-2008, và dự kiến còn có các đợt bùng phát khác nữa."
         },
         "taxonomy": {
             "species": "N. lugens",
@@ -188,7 +188,7 @@
         "nomenclature": {
             "commonName": "white backed plant hopper ",
             "scientificName": "Sogatella furcifera",
-            "other_name": "Rầy lưng trắng"
+            "otherName": "Rầy lưng trắng"
         },
         "taxonomy": {
             "species": "S. furcifera",
@@ -211,7 +211,7 @@
         "nomenclature": {
             "commonName": "small brown plant hopper ",
             "scientificName": "Laodelphax striatellus",
-            "other_name": "Rầy nâu nhỏ"
+            "otherName": "Rầy nâu nhỏ"
         },
         "taxonomy": {
             "species": "L. striatellus",
@@ -234,7 +234,7 @@
         "nomenclature": {
             "commonName": "rice water weevil ",
             "scientificName": "Lissorhoptrus oryzophilus",
-            "other_name": "Mọt nước gây hại trên cây lúa, mọt vòi voi"
+            "otherName": "Mọt nước gây hại trên cây lúa, mọt vòi voi"
         },
         "taxonomy": {
             "species": "L. oryzophilus",

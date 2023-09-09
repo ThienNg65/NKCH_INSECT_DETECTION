@@ -15,9 +15,10 @@ class LoginState extends Equatable {
     this.message,
   });
 
+  /// TODO : DELETE THIS EVERY COMMIT
   factory LoginState.initial() => const LoginState(
-        email: '',
-        password: '',
+        email: 'nvtt@gmail.com',
+        password: '12345678',
         status: LoginStatus.initial,
         message: '',
       );

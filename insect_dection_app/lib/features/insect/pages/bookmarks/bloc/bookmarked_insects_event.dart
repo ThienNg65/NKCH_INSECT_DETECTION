@@ -11,8 +11,8 @@ final class LoadBookmaredInsectsEvent extends BookmarkedInsectsEvent {
   List<Object?> get props => [userBucketParams];
 }
 
-final class ToggleBookmarkedInsectEvent extends BookmarkedInsectsEvent {
-  ToggleBookmarkedInsectEvent({
+final class RemoveBookmarkedInsectEvent extends BookmarkedInsectsEvent {
+  RemoveBookmarkedInsectEvent({
     required this.userBucketParams,
     required this.insect,
   });
