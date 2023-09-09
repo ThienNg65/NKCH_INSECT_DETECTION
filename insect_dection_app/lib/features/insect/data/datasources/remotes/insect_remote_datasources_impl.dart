@@ -14,8 +14,10 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
       String modelId) async {
     try {
       // Take id
-      final insectDocument =
-          await _data.collection(InsectCollectionName.insects).doc(modelId).get();
+      final insectDocument = await _data
+          .collection(InsectCollectionName.insects)
+          .doc(modelId)
+          .get();
 
       // Check if date is empty or not
       if (insectDocument.data() == null) {
@@ -90,5 +92,49 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));
     }
+  }
+
+  @override
+  Future<Either<Failure, InsectListModel>> getInsectByKeyword(
+      String keyword) async {
+    // Get the initial page of insects.
+    try {
+      // Take id
+      final insectsDocument = await _data
+          .collection(InsectCollectionName.insects)
+          .orderBy("nomenclature.commonName")
+          .where(
+            "nomenclature.commonName",
+            isGreaterThanOrEqualTo: keyword,
+          )
+          .where(
+            "nomenclature.commonName",
+            isLessThan: _replaceCharactersNext(keyword),
+          )
+          .limit(10)
+          .get();
+
+      // Check if date is empty or not
+      if (insectsDocument.docs.isEmpty) {
+        return const Left(DataNotFoundFailure());
+      }
+      // Convert models
+      final insects = insectsDocument.docs
+          .map((doc) => InsectModel.fromMap(doc.data()))
+          .toList();
+
+      return Right(InsectListModel(
+        insects: insects,
+      ));
+    } on FirebaseException catch (e) {
+      // Return a Failure object if an error occurs.
+      return Left(ServerFailure(errorMessage: e.message));
+    }
+  }
+
+  String _replaceCharactersNext(String string) {
+    final runes = string.runes;
+    final result = String.fromCharCodes(runes.map((rune) => rune + 1).toList());
+    return result;
   }
 }

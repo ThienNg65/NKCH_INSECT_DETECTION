@@ -24,10 +24,9 @@ class _MyDrawerState extends State<MyDrawer> {
     Navigator.pop(context);
 
     // go to the profile page
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const SearchPage(),
+    Navigator.of(context).push(
+      SearchPage.route(
+        context,
       ),
     );
   }

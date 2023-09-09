@@ -1,118 +1,123 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
+import 'package:insect_dection_app/features/insect/pages/search/search.dart';
+import 'package:insect_dection_app/injection_container.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
+  static MaterialPageRoute<SearchPage> route(BuildContext context) {
+    // final userBucketParams = UserBucketParams.fromEntity(
+    //   BlocProvider.of<AuthBloc>(context).state.user,
+    // );
+    return MaterialPageRoute<SearchPage>(
+      builder: (_) => MultiBlocProvider(
+        providers: [
+          BlocProvider.value(
+            value: sl<SearchInsectBloc>.call()
+              ..add(
+                SearchInsectByKeyword(''),
+              ),
+          ),
+        ],
+        child: const BookmarkedInsectsPage(),
+      ),
+    );
+  }
 
   @override
   State<SearchPage> createState() => _SearchPageState();
 }
 
 class _SearchPageState extends State<SearchPage> {
-  final currentUser = FirebaseAuth.instance.currentUser!;
+  // final currentUser = FirebaseAuth.instance.currentUser!;
 
-  final TextEditingController _searchController = TextEditingController();
+  // final TextEditingController _searchController = TextEditingController();
 
-  List _allResult = [];
-  List _resultList = [];
+  // @override
+  // void initState() {
+  //   // _searchController.addListener(_onSearchChanged);
+  //   super.initState();
+  // }
 
-  @override
-  void initState() {
-    _searchController.addListener(_onSearchChanged);
-    super.initState();
-  }
+  // _onSearchChanged() {
+  //   debugPrint(_searchController.text);
 
-  _onSearchChanged() {
-    debugPrint(_searchController.text);
-    searchResultList();
-  }
+  // }
 
-  searchResultList() {
-    var showResults = [];
-    if (_searchController.text != "") {
-      for (var userSnapshot in _allResult) {
-        var username = userSnapshot['name'].toString().toLowerCase();
-        if (username.contains(_searchController.text.toLowerCase())) {
-          showResults.add(userSnapshot);
-        }
-      }
-    } else {
-      showResults = List.from(_allResult);
-    }
-    setState(() {
-      _resultList = showResults;
-    });
-  }
-
-  getUserStream() async {
-    var data = await FirebaseFirestore.instance
-        .collection("Insects")
-        .orderBy('name')
-        .get();
-    setState(() {
-      _allResult = data.docs;
-    });
-    searchResultList();
-  }
-
-  @override
-  void dispose() {
-    _searchController.removeListener(_onSearchChanged);
-    _searchController.dispose();
-    super.dispose();
-  }
-
-  @override
-  void didChangeDependencies() {
-    getUserStream();
-    super.didChangeDependencies();
+  void goToInsectPage(Insect insects) {
+    Navigator.of(context).push(
+      InsectPage.route(
+        context,
+        modelId: insects.modelId,
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.grey[300],
-        appBar: CustomAppbar(
-          title: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: CupertinoSearchTextField(
-              backgroundColor: Colors.grey[200],
-              controller: _searchController,
-            ),
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      appBar: CustomAppbar(
+        title: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: CupertinoSearchTextField(
+            backgroundColor: Colors.grey[200],
+            // controller: _searchController,
+            onChanged: (value) => BlocProvider.of<SearchInsectBloc>(context)
+              ..add(
+                SearchInsectByKeyword(value),
+              ),
           ),
         ),
-        drawer: const MyDrawer(),
-        body: ListView.builder(
-          itemCount: _resultList.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  InsectPage.route(
-                    context,
-                    modelId: _resultList[index]['model_id'],
-                  ),
-                );
+      ),
+      drawer: const MyDrawer(),
+      body: _searchInsectBody(),
+    );
+  }
+
+  Widget _searchInsectBody() {
+    return BlocBuilder<SearchInsectBloc, SearchInsectState>(
+      builder: (context, state) {
+        if (state.getInsectByKeywordProcess == const Loading()) {
+          return const LoadingWigget();
+        } else {
+          if (state.getInsectByKeywordProcess == const Success() &&
+              state.insectList.insects.isNotEmpty) {
+            final insects = state.insectList.insects;
+            return ListView.builder(
+              itemCount: insects.length,
+              itemBuilder: (context, index) {
+                final insect = insects[index];
+                return _insectSearchResultTile(insect, index);
               },
-              child: ListTile(
-                title: Text(_resultList[index]['name']),
-                subtitle: Text(_resultList[index]['description']),
-                leading: CircleAvatar(
-                  backgroundColor: Colors.black,
-                  radius: 35,
-                  backgroundImage: NetworkImage(_resultList[index]['image']),
-                ),
-                trailing: const Icon(Icons.arrow_forward),
-              ),
             );
-          },
+          } else {
+            return const Text("Not found... ");
+          }
+        }
+      },
+    );
+  }
+
+  Widget _insectSearchResultTile(Insect insect, int index) {
+    return GestureDetector(
+      onTap: () => goToInsectPage(insect),
+      child: ListTile(
+        key: Key(
+          'searchPage_insectResult${insect.nomenclature.commonName}_$index',
         ),
+        title: Text(insect.nomenclature.commonName),
+        subtitle: Text(
+            '${insect.nomenclature.scientificName}  ${insect.nomenclature.otherName}'),
+        leading: CircleAvatar(
+          backgroundColor: Colors.black,
+          radius: 35,
+          backgroundImage: NetworkImage(insect.photoUrl),
+        ),
+        trailing: const Icon(Icons.arrow_forward),
       ),
     );
   }

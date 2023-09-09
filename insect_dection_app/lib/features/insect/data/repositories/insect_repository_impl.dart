@@ -38,4 +38,13 @@ class InsectRepositoryImpl extends InsectRepository {
       (InsectListModel models) => Right(models.toEntity()),
     );
   }
+
+  @override
+  Future<Either<Failure, InsectList>> getInsectByKeyword(String keyword) async {
+    final response = await _remoteDatasource.getInsectByKeyword(keyword);
+    return response.fold(
+      (Failure failure) => Left(failure),
+      (InsectListModel models) => Right(models.toEntity()),
+    );
+  }
 }
