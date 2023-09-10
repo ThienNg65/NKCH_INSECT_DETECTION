@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:insect_dection_app/features/features.dart';
+import 'package:insect_dection_app/features/general/pages/home/bloc/home_page_bloc.dart';
 
 GetIt sl = GetIt.instance;
 
@@ -11,6 +12,7 @@ Future<void> init() async {
   initAuthentication();
   initUserProfile();
   initInsectDetail();
+  generalPages();
 
   /// Externals
   initExternalServices();
@@ -154,6 +156,16 @@ void initInsectDetail() {
   // User Insect Info
   sl.registerLazySingleton<UserInsectDataRepository>(
     () => UserInsectDataRepositoryImpl(remoteDatasource: sl.call()),
+  );
+}
+
+void generalPages() {
+  sl.registerFactory<HomePageBloc>(
+    () => HomePageBloc(
+      getBookmarkedInsectList: sl<GetBookmarkedInsectList>(),
+      getInitialInsectList: sl<GetInitialInsectList>(),
+      getRecentlySearchInsectList: sl<GetRecentlySearchInsectList>(),
+    ),
   );
 }
 

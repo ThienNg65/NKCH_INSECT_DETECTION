@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
-import 'package:insect_dection_app/features/insect/pages/bookmarks/bloc/bookmarked_insects_bloc.dart';
 import 'package:insect_dection_app/injection_container.dart';
 
 class BookmarkedInsectsPage extends StatefulWidget {

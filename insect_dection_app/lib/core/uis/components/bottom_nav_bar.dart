@@ -1,10 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/features.dart';
+import 'package:insect_dection_app/features/general/pages/home/bloc/home_page_bloc.dart';
 import 'package:insect_dection_app/injection_container.dart' as di;
 
 class MyBottomNavBar extends StatefulWidget {
@@ -16,18 +15,9 @@ class MyBottomNavBar extends StatefulWidget {
 }
 
 class _MyBottomNavBarState extends State<MyBottomNavBar> {
-  // User
-  final currentUser = FirebaseAuth.instance.currentUser!;
-
-  // all user
-  final usersCollection = FirebaseFirestore.instance.collection("Users");
-
-  // text controller
-  final TextEditingController textController = TextEditingController();
-
   // Sign Out
   Future<void> signOut() async {
-    FirebaseAuth.instance.signOut();
+    BlocProvider.of<AuthBloc>(context).add(AuthLogoutRequested());
   }
 
   // this selected index is to control the bottom nav bar
@@ -56,14 +46,17 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
   // pages to display
   final List<Widget> _pages = [
     // Camera Page
-    const HomePage(),
+    BlocProvider<HomePageBloc>.value(
+      value: di.sl<HomePageBloc>(),
+      child: const HomePage(),
+    ),
 
     // Camera Page
     const CameraPage(),
 
     // Profile Page
-    BlocProvider<UserProfileBloc>(
-      create: (_) => di.sl<UserProfileBloc>(),
+    BlocProvider<UserProfileBloc>.value(
+      value: di.sl<UserProfileBloc>(),
       child: const ProfilePage(),
     ),
   ];
