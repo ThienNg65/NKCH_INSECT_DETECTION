@@ -57,6 +57,23 @@ class MockInsectRepository extends _i1.Mock implements _i3.InsectRepository {
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i3.Insect>>);
   @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>> getInsectByKeyword(
+          String? keyword) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getInsectByKeyword,
+          [keyword],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>.value(
+            _FakeEither_0<_i5.Failure, _i3.InsectList>(
+          this,
+          Invocation.method(
+            #getInsectByKeyword,
+            [keyword],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
+  @override
   _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>> getInitialInsectList(
           _i3.InsectListParams? insectListParams) =>
       (super.noSuchMethod(
@@ -273,6 +290,24 @@ class MockInsectRemoteDatasource extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectModel>>);
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>> getInsectByKeyword(
+          String? keyword) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getInsectByKeyword,
+          [keyword],
+        ),
+        returnValue:
+            _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>>.value(
+                _FakeEither_0<_i5.Failure, _i3.InsectListModel>(
+          this,
+          Invocation.method(
+            #getInsectByKeyword,
+            [keyword],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>>);
   @override
   _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>> getInitialInsectList(
           _i3.InsectListParams? insectListParams) =>

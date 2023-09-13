@@ -1,5 +1,5 @@
 part of 'user_profile_bloc.dart';
-// TODO: spereate each process of updating feilds insead of using big state
+
 
 enum UserProfileStatus { initial, loading, succes, error }
 

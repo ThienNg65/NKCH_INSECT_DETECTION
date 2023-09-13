@@ -269,12 +269,12 @@ class _InsectPageState extends State<InsectPage> {
       ),
     );
 
-    /// Add recent search
-    BlocProvider.of<InsectDetailBloc>(context).add(
-      AddRecentlySearchInsectEvent(
-        userBucketParams: userBucketParams,
-        insect: state.insect,
-      ),
-    );
+    // /// Add recent search
+    // BlocProvider.of<InsectDetailBloc>(context).add(
+    //   AddRecentlySearchInsectEvent(
+    //     userBucketParams: userBucketParams,
+    //     insect: state.insect,
+    //   ),
+    // );
   }
 }

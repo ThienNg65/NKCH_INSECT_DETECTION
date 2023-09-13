@@ -31,7 +31,7 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  void goToInsectPage(Insect insects) {
+  void toggleInsectPage(Insect insects) {
     Navigator.of(context).push(
       InsectPage.route(
         context,
@@ -88,7 +88,7 @@ class _SearchPageState extends State<SearchPage> {
 
   Widget _insectSearchResultTile(Insect insect, int index) {
     return GestureDetector(
-      onTap: () => goToInsectPage(insect),
+      onTap: () => toggleInsectPage(insect),
       child: ListTile(
         key: Key(
           'searchPage_insectResult${insect.nomenclature.commonName}_$index',

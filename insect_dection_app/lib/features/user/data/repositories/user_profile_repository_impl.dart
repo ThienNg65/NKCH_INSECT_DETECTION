@@ -9,7 +9,6 @@ class UserProfileRepositoryImpl extends UserProfileRepository {
     required UserProfileRemoteDataSource remoteDataSource,
   }) : _remoteDataSource = remoteDataSource;
 
-  // TODO: should create instance of userdata in local
   @override
   Future<Either<Failure, UserProfileEntity>> createUserProfile(
       UserParams userParams) async {
@@ -42,7 +41,6 @@ class UserProfileRepositoryImpl extends UserProfileRepository {
     );
   }
 
-  // TODO: should create instance of userdata in local
   @override
   Future<Either<Failure, UserProfileEntity>> updateUserProfile(
       UserParams userParams) async {

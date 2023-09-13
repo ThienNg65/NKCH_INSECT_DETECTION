@@ -45,17 +45,17 @@ class _HomePageState extends State<HomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const RecentSearchPage(),
+        builder: (context) => const RecentlyDetectedInsectsPage(),
       ),
     );
   }
 
   // user selected a insects, go to the insect page
-  void goToInsectPage(Insect insects) {
+  void toggleInsectPage(Insect insect) {
     Navigator.of(context).push(
       InsectPage.route(
         context,
-        modelId: insects.modelId,
+        modelId: insect.modelId,
       ),
     );
   }
@@ -129,12 +129,7 @@ class _HomePageState extends State<HomePage> {
                   key: Key(
                       "homePage_RecentlySearchTitle_insectTile${insect.modelId}_"),
                   insect: insect,
-                  onTap: () => Navigator.of(context).push(
-                    InsectPage.route(
-                      context,
-                      modelId: insect.modelId,
-                    ),
-                  ),
+                  onTap: () => toggleInsectPage(insect),
                 );
               },
             ),

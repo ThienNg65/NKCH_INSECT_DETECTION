@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/features.dart';
+import 'package:insect_dection_app/features/insect/pages/recent_search/bloc/recently_detection_bloc.dart';
 
 GetIt sl = GetIt.instance;
 
@@ -99,6 +100,11 @@ void initInsectDetail() {
     () => SearchInsectBloc(
       getInitialInsectList: sl<GetInitialInsectList>(),
       getInsectByKeyword: sl<GetInsectByKeyword>(),
+    ),
+  );
+  sl.registerFactory<RecentlyDetectionBloc>(
+    () => RecentlyDetectionBloc(
+      getRecentlySearchInsectList: sl<GetRecentlySearchInsectList>(),
     ),
   );
 

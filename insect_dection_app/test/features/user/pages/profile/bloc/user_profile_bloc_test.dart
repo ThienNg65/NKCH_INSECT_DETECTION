@@ -27,19 +27,7 @@ void main() {
     ),
     photoUrl: 'https://examples.com/testUid/avatar.jpg',
   );
-  // const userParams =  UserParams(
-  //       uid: 'testUid',
-  //       username: 'nvtt@gmail.com',
-  //       phoneNumber: '0922245136',
-  //       firstName: 'Insect',
-  //       lastName: 'Dection',
-  //       address: Address(
-  //         street: '3/2 Street',
-  //         city: 'Cantho',
-  //         country: 'Vietnam',
-  //       ),
-  //       photoUrl: 'https://examples.com/testUid/avatar.jpg',
-  //     );
+
   setUp(() {
     mockGetUserProfile = MockGetUserProfile();
     mockUpdateUserProfile = MockUpdateUserProfile();

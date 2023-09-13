@@ -24,8 +24,9 @@ class InsectTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         child: ListTile(
           key: key,
+          isThreeLine: false,
           title: Text(insect.nomenclature.commonName),
-          subtitle: Text(insect.identificationFeatures),
+          subtitle: Text(insect.nomenclature.otherName),
           leading: CircleAvatar(
             backgroundColor: Colors.black,
             radius: 35,

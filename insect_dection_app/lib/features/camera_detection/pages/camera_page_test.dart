@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image/image.dart' as img;
 import 'package:image_picker/image_picker.dart';
 import 'package:insect_dection_app/core/core.dart';
+import 'package:insect_dection_app/features/camera_detection/domain/entities/detection_result_entity.dart';
 import 'package:insect_dection_app/features/camera_detection/pages/bloc/camara_detection_bloc.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
@@ -152,12 +153,7 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
                     Icons.arrow_forward_sharp,
                   ),
                   onTap: () {
-                    Navigator.of(context).push(
-                      InsectPage.route(
-                        context,
-                        modelId: result.modelId,
-                      ),
-                    );
+                    toggleInsectPage(context, result);
                   },
                 ),
               );
@@ -176,5 +172,14 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
         }
       },
     ));
+  }
+
+  void toggleInsectPage(BuildContext context, DetectionResult result) {
+    Navigator.of(context).push(
+      InsectPage.route(
+        context,
+        modelId: result.modelId,
+      ),
+    );
   }
 }

@@ -33,20 +33,22 @@ class _MyDrawerState extends State<MyDrawer> {
 
   // to the RecentPage page
   void goToRecentSearchPage() {
+    final AuthUserInfo userInfo = BlocProvider.of<AuthBloc>(context).state.user;
+
     // pop menu drawer
     Navigator.pop(context);
 
     // go to the profile page
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const RecentSearchPage(),
+    Navigator.of(context).push(
+      RecentlyDetectedInsectsPage.route(
+        context,
+        userBucketParams: UserBucketParams.fromAuthUserInfo(userInfo),
       ),
     );
   }
 
-  // to the RecentPage page
-  void goToFavouritePage() {
+  // to the Bookmared page
+  void goToBookmarkedPage() {
     // pop menu drawer
     final AuthUserInfo userInfo = BlocProvider.of<AuthBloc>(context).state.user;
     // go to the profile page
@@ -144,7 +146,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 child: MyListTile(
                   icon: Icons.star,
                   text: 'Favourite',
-                  onTap: goToFavouritePage,
+                  onTap: goToBookmarkedPage,
                 ),
               ),
 

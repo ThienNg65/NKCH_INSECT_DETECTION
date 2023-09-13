@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
 
 class LoginPage extends StatefulWidget {
@@ -48,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocListener<LoginCubit, LoginState>(
       listener: (_, state) {
         if (state.status == LoginStatus.error) {
-          //TODO : create snackbar
+          showTopSnackBar(context, message: state.message);
         }
       },
       child: Scaffold(

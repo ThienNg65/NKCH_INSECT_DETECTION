@@ -89,13 +89,7 @@ class _ProfilePageState extends State<ProfilePage> {
       body: BlocConsumer<UserProfileBloc, UserProfileState>(
         listener: (_, state) {
           if (state.status == UserProfileStatus.error) {
-            if (state.status == UserProfileStatus.error) {
-              final snackBar = SnackBar(
-                content: Text(state.message!),
-                backgroundColor: Color(Colors.red.hashCode),
-              );
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            }
+            showTopSnackBar(context, message: state.message);
           }
         },
         builder: (_, state) {
