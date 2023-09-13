@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/auth/auth.dart';
-import 'package:insect_dection_app/features/general/pages/home/bloc/home_page_bloc.dart';
+import 'package:insect_dection_app/features/general/general.dart';
+
 import 'package:insect_dection_app/features/insect/insect.dart';
 import 'package:insect_dection_app/injection_container.dart';
 

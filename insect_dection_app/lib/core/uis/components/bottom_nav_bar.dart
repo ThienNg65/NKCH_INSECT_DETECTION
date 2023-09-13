@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/features.dart';
-import 'package:insect_dection_app/features/general/pages/home/bloc/home_page_bloc.dart';
 import 'package:insect_dection_app/injection_container.dart' as di;
 
 class MyBottomNavBar extends StatefulWidget {

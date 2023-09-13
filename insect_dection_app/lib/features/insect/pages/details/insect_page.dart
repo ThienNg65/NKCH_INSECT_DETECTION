@@ -24,7 +24,7 @@ class InsectPage extends StatefulWidget {
             value: sl<InsectDetailBloc>.call()
               ..add(
                 LoadInsectDetailEvent(
-                  // TODO: REPLACE THIS ONE FOR REAL PASSING ID
+                  // TODO: REMOVE THIS ONE
                   modelId: 'IP000000001',
                   userBucketParams: userParams,
                 ),

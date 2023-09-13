@@ -28,7 +28,7 @@ dependencies:
   # Provides a flexible and fast solution for 
   # accessing TensorFlow Lite interpreter and performing inference
   # TODO: current disable for dev
-  # tflite_flutter: ^0.10.1
+  tflite_flutter: ^0.10.1
   # Dont know
   video_player: ^2.7.0
   # Extra state manange for camera services

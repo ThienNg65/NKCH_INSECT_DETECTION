@@ -1,0 +1,1 @@
+export 'detection_result_model.dart';

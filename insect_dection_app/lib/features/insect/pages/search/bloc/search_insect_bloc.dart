@@ -29,7 +29,7 @@ class SearchInsectBloc extends Bloc<SearchInsectEvent, SearchInsectState> {
       final keyword = event.keyword.trim();
       late Either<Failure, InsectList> result;
       if (keyword.isEmpty) {
-        result = await _getInitialInsectList(InsectListParams(insects: []));
+        result = await _getInitialInsectList(InsectListParams.empty());
       } else {
         result = await _getInsectByKeyword(keyword);
       }

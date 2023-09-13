@@ -2,8 +2,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/features.dart';
-import 'package:insect_dection_app/features/general/pages/home/bloc/home_page_bloc.dart';
 
 GetIt sl = GetIt.instance;
 
@@ -12,7 +12,8 @@ Future<void> init() async {
   initAuthentication();
   initUserProfile();
   initInsectDetail();
-  generalPages();
+  initGeneralPages();
+  initInsectDetection();
 
   /// Externals
   initExternalServices();
@@ -159,13 +160,37 @@ void initInsectDetail() {
   );
 }
 
-void generalPages() {
+void initGeneralPages() {
   sl.registerFactory<HomePageBloc>(
     () => HomePageBloc(
       getBookmarkedInsectList: sl<GetBookmarkedInsectList>(),
       getInitialInsectList: sl<GetInitialInsectList>(),
       getRecentlySearchInsectList: sl<GetRecentlySearchInsectList>(),
     ),
+  );
+}
+
+void initInsectDetection() {
+  /// Bloc
+  sl.registerFactory<CamaraDetectionBloc>(
+    () => CamaraDetectionBloc(
+      getDetectionResult: sl<GetDetectionResult>.call(),
+    ),
+  );
+
+  /// Use case
+  /// Camara detection
+  sl.registerLazySingleton<GetDetectionResult>(
+    () => GetDetectionResult(service: sl.call()),
+  );
+
+  /// Data Sources
+  // Services
+  sl.registerLazySingleton<InsectDetectionService>(
+    () => InsectDetectionServiceImpl(helper: sl<ImageClassificationHelper>()),
+  );
+  sl.registerFactory<ImageClassificationHelper>(
+    () => ImageClassificationHelper(),
   );
 }
 

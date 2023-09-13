@@ -44,3 +44,9 @@ class InvalidInputFailure extends Failure {
   @override
   List<Object?> get props => [errorMessage];
 }
+
+class DetectionResultFailure extends Failure {
+  const DetectionResultFailure({super.errorMessage = 'Detection input'});
+  @override
+  List<Object?> get props => [errorMessage];
+}
