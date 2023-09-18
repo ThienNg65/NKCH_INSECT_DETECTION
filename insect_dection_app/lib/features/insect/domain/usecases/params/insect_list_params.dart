@@ -37,4 +37,13 @@ class InsectListParams extends Equatable {
 
   @override
   List<Object?> get props => [currentPage, nextPage, insects, size];
+
+  factory InsectListParams.fromEntity(InsectList entity) {
+    return InsectListParams(
+      currentPage: entity.currentPage,
+      nextPage: entity.currentPage,
+      insects: entity.insects,
+      size: entity.size,
+    );
+  }
 }

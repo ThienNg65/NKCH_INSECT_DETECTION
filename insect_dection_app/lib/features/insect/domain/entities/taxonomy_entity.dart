@@ -5,7 +5,7 @@ class Taxonomy extends Equatable {
   final String? genus;
   final String? family;
   final String? order;
-  final String? classic;
+  final String? classical;
   final String? phylum;
   final String? regnum;
 
@@ -14,7 +14,7 @@ class Taxonomy extends Equatable {
     required this.genus,
     required this.family,
     required this.order,
-    required this.classic,
+    required this.classical,
     required this.phylum,
     required this.regnum,
   });
@@ -26,18 +26,18 @@ class Taxonomy extends Equatable {
       genus,
       family,
       order,
-      classic,
+      classical,
       phylum,
       regnum,
     ];
   }
 
-  static get empty => const Taxonomy(
+  static Taxonomy get empty => const Taxonomy(
         species: '',
         genus: '',
         family: '',
         order: '',
-        classic: '',
+        classical: '',
         phylum: '',
         regnum: '',
       );
@@ -47,7 +47,7 @@ class Taxonomy extends Equatable {
     String? genus,
     String? family,
     String? order,
-    String? classic,
+    String? classical,
     String? phylum,
     String? regnum,
   }) {
@@ -56,7 +56,7 @@ class Taxonomy extends Equatable {
       genus: genus ?? this.genus,
       family: family ?? this.family,
       order: order ?? this.order,
-      classic: classic ?? this.classic,
+      classical: classical ?? this.classical,
       phylum: phylum ?? this.phylum,
       regnum: regnum ?? this.regnum,
     );

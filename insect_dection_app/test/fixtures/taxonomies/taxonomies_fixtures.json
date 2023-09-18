@@ -1,0 +1,28 @@
+{
+  "taxonomies": [
+    {
+      "species": "E. tyranus",
+      "genus": "Eudocima",
+      "family": "Erebidae",
+      "order": "Lepidoptera",
+      "class": "Insecta"
+    },
+    null,
+    {
+      "species": "A. spiniferus",
+      "genus": "Aleurocanthus",
+      "family": "Aleyrodidae",
+      "order": "Hemiptera",
+      "class": "Insecta"
+    },
+    {
+      "species": "B. dorsalis",
+      "genus": "Bactrocera",
+      "family": "Tephritidae",
+      "order": "Diptera",
+      "class": "Insecta",
+      "phylum": "Arthropoda",
+      "regnum": "Animalia"
+    }
+  ]
+}

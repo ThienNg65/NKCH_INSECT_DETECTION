@@ -31,6 +31,10 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));
+    } catch (err) {
+      return Left(InternalFailure(
+        errorMessage: err.toString(),
+      ));
     }
   }
 
@@ -48,7 +52,7 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
           .collection(InsectCollectionName.users)
           .doc(userBucketParams.uid)
           // Subcollection Insect
-          .collection('recent_searchs')
+          .collection(InsectCollectionName.recentSearches)
           .doc(insectParams.modelId)
           .set(model.toMap());
 
@@ -57,6 +61,10 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));
+    } catch (err) {
+      return Left(InternalFailure(
+        errorMessage: err.toString(),
+      ));
     }
   }
 
@@ -71,14 +79,19 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
           .collection(InsectCollectionName.users)
           .doc(userBucketParams.uid)
           // Subcollection Insect
-          .collection(InsectCollectionName.recentSearches)
+          .collection(InsectCollectionName.bookmarkedInsects)
           .get();
 
       /// Convert query snapshot into list
+      final insects = snapshot.docs
+          .map(
+            (doc) => InsectModel.fromMap(doc.data()),
+          )
+          .toList();
+
       /// Assign into model
       final insectList = InsectListModel(
-        insects:
-            snapshot.docs.map((e) => InsectModel.fromMap(e.data())).toList(),
+        insects: insects,
       );
 
       /// Return the value if adding was succesfully
@@ -86,6 +99,10 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));
+    } catch (err) {
+      return Left(InternalFailure(
+        errorMessage: err.toString(),
+      ));
     }
   }
 
@@ -117,6 +134,10 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));
+    } catch (err) {
+      return Left(InternalFailure(
+        errorMessage: err.toString(),
+      ));
     }
   }
 
@@ -143,6 +164,10 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));
+    } catch (err) {
+      return Left(InternalFailure(
+        errorMessage: err.toString(),
+      ));
     }
   }
 
@@ -163,6 +188,10 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));
+    } catch (err) {
+      return Left(InternalFailure(
+        errorMessage: err.toString(),
+      ));
     }
   }
 }

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/features.dart';
-import 'package:insect_dection_app/injection_container.dart' as di;
 
 class MyBottomNavBar extends StatefulWidget {
   // void Function(int)? onTabChange;
@@ -44,20 +43,14 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
 
   // pages to display
   final List<Widget> _pages = [
-    // Camera Page
-    BlocProvider<HomePageBloc>.value(
-      value: di.sl<HomePageBloc>(),
-      child: const HomePage(),
-    ),
+    //Home Page
+    const HomePage(key: Key("bottomNavBarPage_HomePage")),
 
     // Camera Page
-    const CameraPage(),
+    const CameraPage(key: Key("bottomNavBarPage_CamaraPage")),
 
     // Profile Page
-    BlocProvider<UserProfileBloc>.value(
-      value: di.sl<UserProfileBloc>(),
-      child: const ProfilePage(),
-    ),
+    const UserProfilePage(key: Key("bottomNavBarPage_ProfilePage")),
   ];
 
   @override
@@ -78,7 +71,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
         tabs: const [
           GButton(
             icon: Icons.home,
-            text: 'Camera',
+            text: 'Home',
           ),
           GButton(
             icon: Icons.camera_alt_rounded,

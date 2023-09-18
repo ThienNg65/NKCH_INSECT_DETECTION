@@ -14,3 +14,33 @@ List<InsectModel> getInsectListFixture(String name) {
       .map<InsectModel>((insect) => InsectModel.fromMap(insect))
       .toList();
 }
+
+List<ImpactModel> getImpactsListFixture(String name) {
+  final impactsListFixtures = fixture('impacts/$name');
+  var map = jsonDecode(impactsListFixtures);
+  return map['impacts']
+      .map<ImpactModel>(
+        (impact) => ImpactModel.fromMap(impact),
+      )
+      .toList();
+}
+
+List<NomenclatureModel> getNomenclaturesListFixture(String name) {
+  final impactsListFixtures = fixture('nomenclatures/$name');
+  var map = jsonDecode(impactsListFixtures);
+  return map['nomenclatures']
+      .map<NomenclatureModel>(
+        (nomenclature) => NomenclatureModel.fromMap(nomenclature),
+      )
+      .toList();
+}
+
+List<TaxonomyModel> getTaxonomiesListFixture(String name) {
+  final impactsListFixtures = fixture('taxonomies/$name');
+  var map = jsonDecode(impactsListFixtures);
+  return map['taxonomies']
+      .map<TaxonomyModel>(
+        (taxonomy) => TaxonomyModel.fromMap(taxonomy),
+      )
+      .toList();
+}

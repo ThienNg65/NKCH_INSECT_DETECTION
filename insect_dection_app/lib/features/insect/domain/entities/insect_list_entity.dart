@@ -37,5 +37,6 @@ class InsectList extends Equatable {
         hasNextPage: true,
         size: 0,
       );
-  bool get isNotEmpty => this != InsectList.empty();
+  bool get isEmpty => this == InsectList.empty();
+  bool get isNotEmpty => !isEmpty;
 }

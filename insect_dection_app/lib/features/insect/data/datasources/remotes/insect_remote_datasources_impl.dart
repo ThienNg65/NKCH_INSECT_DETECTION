@@ -45,9 +45,9 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
 
       final insectsSnapshot = await insectsQuery.get();
 
-      final insects = insectsSnapshot.docs
-          .map((doc) => InsectModel.fromMap(doc.data()))
-          .toList();
+      final insects = insectsSnapshot.docs.map((doc) {
+        return InsectModel.fromMap(doc.data());
+      }).toList();
 
       return Right(InsectListModel(
         currentPage: insectListParams.currentPage,
@@ -76,18 +76,23 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
       final insectsSnapshot =
           await insectsQuery.startAfter([lastModelId]).get();
 
-      final insects = insectsSnapshot.docs
+      var previous = insectListParams.insects
+          ?.map<InsectModel>(((e) => InsectModel.fromEntity(e)))
+          .toList();
+      var insects = insectsSnapshot.docs
           .map((doc) => InsectModel.fromMap(doc.data()))
           .toList();
-
+      previous?.addAll(insects);
       // Check if there is a next page.
       final hasMorePages = insectsSnapshot.docs.length >= insectListParams.size;
 
-      return Right(InsectListModel(
-        currentPage: insectListParams.currentPage,
-        hasNextPage: hasMorePages,
-        insects: insects,
-      ));
+      return Right(
+        InsectListModel(
+          currentPage: insectListParams.currentPage,
+          hasNextPage: hasMorePages,
+          insects: previous,
+        ),
+      );
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
       return Left(ServerFailure(errorMessage: e.message));

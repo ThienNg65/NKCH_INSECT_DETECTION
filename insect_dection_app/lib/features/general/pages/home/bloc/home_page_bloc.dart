@@ -28,14 +28,14 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
   final GetRecentlySearchInsectList _getRecentlySearchInsectList;
 
   void onLoadInit(UserBucketParams userBucketParams) {
-    add(LoadInitialInsectListEvent(insectListParams: InsectListParams.empty()));
+    // add(LoadInitialInsectListEvent(insectListParams: InsectListParams.empty()));
     add(LoadRecentlySearchInsectListEvent(userBucketParams: userBucketParams));
-    add(
-      LoadRecentlyBookmarkedInsectListEvent(
-        userBucketParams: userBucketParams,
-        insectListParams: InsectListParams.empty(),
-      ),
-    );
+    // add(
+    //   LoadRecentlyBookmarkedInsectListEvent(
+    //     userBucketParams: userBucketParams,
+    //     insectListParams: InsectListParams.empty(),
+    //   ),
+    // );
   }
 
   Future<void> _onLoadRecentlyBookmarkedInsectListEvent(

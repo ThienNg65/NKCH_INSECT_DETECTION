@@ -9,9 +9,9 @@ part 'user_insect_remote_datasource.dart';
 
 final class InsectCollectionName {
   static String users = 'users';
-  static String insects = 'insects';
+  static String insects = 'insect_import';
   static String bookmarkedInsects = 'favorite_insects';
-  static String recentSearches = 'recent_searchs';
+  static String recentSearches = 'recent_searches';
 }
 
 abstract class InsectRemoteDatasource {

@@ -12,3 +12,13 @@ final class ProcessImageDetectionEvent extends CamaraDetectionEvent {
     required this.imagePath,
   }) : insectImage = imageData;
 }
+
+final class AddRecentlyDetectedInsectEvent extends CamaraDetectionEvent {
+  final UserBucketParams userBucketParams;
+  final String modelId;
+
+  AddRecentlyDetectedInsectEvent({
+    required this.modelId,
+    required this.userBucketParams,
+  });
+}

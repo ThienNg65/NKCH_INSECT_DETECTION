@@ -5,7 +5,7 @@ class InsectParams extends Equatable {
   final String modelId;
   final Taxonomy taxonomy;
   final Nomenclature nomenclature;
-  final Impacts impacts;
+  final Impact impacts;
   final String? origin;
   final String? predators;
   final String? photoUrl;
@@ -31,7 +31,7 @@ class InsectParams extends Equatable {
     String? modelId,
     Taxonomy? taxonomy,
     Nomenclature? nomenclature,
-    Impacts? impacts,
+    Impact? impacts,
     String? origin,
     String? predators,
     String? photoUrl,

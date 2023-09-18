@@ -31,7 +31,7 @@ void main() {
         genus: 'Cnaphalococis',
         family: 'Crambidae',
         order: 'Lepidoptera',
-        classic: 'Insecta',
+        classical: 'Insecta',
         phylum: 'Arthropoda',
         regnum: 'Animalia',
       ),
@@ -41,7 +41,7 @@ void main() {
             'Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae',
         scientificName: 'Marasmia exigua/Cnaphalocrocis medinalis',
       ),
-      impacts: Impacts(
+      impacts: Impact(
           harms: 'Harm,Feeds on rice leaves, causing damage to the crop'),
       origin: '',
       predators:
@@ -52,7 +52,6 @@ void main() {
       lifeCycle:
           'Eggs are laid on rice leaves. Larvae hatch and feed on rice leaves, making them curl up. Larvae go through 5 instars. Pupae form on rice leaves. Adults emerge from pupae and lay eggs.',
       pestControl: '',
-      
     );
 
     insectModel = InsectModel.fromParams(insectParams);

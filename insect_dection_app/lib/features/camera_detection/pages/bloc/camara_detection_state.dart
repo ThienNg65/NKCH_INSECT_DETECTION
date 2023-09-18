@@ -7,22 +7,30 @@ class CamaraDetectionState extends Equatable {
   final Process insectDetectionProcess;
   final String? imagePath;
 
+  final Process addRecentlySearchInsectProcess;
+
   final String? message;
 
   const CamaraDetectionState({
     required this.detectionResultList,
     required this.insectDetectionProcess,
     this.imagePath,
+    required this.addRecentlySearchInsectProcess,
     this.message,
   });
   @override
-  List<Object?> get props =>
-      [detectionResultList, insectDetectionProcess, imagePath, message];
+  List<Object?> get props => [
+        detectionResultList,
+        insectDetectionProcess,
+        imagePath,
+        message,
+      ];
 
   CamaraDetectionState copyWith({
     DetectionResultList? detectionResultList,
     Process? insectDetectionProcess,
     String? imagePath,
+    Process? addRecentlySearchInsectProcess,
     String? message,
   }) {
     return CamaraDetectionState(
@@ -30,11 +38,14 @@ class CamaraDetectionState extends Equatable {
       insectDetectionProcess:
           insectDetectionProcess ?? this.insectDetectionProcess,
       imagePath: imagePath ?? this.imagePath,
+      addRecentlySearchInsectProcess:
+          addRecentlySearchInsectProcess ?? this.addRecentlySearchInsectProcess,
       message: message ?? this.message,
     );
   }
 
   factory CamaraDetectionState.initial() => CamaraDetectionState(
+        addRecentlySearchInsectProcess: const Initial(),
         detectionResultList: DetectionResultList.empty(),
         insectDetectionProcess: const Initial(),
       );

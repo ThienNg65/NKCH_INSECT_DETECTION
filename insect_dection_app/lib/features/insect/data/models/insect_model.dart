@@ -8,7 +8,7 @@ class InsectModel extends Equatable {
   final String modelId;
   final TaxonomyModel taxonomy;
   final NomenclatureModel nomenclature;
-  final ImpactsModel impacts;
+  final ImpactModel impacts;
   final String? origin;
   final String? predators;
   final String? photoUrl;
@@ -61,20 +61,21 @@ class InsectModel extends Equatable {
     };
   }
 
-  factory InsectModel.fromMap(Map<String, dynamic> map) {
-    return InsectModel(
-      modelId: map['modelId'].toString(),
-      taxonomy: TaxonomyModel.fromMap(map['taxonomy'] as Map<String, dynamic>),
-      nomenclature: NomenclatureModel.fromMap(
-          map['nomenclature'] as Map<String, dynamic>),
-      impacts: ImpactsModel.fromMap(map['impacts'] as Map<String, dynamic>),
-      origin: map['origin'],
-      predators: map['predators'],
-      photoUrl: map['photoUrl'],
-      identificationFeatures: map['identificationFeatures'],
-      lifeCycle: map['lifeCycle'],
-      pestControl: map['pestControl'],
-    );
+  factory InsectModel.fromMap(Map<String, dynamic>? map) {
+    return map != null
+        ? InsectModel(
+            modelId: map['modelId'].toString(),
+            taxonomy: TaxonomyModel.fromMap(map['taxonomy']),
+            nomenclature: NomenclatureModel.fromMap(map['nomenclature']),
+            impacts: ImpactModel.fromMap(map['impacts'] ?? map['impacts']),
+            origin: map['origin'],
+            predators: map['predators'],
+            photoUrl: map['photoUrl'],
+            identificationFeatures: map['identificationFeatures'],
+            lifeCycle: map['lifeCycle'],
+            pestControl: map['pestControl'],
+          )
+        : InsectModel.empty();
   }
 
   String toJson() => json.encode(toMap());
@@ -86,7 +87,7 @@ class InsectModel extends Equatable {
     String? modelId,
     TaxonomyModel? taxonomy,
     NomenclatureModel? nomenclature,
-    ImpactsModel? impacts,
+    ImpactModel? impacts,
     String? origin,
     String? predators,
     String? photoUrl,
@@ -113,7 +114,7 @@ class InsectModel extends Equatable {
         modelId: insectParams.modelId,
         taxonomy: TaxonomyModel.fromEntity(insectParams.taxonomy),
         nomenclature: NomenclatureModel.fromEntity(insectParams.nomenclature),
-        impacts: ImpactsModel.fromEntity(insectParams.impacts),
+        impacts: ImpactModel.fromEntity(insectParams.impacts),
         origin: insectParams.origin,
         predators: insectParams.predators,
         photoUrl: insectParams.photoUrl,
@@ -123,9 +124,9 @@ class InsectModel extends Equatable {
       );
   Insect toEntity() => Insect(
         modelId: modelId,
-        taxonomy: taxonomy,
-        nomenclature: nomenclature,
-        impacts: impacts,
+        taxonomy: taxonomy.toEntity(),
+        nomenclature: nomenclature.toEntity(),
+        impacts: impacts.toEntity(),
         origin: origin ?? '',
         predators: predators ?? '',
         photoUrl: photoUrl ?? '',
@@ -137,12 +138,18 @@ class InsectModel extends Equatable {
         modelId: enity.modelId,
         taxonomy: TaxonomyModel.fromEntity(enity.taxonomy),
         nomenclature: NomenclatureModel.fromEntity(enity.nomenclature),
-        impacts: ImpactsModel.fromEntity(enity.impacts),
+        impacts: ImpactModel.fromEntity(enity.impacts),
         origin: enity.origin,
         predators: enity.predators,
         photoUrl: enity.photoUrl,
         identificationFeatures: enity.identificationFeatures,
         lifeCycle: enity.lifeCycle,
         pestControl: enity.pestControl,
+      );
+  factory InsectModel.empty() => InsectModel(
+        modelId: '',
+        taxonomy: TaxonomyModel.fromEntity(Taxonomy.empty),
+        nomenclature: NomenclatureModel.fromEntity(Nomenclature.empty),
+        impacts: ImpactModel.fromEntity(Impact.empty),
       );
 }

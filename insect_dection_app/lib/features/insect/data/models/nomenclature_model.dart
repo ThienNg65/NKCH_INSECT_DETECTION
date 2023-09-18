@@ -16,12 +16,14 @@ class NomenclatureModel extends Nomenclature {
     };
   }
 
-  factory NomenclatureModel.fromMap(Map<String, dynamic> map) {
-    return NomenclatureModel(
-      commonName: map['commonName'] as String,
-      otherName: map['otherName'] as String,
-      scientificName: map['scientificName'] as String,
-    );
+  factory NomenclatureModel.fromMap(Map<String, dynamic>? map) {
+    return map != null
+        ? NomenclatureModel(
+            commonName: map['commonName'] as String,
+            otherName: map['otherName'] ?? '',
+            scientificName: map['scientificName'] ?? '',
+          )
+        : const NomenclatureModel();
   }
 
   String toJson() => json.encode(toMap());

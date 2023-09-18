@@ -32,7 +32,7 @@ void main() {
         genus: 'Cnaphalococis',
         family: 'Crambidae',
         order: 'Lepidoptera',
-        classic: 'Insecta',
+        classical: 'Insecta',
         phylum: 'Arthropoda',
         regnum: 'Animalia',
       ),
@@ -42,7 +42,7 @@ void main() {
             'Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae',
         scientificName: 'Marasmia exigua/Cnaphalocrocis medinalis',
       ),
-      impacts: ImpactsModel(
+      impacts: ImpactModel(
           harms: 'Harm,Feeds on rice leaves, causing damage to the crop'),
       origin: '',
       predators:

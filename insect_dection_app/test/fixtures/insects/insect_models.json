@@ -1,0 +1,144 @@
+{
+    "insects": [
+      null,
+      {
+        "modelId": "0",
+        "nomenclature": {
+          "commonName": "Adristyrannus",
+          "scientificName": "Eudocima tyrannus",
+          "otherName": "Oriental Fruit-piercing Moth"
+        },
+        "taxonomy": {
+          "species": "E. tyranus",
+          "genus": "Eudocima",
+          "family": "Erebidae",
+          "order": "Lepidoptera",
+          "class": "Insecta"
+        },
+        "impact": {
+          "benefits": "",
+          "harms": "Nó làm hỏng các loại trái cây như cam quýt, táo, nho, loquat, xoài, lê, đào, mơ, mận, hồng và các loại cây khác. Những con trưởng thành chọc thủng vỏ bằng phần miệng sắc nhọn hình ống hút. Trên bề mặt quả có những lỗ kim, cùi mất nước, xốp, khi dùng ngón tay ấn vào có cảm giác mềm, phần bị hư hỏng bị đổi màu, trũng xuống, sau đó thối rữa và rụng đi. Nó thường gây hại bởi ong bắp cày và các côn trùng khác, chúng ăn quả thành những vỏ rỗng."
+        },
+        "predators": "",
+        "origin": "It is found in south-eastern Siberia, India, eastern China, the Philippines and Japan.",
+        "identificationFeatures": "Con trưởng thành: dài thân 35-38 mm, sải cánh 96-106 mm, đầu và ngực màu nâu, bụng màu mai. Ăng-ten dạng sợi. Lá chết ở cánh trước có màu nâu sẫm, màu hơi xanh, đỉnh rất nhọn, mép ngoài hình vòng cung và nghiêng, phần giữa mép sau lõm xuống, có một đường xiên màu nâu sẫm từ trên xuống. góc trên đến chỗ lõm của mép sau, đường bên trong màu nâu sẫm, có nhiều đốm nhỏ màu nâu sẫm, có sọc tròn màu xanh đậm ở gốc và giữa cánh. Cánh sau màu vàng mơ có đốm đen hình quả thận ở giữa. Đầu trước chạm đến gân M2, ở phần dưới có các đường màu đen hình sừng.\n Trứng: hình cầu dẹt, hình cầu từ 1 đến 1,1 mm, cao 0,85 đến 0,9 mm, mặt trên và dưới phẳng, màu trắng sữa.\n Ấu trùng: dài thân 57-71 mm, mặt trước nhọn, đốt bụng thứ 1 và thứ 2 thường cong, đốt bụng thứ 8 lồi lên, đốt bụng thứ 7-10 nối thành hình chóp. Đầu có màu nâu đỏ không có hoa văn. Thân màu nâu vàng hoặc nâu xám, các đường lưng, đường dưới lưng, đường van, đường dưới bụng và đường bụng đều màu nâu sẫm; trên mặt dưới lưng của đốt bụng thứ 2 và thứ 3 có một đốm hình mắt. phần giữa màu đen và một đốm trắng hình lưỡi liềm. Hoa văn màu trắng hơi vàng với các vòng tròn màu đen ở ngoại vi, trên mỗi đốt cơ thể có nhiều đường trắng không đều. Giữa đường dưới lưng và đường dưới bụng có một đốm trắng hình vuông không đều. đốt bụng thứ 6, trên có nhiều vòng và đốm màu nâu vàng. Mặt ngoài của ngực màu nâu sẫm, phần gốc nhạt hơn, có các đốm trắng ở mặt trong, bàn chân bụng màu nâu vàng, các móc ngón chân xếp thành một dãy ở giữa, cặp bàn chân bụng thứ nhất rất nhỏ, và các cặp bàn chân bụng thứ hai đến thứ tư và các móc ngón chân cái đều có hơn 40 móc. . Van có hình trứng dài và màu đen, van bụng thứ tám lớn hơn van bụng thứ bảy một chút.\n Nhộng: dài 31 đến 32 mm, màu nâu đỏ đến nâu sẫm. Giữa đầu có một mỏm hơi nhọn, mặt lưng và mặt bụng của phần đầu ngực có nhiều nếp gấp dày và đều, phần bụng sau nhẵn, có vết rạch nông và thưa.",
+        "lifeCycle": "Ở Hoàng Nham, Chiết Giang, có 2 đến 3 thế hệ mỗi năm và trưởng thành qua mùa đông. Côn trùng trưởng thành có thể được tìm thấy trên đồng ruộng từ tháng 3 đến tháng 11, nhưng thường xuyên hơn vào mùa thu. Thời điểm xuất hiện nhiều trứng ngoài tự nhiên là đầu tháng 6, tháng 8 và đầu tháng 9. Tuy nhiên, do tỷ lệ nở trứng thấp và tỷ lệ ấu trùng chết cao nên số lượng ấu trùng không lớn. Ở Quảng Đông, thời điểm sâu trưởng thành gây hại cây có múi là từ giữa tháng 8 đến tháng 12. Thiệt hại đối với quýt Ôn Châu chín sớm bắt đầu từ giữa tháng 8. Thiệt hại nghiêm trọng nhất là từ cuối tháng 8 đến đầu tháng 9. Thiệt hại đối với quýt Ôn Châu chín sớm, các giống cam ngọt chín bắt đầu từ giữa tháng 9, thiệt hại cao nhất xảy ra từ cuối tháng 9 đến cuối tháng 10. Con trưởng thành thường đẻ trứng ở mặt sau của lá, thường đẻ trứng vào nhau. Ấu trùng tuổi 1 có tập tính kéo tơ, khi đứng yên thường đậu trên mặt đất bằng 3 đôi chân bụng, toàn thân hình chữ “U” hoặc “?”. Các vật chủ ấu trùng được phát hiện bao gồm Cocculus orbiculatus, Akebia quinata, thông thoát mộc và Mahonia fortunei. Ruồi trưởng thành có tập tính nhẹ là lơ lửng, ban ngày ẩn nấp, khi trời tối mới bay vào vườn phá hại trái cây, thích chọn những trái khỏe mạnh để làm hại trái cây. Quả cam quýt sau khi bị hư hỏng sẽ xuất hiện những lỗ kim nhỏ có keo chảy ra, sau đó mở rộng thành những đốm nâu hình bầu dục sũng nước, chai sạn, cuối cùng toàn bộ quả sẽ thối rữa và có mùi như cặn.",
+        "pestControl": "1. Phòng trừ nông nghiệp: Quy hoạch vườn ươm hợp lý, khi xây dựng vườn ươm mới nên bố trí càng xa vườn cây càng tốt.\n 2. Biện pháp phòng trừ nhân tạo: Bắt và tiêu diệt con trưởng thành trong thời kỳ ấu trùng đẻ trứng và ấu trùng nở.\n 3. Diệt trừ các cây ký chủ như cây thân gỗ và cây thân ngắn xung quanh vườn ươm.\n 4. Bẫy và tiêu diệt côn trùng trưởng thành bằng ánh sáng.Trong thời kỳ côn trùng trưởng thành có tỷ lệ mắc cao, theo phototaxis của người trưởng thành, đèn ánh sáng đen hoặc đèn diệt côn trùng rung tần số được lắp đặt để bẫy và tiêu diệt.\n 5. Phòng trừ bằng hóa chất: Sau khi trưởng thành đẻ trứng và ấu trùng nở, tiến hành phun thuốc trừ sâu kịp thời để phòng trừ. Các tác nhân thường được sử dụng bao gồm 90% trichlorfon tinh thể 800-1.000 lần và cypermethrin cô đặc có thể nhũ hóa hiệu quả cao 4,5% 1.500 lần, hiệu quả kiểm soát có thể đạt hơn 95%.\n 6. Phòng trừ sinh học: Chú ý bảo vệ và tận dụng thiên địch.",
+        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg88.jpg?alt=media&token=7cd5ceab-4953-427d-8723-7eec23725784"
+      },
+      {
+        "modelId": "1",
+        "nomenclature": {
+          "commonName": "Aleurocanthus spiniferus",
+          "scientificName": "Aleurocanthus spiniferus",
+          "otherName": "Orange Spiny Whitefly"
+        },
+        "taxonomy": {
+          "species": "A. spiniferus",
+          "genus": "Aleurocanthus",
+          "family": "Aleyrodidae",
+          "order": "Hemiptera",
+          "class": "Insecta"
+        },
+        "impact": {
+          "benefits": "",
+          "harms": "A. spiniferus causes direct damage, as well as indirect damage to an infested plant.The direct damage includes the weakening of the infested trees due to the ingesting of sap. The second type of damage occurs when the whiteflies excrete honeydew on the leaf surfaces. This in turn promotes the development of sooty mold, which leaves numerous parts of the infested plant such as the leaves, fruit and branches covered with sooty mold. This interferes with photosynthesis, which as a results heavily diminishes overall plant quality.\n It has been observed that these pest of citrus plants have also attacked tea plants, such as Camellia sinensis found in Japan. However, researchers found that adult females of the citrus infesting population laid no eggs on the leaves of these tea plants, and only on citrus plants, thus demonstrating the exclusivity of each population."
+        },
+        "predators": "",
+        "origin": "The citrus spiny whitefly has spread to multiple continents including Asia, Africa, Australia, America, Pacific Islands and Italy.",
+        "identificationFeatures": "Egg: The egg is minute (0.2 x 0.1 mm), yellow, stalked, curved and marked with polygonal areas (Quaintance 1903, Quaintance and Baker 1917). The stalk is short and holds the egg in more or less upright position on leaf.\n \n Larva: The larva is elliptical or oval-shaped, brown to black and a short fringe of wax surrounds its body. As the orange spiny whitefly develops to the sessile nympal stage, the second instar is about 0.4 x 0.3 mm and has a distinctly crenulated marginal edge. Additionally, the second instar has short, acute incisions between the marginal wax tubes. Also, in the 2nd and 3rd instar stages, abdominal segments are more distinct than thoracic segments. The dorsal or upper side has a single row of eight abdominal and six thoracic strong, heavy spines on either side of the mid-dorsal line of the body.\n \n Pupa: The oval-shaped pupa or 4th instar is jet black, convex, approximately 1.23 mm long and 1.88 mm wide with strong, dark dorsal spines. The marginal wax tubes produce a compact, short, cottony fringe that occurs on the pupal margin. The pupal stage of orange spiny whitefly is very similar to another exotic whitefly that is currently established in Florida, Alerocanthus woglumi Ashby or citrus blackfly. The main field characteristic difference between orange spiny whitefly and citrus blackfly is that the white wax fringe that surrounds their pupal case margins is generally twice as large for the orange spiny whitefly.\n \n Adult: The adult orange spiny whitefly cannot be distinguished from citrus blackfly — both are a slate blue color. More information on citrus blackfly in Florida is available in Nguygen and Hamon (1998).",
+        "lifeCycle": "The eggs are typically laid near each other on a food plants, such as citrus plants, usually on a leaf. Whiteflies have six developmental stages: egg, crawler (1st instars), two sessile nymphal instars (2nd and 3rd instars), pupa (4th instar), and adult. In terms of identification within the Aleyrodidae family, the pupal stage (4th stage) displays the most diagnostic features of the closely related whiteflies.\n \n The initiation and duration of the life cycle, as well as the number of generations per year is highly dependent on the surrounding climate.A mild temperature along with high humidity provides an ideal environment for successful growth and development. Kuwana et al. (1927) were able to record about 4 generations per year, with as many as 7 generations that occurred under these ideal laboratory conditions.This study was also able to demonstrate the variability in the life cycle duration.",
+        "pestControl": "Biological control: Orange spiny whitefly outbreaks in other countries have been successfully brought under control through biological control. For example, the Japanese introduced parasitoids Prospaltella smithi Silv and a Cryptognatha sp. from China in 1925 and achieved satisfactory control by killing more than 74% of the population (Kuwana et al. 1927). In Guam, the use of Prospaltella smithi and Amitus hesperidium achieved 80 to 95% parasitism (Peterson 1955). However, it was noted that the biocontrol agent did not perform as well on rose and grapes, an observation reported in India.\n \n Classical biological control of A. spiniferus brought significant reduction within eight months of release of Encarsia cf. smithi (Hymenoptera: Aphelinidae) in the commercial orchards of southern Africa with a mean parasitism rate of about 72.9% parasitsm (Van den Berg et al. 1997). It was also shown to be cost-effective with a benefit ratio of 2.8 (Van den Berg 2000).\n \n Current established biological control options that are effective against citrus blackfly in Florida include Encarsi perplexa Huang & Polaszek and Amitus hesperidum Silvestri. Possibly these existing biological controls would also control orange spiny whitefly in Florida.\n \n In additional to biological controls, whiteflies in general can be controlled by sprays applied primarily for scale insects. A low concentration petroleum spray oils (0.25 to 0.5%) has been found to provide acceptable control in China on sweet orange (Citrus sinensis L.) and pummelo (Citrus grandis L.) (Rae et al. 2000). As with any control option, effects may vary with the growing region, host plant or variety, and oil formulation.\n \n Chemical control: In general, chemical control has not been shown to be effective on orange spiny whitefly or other whiteflies in crop systems.",
+        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg83.jpg?alt=media&token=9d7b393a-b1ff-4ce5-b3c6-22dc536b4ecf"
+      },
+      {
+        "modelId": "100",
+        "nomenclature": {
+          "commonName": "wireworm ",
+          "scientificName": "Elateridae",
+          "otherName": "họ bổ cũi"
+        },
+        "taxonomy": {
+          "species": "",
+          "genus": "",
+          "family": "Elateridae",
+          "order": "Coleoptera",
+          "class": "Insecta"
+        },
+        "impact": { "benefits": "", "harms": "" },
+        "predators": "",
+        "origin": "",
+        "identificationFeatures": "",
+        "lifeCycle": "",
+        "pestControl": "",
+        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg17.jpg?alt=media&token=44f91b14-8af3-4833-b969-a579dc109931"
+      },
+      {
+        "modelId": "101",
+        "nomenclature": {
+          "commonName": "yellow cutworm ",
+          "scientificName": "Agrotis segetum",
+          "otherName": "turnip moth"
+        },
+        "taxonomy": {
+          "species": "A. segetum",
+          "genus": "Argotis",
+          "family": "Noctuidae",
+          "order": "Lepidoptera",
+          "class": "Insecta"
+        },
+        "impact": { "benefits": "", "harms": "" },
+        "predators": "",
+        "origin": "phổ biến ở châu Âu và nó được tìm thấy ở châu Phi và khắp Âu Á ngoại trừ các phần cực bắc",
+        "identificationFeatures": "Đặc điểm hình thái:\n- The paler forms have three dark-bordered stigmata on each fore-wing. Antennae of male bipectinated (comb like on both sides) with moderate length branches. The main feature distinguishing it from other Agrotis species is the shade of the hind-wings, pure white in the males and pearly grey in the females. The wingspan is 32–42 mm\n",
+        "lifeCycle": "",
+        "pestControl": "",
+        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg21.jpg?alt=media&token=851fdcb5-9857-4376-bd7c-715f88dc2d26"
+      },
+      {
+        "modelId": "10",
+        "nomenclature": {
+          "commonName": "Cicadella viridis",
+          "scientificName": "Cicadella viridis",
+          "otherName": ""
+        },
+        "taxonomy": {
+          "species": "Cicadella viridis",
+          "genus": "Cicadella",
+          "family": "Cicadellidae",
+          "order": "Hemiptera",
+          "class": "Insecta"
+        },
+        "impact": { "benefits": "", "harms": "" },
+        "predators": "Spiders (Parasteatoda tepidariorum, Dolomedes fimbriatus, Tetragnatha extensa). Possible parasites are several Dryinidae species. Moreover several parasitoids of the family Mymaridae (Anagrus species) lay their eggs in eggs of these leafhoppers.",
+        "origin": "Europe, in eastern Palearctic realm, in the Near East, in the Nearctic realm, and in the Indomalayan realm.",
+        "identificationFeatures": "The adult males of Cicadella viridis can reach a length of 5.7–7 millimetres (0.22–0.28 in), but the females are quite larger than the males, reaching 7.5–9 millimetres (0.30–0.35 in).\nTheir pronotum and scutellum are green and yellow. The front head is pale yellow, with two black spots near the compound eyes. The forewings are turquoise green in the females, blue or dark bluish in males (sexual dimorphism). The abdomen is bluish-black.",
+        "lifeCycle": "Cicadella viridis may have one or more generations per year. In the colder parts of Europe, there is one generation per year, in the warmer parts two, and in some regions even three generations. In the temperate climate of Europe, females lay eggs in late August - early November. This species overwinters in the egg stage. Nymphs appear in the spring. The transformation of nymphs into adults occurs in June or in July. Adult leafhoppers can mostly be encountered from July through October.",
+        "pestControl": "",
+        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg70.jpg?alt=media&token=2e650d0b-407e-49c4-829e-e839d2a4a3a4"
+      },
+      {
+        "modelId": "11",
+        "nomenclature": {
+          "commonName": "Cicadellidae",
+          "scientificName": "Cicadellidae",
+          "otherName": "chicharritas hoặc saltahojas"
+        },
+        "taxonomy": {
+          "species": "",
+          "genus": "",
+          "family": "",
+          "order": "Hemiptera",
+          "class": "Insecta"
+        },
+        "impact": { "benefits": "", "harms": "" },
+        "predators": "",
+        "origin": "Cicadellidae là một trong những họ lớn nhất của Hemiptera. Chúng được tìm thấy trên hầu hết tất cả các loại cây; tuy nhiên, từng loài lại có sự kết hợp chủ cụ thể. Chúng được biết đến với tên gọi phổ biến là “hoppers”, là những loài côn trùng nhỏ, ăn cây, hút mật cây từ cỏ, cây bụi hoặc cây cối",
+        "identificationFeatures": "Chân sau của chúng được biến đổi để nhảy, và được phủ đầy lông giúp lan truyền một chất tiết ra khỏi cơ thể của chúng, hoạt động như một chất chống nước và mang theo pheromones. Chúng trải qua một quá trình biến đổi một phần, và có các mối quan hệ với chủ khác nhau, từ rất tổng quát đến rất cụ thể.",
+        "lifeCycle": "",
+        "pestControl": "",
+        "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg102.jpg?alt=media&token=d2895a6b-2ab0-415d-85f1-7f49afb219a1"
+      }
+    ]
+  }
+  

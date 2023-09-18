@@ -71,3 +71,9 @@ class DetectionResultFailure extends Failure {
   @override
   List<Object?> get props => [errorMessage];
 }
+
+class InternalFailure extends Failure {
+  const InternalFailure({super.errorMessage = 'Error occour within app'});
+  @override
+  List<Object?> get props => [errorMessage];
+}

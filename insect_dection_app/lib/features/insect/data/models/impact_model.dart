@@ -2,16 +2,16 @@ import 'dart:convert';
 
 import 'package:insect_dection_app/features/insect/insect.dart';
 
-class ImpactsModel extends Impacts {
-  const ImpactsModel({
-    super.benefits,
-    super.harms,
+class ImpactModel extends Impact {
+  const ImpactModel({
+    super.benefits = '',
+    super.harms = '',
   });
-  Impacts copyWith({
+  Impact copyWith({
     String? benefits,
     String? harms,
   }) {
-    return Impacts(
+    return Impact(
       benefits: benefits ?? this.benefits,
       harms: harms ?? this.harms,
     );
@@ -30,27 +30,28 @@ class ImpactsModel extends Impacts {
         harms,
       ];
 
-  factory ImpactsModel.fromMap(Map<String, dynamic> map) {
-    return ImpactsModel(
-      benefits: map['benefits'] as String?,
-      harms: map['harms'] as String?,
-    );
+  factory ImpactModel.fromMap(Map<String, dynamic>? map) {
+    return map != null
+        ? ImpactModel(
+            benefits: map['benefits'] ?? '',
+            harms: map['harms'] ?? '',
+          )
+        : const ImpactModel();
   }
+  factory ImpactModel.fromJson(String source) =>
+      ImpactModel.fromMap(json.decode(source) as Map<String, dynamic>,);
 
+
+  factory ImpactModel.fromEntity(Impact entity) => ImpactModel(
+        benefits: entity.benefits,
+        harms: entity.harms,
+      );
   String toJson() => json.encode(toMap());
 
-  factory ImpactsModel.fromJson(String source) =>
-      ImpactsModel.fromMap(json.decode(source) as Map<String, dynamic>);
-
-  Impacts toEntity() {
-    return Impacts(
+  Impact toEntity() {
+    return Impact(
       benefits: benefits,
       harms: harms,
     );
   }
-
-  factory ImpactsModel.fromEntity(Impacts entity) => ImpactsModel(
-        benefits: entity.benefits,
-        harms: entity.harms,
-      );
 }

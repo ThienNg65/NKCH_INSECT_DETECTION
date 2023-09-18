@@ -4,24 +4,26 @@ import 'package:insect_dection_app/features/insect/insect.dart';
 
 class TaxonomyModel extends Taxonomy {
   const TaxonomyModel({
-    required super.species,
-    required super.genus,
-    required super.family,
-    required super.order,
-    required super.classic,
-    required super.phylum,
-    required super.regnum,
+    super.species = '',
+    super.genus = '',
+    super.family = '',
+    super.order = '',
+    super.classical = '',
+    super.phylum = 'Arthropoda',
+    super.regnum = 'Animalia',
   });
-  factory TaxonomyModel.fromMap(Map<String, dynamic> map) {
-    return TaxonomyModel(
-      species: map['species'] as String?,
-      genus: map['genus'] as String?,
-      family: map['family'] as String?,
-      order: map['order'] as String?,
-      classic: map['classic'] as String?,
-      phylum: map['phylum'] as String?,
-      regnum: map['regnum'] as String?,
-    );
+  factory TaxonomyModel.fromMap(Map<String, dynamic>? map) {
+    return map != null
+        ? TaxonomyModel(
+            species: map['species'] ?? '',
+            genus: map['genus'] ?? '',
+            family: map['family'] ?? '',
+            order: map['order'] ?? '',
+            classical: map['class'] ?? ' ',
+            phylum: map['phylum'] ?? 'Arthropoda',
+            regnum: map['regnum'] ?? 'Animalia',
+          )
+        : const TaxonomyModel();
   }
 
   String toJson() => json.encode(toMap());
@@ -35,7 +37,7 @@ class TaxonomyModel extends Taxonomy {
       'genus': genus,
       'family': family,
       'order': order,
-      'classic': classic,
+      'class': classical,
       'phylum': phylum,
       'regnum': regnum,
     };
@@ -46,7 +48,7 @@ class TaxonomyModel extends Taxonomy {
         genus: genus,
         family: family,
         order: order,
-        classic: classic,
+        classical: classical,
         phylum: phylum,
         regnum: regnum,
       );
@@ -55,7 +57,7 @@ class TaxonomyModel extends Taxonomy {
         genus: entity.genus,
         family: entity.family,
         order: entity.order,
-        classic: entity.classic,
+        classical: entity.classical,
         phylum: entity.phylum,
         regnum: entity.regnum,
       );

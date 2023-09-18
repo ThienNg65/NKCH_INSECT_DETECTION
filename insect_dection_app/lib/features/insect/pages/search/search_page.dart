@@ -14,12 +14,7 @@ class SearchPage extends StatefulWidget {
     return MaterialPageRoute<SearchPage>(
       builder: (_) => MultiBlocProvider(
         providers: [
-          BlocProvider.value(
-            value: sl<SearchInsectBloc>.call()
-              ..add(
-                SearchInsectByKeyword(''),
-              ),
-          ),
+          BlocProvider.value(value: sl<SearchInsectBloc>.call()),
         ],
         child: const SearchPage(),
       ),
@@ -31,13 +26,27 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  void toggleInsectPage(Insect insects) {
+  void _toggleInsectPage(Insect insects) {
     Navigator.of(context).push(
       InsectPage.route(
         context,
         modelId: insects.modelId,
       ),
     );
+  }
+
+  void _toggleLoadMore() {
+    BlocProvider.of<SearchInsectBloc>(context).add(
+      LoadMoreLibraryInsectList(),
+    );
+  }
+
+  @override
+  void initState() {
+    BlocProvider.of<SearchInsectBloc>(context).add(
+      LoadInitalLibraryInsectList(),
+    );
+    super.initState();
   }
 
   @override
@@ -48,47 +57,61 @@ class _SearchPageState extends State<SearchPage> {
         title: Padding(
           padding: const EdgeInsets.all(10.0),
           child: CupertinoSearchTextField(
-            backgroundColor: Colors.grey[200],
-            // controller: _searchController,
-            onChanged: (value) => BlocProvider.of<SearchInsectBloc>(context)
-              ..add(
-                SearchInsectByKeyword(value),
-              ),
-          ),
+              backgroundColor: Colors.grey[200],
+              onChanged: (value) {
+                BlocProvider.of<SearchInsectBloc>(context).add(
+                  SearchInsectByKeyword(value),
+                );
+              }),
         ),
       ),
       drawer: const MyDrawer(),
-      body: _searchInsectBody(),
-    );
-  }
+      body: BlocBuilder<SearchInsectBloc, SearchInsectState>(
+        builder: (context, state) {
+          /// If the process is Loading then return loading wigget
+          if (state.getInsectByKeywordProcess is Loading ||
+              state.getLoadInsectListProcess is Loading) {
+            return const LoadingWigget();
+          }
 
-  Widget _searchInsectBody() {
-    return BlocBuilder<SearchInsectBloc, SearchInsectState>(
-      builder: (context, state) {
-        if (state.getInsectByKeywordProcess == const Loading()) {
-          return const LoadingWigget();
-        } else {
-          if (state.getInsectByKeywordProcess == const Success() &&
-              state.insectList.insects.isNotEmpty) {
-            final insects = state.insectList.insects;
+          /// If the process is succes then return the list view of insect
+          if (state.getInsectByKeywordProcess is Success ||
+              state.getLoadInsectListProcess is Success) {
+            /// Populate the list based on search mode or not
+            final insects = state.isKeywordSearch
+                ? state.searchResulList.insects
+                : state.insectList.insects;
+
+            /// Return the list view
             return ListView.builder(
-              itemCount: insects.length,
+              itemCount: insects.length + 1,
               itemBuilder: (context, index) {
-                final insect = insects[index];
-                return _insectSearchResultTile(insect, index);
+                if (index == insects.length) {
+                  if (state.isKeywordSearch == false) {
+                    return ListTile(
+                      title: const Center(child: Text("Show more")),
+                      onTap: () => _toggleLoadMore(),
+                    );
+                  } else {
+                    return Container();
+                  }
+                } else {
+                  final insect = insects[index];
+                  return _insectSearchResultTile(insect, index);
+                }
               },
             );
           } else {
             return const Text("Not found... ");
           }
-        }
-      },
+        },
+      ),
     );
   }
 
   Widget _insectSearchResultTile(Insect insect, int index) {
     return GestureDetector(
-      onTap: () => toggleInsectPage(insect),
+      onTap: () => _toggleInsectPage(insect),
       child: ListTile(
         key: Key(
           'searchPage_insectResult${insect.nomenclature.commonName}_$index',
@@ -100,7 +123,7 @@ class _SearchPageState extends State<SearchPage> {
           backgroundColor: Colors.black,
           radius: 35,
           backgroundImage:
-              insect.photoUrl.isEmpty ? NetworkImage(insect.photoUrl) : null,
+              insect.photoUrl.isNotEmpty ? NetworkImage(insect.photoUrl) : null,
         ),
         trailing: const Icon(Icons.arrow_forward),
       ),

@@ -7,7 +7,7 @@ class Insect extends Equatable {
   final String modelId;
   final Taxonomy taxonomy;
   final Nomenclature nomenclature;
-  final Impacts impacts;
+  final Impact impacts;
   final String origin;
   final String predators;
   final String photoUrl;
@@ -49,13 +49,13 @@ class Insect extends Equatable {
       modelId: '',
       taxonomy: Taxonomy.empty,
       nomenclature: Nomenclature.empty,
-      impacts: Impacts.empty);
+      impacts: Impact.empty);
 
   Insect copyWith({
     String? modelId,
     Taxonomy? taxonomy,
     Nomenclature? nomenclature,
-    Impacts? impacts,
+    Impact? impacts,
     String? origin,
     String? predators,
     String? photoUrl,

@@ -49,16 +49,11 @@ class _MyDrawerState extends State<MyDrawer> {
 
   // to the Bookmared page
   void goToBookmarkedPage() {
-    // pop menu drawer
-    final AuthUserInfo userInfo = BlocProvider.of<AuthBloc>(context).state.user;
     // go to the profile page
     Navigator.pop(context);
 
     Navigator.of(context).push(
-      BookmarkedInsectsPage.route(
-        context,
-        userBucketParams: UserBucketParams.fromAuthUserInfo(userInfo),
-      ),
+      BookmarkedInsectsPage.route(context),
     );
   }
 
@@ -85,7 +80,7 @@ class _MyDrawerState extends State<MyDrawer> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const MyBottomNavBar(),
+        builder: (context) => const HomePage(),
       ),
     );
   }

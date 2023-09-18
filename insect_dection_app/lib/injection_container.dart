@@ -100,6 +100,7 @@ void initInsectDetail() {
     () => SearchInsectBloc(
       getInitialInsectList: sl<GetInitialInsectList>(),
       getInsectByKeyword: sl<GetInsectByKeyword>(),
+      getMoreInsectList: sl<GetMoreInsectList>(),
     ),
   );
   sl.registerFactory<RecentlyDetectionBloc>(
@@ -181,6 +182,8 @@ void initInsectDetection() {
   sl.registerFactory<CamaraDetectionBloc>(
     () => CamaraDetectionBloc(
       getDetectionResult: sl<GetDetectionResult>.call(),
+      addRecentlySearchInsect: sl<AddRecentlySearchInsect>.call(),
+      getInsectByModelId: sl<GetInsectByModelId>.call(),
     ),
   );
 

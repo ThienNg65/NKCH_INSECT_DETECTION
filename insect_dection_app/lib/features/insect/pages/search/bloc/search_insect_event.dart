@@ -7,3 +7,15 @@ final class SearchInsectByKeyword extends SearchInsectEvent {
 
   SearchInsectByKeyword(this.keyword);
 }
+
+final class LoadMoreLibraryInsectList extends SearchInsectEvent {
+  LoadMoreLibraryInsectList();
+}
+
+final class LoadInitalLibraryInsectList extends SearchInsectEvent {
+  LoadInitalLibraryInsectList();
+}
+
+final class ResetSearchResult extends SearchInsectEvent {
+  ResetSearchResult();
+}

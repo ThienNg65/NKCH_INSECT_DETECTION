@@ -1,255 +1,266 @@
-[
+{
+  "insects": [
+    null,
     {
-        "modelId": 0,
-        "nomenclature": {
-            "commonName": "rice leaf roller",
-            "scientificName": "Marasmia exigua / Cnaphalocrocis medinalis",
-            "otherName": "It is also known as Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae"
-        },
-        "taxonomy": {
-            "species": "C. medinalis",
-            "genus": "Cnaphalococis",
-            "family": "Crambidae",
-            "order": "Lepidoptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Sâu cuốn lá gây hại ở giai đoạn sâu non. Một ấu trùng có thể ăn khoảng 25 cm vuông (4 in2) mô lá, chiếm chưa đến 40% lá lúa bình thường."
-        },
-        "predators": "",
-        "origin": "tìm thấy ở Đông Nam Á , bao gồm Hồng Kông , Sri Lanka , Đài Loan , Thái Lan và hầu hết Australia",
-        "identificationFeatures": "Ấu trùng thường có 5 tuổi, chiều dài cơ thể ấu trùng ở giai đoạn trưởng thành khoảng 15–18mm(19⁄32–23⁄32 in). Chúng có đầu màu nâu, ngực và bụng lúc đầu có màu xanh lục, sau chuyển sang màu xanh vàng và khi trưởng thành có màu đỏ nâu. Có hai đường màu đen hình xoắn ốc ở mép sau của đỉnh ngực trước và 8 vòng tròn nhỏ màu đen rõ rệt ở đầu ngực giữa và ngực sau, trong đó có sáu mép trước và hai mép sau.",
-        "lifeCycle": ""
+      "modelId": "0",
+      "nomenclature": {
+        "commonName": "Adristyrannus",
+        "scientificName": "Eudocima tyrannus",
+        "otherName": "Oriental Fruit-piercing Moth"
+      },
+      "taxonomy": {
+        "species": "E. tyranus",
+        "genus": "Eudocima",
+        "family": "Erebidae",
+        "order": "Lepidoptera",
+        "class": "Insecta"
+      },
+      "impact": {
+        "benefits": "",
+        "harms": "Nó làm hỏng các loại trái cây như cam quýt, táo, nho, loquat, xoài, lê, đào, mơ, mận, hồng và các loại cây khác. Những con trưởng thành chọc thủng vỏ bằng phần miệng sắc nhọn hình ống hút. Trên bề mặt quả có những lỗ kim, cùi mất nước, xốp, khi dùng ngón tay ấn vào có cảm giác mềm, phần bị hư hỏng bị đổi màu, trũng xuống, sau đó thối rữa và rụng đi. Nó thường gây hại bởi ong bắp cày và các côn trùng khác, chúng ăn quả thành những vỏ rỗng."
+      },
+      "predators": "",
+      "origin": "It is found in south-eastern Siberia, India, eastern China, the Philippines and Japan.",
+      "identificationFeatures": "Con trưởng thành: dài thân 35-38 mm, sải cánh 96-106 mm, đầu và ngực màu nâu, bụng màu mai. Ăng-ten dạng sợi. Lá chết ở cánh trước có màu nâu sẫm, màu hơi xanh, đỉnh rất nhọn, mép ngoài hình vòng cung và nghiêng, phần giữa mép sau lõm xuống, có một đường xiên màu nâu sẫm từ trên xuống. góc trên đến chỗ lõm của mép sau, đường bên trong màu nâu sẫm, có nhiều đốm nhỏ màu nâu sẫm, có sọc tròn màu xanh đậm ở gốc và giữa cánh. Cánh sau màu vàng mơ có đốm đen hình quả thận ở giữa. Đầu trước chạm đến gân M2, ở phần dưới có các đường màu đen hình sừng.\n Trứng: hình cầu dẹt, hình cầu từ 1 đến 1,1 mm, cao 0,85 đến 0,9 mm, mặt trên và dưới phẳng, màu trắng sữa.\n Ấu trùng: dài thân 57-71 mm, mặt trước nhọn, đốt bụng thứ 1 và thứ 2 thường cong, đốt bụng thứ 8 lồi lên, đốt bụng thứ 7-10 nối thành hình chóp. Đầu có màu nâu đỏ không có hoa văn. Thân màu nâu vàng hoặc nâu xám, các đường lưng, đường dưới lưng, đường van, đường dưới bụng và đường bụng đều màu nâu sẫm; trên mặt dưới lưng của đốt bụng thứ 2 và thứ 3 có một đốm hình mắt. phần giữa màu đen và một đốm trắng hình lưỡi liềm. Hoa văn màu trắng hơi vàng với các vòng tròn màu đen ở ngoại vi, trên mỗi đốt cơ thể có nhiều đường trắng không đều. Giữa đường dưới lưng và đường dưới bụng có một đốm trắng hình vuông không đều. đốt bụng thứ 6, trên có nhiều vòng và đốm màu nâu vàng. Mặt ngoài của ngực màu nâu sẫm, phần gốc nhạt hơn, có các đốm trắng ở mặt trong, bàn chân bụng màu nâu vàng, các móc ngón chân xếp thành một dãy ở giữa, cặp bàn chân bụng thứ nhất rất nhỏ, và các cặp bàn chân bụng thứ hai đến thứ tư và các móc ngón chân cái đều có hơn 40 móc. . Van có hình trứng dài và màu đen, van bụng thứ tám lớn hơn van bụng thứ bảy một chút.\n Nhộng: dài 31 đến 32 mm, màu nâu đỏ đến nâu sẫm. Giữa đầu có một mỏm hơi nhọn, mặt lưng và mặt bụng của phần đầu ngực có nhiều nếp gấp dày và đều, phần bụng sau nhẵn, có vết rạch nông và thưa.",
+      "lifeCycle": "Ở Hoàng Nham, Chiết Giang, có 2 đến 3 thế hệ mỗi năm và trưởng thành qua mùa đông. Côn trùng trưởng thành có thể được tìm thấy trên đồng ruộng từ tháng 3 đến tháng 11, nhưng thường xuyên hơn vào mùa thu. Thời điểm xuất hiện nhiều trứng ngoài tự nhiên là đầu tháng 6, tháng 8 và đầu tháng 9. Tuy nhiên, do tỷ lệ nở trứng thấp và tỷ lệ ấu trùng chết cao nên số lượng ấu trùng không lớn. Ở Quảng Đông, thời điểm sâu trưởng thành gây hại cây có múi là từ giữa tháng 8 đến tháng 12. Thiệt hại đối với quýt Ôn Châu chín sớm bắt đầu từ giữa tháng 8. Thiệt hại nghiêm trọng nhất là từ cuối tháng 8 đến đầu tháng 9. Thiệt hại đối với quýt Ôn Châu chín sớm, các giống cam ngọt chín bắt đầu từ giữa tháng 9, thiệt hại cao nhất xảy ra từ cuối tháng 9 đến cuối tháng 10. Con trưởng thành thường đẻ trứng ở mặt sau của lá, thường đẻ trứng vào nhau. Ấu trùng tuổi 1 có tập tính kéo tơ, khi đứng yên thường đậu trên mặt đất bằng 3 đôi chân bụng, toàn thân hình chữ “U” hoặc “?”. Các vật chủ ấu trùng được phát hiện bao gồm Cocculus orbiculatus, Akebia quinata, thông thoát mộc và Mahonia fortunei. Ruồi trưởng thành có tập tính nhẹ là lơ lửng, ban ngày ẩn nấp, khi trời tối mới bay vào vườn phá hại trái cây, thích chọn những trái khỏe mạnh để làm hại trái cây. Quả cam quýt sau khi bị hư hỏng sẽ xuất hiện những lỗ kim nhỏ có keo chảy ra, sau đó mở rộng thành những đốm nâu hình bầu dục sũng nước, chai sạn, cuối cùng toàn bộ quả sẽ thối rữa và có mùi như cặn.",
+      "pestControl": "1. Phòng trừ nông nghiệp: Quy hoạch vườn ươm hợp lý, khi xây dựng vườn ươm mới nên bố trí càng xa vườn cây càng tốt.\n 2. Biện pháp phòng trừ nhân tạo: Bắt và tiêu diệt con trưởng thành trong thời kỳ ấu trùng đẻ trứng và ấu trùng nở.\n 3. Diệt trừ các cây ký chủ như cây thân gỗ và cây thân ngắn xung quanh vườn ươm.\n 4. Bẫy và tiêu diệt côn trùng trưởng thành bằng ánh sáng.Trong thời kỳ côn trùng trưởng thành có tỷ lệ mắc cao, theo phototaxis của người trưởng thành, đèn ánh sáng đen hoặc đèn diệt côn trùng rung tần số được lắp đặt để bẫy và tiêu diệt.\n 5. Phòng trừ bằng hóa chất: Sau khi trưởng thành đẻ trứng và ấu trùng nở, tiến hành phun thuốc trừ sâu kịp thời để phòng trừ. Các tác nhân thường được sử dụng bao gồm 90% trichlorfon tinh thể 800-1.000 lần và cypermethrin cô đặc có thể nhũ hóa hiệu quả cao 4,5% 1.500 lần, hiệu quả kiểm soát có thể đạt hơn 95%.\n 6. Phòng trừ sinh học: Chú ý bảo vệ và tận dụng thiên địch.",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg88.jpg?alt=media&token=7cd5ceab-4953-427d-8723-7eec23725784"
     },
     {
-        "modelId": 1,
-        "nomenclature": {
-            "commonName": "rice leaf caterpillar",
-            "scientificName": "Cnaphalocrocis medinalis",
-            "otherName": "Rice leaf folder"
-        },
-        "taxonomy": {
-            "species": "",
-            "genus": "",
-            "family": "",
-            "order": "",
-            "class": ""
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": ""
-        },
-        "predators": "",
-        "origin": "",
-        "identificationFeatures": "",
-        "lifeCycle": ""
+      "modelId": "1",
+      "nomenclature": {
+        "commonName": "Aleurocanthus spiniferus",
+        "scientificName": "Aleurocanthus spiniferus",
+        "otherName": "Orange Spiny Whitefly"
+      },
+      "taxonomy": {
+        "species": "A. spiniferus",
+        "genus": "Aleurocanthus",
+        "family": "Aleyrodidae",
+        "order": "Hemiptera",
+        "class": "Insecta"
+      },
+      "impact": {
+        "benefits": "",
+        "harms": "A. spiniferus causes direct damage, as well as indirect damage to an infested plant.The direct damage includes the weakening of the infested trees due to the ingesting of sap. The second type of damage occurs when the whiteflies excrete honeydew on the leaf surfaces. This in turn promotes the development of sooty mold, which leaves numerous parts of the infested plant such as the leaves, fruit and branches covered with sooty mold. This interferes with photosynthesis, which as a results heavily diminishes overall plant quality.\n It has been observed that these pest of citrus plants have also attacked tea plants, such as Camellia sinensis found in Japan. However, researchers found that adult females of the citrus infesting population laid no eggs on the leaves of these tea plants, and only on citrus plants, thus demonstrating the exclusivity of each population."
+      },
+      "predators": "",
+      "origin": "The citrus spiny whitefly has spread to multiple continents including Asia, Africa, Australia, America, Pacific Islands and Italy.",
+      "identificationFeatures": "Egg: The egg is minute (0.2 x 0.1 mm), yellow, stalked, curved and marked with polygonal areas (Quaintance 1903, Quaintance and Baker 1917). The stalk is short and holds the egg in more or less upright position on leaf.\n \n Larva: The larva is elliptical or oval-shaped, brown to black and a short fringe of wax surrounds its body. As the orange spiny whitefly develops to the sessile nympal stage, the second instar is about 0.4 x 0.3 mm and has a distinctly crenulated marginal edge. Additionally, the second instar has short, acute incisions between the marginal wax tubes. Also, in the 2nd and 3rd instar stages, abdominal segments are more distinct than thoracic segments. The dorsal or upper side has a single row of eight abdominal and six thoracic strong, heavy spines on either side of the mid-dorsal line of the body.\n \n Pupa: The oval-shaped pupa or 4th instar is jet black, convex, approximately 1.23 mm long and 1.88 mm wide with strong, dark dorsal spines. The marginal wax tubes produce a compact, short, cottony fringe that occurs on the pupal margin. The pupal stage of orange spiny whitefly is very similar to another exotic whitefly that is currently established in Florida, Alerocanthus woglumi Ashby or citrus blackfly. The main field characteristic difference between orange spiny whitefly and citrus blackfly is that the white wax fringe that surrounds their pupal case margins is generally twice as large for the orange spiny whitefly.\n \n Adult: The adult orange spiny whitefly cannot be distinguished from citrus blackfly — both are a slate blue color. More information on citrus blackfly in Florida is available in Nguygen and Hamon (1998).",
+      "lifeCycle": "The eggs are typically laid near each other on a food plants, such as citrus plants, usually on a leaf. Whiteflies have six developmental stages: egg, crawler (1st instars), two sessile nymphal instars (2nd and 3rd instars), pupa (4th instar), and adult. In terms of identification within the Aleyrodidae family, the pupal stage (4th stage) displays the most diagnostic features of the closely related whiteflies.\n \n The initiation and duration of the life cycle, as well as the number of generations per year is highly dependent on the surrounding climate.A mild temperature along with high humidity provides an ideal environment for successful growth and development. Kuwana et al. (1927) were able to record about 4 generations per year, with as many as 7 generations that occurred under these ideal laboratory conditions.This study was also able to demonstrate the variability in the life cycle duration.",
+      "pestControl": "Biological control: Orange spiny whitefly outbreaks in other countries have been successfully brought under control through biological control. For example, the Japanese introduced parasitoids Prospaltella smithi Silv and a Cryptognatha sp. from China in 1925 and achieved satisfactory control by killing more than 74% of the population (Kuwana et al. 1927). In Guam, the use of Prospaltella smithi and Amitus hesperidium achieved 80 to 95% parasitism (Peterson 1955). However, it was noted that the biocontrol agent did not perform as well on rose and grapes, an observation reported in India.\n \n Classical biological control of A. spiniferus brought significant reduction within eight months of release of Encarsia cf. smithi (Hymenoptera: Aphelinidae) in the commercial orchards of southern Africa with a mean parasitism rate of about 72.9% parasitsm (Van den Berg et al. 1997). It was also shown to be cost-effective with a benefit ratio of 2.8 (Van den Berg 2000).\n \n Current established biological control options that are effective against citrus blackfly in Florida include Encarsi perplexa Huang & Polaszek and Amitus hesperidum Silvestri. Possibly these existing biological controls would also control orange spiny whitefly in Florida.\n \n In additional to biological controls, whiteflies in general can be controlled by sprays applied primarily for scale insects. A low concentration petroleum spray oils (0.25 to 0.5%) has been found to provide acceptable control in China on sweet orange (Citrus sinensis L.) and pummelo (Citrus grandis L.) (Rae et al. 2000). As with any control option, effects may vary with the growing region, host plant or variety, and oil formulation.\n \n Chemical control: In general, chemical control has not been shown to be effective on orange spiny whitefly or other whiteflies in crop systems.",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg83.jpg?alt=media&token=9d7b393a-b1ff-4ce5-b3c6-22dc536b4ecf"
     },
     {
-        "modelId": 2,
-        "nomenclature": {
-            "commonName": "paddy stem maggot",
-            "scientificName": "Scirpophaga incertulas",
-            "otherName": "Giòi đục lá lúa/yellow stem borer"
-        },
-        "taxonomy": {
-            "species": "S. incertulas",
-            "genus": "Scirpophaga",
-            "family": "Crambidae",
-            "order": "Lepidoptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Ấu trùng ăn Oryza sativa. Nó được coi là loài gây hại lúa chính trên khắp Ấn Độ, Sri Lanka cũng như ở nhiều vùng khác nhau của Nepal, và nó tàn phá mùa màng hàng năm. Chúng mang thân của cây chủ. "
-        },
-        "predators": "Các loài thuộc ba chi Telenomus, Tetrastichus và Trichogramma có tác dụng diệt trứng, ấu trùng và bướm trưởng thành rất hiệu quả.",
-        "origin": "It is found in Afghanistan, Nepal, north-eastern India, Sri Lanka, Bangladesh, Myanmar, Vietnam, Thailand, Malaysia, Singapore, Sumatra, Java, Borneo, Sumba, Sulawesi, the Philippines, Taiwan, China and Japan.",
-        "identificationFeatures": "Ấu trùng trưởng thành có màu vàng nhạt đến xanh vàng với đầu màu nâu và đạt chiều dài 20 mm. Nhộng diễn ra trong một cái kén lụa trắng.",
-        "lifeCycle": ""
+      "modelId": "100",
+      "nomenclature": {
+        "commonName": "wireworm ",
+        "scientificName": "Elateridae",
+        "otherName": "họ bổ cũi"
+      },
+      "taxonomy": {
+        "species": "",
+        "genus": "",
+        "family": "Elateridae",
+        "order": "Coleoptera",
+        "class": "Insecta"
+      },
+      "impact": { "benefits": "", "harms": "" },
+      "predators": "",
+      "origin": "",
+      "identificationFeatures": "",
+      "lifeCycle": "",
+      "pestControl": "",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg17.jpg?alt=media&token=44f91b14-8af3-4833-b969-a579dc109931"
     },
     {
-        "modelId": 3,
-        "nomenclature": {
-            "commonName": "asiatic rice borer",
-            "scientificName": "Chilo suppressalis",
-            "otherName": "Striped rice stemborer/  \nSâu đục thân lúa châu Á hoặc sâu đục thân 5 vạch đầu nâu"
-        },
-        "taxonomy": {
-            "species": "C. suppressalis",
-            "genus": "Chilo",
-            "family": "Crambidae",
-            "order": "Lepidoptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Đây là loài sâu hại lúa nghiêm trọng. Chúng chịu trách nhiệm chính cho sự sụt giảm lớn trong việc trồng lúa ở Đông Á, Ấn Độ và Indonesia. "
-        },
-        "predators": "",
-        "origin": "It is a widespread species, known from Iran,[2] India, Sri Lanka, China, eastern Asia, Japan, Taiwan, Malaysia to the Pacific.",
-        "identificationFeatures": "Sải cánh dài 25 mm. Con cái lớn hơn con đực. Con trưởng thành có cánh trước màu vàng nạt, mỗi cánh có một hoặc nhiều hơn đốm đậm. Cánh sau màu trắng.\nẤu trùng ăn Chaetochloa verticellata, Echinochloa crusgalli cruspavonis, Echinochloa stagnina, Eleusine indica, Panicum barbinode, Paspalum conjugatum và lúa. Chúng đục thân cây chủ. Ấu trùng màu vàng.",
-        "lifeCycle": "Sâu đục thân lúa là loài côn trùng đẻ trứng thành đám, dạng vảy, có màu trắng mờ đến vàng sẫm. Ấu trùng bắt đầu có màu trắng xám với đầu đen và dài khoảng 25 mm, chuyển sang màu vàng với 5 đường mờ. Chúng ăn nhiều loại cây khác nhau, bao gồm cả lúa và làm nhộng bên trong thân cây. Có hai quần thể liên quan đến gạo và Yến mạch nước, cho thấy sự khác biệt về mặt sinh học, nhưng phân tích di truyền cho thấy dòng gen giữa chúng."
+      "modelId": "101",
+      "nomenclature": {
+        "commonName": "yellow cutworm ",
+        "scientificName": "Agrotis segetum",
+        "otherName": "turnip moth"
+      },
+      "taxonomy": {
+        "species": "A. segetum",
+        "genus": "Argotis",
+        "family": "Noctuidae",
+        "order": "Lepidoptera",
+        "class": "Insecta"
+      },
+      "impact": { "benefits": "", "harms": "" },
+      "predators": "",
+      "origin": "phổ biến ở châu Âu và nó được tìm thấy ở châu Phi và khắp Âu Á ngoại trừ các phần cực bắc",
+      "identificationFeatures": "Đặc điểm hình thái:\n- The paler forms have three dark-bordered stigmata on each fore-wing. Antennae of male bipectinated (comb like on both sides) with moderate length branches. The main feature distinguishing it from other Agrotis species is the shade of the hind-wings, pure white in the males and pearly grey in the females. The wingspan is 32–42 mm\n",
+      "lifeCycle": "",
+      "pestControl": "",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg21.jpg?alt=media&token=851fdcb5-9857-4376-bd7c-715f88dc2d26"
     },
     {
-        "modelId": 4,
-        "nomenclature": {
-            "commonName": "yellow rice borer",
-            "scientificName": "Scirpophaga incertulas",
-            "otherName": "Bướm hai chấm. Giai đoạn ngày của nó được gọi là Sâu đục thân hai chấm là một loài bướm đêm trong họ Crambidae."
-        },
-        "taxonomy": {
-            "species": "S. incertulas",
-            "genus": "Scirpophaga",
-            "family": "Crambidae",
-            "order": "Lepidoptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Sâu non xâm nhập vào bẹ lá vào thân cắt đứt đường vận chuyển dinh dưỡng làm dảnh vô hiệu và bông bạc, ảnh hưởng đến cây lúa và năng suất lúa. Nhộng làm ổ bên trong thân lúa và bướm vũ hóa từ đấy.\n\nSâu đục thân bướm hai chấm thường phát sinh gây hại nặng ở vụ lúa xuân muộn và mùa chính vụ. Các tỉnh Miền Nam và Miền Trung gây hại ở tất cả các vụ lúa, còn các tỉnh Miền Bắc thi những năm mùa đông rét đậm kéo dài, vụ mùa khô hạn thì thường phát sinh nặng. Sâu phân bố khắp các vùng trồng lúa trong nước và trên thế giới."
-        },
-        "predators": "",
-        "origin": "Nó được tìm thấy ở Afghanistan, Nepal, đông bắc Ấn Độ, Sri Lanka, Bangladesh, Burma, Việt Nam, Thái Lan, Malaysia, Singapore, Sumatra, Java, Borneo, Sumba, Sulawesi, Philippines, Đài Loan, Trung Quốc và Nhật Bản.",
-        "identificationFeatures": "Đặc điểm hình thái:\n\n- Trứng hình đẻ thành ổ hình bầu dục, trên mặt phủ lớp lông màu vàng nhạt, ở giữa nhô lên. Mới đẻ trứng có màu trắng, sau chuyển ngà vàng, sắp nở màu đen.\n\n- Sâu non đẫy sức màu trắng sữa, đầu màu nâu vàng. Chân bụng ít phát triển, móc bàn chân bụng có 28 cái xếp thành hình elip.\n\n- Nhộng: con cái có chân sau dài hết đốt bụng 5, còn con đực có chân sau dài tới đốt bụng 8. Nhộng mới hóa có màu trắng sữa, sau chuyển màu vàng nhạt.\n\n- Con trưởng thành:\n\n+ Ngài đực có đầu ngực và cánh trước màu nâu vàng nhạt hình tam giác; giữa cánh có một chấm đen; từ đỉnh cánh đến mép sau có một vệt xiên màu nâu đen, mép ngoài cánh có 9 chấm đen nhỏ; mắt kép, to đen.\n\n+ Ngài cái có thân màu trắng vàng hoặc vàng nhạt, cuối bụng có chùm lông màu vàng nhạt, giữa cánh trước có một chấm đen.",
-        "lifeCycle": "Đặc điểm sinh học, sinh thái và gây hại:\n\nVòng đời của sâu đục thân bướm 2 chấm từ 54-66 ngày. Nhiệt độ từ 19-25 độ C có:\n\n+ Thời gian trứng: 8-13 ngày.\n\n+ Thời gian sâu non: 36-39 ngày.\n\n+ Thời gian nhộng: 12-16 ngày.\n\n+ Thời gian ngài vũ hóa đến đẻ trứng: 3 ngày.\n\nNgài của sâu đục thân bướm 2 chấm có tính hướng sáng mạnh, vũ hóa về đêm và sau đó giao phối ngay trong đêm đó và đêm sau có thể đẻ trứng, ban ngày ẩn nấp, bị khua động thì bay sang cây khác. Ngài cái hoạt động mạnh từ 19-20 h, ngài đực từ 23-1 h sáng. Mỗi ngài cái đẻ từ 1-5 ổ trứng (có 100-150 quả trứng/ổ). Một năm sâu đục thân bướm 2 chấm phát sinh 6-7 lứa. Điều kiện nhiệt độ ấm nóng và ẩm độ cao thích hợp cho sâu phát sinh gây hại."
+      "modelId": "10",
+      "nomenclature": {
+        "commonName": "Cicadella viridis",
+        "scientificName": "Cicadella viridis",
+        "otherName": ""
+      },
+      "taxonomy": {
+        "species": "Cicadella viridis",
+        "genus": "Cicadella",
+        "family": "Cicadellidae",
+        "order": "Hemiptera",
+        "class": "Insecta"
+      },
+      "impact": { "benefits": "", "harms": "" },
+      "predators": "Spiders (Parasteatoda tepidariorum, Dolomedes fimbriatus, Tetragnatha extensa). Possible parasites are several Dryinidae species. Moreover several parasitoids of the family Mymaridae (Anagrus species) lay their eggs in eggs of these leafhoppers.",
+      "origin": "Europe, in eastern Palearctic realm, in the Near East, in the Nearctic realm, and in the Indomalayan realm.",
+      "identificationFeatures": "The adult males of Cicadella viridis can reach a length of 5.7–7 millimetres (0.22–0.28 in), but the females are quite larger than the males, reaching 7.5–9 millimetres (0.30–0.35 in).\nTheir pronotum and scutellum are green and yellow. The front head is pale yellow, with two black spots near the compound eyes. The forewings are turquoise green in the females, blue or dark bluish in males (sexual dimorphism). The abdomen is bluish-black.",
+      "lifeCycle": "Cicadella viridis may have one or more generations per year. In the colder parts of Europe, there is one generation per year, in the warmer parts two, and in some regions even three generations. In the temperate climate of Europe, females lay eggs in late August - early November. This species overwinters in the egg stage. Nymphs appear in the spring. The transformation of nymphs into adults occurs in June or in July. Adult leafhoppers can mostly be encountered from July through October.",
+      "pestControl": "",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg70.jpg?alt=media&token=2e650d0b-407e-49c4-829e-e839d2a4a3a4"
     },
     {
-        "modelId": 5,
-        "nomenclature": {
-            "commonName": "rice gall midge ",
-            "scientificName": "Orseolia oryzae.",
-            "otherName": "Sâu năn hay muỗi hành "
-        },
-        "taxonomy": {
-            "species": "O. oryzae",
-            "genus": "Orseolia",
-            "family": "Cecidomyiidae",
-            "order": "Diptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Triệu chứng gây hại:\n- Ấu trùng mới xâm nhập vào điểm sinh trưởng làm cho gốc dảnh lúa tròn và to lên. Ấu trùng ăn tại điểm sinh trưởng làm cho đọt lúa phát triển thành ống như lá hành, có màu xanh nhạt, phía đầu ống tròn được bịt kín bắng một nút cứng do mô lá tạo thành. Ống tròn có thể dài bằng lá dễ nhận hoặc rất ngắn khó phát hiện.\n\n- Dảnh lúa bị biến thành ống hành sẽ không trỗ bông được nhưng có thể mọc thêm chồi mới để bù lại. Nếu bị nhiễm sớm khả năng đền bù cao, ít thiệt hại. Sâu chỉ gây hại lúa ở giai đoạn trước khi có đòng."
-        },
-        "predators": "Sâu năn có nhiều loại thiên địch, nhất là loài ong ký sinh trên sâu non. ",
-        "origin": "",
-        "identificationFeatures": "- Trưởng thành là loài muỗi nhỏ, dài khoảng 3 - 5mm, bụng màu hồng nhạt.\n\n- Trứng đẻ rãi rác từng quả , rất nhỏ, màu trắng, trước khi nở có màu vàng.\n\n- Ấu trùng giống như con dòi, mình dẹt, màu trắng sữa, dài 4-5mm.\n\n- Nhộng màu hồng, dài 4-5mm, nằm trong ống hành.",
-        "lifeCycle": "* Vòng đời: 25-30 ngày\n\n- Trứng: 3-4 ngày\n\n- Sâu non: 15-18 ngày\n\n- Nhộng: 4-5 ngày\n\n- Trưởng thành: 2-3 ngày\n\n* Đặc điểm sinh thái và gây hại\nMuỗi hoạt động về đêm, có xu tính rất mạnh với ánh sáng. Sức bay yếu nên sự phân bố thường có tính khu vực. Trứng đẻ riêng lẻ hoặc từng nhóm 3-4 cái ở phía dưới mặt lá gần gốc lúa. Mỗi con cái đẻ hàng trăm trừng. Trứng cần có ẩm độ cao (trên 80%) để phát triển và nở.\n\nẤu trùng mới nở có một thời gian ngắn khoảng 1-2 ngày sống trong nước, nếu không có nước trong vòng 24giờ ấu trùng sẽ chết, sau đó chui qua bẹ lá đục vào điểm sinh trưởng làm cho lá lúa mới mọc cuốn lại như lá hành, ấu trùng sống trong đó. Khi sắp hoá nhộng ấu trùng bò lên ngọn lá hành đục một lỗ nhỏ nằm ở đó và hoá muỗi.\n\nSâu năn phát triển thích hợp trong điều kiện thời tiết tương đối ẩm, có mưa và trời ít nắng. Thường phát sinh cục bộ trên một cánh đồng hoặc một vùng hẹp do khả năng di chuyển yếu của muỗi."
+      "modelId": "11",
+      "nomenclature": {
+        "commonName": "Cicadellidae",
+        "scientificName": "Cicadellidae",
+        "otherName": "chicharritas hoặc saltahojas"
+      },
+      "taxonomy": {
+        "species": "",
+        "genus": "",
+        "family": "",
+        "order": "Hemiptera",
+        "class": "Insecta"
+      },
+      "impact": { "benefits": "", "harms": "" },
+      "predators": "",
+      "origin": "Cicadellidae là một trong những họ lớn nhất của Hemiptera. Chúng được tìm thấy trên hầu hết tất cả các loại cây; tuy nhiên, từng loài lại có sự kết hợp chủ cụ thể. Chúng được biết đến với tên gọi phổ biến là “hoppers”, là những loài côn trùng nhỏ, ăn cây, hút mật cây từ cỏ, cây bụi hoặc cây cối",
+      "identificationFeatures": "Chân sau của chúng được biến đổi để nhảy, và được phủ đầy lông giúp lan truyền một chất tiết ra khỏi cơ thể của chúng, hoạt động như một chất chống nước và mang theo pheromones. Chúng trải qua một quá trình biến đổi một phần, và có các mối quan hệ với chủ khác nhau, từ rất tổng quát đến rất cụ thể.",
+      "lifeCycle": "",
+      "pestControl": "",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg102.jpg?alt=media&token=d2895a6b-2ab0-415d-85f1-7f49afb219a1"
+    },
+
+    {
+      "modelId": "12",
+      "nomenclature": {
+        "commonName": "Colomerus vitis",
+        "scientificName": "Colomerus vitis",
+        "otherName": "Ve phồng giộp nho"
+      },
+      "taxonomy": {
+        "species": "Colomerus vitis",
+        "genus": "Colomerus",
+        "family": "Eriophyidae",
+        "order": "Acarida",
+        "class": "Arachnida"
+      },
+      "impact": {
+        "benefits": "",
+        "harms": "This pest causes different forms of damage to the grape, believed to be due to different mite races. Feeding on the lower leaf surfaces induces the appearance of white-grey patches, made up of unicellular hairs (erineum) that grow out of depressions between the veins, and corresponding blisters that bulge out of the upper leaf sides. The patches later become brownish and may cover the entire leaf, leading to its premature drop. Such leaf damage is of economic importance only in nurseries, as it may retard plant growth."
+      },
+      "predators": "",
+      "origin": "Worldwide",
+      "identificationFeatures": "The body of the grape erineum mite is yellowish, about 0.18 mm in length, cylindrical, with a similar number (ca 70) of dorsal and ventral opisthosoma rings. The prodorsum bears a pair of forward-pointing setae and several weak, longitudinal ridges along its entire length. The featherclaw is five-rayed.",
+      "lifeCycle": "The mite lives on the lower side of grape leaves and in the buds, overwintering there and in bark crevices. Reproduction continues in winter, provided temperatures do not drop below 15°C. In the spring the mites move onto leaves as soon as they unfold and feed there, forming large colonies within the protective erineum. They may also be carried on the growing shoot from the bud, settling first in the basal buds, their numbers gradually diminishing in the more distant buds. Dispersal between plants is by winds, insects and especially by transferring propagation canes from infested stock to new areas. A life cycle is completed in about a fortnight, and 15-20 annual generations may be raised",
+      "pestControl": "Acaricides in common usage applied in the spring (the only season when the pest is exposed), along with the pruning regime, may reduce injury. However, as damage is dependent on individual growth pattern, control decisions should individually be made for each variety, as well as according to the perceived damage - if any.",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg61.jpg?alt=media&token=e650659d-7d3f-44ec-9203-b12f54194105"
     },
     {
-        "modelId": 6,
-        "nomenclature": {
-            "commonName": "Rice Stemfly",
-            "scientificName": "Pachydiplosis oryzae",
-            "otherName": "Đây là loài gây hại chính trên lúa ở nhiều vùng khác nhau của Ấn Độ và thường được gọi là “Kharika hoặc Kane”."
-        },
-        "taxonomy": {
-            "species": "Oryzae",
-            "genus": "Pachydiplosis",
-            "family": "Cecidomyidae",
-            "order": "Diptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Nature of Damage:\nThe maggote enters into the plant tissues and stimulates the formation of hollow tubular out growth called, “Silver Shoots”. Such tillers do not produce grain and the affected plant ultimately dies. Sometimes abnormal growth of the infected plant has been observed which may be due to the irritation caused to the plant by the developing maggots inside the stem. The loss done to the crop by this pest varies between 10-15 %."
-        },
-        "predators": "Introduction of hyperparasites such as Platygaster oryzae (Can,) Polygnotus spp, Neanastatus grallarius (Mast.), Proleptacis oryzae, Telenomus Israelis etc., proves to be highly effective in controlling this pest.",
-        "origin": "",
-        "identificationFeatures": "Dấu hiệu nhận dạng: \n\nCon trưởng thành là một con muỗi mỏng manh như ruồi, dài 1/4 inch và có thân hình mảnh khảnh với đôi chân dài. Con dòi có màu hơi hồng.",
-        "lifeCycle": "Life Cycle:\nThe elongated pinkish eggs are laid at the base of the paddy leaves either singly or in clusters. The maximum number of eggs laid by a female is 200. The larva hatches in about 4-5 days. It crawls between the leave sheath and try to reach the apical point or the growing point. After that it starts feeding. As a result of continuous feeding and irritation, an oval chamber is formed around the maggot. These chambers grow out as elongated, cylindrical gall known as the “Silver Shoots”.\n\nThe larval period lasts for 5-15 days, depending upon the climatic conditions. The full grown larva is about 3 mm in length and pale red in colour. After the formation of the gall the larva pupates inside it. After 5-8 days of pupation, the adult fly emerges out from the gall. The whole life cycle is completed in about 2- 3 weeks. The tillering stage of the paddy crop is most susceptible to the attacked by this pest."
+      "modelId": "13",
+      "nomenclature": {
+        "commonName": "Dacus dorsalis(Hendel)",
+        "scientificName": "Dacus dorsalis(Hendel)",
+        "otherName": "Oriental Fruit Fly"
+      },
+      "taxonomy": {
+        "species": "B. dorsalis",
+        "genus": "Bactrocera",
+        "family": "Tephritidae",
+        "order": "Diptera",
+        "class": "Insecta"
+      },
+      "impact": {
+        "benefits": "",
+        "harms": "Loài này hiện diện khắp các vùng cây ăn trái ở Đông Nam Á, trong đó có Việt Nam. Ngoài xoài chúng còn tấn công trên cam, chanh, quít, ổi, mít, nhãn."
+      },
+      "predators": "",
+      "origin": "Đông Nam Á",
+      "identificationFeatures": "B. dorsalis is a species of tephritid fruit fly. Flies that belong to this family are usually small to medium-sized with colorful markings. In particular, B. dorsalis belongs to a complex of physically similar flies called the Bactrocera dorsalis complex, whose defining characteristics include a mostly black thorax and dark T-shaped marking on the fly's abdominal segment. The T-shape marking consists of a dark medial and transverse band along the fly's abdomen.\n \n The B. dorsalis species has distinctive yellow and black markings on its thorax and abdomen, which may vary between flies. Two vertical yellow markings on the thorax and the dark T-shaped marking on the abdomen differentiate this species of fly from its close relatives. The wings are clear with a continuous costal band. The adult body is around 8.0 mm in length, with wings approximately 7.3 mm in length. The female adult has a tapered ovipositor for depositing eggs in host fruits, while in male adults this ovipositor is notably absent.",
+      "lifeCycle": "Ruồi cái dùng ống đẻ trứng chọc thủng vỏ trái cây và đẻ trứng vào chỗ tiếp giáp giữa vỏ và thịt, trứng được đẻ thành từng chùm trong một lỗ khoét trên trái. Dòi non nở ra đục ăn thịt trái cây, tuổi càng lớn dòi càng đục sâu vào phía trong trái làm trái bị thúi và hư. Ngay sau khi dòi nở ra, tại miệng lỗ chọc ở vỏ trái bắt đầu ứa nước. Triệu chứng này càng về sau càng rõ rệt. Lúc này mép của miệng lỗ chọc hơi nhô cao, tiếp đến là phần vỏ chung quanh lổ bị thúi. Khi lớn đủ sức, nếu trái rụng dòi sẽ di chuyển xuống đất làm nhộng, nếu trái không rụng dòi cũng búng mình cho rơi xuống đất để hóa nhộng. Dòi làm nhộng dưới đất sâu khoảng 3-7 cm.",
+      "pestControl": "Nhặt và tiêu hủy tất cả trái bị hư rụng xuống đất, vì đây là nơi trú ẩn của dòi.\n Sử dụng bao trái.\n Sử dụng chất dẫn dụ như thuộc loại sex pheromone để quấy rối sự bắt cặp\n hay chất protein thuỷ phân để thu hút con cái.\n Phun thuốc BVTV có hoạt chất Pyriproxyfen, Abamectin, Cyromazine khi ruồi mới đẻ trứng hay giòi mới nở",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg85.jpg?alt=media&token=89f4750b-a915-4ce7-a7f7-2e45f4917848"
     },
     {
-        "modelId": 7,
-        "nomenclature": {
-            "commonName": "brown plant hopper",
-            "scientificName": "Nilaparvata lugens",
-            "otherName": "Rầy nâu, là một loại côn trùng ăn cây lúa. Có nhiều đợt bùng phát rầy nâu ở Đông Nam Á vào thập niên 1980, 2005-2008, và dự kiến còn có các đợt bùng phát khác nữa."
-        },
-        "taxonomy": {
-            "species": "N. lugens",
-            "genus": "Nilaparvata",
-            "family": "Delphacidae",
-            "order": "Homoptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "lúa bị rầy nâu gây hại sẽ trở nên yếu ớt hơn, tạo điều kiện cho nấm, virus gây bệnh xâm nhập và phát triển. Điều này khiến cây lúa bị thối nhũn, đổ rạp và có nguy cơ lây lan dịch bệnh ra cả cánh đồng nếu như không có biện pháp phòng trừ kịp thời. \n\nMột năm rầy nâu phát sinh từ 6 - 7 lứa, trong đó có 2 lứa cần chú ý theo dõi và phòng trừ là lứa rầy phá hoại vào tháng 4, tháng 5 (lúa vụ xuân) và tháng 8, tháng 9 (lúa vụ mùa)."
-        },
-        "predators": "Theo Thư viện Bộ Nông nghiệp và Phát triển nông thôn (thuvien.mard.gov.vn), để hoạt động phòng chống rầy nâu thêm hiệu quả, quý khách cần chú ý đến việc bảo vệ và tăng cường hoạt động của các thiên địch của rầy nâu như: nhện ăn thịt (Lycosa pseudoannulata), nhện lùn (Atypena formosana), bọ rùa, gọng vó (Limnogonus fossarum),... Các thiên địch này sẽ giúp quý khách tiêu diệt rầy nâu thay vì phải dùng thuốc hóa học, nhất là trong giai đoạn đầu phát triển của cây lúa. ",
-        "origin": "",
-        "identificationFeatures": "Đặc điểm hình thái\nTrứng: Ổ trứng từ 5 - 12 quả nằm sát nhau. Trứng mới đẻ có màu trong suốt, khi sắp nở sẽ chuyển thành màu vàng và có hai chấm đỏ.\nRầy non:Thân tròn, lúc mới nở có màu xám trắng, khi trưởng thành có màu nâu vàng.\nRầy nâu trưởng thành:Có 2 dạng cánh là cánh dài và cánh ngắn. Con đực nhỏ hơn con cái.\n ",
-        "lifeCycle": "Vòng đời của rầy nâu từ 25-30 ngày và thay đổi theo mùa, thời gian trứng 5-14 ngày, rầy non: 12-32 ngày; rầy trưởng thành: 3-20 ngày."
+      "modelId": "14",
+      "nomenclature": {
+        "commonName": "Dasineura sp",
+        "scientificName": "Dasineura sp",
+        "otherName": "Bọ phấn trắng, rệp sáp trắng"
+      },
+      "taxonomy": {
+        "species": "Dasineura",
+        "genus": "Dasineura",
+        "family": "Cecidomyiidae (Bọ phấn)",
+        "order": "Diptera (Cánh hai cánh)",
+        "class": "Insecta"
+      },
+      "impact": {
+        "benefits": "",
+        "harms": "Bọ phấn trắng là loài gây hại cho cây trồng, đặc biệt là các loại cây ăn lá như rau xanh, cây ăn quả. Sâu non của bọ phấn trắng ăn lá của cây chủ, gây hại cho cây, làm giảm năng suất và chất lượng nông sản."
+      },
+      "predators": "Các loài ong ký sinh, bọ cánh cứng, nhện",
+      "origin": "Trên toàn thế giới",
+      "identificationFeatures": "Bọ phấn trắng có kích thước nhỏ, khoảng 1-2 mm. Bọ trưởng thành có màu trắng, với cánh trong suốt. Bọ phấn trắng đẻ trứng vào lá của cây chủ. Sâu non của bọ phấn trắng ăn lá của cây chủ, gây hại cho cây.",
+      "lifeCycle": "",
+      "pestControl": "Để phòng trừ bọ phấn trắng, cần thực hiện các biện pháp sau: Trồng cây khỏe mạnh, có khả năng chống chịu sâu bệnh. Sử dụng các loại thuốc trừ sâu sinh học. Thu hoạch lá bị hại và tiêu hủy.",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg94.jpg?alt=media&token=c62d8ef1-1d9a-4ae7-a051-3745a7a06d03"
     },
     {
-        "modelId": 8,
-        "nomenclature": {
-            "commonName": "white backed plant hopper ",
-            "scientificName": "Sogatella furcifera",
-            "otherName": "Rầy lưng trắng"
-        },
-        "taxonomy": {
-            "species": "S. furcifera",
-            "genus": "Sogatella",
-            "family": "Delphacidae",
-            "order": "Hemiptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Lan truyền Virus lùn sọc đen, thường hại nặng trên các giống lúa nhiễm rầy, lúa lai, thâm canh cao, bón nhiều đạm, ruộng lúa cấy dày, rậm rạp, gây hại nặng vào giai đoạn lúa làm đòng."
-        },
-        "predators": "",
-        "origin": "",
-        "identificationFeatures": "Đặc điểm hình thái:\n- Trứng: dạng quả chuối tiêu như trứng rầy nâu nhưng nhỏ, dài và nhọn hơn. Rầy đẻ trứng thành từng ổ theo chiều dọc, chìm trong bẹ hoặc gân chính của lá, mỗi ổ 2-7 quả.\n- Rầy non: mới nở có màu trắng đục, đến tuổi 3 xuất hiện các vệt vằn trên lưng.\n- Rầy trưởng thành: có màu đen nâu với một dải trắng trên mảnh lưng giữa, cơ thể màu trắng kem, bụng màu đen. Con cái có hai dạng: cánh dài và cánh ngắn; Con đực có một dạng hình cánh dài.\n\n",
-        "lifeCycle": "Vòng đời của rầy ngắn, từ 26-30 ngày, thời gian trứng từ 6-8 ngày, rầy non: 12-14 ngày, rầy trưởng thành: 14-16 ngày."
+      "modelId": "15",
+      "nomenclature": {
+        "commonName": "Deporaus marginatus Pascoe",
+        "scientificName": "Deporaus marginatus Pascoe",
+        "otherName": "bọ cắt lá, bọ cánh cứng cắt lá"
+      },
+      "taxonomy": {
+        "species": "Deporaus marginatus",
+        "genus": "Deporaus",
+        "family": "Curculionidae (Bọ vòi voi)",
+        "order": "Coleoptera ",
+        "class": "Insecta"
+      },
+      "impact": {
+        "benefits": "",
+        "harms": "Bọ cắt lá là loài gây hại cho cây trồng, đặc biệt là các loại cây ăn lá như rau xanh, cây ăn quả. Sâu non của bọ cắt lá ăn lá của cây chủ, gây hại cho cây, làm giảm năng suất và chất lượng nông sản."
+      },
+      "predators": "Các loài bọ cánh cứng, bọ nhện, chim, ếch, nhái",
+      "origin": "Châu Á, Châu Phi, Châu Mỹ",
+      "identificationFeatures": "",
+      "lifeCycle": "",
+      "pestControl": "Để phòng trừ bọ cắt lá, cần thực hiện các biện pháp sau: Trồng cây khỏe mạnh, có khả năng chống chịu sâu bệnh. Sử dụng các loại thuốc trừ sâu sinh học. Thu hoạch lá bị hại và tiêu hủy.",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg97.jpg?alt=media&token=67901b83-70c9-4459-ab6e-148664f3e900"
     },
     {
-        "modelId": 9,
-        "nomenclature": {
-            "commonName": "small brown plant hopper ",
-            "scientificName": "Laodelphax striatellus",
-            "otherName": "Rầy nâu nhỏ"
-        },
-        "taxonomy": {
-            "species": "L. striatellus",
-            "genus": "Laodelphax",
-            "family": "Delphacidae",
-            "order": "Hemiptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Lan truyền Virus sọc lá lúa làm lúa bị úa lá, suy nhược, hoại tử và sinh trưởng còi cọc, gây thiệt hại nghiêm trọng trong sản xuất lúa gạo."
-        },
-        "predators": "",
-        "origin": "Á - Âu và Bắc Phi",
-        "identificationFeatures": "",
-        "lifeCycle": ""
-    },
-    {
-        "modelId": 10,
-        "nomenclature": {
-            "commonName": "rice water weevil ",
-            "scientificName": "Lissorhoptrus oryzophilus",
-            "otherName": "Mọt nước gây hại trên cây lúa, mọt vòi voi"
-        },
-        "taxonomy": {
-            "species": "L. oryzophilus",
-            "genus": "Lissorhoptus",
-            "family": "Curculionidae",
-            "order": "Coleoptera",
-            "class": "Insecta"
-        },
-        "impacts": {
-            "benefits": "",
-            "harms": "Mọt trưởng thành ăn mô lá, để lại vết xước dọc theo phiến lá, cắn đọt non, gây hiện tượng nõn cây bị héo, gãy nục; với sâu non sẽ gây hại dưới rễ lúa làm cho cây lúa còi cọc sinh trưởng chậm. Gây hại nặng là giai đoạn ấu trùng. Ấu trùng của mọt nước ở trong đất, tấn công rễ lúa."
-        },
-        "predators": "",
-        "origin": "Mỹ (1881), đến năm 1951 Kuschel phân đã loại đối tượng dịch hại này. Nhiều nơi trên thế giới nó như một dịch hại nguy hiểm và đã kháng thuốc, Ở Việt Nam chỉ mới xuất hiện trong một vài vụ lúa gần đây nhưng tác hại ghê gớm.",
-        "identificationFeatures": "Đặc điểm hình thái:\n- Chiều dài ấu trùng: hơn 1cm.\n- Trước khi từ ấu trùng hóa nhộng, ấu trùng nhả tơ tạo thành buồng nhộng hình bầu dục, che kín và nước không thể vào cũng như không khí không thể thoát ra.\n- Con trưởng thành: 3-4mm màu nâu nhạt, có các sợi lông kỵ nước trên chân nên chúng có thể bơi như một số loài thuộc bộ cánh cứng và bộ cánh nửa sống thủy sinh khác.",
-        "lifeCycle": "Thời gian trứng nở: 4-9 ngày, giai đoạn ấu trùng: 28-35 ngày (có thể kéo dài đến 50 ngày ở nhiệt độ 20 độ C).\n- Con trưởng thành đẻ trứng vào trong các bẹ lá nằm dưới mặt nước."
+      "modelId": "16",
+      "nomenclature": {
+        "commonName": "Erythroneura apicalis",
+        "scientificName": "Erythroneura bigemina",
+        "otherName": ""
+      },
+      "taxonomy": {
+        "species": "Erythroneura bigemina",
+        "genus": "Erythroneura",
+        "family": "Cicadellidae",
+        "order": "Hemiptera",
+        "class": "Insecta"
+      },
+      "impact": { "benefits": "", "harms": "" },
+      "predators": "",
+      "origin": "",
+      "identificationFeatures": "",
+      "lifeCycle": "",
+      "pestControl": "",
+      "photoUrl": "https://firebasestorage.googleapis.com/v0/b/nckh-insect.appspot.com/o/insects_img%2Fimg73.jpg?alt=media&token=0a72a5e4-a1ec-4992-9a05-1c078c235608"
     }
-]
+  ]
+}

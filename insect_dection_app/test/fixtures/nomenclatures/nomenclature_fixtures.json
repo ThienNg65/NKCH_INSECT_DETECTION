@@ -1,0 +1,27 @@
+{
+  "nomenclatures": [
+    {
+      "commonName": "yellow cutworm ",
+      "scientificName": "Agrotis segetum",
+      "otherName": "turnip moth"
+    },
+    null,
+    {
+      "commonName": "white margined moth ",
+      "scientificName": "",
+      "otherName": ""
+    },
+    {
+      "commonName": "white margined moth ",
+      "scientificName": null,
+      "otherName": null
+    },
+    {
+      "species": "Colomerus vitis",
+      "genus": "Colomerus",
+      "family": "Eriophyidae",
+      "order": "Acarida",
+      "class": "Arachnida"
+    }
+  ]
+}

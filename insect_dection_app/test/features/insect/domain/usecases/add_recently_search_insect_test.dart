@@ -31,7 +31,7 @@ void main() {
         genus: 'Cnaphalococis',
         family: 'Crambidae',
         order: 'Lepidoptera',
-        classic: 'Insecta',
+        classical: 'Insecta',
         phylum: 'Arthropoda',
         regnum: 'Animalia',
       ),
@@ -41,7 +41,7 @@ void main() {
             'Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae',
         scientificName: 'Marasmia exigua/Cnaphalocrocis medinalis',
       ),
-      impacts: Impacts(
+      impacts: Impact(
           harms: 'Harm,Feeds on rice leaves, causing damage to the crop'),
       origin: '',
       predators:
@@ -60,20 +60,24 @@ void main() {
   group('[Usecase]: Add  recently search insect into user profile', () {
     test('should get [Insect Entity] from repository', () async {
       // arrange
-      when(mockRepository.addRecentlySearchInsect(userBucketParams, insectParams))
+      when(mockRepository.addRecentlySearchInsect(
+              userBucketParams, insectParams))
           .thenAnswer((_) async => Right(insectEntity));
       // act
-      final result = await addRecentlySearchInsect(userBucketParams, insectParams);
+      final result =
+          await addRecentlySearchInsect(userBucketParams, insectParams);
       // assert
       verify(mockRepository.addRecentlySearchInsect(any, any));
       expect(result, equals(Right(insectEntity)));
     });
     test('should get [Failure] from repository', () async {
       // arrange
-      when(mockRepository.addRecentlySearchInsect(userBucketParams, insectParams))
+      when(mockRepository.addRecentlySearchInsect(
+              userBucketParams, insectParams))
           .thenAnswer((_) async => const Left(ServerFailure()));
       // act
-      final result = await addRecentlySearchInsect(userBucketParams, insectParams);
+      final result =
+          await addRecentlySearchInsect(userBucketParams, insectParams);
       // assert
       expect(result, equals(const Left(ServerFailure())));
     });
