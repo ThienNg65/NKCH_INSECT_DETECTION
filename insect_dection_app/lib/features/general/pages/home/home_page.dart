@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/core/uis/uis.dart';
 import 'package:insect_dection_app/features/features.dart';
 import 'package:insect_dection_app/injection_container.dart';
+import 'package:insect_dection_app/utils/MyNavBar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       // appBar: const CustomAppbar(),
       // drawer: const MyDrawer(),
+      // bottomNavigationBar: const MyNavBar(),
       backgroundColor: Colors.grey[300],
       body: Center(
         child: BlocProvider.value(
