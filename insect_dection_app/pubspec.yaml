@@ -1,11 +1,11 @@
 name: insect_dection_app
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ">=3.0.5 <4.0.0"
 dependencies:
   flutter:
     sdk: flutter
@@ -25,7 +25,7 @@ dependencies:
   image: ^4.0.17
   image_picker: ^1.0.2
   path: ^1.8.3
-  # Provides a flexible and fast solution for 
+  # Provides a flexible and fast solution for
   # accessing TensorFlow Lite interpreter and performing inference
   # TODO: current disable for dev
   tflite_flutter: ^0.10.1
@@ -59,7 +59,6 @@ dev_dependencies:
   very_good_analysis: ^5.1.0
 
 flutter:
-
   uses-material-design: true
 
   assets:

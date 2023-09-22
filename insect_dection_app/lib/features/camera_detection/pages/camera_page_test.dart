@@ -36,8 +36,14 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
   }
 
   @override
+  void didChangeDependencies() {
+    BlocProvider.of<CamaraDetectionBloc>(context);
+    super.didChangeDependencies();
+  }
+
+  @override
   void dispose() {
-    BlocProvider.of<CamaraDetectionBloc>(context).close();
+    // BlocProvider.of<CamaraDetectionBloc>(context).close();
     super.dispose();
   }
 
