@@ -11,9 +11,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: const CustomAppbar(),
-      // drawer: const MyDrawer(),
-      // bottomNavigationBar: const MyNavBar(),
       backgroundColor: Colors.grey[300],
       body: Center(
         child: BlocProvider.value(

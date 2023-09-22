@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/features/camera_detection/camera_detection.dart';
 import 'package:insect_dection_app/injection_container.dart';
+import 'package:insect_dection_app/utils/MyNavBar.dart';
+
+import '../../../core/uis/uis.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({super.key});

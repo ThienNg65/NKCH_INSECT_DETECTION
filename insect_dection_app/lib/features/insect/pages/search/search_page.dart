@@ -110,22 +110,26 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _insectSearchResultTile(Insect insect, int index) {
-    return GestureDetector(
-      onTap: () => _toggleInsectPage(insect),
-      child: ListTile(
-        key: Key(
-          'searchPage_insectResult${insect.nomenclature.commonName}_$index',
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () => _toggleInsectPage(insect),
+        child: ListTile(
+          key: Key(
+            'searchPage_insectResult${insect.nomenclature.commonName}_$index',
+          ),
+          title: Text(insect.nomenclature.commonName),
+          subtitle: Text(
+              '${insect.nomenclature.scientificName}  ${insect.nomenclature.otherName}'),
+          leading: CircleAvatar(
+            backgroundColor: Colors.black,
+            radius: 35,
+            backgroundImage: insect.photoUrl.isNotEmpty
+                ? NetworkImage(insect.photoUrl)
+                : null,
+          ),
+          trailing: const Icon(Icons.arrow_forward),
         ),
-        title: Text(insect.nomenclature.commonName),
-        subtitle: Text(
-            '${insect.nomenclature.scientificName}  ${insect.nomenclature.otherName}'),
-        leading: CircleAvatar(
-          backgroundColor: Colors.black,
-          radius: 35,
-          backgroundImage:
-              insect.photoUrl.isNotEmpty ? NetworkImage(insect.photoUrl) : null,
-        ),
-        trailing: const Icon(Icons.arrow_forward),
       ),
     );
   }

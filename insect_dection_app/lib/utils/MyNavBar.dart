@@ -18,6 +18,19 @@ class _MyNavBarState extends State<MyNavBar> {
     });
   }
 
+  void goToCameraPage() {
+    // pop menu drawer
+    Navigator.pop(context);
+
+    // go to the profile page
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const CameraPage(),
+      ),
+    );
+  }
+
   // pages to display
   final List<Widget> _pages = [
     //Home Page
@@ -43,7 +56,7 @@ class _MyNavBarState extends State<MyNavBar> {
       gap: 8,
       // onTabChange: (value) => widget.onTabChange!(value),
       onTabChange: (index) => navigateBottomBar(index),
-      tabs: const [
+      tabs: [
         GButton(
           icon: Icons.home,
           text: 'Home',
@@ -51,6 +64,9 @@ class _MyNavBarState extends State<MyNavBar> {
         GButton(
           icon: Icons.camera_alt_rounded,
           text: 'Camera',
+          // onPressed: () => {
+          //   goToCameraPage(),
+          // },
         ),
         GButton(
           icon: Icons.person,

@@ -80,7 +80,7 @@ class _MyDrawerState extends State<MyDrawer> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const HomePage(),
+        builder: (context) => const MyBottomNavBar(),
       ),
     );
   }
@@ -145,14 +145,14 @@ class _MyDrawerState extends State<MyDrawer> {
                 ),
               ),
 
-              Padding(
-                padding: const EdgeInsets.only(left: 25.0),
-                child: MyListTile(
-                  icon: Icons.camera_alt_outlined,
-                  text: 'Camera',
-                  onTap: goToCameraPage,
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(left: 25.0),
+              //   child: MyListTile(
+              //     icon: Icons.camera_alt_outlined,
+              //     text: 'Camera',
+              //     onTap: goToCameraPage,
+              //   ),
+              // ),
             ],
           ),
 
