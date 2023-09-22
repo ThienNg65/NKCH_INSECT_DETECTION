@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insect_dection_app/core/uis/uis.dart';
 import 'package:insect_dection_app/features/features.dart';
 import 'package:insect_dection_app/injection_container.dart';
 
@@ -9,6 +10,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: const CustomAppbar(),
+      // drawer: const MyDrawer(),
       backgroundColor: Colors.grey[300],
       body: Center(
         child: BlocProvider.value(

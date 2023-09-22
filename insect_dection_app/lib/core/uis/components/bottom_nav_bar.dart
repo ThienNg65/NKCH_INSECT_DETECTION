@@ -6,6 +6,7 @@ import 'package:insect_dection_app/features/features.dart';
 
 class MyBottomNavBar extends StatefulWidget {
   // void Function(int)? onTabChange;
+
   const MyBottomNavBar({super.key});
 
   @override
@@ -56,6 +57,9 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppbar(),
+      drawer: const MyDrawer(),
+      body: _pages[_selectIndex],
       backgroundColor: Colors.grey[300],
       bottomNavigationBar: GNav(
         tabMargin: const EdgeInsets.symmetric(vertical: 20),
@@ -83,9 +87,6 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           )
         ],
       ),
-      appBar: const CustomAppbar(),
-      drawer: const MyDrawer(),
-      body: _pages[_selectIndex],
     );
   }
 }

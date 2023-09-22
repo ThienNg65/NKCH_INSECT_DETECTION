@@ -129,9 +129,11 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
     return BlocBuilder<CamaraDetectionBloc, CamaraDetectionState>(
       builder: (context, state) {
         if (state == CamaraDetectionState.initial()) {
-          return const Center(
+          return const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "Take a photo or choose one from the CamaraForm to inference.",
+              textAlign: TextAlign.center,
             ),
           );
         } else {
