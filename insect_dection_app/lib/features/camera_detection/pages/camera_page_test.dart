@@ -102,7 +102,7 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
                     size: 48,
                     color: Colors.black54,
                   ),
-                  label: const Text("Pick from CamaraForm"),
+                  label: const Text("Pick from Library"),
                 ),
               ],
             ),
@@ -137,9 +137,12 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
         } else {
           if (state.imagePath != null && state.imagePath!.isNotEmpty) {
             return Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Image.file(File(state.imagePath!)),
-            );
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Image.file(
+                  File(state.imagePath!),
+                  height: 200,
+                  width: 200,
+                ));
           } else {
             return const Spacer();
           }
