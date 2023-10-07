@@ -455,22 +455,26 @@ class _AppbarBookmarkButton extends StatelessWidget {
     return BlocBuilder<InsectDetailBloc, InsectDetailState>(
       builder: (context, state) {
         if (state.getUserInsectBookmarkStateProcess is Success) {
-          return BookmarkButton(
-            key: const Key('insectDetail_isBookmarkedInsect_bookmarkButton'),
-            onTap: () {
-              final currentUser = BlocProvider.of<AuthBloc>(context).state.user;
-              final state = BlocProvider.of<InsectDetailBloc>(context).state;
-              BlocProvider.of<InsectDetailBloc>(context).add(
-                ToggleBookmarkedInsectEvent(
-                  userBucketParams: UserBucketParams(
-                    uid: currentUser.uid,
+          return Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: BookmarkButton(
+              key: const Key('insectDetail_isBookmarkedInsect_bookmarkButton'),
+              onTap: () {
+                final currentUser =
+                    BlocProvider.of<AuthBloc>(context).state.user;
+                final state = BlocProvider.of<InsectDetailBloc>(context).state;
+                BlocProvider.of<InsectDetailBloc>(context).add(
+                  ToggleBookmarkedInsectEvent(
+                    userBucketParams: UserBucketParams(
+                      uid: currentUser.uid,
+                    ),
+                    insect: state.insect,
+                    isBookmarked: state.isBookmarked,
                   ),
-                  insect: state.insect,
-                  isBookmarked: state.isBookmarked,
-                ),
-              );
-            },
-            isBookmarked: state.isBookmarked,
+                );
+              },
+              isBookmarked: state.isBookmarked,
+            ),
           );
         } else {
           return LoadingWigget();
