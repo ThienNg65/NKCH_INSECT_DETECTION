@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:insect_dection_app/core/core.dart';
+import 'package:insect_dection_app/features/insect/insect.dart';
 import 'package:insect_dection_app/features/user/user.dart';
 
 abstract class UserProfileRemoteDataSource {
@@ -28,6 +29,16 @@ class UserProfileRemoteDatasourceImpl extends UserProfileRemoteDataSource {
       await _database.collection('users').doc(userParams.uid).set(
             userParams.toMap(),
           );
+      await _database
+          .collection('users')
+          .doc(userParams.uid)
+          .collection(InsectCollectionName.bookmarkedInsects)
+          .add({});
+      await _database
+          .collection('users')
+          .doc(userParams.uid)
+          .collection(InsectCollectionName.recentSearches)
+          .add({});
 
       // Create a UserProfileModel from the document data.
       final userProfileModel = UserProfileModel.fromMap(userParams.toMap());

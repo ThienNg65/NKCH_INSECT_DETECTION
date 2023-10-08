@@ -42,9 +42,9 @@ class Address extends Equatable {
 
   factory Address.fromMap(Map<String, dynamic> map) {
     return Address(
-      street: map['street'],
-      country: map['country'],
-      city: map['city'],
+      street: map['street'] ?? '',
+      country: map['country'] ?? '',
+      city: map['city'] ?? '',
     );
   }
 
@@ -52,4 +52,6 @@ class Address extends Equatable {
 
   factory Address.fromJson(String source) =>
       Address.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  static Address get empty => const Address();
 }

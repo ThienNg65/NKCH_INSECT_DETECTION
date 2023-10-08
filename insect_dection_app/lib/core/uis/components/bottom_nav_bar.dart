@@ -45,13 +45,16 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
   // pages to display
   final List<Widget> _pages = [
     //Home Page
-    const HomePage(key: Key("bottomNavBarPage_HomePage")),
+    // ignore: prefer_const_constructors
+    HomePage(key: Key("bottomNavBarPage_HomePage")),
 
     // Camera Page
-    const CameraPage(key: Key("bottomNavBarPage_CamaraPage")),
+    // ignore: prefer_const_constructors
+    CameraPage(key: Key("bottomNavBarPage_CamaraPage")),
 
     // Profile Page
-    const UserProfilePage(key: Key("bottomNavBarPage_ProfilePage")),
+    // ignore: prefer_const_constructors
+    UserProfilePage(key: Key("bottomNavBarPage_ProfilePage")),
   ];
 
   @override
