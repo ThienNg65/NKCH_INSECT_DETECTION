@@ -33,6 +33,10 @@ class RegisterPageSate extends State<RegisterPage> {
     BlocProvider.of<SignUpCubit>(context).signUpWithEmailCredential();
   }
 
+  Future createUserProfile() async {
+    BlocProvider.of<SignUpCubit>(context).createUserProfile();
+  }
+
   @override
   void dispose() {
     super.dispose();
@@ -44,6 +48,10 @@ class RegisterPageSate extends State<RegisterPage> {
       listener: (_, state) async {
         if (state.status == SignUpStatus.error) {
           await displayMessageDialog(context: context, message: state.message);
+        } else {
+          if (state.status == SignUpStatus.success) {
+            await createUserProfile();
+          }
         }
       },
       child: Scaffold(

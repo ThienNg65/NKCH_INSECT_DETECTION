@@ -64,7 +64,7 @@ void main() {
         final result = await authRepository.logIn(authParams);
         //assert
         verify(mockRemoteDatasource.logIn(authParams));
-        expect(result, equals(const Left(ServerFailure())));
+        expect(result, equals(const Left(ServerFailure(errorMessage: null))));
       });
     });
     group('Sign up with email and password', () {

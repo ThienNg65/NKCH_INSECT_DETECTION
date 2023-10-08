@@ -71,32 +71,37 @@ class SignUpCubit extends Cubit<SignUpState> {
       emit(state.copyWith(
         status: SignUpStatus.success,
         message: state.email,
+        signUpSuccess: signUpSuccess,
       ));
-      _onSignUpSucesss(entity: signUpSuccess);
+      // _onSignUpSucesss(entity: signUpSuccess);
     });
   }
 
-  Future<void> _onSignUpSucesss({required SignUpSuccessEntity entity}) async {
-    final userParams = UserParams(
-      uid: entity.uid,
-      username: state.email,
-    );
-
-    final result = await _createUserProfile(userParams);
-
-    result!.fold(
-      (Failure failure) {
-        emit(state.copyWith(
-          status: SignUpStatus.error,
-          message: failure.errorMessage,
-        ));
-      },
-      (UserProfileEntity user) {
-        emit(state.copyWith(
-          status: SignUpStatus.success,
-          message: state.email,
-        ));
-      },
-    );
+  Future<void> createUserProfile() async {
+    final signUpSuccess = state.signUpSuccess;
+    final status = state.status;
+    if (status == SignUpStatus.success && signUpSuccess != null) {
+      final userParams = UserParams(
+        uid: signUpSuccess.uid,
+        username: state.email,
+      );
+      final result = await _createUserProfile(userParams);
+      if (result != null) {
+        result.fold(
+          (Failure failure) {
+            emit(state.copyWith(
+              status: SignUpStatus.error,
+              message: failure.errorMessage,
+            ));
+          },
+          (UserProfileEntity user) {
+            emit(state.copyWith(
+              status: SignUpStatus.success,
+              message: state.email,
+            ));
+          },
+        );
+      }
+    }
   }
 }

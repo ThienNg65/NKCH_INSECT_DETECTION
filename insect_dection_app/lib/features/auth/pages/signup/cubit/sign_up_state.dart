@@ -8,6 +8,8 @@ class SignUpState extends Equatable {
   final String password;
   final String confirmPassword;
   final SignUpStatus status;
+
+  final SignUpSuccessEntity? signUpSuccess;
   final String? message;
 
   const SignUpState({
@@ -16,6 +18,7 @@ class SignUpState extends Equatable {
     required this.confirmPassword,
     required this.status,
     required this.message,
+    this.signUpSuccess,
   });
   factory SignUpState.initial() => const SignUpState(
         email: '',
@@ -31,6 +34,7 @@ class SignUpState extends Equatable {
         confirmPassword,
         status,
         message,
+        signUpSuccess,
       ];
 
   SignUpState copyWith({
@@ -39,6 +43,7 @@ class SignUpState extends Equatable {
     String? confirmPassword,
     SignUpStatus? status,
     String? message,
+    SignUpSuccessEntity? signUpSuccess,
   }) {
     return SignUpState(
       email: email ?? this.email,
@@ -46,6 +51,7 @@ class SignUpState extends Equatable {
       confirmPassword: confirmPassword ?? this.confirmPassword,
       status: status ?? this.status,
       message: message ?? this.message,
+      signUpSuccess: signUpSuccess ?? this.signUpSuccess,
     );
   }
 }
