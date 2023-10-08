@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
@@ -75,7 +76,7 @@ void main() {
         () async {
           final impactFixtures = getInsectListFixture("insect_data_list.json");
           for (var i = 0; i < impactFixtures.length; i++) {
-            print(impactFixtures[i] == expects[i]);
+            debugPrint((impactFixtures[i] == expects[i]).toString());
           }
           expect(impactFixtures, expects);
         },

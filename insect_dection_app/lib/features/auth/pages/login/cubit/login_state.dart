@@ -14,8 +14,7 @@ class LoginState extends Equatable {
     required this.status,
     this.message,
   });
-
-  /// TODO : DELETE THIS EVERY COMMIT
+  // This is for mannual testing only
   factory LoginState.initial() => const LoginState(
         email: 'nvtt@gmail.com',
         password: '12345678',

@@ -96,11 +96,12 @@ class _SearchPageState extends State<SearchPage> {
                     children: [
                       IconButton(
                         onPressed: () {
+                          // ignore: avoid_print
                           print("Helo");
                         },
-                        icon: Icon(Icons.check_box_outline_blank),
+                        icon: const Icon(Icons.check_box_outline_blank),
                       ),
-                      Text("Họ"),
+                    const  Text("Họ"),
                     ],
                   ),
                 ),
@@ -110,11 +111,11 @@ class _SearchPageState extends State<SearchPage> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          print("Helo");
+              
                         },
-                        icon: Icon(Icons.check_box_outline_blank),
+                        icon: const Icon(Icons.check_box_outline_blank),
                       ),
-                      Text("Bộ"),
+                     const  Text("Bộ"),
                     ],
                   ),
                 ),
@@ -124,11 +125,11 @@ class _SearchPageState extends State<SearchPage> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          print("Helo");
+    
                         },
-                        icon: Icon(Icons.check_box_outline_blank),
+                        icon: const Icon(Icons.check_box_outline_blank),
                       ),
-                      Text("Loài"),
+                     const Text("Loài"),
                     ],
                   ),
                 ),
