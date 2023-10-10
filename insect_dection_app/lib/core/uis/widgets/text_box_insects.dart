@@ -30,21 +30,27 @@ class MyTextBoxInsect extends StatelessWidget {
               // section name
               Text(
                 label,
-                style: TextStyle(color: Colors.grey[500]),
+                style: TextStyle(
+                  color: Colors.grey[500],
+                  fontSize: 18,
+                ),
               ),
             ],
           ),
 
-          const SizedBox(height: 5),
+          const SizedBox(height: 7),
 
           // text (name, email, etc..)
-          Text(
-            content,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              fontStyle: FontStyle.italic,
-              color: Colors.grey[900],
+          Container(
+            padding: EdgeInsets.only(right: 10),
+            child: Text(
+              content,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                fontStyle: FontStyle.italic,
+                color: Colors.grey[900],
+              ),
             ),
           ),
         ],
