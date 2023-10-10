@@ -78,6 +78,8 @@ class _InsectPageState extends State<InsectPage> {
 
                       /// Scientific Label
                       _ScientificLabelName(),
+
+                      // ĐƠN VỊ PHÂN LOẠI CÔN TRÙNG
                       const SizedBox(height: 15),
 
                       /// Species
@@ -94,19 +96,33 @@ class _InsectPageState extends State<InsectPage> {
 
                       /// Classics - Phylum - Regnum
                       _TaxonomyOthers(),
-                      const SizedBox(height: 5),
+                      const SizedBox(height: 15),
 
                       /// Origin
                       _InsectOrigin(),
-                      const SizedBox(height: 5),
+                      const SizedBox(height: 15),
+
+                      /// Tác hại
+                      MyTextBoxInsect(
+                        label: "Tác hại",
+                        content: "content",
+                      ),
+                      const SizedBox(height: 15),
+
+                      /// Đối tượng gây hại
+                      MyTextBoxInsect(
+                        label: "Đối tượng gây hại",
+                        content: "content",
+                      ),
+                      const SizedBox(height: 15),
 
                       /// Identification Features
                       _InsectIdentificationFeatures(),
-                      const SizedBox(height: 5),
+                      const SizedBox(height: 25),
 
-                      /// Predators
-                      _InsectPredators(),
-                      const SizedBox(height: 5),
+                      // /// Predators
+                      // _InsectPredators(),
+                      // const SizedBox(height: 5),
                     ],
                   ),
                 ],
@@ -144,9 +160,8 @@ class _InsectIdentificationFeatures extends StatelessWidget {
         final content = state.getDetailInsectProcess is Success
             ? state.insect.identificationFeatures
             : "Loading...";
-        return _InsectInformationBox(
-          label: "Identification Features",
-          description: "Đặc điểm nhận dạng",
+        return MyTextBoxInsect(
+          label: "Đặc điểm nhận dạng",
           content: content,
         );
       },
@@ -182,11 +197,13 @@ class _InsectOrigin extends StatelessWidget {
         final content = state.getDetailInsectProcess is Success
             ? state.insect.origin
             : "Loading...";
-        return _InsectInformationBox(
-          label: "Origin",
-          description: 'Nguồn gốc',
-          content: content,
-        );
+        // return _InsectInformationBox(
+        //   label: "Origin",
+        //   description: 'Nguồn gốc',
+        //   content: content,
+        // );
+
+        return MyTextBoxInsect(label: "Nguồn gốc", content: content);
       },
     );
   }
@@ -194,12 +211,12 @@ class _InsectOrigin extends StatelessWidget {
 
 class _InsectInformationBox extends StatelessWidget {
   final String label;
-  final String description;
+  final String? description;
   final String content;
 
   const _InsectInformationBox({
     required this.label,
-    required this.description,
+    this.description,
     required this.content,
   });
   @override
@@ -228,7 +245,7 @@ class _InsectInformationBox extends StatelessWidget {
           /// Description
           const SizedBox(height: 10),
           Text(
-            description,
+            description!,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
@@ -260,7 +277,10 @@ class _TaxonomyOthers extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
       ),
       padding: EdgeInsets.only(top: 15, left: 15, bottom: 15),
-      margin: EdgeInsets.only(left: 25, right: 25),
+      margin: EdgeInsets.only(
+        left: 25,
+        right: 25,
+      ),
       child: BlocBuilder<InsectDetailBloc, InsectDetailState>(
         builder: (context, state) {
           final classical = state.getDetailInsectProcess is Success
@@ -278,11 +298,20 @@ class _TaxonomyOthers extends StatelessWidget {
               Row(
                 children: [
                   /// Label
-                  Text("Lớp - ", style: TextStyle(color: Colors.grey[500])),
+                  Text(
+                    "Lớp - ",
+                    style: TextStyle(color: Colors.grey[500], fontSize: 18),
+                  ),
 
-                  Text("Ngành - ", style: TextStyle(color: Colors.grey[500])),
+                  Text(
+                    "Ngành - ",
+                    style: TextStyle(color: Colors.grey[500], fontSize: 18),
+                  ),
 
-                  Text("Giới", style: TextStyle(color: Colors.grey[500])),
+                  Text(
+                    "Giới",
+                    style: TextStyle(color: Colors.grey[500], fontSize: 18),
+                  ),
                 ],
               ),
               const SizedBox(height: 5),
@@ -291,7 +320,7 @@ class _TaxonomyOthers extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "$classical ",
+                    "$classical - ",
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -299,7 +328,7 @@ class _TaxonomyOthers extends StatelessWidget {
                         color: Colors.grey[900]),
                   ),
                   Text(
-                    "$phylum ",
+                    "$phylum - ",
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -432,11 +461,15 @@ class _ImageBox extends StatelessWidget {
               final insect = state.insect;
               return insect.photoUrl.isNotEmpty
                   ? Image.network(
+                      width: 350,
+                      height: 230,
                       key: const Key('insectDetail_imageBox_imageNetwork'),
                       state.insect.photoUrl,
                       fit: BoxFit.fill,
                     )
                   : Image.asset(
+                      width: 350,
+                      height: 230,
                       'assets/images/insects_img/img${int.parse(insect.modelId) + 1}.jpg',
                     );
             } else {
