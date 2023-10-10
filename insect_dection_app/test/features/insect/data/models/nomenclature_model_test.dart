@@ -1,60 +1,112 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
-import '../../../../fixtures/fixtures.dart';
-
 void main() {
-  group('[Nomenclature Model]', () {
-    const testCommonName = 'Test Common Name';
-    const testOtherName = 'Test Other Name';
-    const testScientificName = 'Test Scientific Name ';
-    const nomenclatureModel = NomenclatureModel(
-      commonName: testCommonName,
-      otherName: testOtherName,
-      scientificName: testScientificName,
-    );
-    test('should be a subclass of impact entity', () async {
-      //assert
-      expect(nomenclatureModel, isA<Nomenclature>());
-    });
-    group('fromMap', () {
-      test(
-        'should return various model with various fixtures',
-        () async {
-          final impactFixtures =
-              getNomenclaturesListFixture("nomenclature_fixtures.json");
-
-          final impactList = <NomenclatureModel>[
-            const NomenclatureModel(
-                commonName: "yellow cutworm ",
-                scientificName: "Agrotis segetum",
-                otherName: "turnip moth"),
-            const NomenclatureModel(),
-            const NomenclatureModel(
-              commonName: "white margined moth ",
-              scientificName: "",
-              otherName: "",
-            ),
-            const NomenclatureModel(
-              commonName: "white margined moth ",
-            ),
-          ];
-          expect(impactFixtures, impactList);
-        },
+  group('NomenclatureModel', () {
+    test('toMap() should return a map of the NomenclatureModel instance', () {
+      // Arrange
+      const nomenclatureModel = NomenclatureModel(
+        commonName: 'Common name',
+        otherName: 'Other name',
+        scientificName: 'Scientific name',
       );
+
+      // Act
+      final map = nomenclatureModel.toMap();
+
+      // Assert
+      expect(map['commonName'], 'Common name');
+      expect(map['otherName'], 'Other name');
+      expect(map['scientificName'], 'Scientific name');
     });
 
-    group('toMap', () {
-      test('should return a map containing proper data', () async {
-        expect(
-          nomenclatureModel.toMap(),
-          equals({
-            'commonName': testCommonName,
-            'otherName': testOtherName,
-            'scientificName': testScientificName,
-          }),
-        );
-      });
+    test('fromMap() should create a NomenclatureModel instance from a map', () {
+      // Arrange
+      final map = {
+        'commonName': 'Common name',
+        'otherName': 'Other name',
+        'scientificName': 'Scientific name',
+      };
+
+      // Act
+      final nomenclatureModel = NomenclatureModel.fromMap(map);
+
+      // Assert
+      expect(nomenclatureModel.commonName, 'Common name');
+      expect(nomenclatureModel.otherName, 'Other name');
+      expect(nomenclatureModel.scientificName, 'Scientific name');
+    });
+
+    test(
+        'toJson() should return a JSON string of the NomenclatureModel instance',
+        () {
+      // Arrange
+      const nomenclatureModel = NomenclatureModel(
+        commonName: 'Common name',
+        otherName: 'Other name',
+        scientificName: 'Scientific name',
+      );
+
+      // Act
+      final jsonString = nomenclatureModel.toJson();
+
+      // Assert
+      expect(jsonString,
+          '{"commonName":"Common name","otherName":"Other name","scientificName":"Scientific name"}');
+    });
+
+    test(
+        'fromJson() should create a NomenclatureModel instance from a JSON string',
+        () {
+      // Arrange
+      const jsonString =
+          '{"commonName":"Common name","otherName":"Other name","scientificName":"Scientific name"}';
+
+      // Act
+      final nomenclatureModel = NomenclatureModel.fromJson(jsonString);
+
+      // Assert
+      expect(nomenclatureModel.commonName, 'Common name');
+      expect(nomenclatureModel.otherName, 'Other name');
+      expect(nomenclatureModel.scientificName, 'Scientific name');
+    });
+
+    test(
+        'toEntity() should return a Nomenclature instance from the NomenclatureModel instance',
+        () {
+      // Arrange
+      const nomenclatureModel = NomenclatureModel(
+        commonName: 'Common name',
+        otherName: 'Other name',
+        scientificName: 'Scientific name',
+      );
+
+      // Act
+      final nomenclature = nomenclatureModel.toEntity();
+
+      // Assert
+      expect(nomenclature.commonName, 'Common name');
+      expect(nomenclature.otherName, 'Other name');
+      expect(nomenclature.scientificName, 'Scientific name');
+    });
+
+    test(
+        'fromEntity() should create a NomenclatureModel instance from a Nomenclature instance',
+        () {
+      // Arrange
+      const nomenclature = Nomenclature(
+        commonName: 'Common name',
+        otherName: 'Other name',
+        scientificName: 'Scientific name',
+      );
+
+      // Act
+      final nomenclatureModel = NomenclatureModel.fromEntity(nomenclature);
+
+      // Assert
+      expect(nomenclatureModel.commonName, 'Common name');
+      expect(nomenclatureModel.otherName, 'Other name');
+      expect(nomenclatureModel.scientificName, 'Scientific name');
     });
   });
 }

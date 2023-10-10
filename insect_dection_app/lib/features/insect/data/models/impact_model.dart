@@ -7,6 +7,7 @@ class ImpactModel extends Impact {
     super.benefits = '',
     super.harms = '',
   });
+  @override
   Impact copyWith({
     String? benefits,
     String? harms,
@@ -38,9 +39,9 @@ class ImpactModel extends Impact {
           )
         : const ImpactModel();
   }
-  factory ImpactModel.fromJson(String source) =>
-      ImpactModel.fromMap(json.decode(source) as Map<String, dynamic>,);
-
+  factory ImpactModel.fromJson(String source) => ImpactModel.fromMap(
+        json.decode(source) as Map<String, dynamic>,
+      );
 
   factory ImpactModel.fromEntity(Impact entity) => ImpactModel(
         benefits: entity.benefits,

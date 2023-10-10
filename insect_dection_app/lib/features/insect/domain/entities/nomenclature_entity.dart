@@ -17,6 +17,8 @@ class Nomenclature extends Equatable {
         otherName: '',
         scientificName: '',
       );
+  bool get isNotEmpty => !isEmpty;
+  bool get isEmpty => this == Nomenclature.empty;
   @override
   List<Object?> get props => [commonName, otherName, scientificName];
 

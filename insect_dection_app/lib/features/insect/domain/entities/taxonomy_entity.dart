@@ -41,6 +41,8 @@ class Taxonomy extends Equatable {
         phylum: '',
         regnum: '',
       );
+  bool get isNotEmpty => !isEmpty;
+  bool get isEmpty => this == Taxonomy.empty;
 
   Taxonomy copyWith({
     String? species,
