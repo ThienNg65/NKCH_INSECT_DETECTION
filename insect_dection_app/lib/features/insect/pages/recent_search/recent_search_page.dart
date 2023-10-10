@@ -91,10 +91,10 @@ class _RecentlyDetectedInsectsPageState
               previous.getRecentlyDetectedInsectListProcess),
       builder: (context, state) {
         if (state.getRecentlyDetectedInsectListProcess == const Success()) {
-          final insects = state.recentlyDetectedInsectList.insects;
+          final insects = state.recentlyDetectedInsectList.currentPage;
           return Expanded(
             child: ListView.builder(
-              itemCount: state.recentlyDetectedInsectList.insects.length,
+              itemCount: state.recentlyDetectedInsectList.currentPage.length,
               itemBuilder: (_, index) {
                 final insect = insects[index];
                 return InsectTile(

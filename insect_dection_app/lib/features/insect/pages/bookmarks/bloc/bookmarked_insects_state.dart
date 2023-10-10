@@ -18,7 +18,7 @@ class BookmarkedInsectsState extends Equatable {
     return BookmarkedInsectsState._internal(
       getBookmarkedInsectListProcess: const Initial(),
       toggleBookmarkedInsectProcess: const Initial(),
-      bookmarkedInsectList: InsectList.empty(),
+      bookmarkedInsectList: InsectList.empty,
     );
   }
 

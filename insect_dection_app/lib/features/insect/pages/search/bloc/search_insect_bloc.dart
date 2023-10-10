@@ -52,14 +52,14 @@ class SearchInsectBloc extends Bloc<SearchInsectEvent, SearchInsectState> {
                 getInsectByKeywordProcess: Failed(
                   "Couldn't find the insect name containing$keyword",
                 ),
-                searchResulList: InsectList.empty(),
+                searchResulList: InsectList.empty,
               ),
             );
           } else {
             emit(
               state.copyWith(
                 getInsectByKeywordProcess: Failed(failure.errorMessage),
-                searchResulList: InsectList.empty(),
+                searchResulList: InsectList.empty,
               ),
             );
           }
@@ -100,7 +100,7 @@ class SearchInsectBloc extends Bloc<SearchInsectEvent, SearchInsectState> {
             emit(
               state.copyWith(
                 getLoadInsectListProcess: const Success(),
-                insectList: InsectList.empty(),
+                insectList: InsectList.empty,
               ),
             );
           } else {
@@ -144,7 +144,7 @@ class SearchInsectBloc extends Bloc<SearchInsectEvent, SearchInsectState> {
         getInsectByKeywordProcess: const Initial(),
       ));
 
-      final result = await _getInitialInsectList(InsectListParams.empty());
+      final result = await _getInitialInsectList(InsectListParams.empty);
 
       /// Handle result
       result.fold(
@@ -152,7 +152,7 @@ class SearchInsectBloc extends Bloc<SearchInsectEvent, SearchInsectState> {
           emit(
             state.copyWith(
               getInsectByKeywordProcess: Failed(failure.errorMessage),
-              searchResulList: InsectList.empty(),
+              searchResulList: InsectList.empty,
             ),
           );
         },

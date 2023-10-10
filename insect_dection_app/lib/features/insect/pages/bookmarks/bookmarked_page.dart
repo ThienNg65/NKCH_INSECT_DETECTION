@@ -88,10 +88,10 @@ class _BookmarkedInsectList extends StatelessWidget {
               previous.getBookmarkedInsectListProcess),
       builder: (context, state) {
         if (state.getBookmarkedInsectListProcess == const Success()) {
-          final insects = state.bookmarkedInsectList.insects;
+          final insects = state.bookmarkedInsectList.currentPage;
           return Expanded(
             child: ListView.builder(
-              itemCount: state.bookmarkedInsectList.insects.length,
+              itemCount: state.bookmarkedInsectList.currentPage.length,
               itemBuilder: (_, index) {
                 final insect = insects[index];
                 return InsectTile(

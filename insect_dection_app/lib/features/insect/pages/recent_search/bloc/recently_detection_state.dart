@@ -15,7 +15,7 @@ class RecentlyDetectedInsectsState extends Equatable {
   });
   factory RecentlyDetectedInsectsState.initial() {
     return RecentlyDetectedInsectsState._internal(
-      recentlyDetectedInsectList: InsectList.empty(),
+      recentlyDetectedInsectList: InsectList.empty,
       getRecentlyDetectedInsectListProcess: const Initial(),
     );
   }

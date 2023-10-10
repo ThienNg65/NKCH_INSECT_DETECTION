@@ -18,9 +18,9 @@ class HomePageState extends Equatable {
   });
 
   factory HomePageState.initial() => HomePageState._internal(
-        recentlySearchInsectList: InsectList.empty(),
-        bookmarkedInsectList: InsectList.empty(),
-        intialList: InsectList.empty(),
+        recentlySearchInsectList: InsectList.empty,
+        bookmarkedInsectList: InsectList.empty,
+        intialList: InsectList.empty,
         getBookmarkedInsectListProcess: const Initial(),
         getRecentlySearchInsectListProcess: const Initial(),
         getInitialInsectListProcess: const Initial(),

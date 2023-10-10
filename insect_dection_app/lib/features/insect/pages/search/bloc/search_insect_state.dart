@@ -23,8 +23,8 @@ class SearchInsectState extends Equatable {
   factory SearchInsectState.initial() => SearchInsectState(
         isFirstLoad: true,
         isKeywordSearch: false,
-        insectList: InsectList.empty(),
-        searchResulList: InsectList.empty(),
+        insectList: InsectList.empty,
+        searchResulList: InsectList.empty,
         getInsectByKeywordProcess: const Initial(),
         getLoadInsectListProcess: const Initial(),
       );

@@ -27,7 +27,7 @@ class RecentlyDetectionBloc
     try {
       final result = await _getRecentlySearchInsectList(
         event.userBucketParams,
-        InsectListParams.empty(),
+        InsectListParams.empty,
       );
       result?.fold(
         (Failure failure) {

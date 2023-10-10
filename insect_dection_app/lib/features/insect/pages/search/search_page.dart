@@ -101,7 +101,7 @@ class _SearchPageState extends State<SearchPage> {
                         },
                         icon: const Icon(Icons.check_box_outline_blank),
                       ),
-                    const  Text("Họ"),
+                      const Text("Họ"),
                     ],
                   ),
                 ),
@@ -110,12 +110,10 @@ class _SearchPageState extends State<SearchPage> {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () {
-              
-                        },
+                        onPressed: () {},
                         icon: const Icon(Icons.check_box_outline_blank),
                       ),
-                     const  Text("Bộ"),
+                      const Text("Bộ"),
                     ],
                   ),
                 ),
@@ -124,12 +122,10 @@ class _SearchPageState extends State<SearchPage> {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () {
-    
-                        },
+                        onPressed: () {},
                         icon: const Icon(Icons.check_box_outline_blank),
                       ),
-                     const Text("Loài"),
+                      const Text("Loài"),
                     ],
                   ),
                 ),
@@ -150,8 +146,11 @@ class _SearchPageState extends State<SearchPage> {
                     state.getLoadInsectListProcess is Success) {
                   /// Populate the list based on search mode or not
                   final insects = state.isKeywordSearch
-                      ? state.searchResulList.insects
-                      : state.insectList.insects;
+                      ? state.searchResulList.currentPage
+                      : [
+                          ...state.insectList.previousPage,
+                          ...state.insectList.currentPage,
+                        ];
 
                   /// Return the list view
                   return ListView.builder(

@@ -91,7 +91,8 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
 
       /// Assign into model
       final insectList = InsectListModel(
-        insects: insects,
+        currentPage: insects,
+        size: insects.length,
       );
 
       /// Return the value if adding was succesfully
@@ -129,7 +130,7 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
 
       return Right(InsectListModel(
         size: insects.length,
-        insects: insects,
+        currentPage: insects,
       ));
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.

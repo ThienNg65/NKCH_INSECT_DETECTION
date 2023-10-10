@@ -1,49 +1,45 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:equatable/equatable.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
-class InsectListParams extends Equatable {
-  final int? currentPage;
-  final int? nextPage;
-  final List<Insect>? insects;
-  final int size;
+class InsectListParams extends InsectList {
+  // TODO: add fillter
   const InsectListParams({
-    this.currentPage = 0,
-    this.nextPage,
-    required this.insects,
-    this.size = 10,
+    required super.hasNextPage,
+    super.size = 0,
+    required super.previousPage,
+    required super.currentPage,
   });
 
-  factory InsectListParams.empty() => const InsectListParams(
-        currentPage: 0,
-        nextPage: 0,
-        insects: <Insect>[],
-        size: 10,
+  static InsectListParams get empty => const InsectListParams(
+        hasNextPage: false,
+        previousPage: <Insect>[],
+        currentPage: <Insect>[],
+        size: 0,
       );
-
+  @override
   InsectListParams copyWith({
-    int? currentPage,
-    int? nextPage,
-    List<Insect>? insects,
+    bool? hasNextPage,
     int? size,
+    List<Insect>? previousPage,
+    List<Insect>? currentPage,
   }) {
     return InsectListParams(
-      currentPage: currentPage ?? this.currentPage,
-      nextPage: nextPage ?? this.nextPage,
-      insects: insects ?? this.insects,
-      size: size ?? this.size,
+      hasNextPage: hasNextPage ?? super.hasNextPage,
+      size: size ?? super.size,
+      previousPage: previousPage ?? super.previousPage,
+      currentPage: currentPage ?? super.currentPage,
+    );
+  }
+
+  factory InsectListParams.fromEntity(InsectList entity) {
+    return InsectListParams(
+      hasNextPage: entity.hasNextPage,
+      size: entity.size,
+      previousPage: entity.previousPage,
+      currentPage: entity.currentPage,
     );
   }
 
   @override
-  List<Object?> get props => [currentPage, nextPage, insects, size];
-
-  factory InsectListParams.fromEntity(InsectList entity) {
-    return InsectListParams(
-      currentPage: entity.currentPage,
-      nextPage: entity.currentPage,
-      insects: entity.insects,
-      size: entity.size,
-    );
-  }
+  List<Object> get props => [hasNextPage, size, previousPage, currentPage];
 }

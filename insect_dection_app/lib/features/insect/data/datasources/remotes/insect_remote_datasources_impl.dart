@@ -4,6 +4,7 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
   final FirebaseFirestore _data;
   final _firstSize = 11;
   final _sizeOffset = 14;
+  final _totalInsect = 102;
   InsectRemoteDatasourceImpl({
     required FirebaseFirestore data,
     required FirebaseStorage storage,
@@ -50,9 +51,9 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
       }).toList();
 
       return Right(InsectListModel(
-        currentPage: insectListParams.currentPage,
+        currentPage: insects,
         hasNextPage: true,
-        insects: insects,
+        size: insects.length
       ));
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
@@ -71,26 +72,37 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
           .limit(_sizeOffset);
 
       // Take the last item of previous list
-      final lastModelId = insectListParams.insects!.last.modelId;
+      final lastModelId = insectListParams.currentPage.last.modelId;
 
+      // Fetch new list insect
       final insectsSnapshot =
           await insectsQuery.startAfter([lastModelId]).get();
 
-      var previous = insectListParams.insects
-          ?.map<InsectModel>(((e) => InsectModel.fromEntity(e)))
-          .toList();
-      var insects = insectsSnapshot.docs
+      // Take the prvious page = current page + previous page
+      var previous = <Insect>[
+        ...insectListParams.previousPage,
+        ...insectListParams.currentPage
+      ];
+
+      final previousPage =
+          previous.map((e) => InsectModel.fromEntity(e)).toList();
+
+      // Set new fetch into current page
+
+      var currentPage = insectsSnapshot.docs
           .map((doc) => InsectModel.fromMap(doc.data()))
           .toList();
-      previous?.addAll(insects);
+
       // Check if there is a next page.
-      final hasMorePages = insectsSnapshot.docs.length >= insectListParams.size;
+      final hasMorePages =
+          _totalInsect >= previousPage.length + currentPage.length;
 
       return Right(
         InsectListModel(
-          currentPage: insectListParams.currentPage,
+          currentPage: currentPage,
           hasNextPage: hasMorePages,
-          insects: previous,
+          previousPage: previousPage,
+          size: currentPage.length,
         ),
       );
     } on FirebaseException catch (e) {
@@ -129,7 +141,9 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
           .toList();
 
       return Right(InsectListModel(
-        insects: insects,
+        currentPage: insects,
+        size: insects.length,
+        hasNextPage: false,
       ));
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.

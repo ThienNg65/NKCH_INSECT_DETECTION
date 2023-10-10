@@ -3,40 +3,45 @@ import 'package:equatable/equatable.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
 class InsectList extends Equatable {
-  final int currentPage;
   final bool hasNextPage;
   final int size;
-  final List<Insect> insects;
+  final List<Insect> previousPage;
+  final List<Insect> currentPage;
   const InsectList({
-    required this.currentPage,
     required this.hasNextPage,
     required this.size,
-    required this.insects,
+    required this.previousPage,
+    required this.currentPage,
   });
 
   @override
-  List<Object?> get props => [currentPage, hasNextPage, size, insects];
+  List<Object?> get props => [
+        currentPage,
+        previousPage,
+        hasNextPage,
+        size,
+      ];
 
   InsectList copyWith({
-    int? currentPage,
     bool? hasNextPage,
     int? size,
-    List<Insect>? insects,
+    List<Insect>? previousPage,
+    List<Insect>? currentPage,
   }) {
     return InsectList(
-      currentPage: currentPage ?? this.currentPage,
       hasNextPage: hasNextPage ?? this.hasNextPage,
       size: size ?? this.size,
-      insects: insects ?? this.insects,
+      previousPage: previousPage ?? this.previousPage,
+      currentPage: currentPage ?? this.currentPage,
     );
   }
 
-  factory InsectList.empty() => const InsectList(
-        insects: <Insect>[],
-        currentPage: 0,
-        hasNextPage: true,
+  static InsectList get empty => const InsectList(
+        hasNextPage: false,
+        previousPage: <Insect>[],
+        currentPage: <Insect>[],
         size: 0,
       );
-  bool get isEmpty => this == InsectList.empty();
+  bool get isEmpty => this == InsectList.empty;
   bool get isNotEmpty => !isEmpty;
 }

@@ -24,7 +24,7 @@ void main() {
     getBookmarkedInsectList =
         GetBookmarkedInsectList(repo: mockUserInsectDataRepository);
     insectListModel = InsectListModel(
-      insects: insectModels,
+      currentPage: insectModels,
     );
     userBucketParams = const UserBucketParams(
       uid: 'test_3@-uid',

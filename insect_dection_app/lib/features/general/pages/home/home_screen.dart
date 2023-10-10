@@ -123,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
             state.getRecentlySearchInsectListProcess is Initial) {
           return const LoadingWigget();
         } else {
-          final insects = state.recentlySearchInsectList.insects;
+          final insects = state.recentlySearchInsectList.currentPage;
           return ListView.builder(
             key: const Key("homePage_RecentlySearchList_textRow"),
             shrinkWrap: true,
