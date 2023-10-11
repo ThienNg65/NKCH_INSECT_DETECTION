@@ -90,6 +90,13 @@ class _InsectPageState extends State<InsectPage> {
                       _TaxonomyGenus(),
                       const SizedBox(height: 15),
 
+                      /// Famililia
+                      MyTextBoxInsect(
+                        label: "Họ",
+                        content: "content",
+                      ),
+                      const SizedBox(height: 15),
+
                       /// Ordo
                       _TaxonomyOrdo(),
                       const SizedBox(height: 15),
@@ -123,6 +130,32 @@ class _InsectPageState extends State<InsectPage> {
                       // /// Predators
                       // _InsectPredators(),
                       // const SizedBox(height: 5),
+
+                      Padding(
+                        padding: const EdgeInsets.only(left: 26, right: 26),
+                        child: Text(
+                          "Tìm kiếm mở rộng",
+                          style: TextStyle(
+                            color: Colors.grey[900],
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 15),
+
+                      // Côn trùng cùng họ
+                      Padding(
+                        padding: const EdgeInsets.only(left: 26, right: 26),
+                        child: Text(
+                          "Côn trùng cùng họ: ",
+                          style: TextStyle(
+                            color: Colors.grey[900],
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ],
