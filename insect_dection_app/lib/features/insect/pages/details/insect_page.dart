@@ -79,7 +79,7 @@ class _InsectPageState extends State<InsectPage> {
                       /// Scientific Label
                       _ScientificLabelName(),
 
-                      // ĐƠN VỊ PHÂN LOẠI CÔN TRÙNG
+                      // TAXONOMIC UNIT
                       const SizedBox(height: 15),
 
                       /// Species
@@ -91,10 +91,7 @@ class _InsectPageState extends State<InsectPage> {
                       const SizedBox(height: 15),
 
                       /// Famililia
-                      MyTextBoxInsect(
-                        label: "Họ",
-                        content: "content",
-                      ),
+                      _TaxonomyFamililia(),
                       const SizedBox(height: 15),
 
                       /// Ordo
@@ -109,28 +106,19 @@ class _InsectPageState extends State<InsectPage> {
                       _InsectOrigin(),
                       const SizedBox(height: 15),
 
-                      /// Tác hại
-                      MyTextBoxInsect(
-                        label: "Tác hại",
-                        content: "content",
-                      ),
+                      /// Harms
+                      _Harms(),
                       const SizedBox(height: 15),
 
-                      /// Đối tượng gây hại
-                      MyTextBoxInsect(
-                        label: "Đối tượng gây hại",
-                        content: "content",
-                      ),
+                      /// Harmed Object
+                      _HarmedObject(),
                       const SizedBox(height: 15),
 
                       /// Identification Features
                       _InsectIdentificationFeatures(),
                       const SizedBox(height: 25),
 
-                      // /// Predators
-                      // _InsectPredators(),
-                      // const SizedBox(height: 5),
-
+                      /// Extended search
                       Padding(
                         padding: const EdgeInsets.only(left: 26, right: 26),
                         child: Text(
@@ -144,7 +132,7 @@ class _InsectPageState extends State<InsectPage> {
                       ),
                       const SizedBox(height: 15),
 
-                      // Côn trùng cùng họ
+                      /// Insect in the same level of taxonomy
                       Padding(
                         padding: const EdgeInsets.only(left: 26, right: 26),
                         child: Text(
@@ -183,6 +171,44 @@ class _InsectPageState extends State<InsectPage> {
   }
 }
 
+class _Harms extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<InsectDetailBloc, InsectDetailState>(
+      buildWhen: (previous, current) =>
+          previous.getDetailInsectProcess != current.getDetailInsectProcess,
+      builder: (context, state) {
+        final content = state.getDetailInsectProcess is Success
+            ? state.insect.harms
+            : "Loading...";
+        return MyTextBoxInsect(
+          label: "Tác hại",
+          content: content,
+        );
+      },
+    );
+  }
+}
+
+class _HarmedObject extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<InsectDetailBloc, InsectDetailState>(
+      buildWhen: (previous, current) =>
+          previous.getDetailInsectProcess != current.getDetailInsectProcess,
+      builder: (context, state) {
+        final content = state.getDetailInsectProcess is Success
+            ? state.insect.harmedObject
+            : "Loading...";
+        return MyTextBoxInsect(
+          label: "Tác hại",
+          content: content,
+        );
+      },
+    );
+  }
+}
+
 class _InsectIdentificationFeatures extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -202,24 +228,6 @@ class _InsectIdentificationFeatures extends StatelessWidget {
   }
 }
 
-class _InsectPredators extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<InsectDetailBloc, InsectDetailState>(
-        buildWhen: (previous, current) =>
-            previous.getDetailInsectProcess != current.getDetailInsectProcess,
-        builder: (context, state) {
-          final content = state.getDetailInsectProcess is Success
-              ? state.insect.predators
-              : "Loading...";
-          return MyTextBoxInsect(
-            label: "Predators",
-            content: content,
-          );
-        });
-  }
-}
-
 class _InsectOrigin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -230,73 +238,11 @@ class _InsectOrigin extends StatelessWidget {
         final content = state.getDetailInsectProcess is Success
             ? state.insect.origin
             : "Loading...";
-        // return _InsectInformationBox(
-        //   label: "Origin",
-        //   description: 'Nguồn gốc',
-        //   content: content,
-        // );
-
-        return MyTextBoxInsect(label: "Nguồn gốc", content: content);
+        return MyTextBoxInsect(
+          label: "Nguồn gốc",
+          content: content,
+        );
       },
-    );
-  }
-}
-
-class _InsectInformationBox extends StatelessWidget {
-  final String label;
-  final String? description;
-  final String content;
-
-  const _InsectInformationBox({
-    required this.label,
-    this.description,
-    required this.content,
-  });
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      // height: 300,
-      width: 500,
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      padding: EdgeInsets.only(left: 15, bottom: 15, top: 15),
-      margin: EdgeInsets.only(left: 25, right: 25, top: 15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /// Label
-          Text(
-            label,
-            style: TextStyle(
-              color: Colors.grey[500],
-              fontSize: 20,
-            ),
-          ),
-
-          /// Description
-          const SizedBox(height: 10),
-          Text(
-            description!,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-
-          const SizedBox(height: 10),
-
-          /// Information
-          Text(
-            content,
-            softWrap: true,
-            overflow: TextOverflow.clip,
-            style: TextStyle(fontSize: 14),
-          )
-        ],
-      ),
     );
   }
 }
@@ -402,6 +348,22 @@ class _TaxonomyOrdo extends StatelessWidget {
   }
 }
 
+class _TaxonomyFamililia extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<InsectDetailBloc, InsectDetailState>(
+      buildWhen: (previous, current) =>
+          previous.getDetailInsectProcess != current.getDetailInsectProcess,
+      builder: (context, state) {
+        final content = state.getDetailInsectProcess is Success
+            ? (state.insect.taxonomy.family ?? "Unknow")
+            : "Loading...";
+        return MyTextBoxInsect(label: "Họ", content: content);
+      },
+    );
+  }
+}
+
 class _TaxonomyGenus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -496,7 +458,8 @@ class _ImageBox extends StatelessWidget {
                   ? Image.network(
                       width: 350,
                       height: 230,
-                      key: const Key('insectDetail_imageBox_imageNetwork'),
+                      key: Key(
+                          'insectDetail_imageBox_imageNetwork_img${int.parse(insect.modelId)}'),
                       state.insect.photoUrl,
                       fit: BoxFit.fill,
                     )

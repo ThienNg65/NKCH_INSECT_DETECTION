@@ -1,5 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/core/core.dart';
@@ -15,7 +13,9 @@ class MyDrawer extends StatefulWidget {
 class _MyDrawerState extends State<MyDrawer> {
   // Sign Out
   Future<void> signOut() async {
-    FirebaseAuth.instance.signOut();
+    // pop menu drawer
+    Navigator.pop(context);
+    BlocProvider.of<AuthBloc>(context).add(AuthLogoutRequested());
   }
 
   // to the Search page
