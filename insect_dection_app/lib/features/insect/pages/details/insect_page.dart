@@ -201,7 +201,7 @@ class _HarmedObject extends StatelessWidget {
             ? state.insect.harmedObject
             : "Loading...";
         return MyTextBoxInsect(
-          label: "Tác hại",
+          label: "Đối tượng ảnh hưởng",
           content: content,
         );
       },

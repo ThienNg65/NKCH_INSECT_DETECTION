@@ -2,7 +2,7 @@ part of 'insect_remote_datasources.dart';
 
 class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
   final FirebaseFirestore _data;
-
+  final int _recentlySearchLimit = 6;
   UserInsectRemoteDatasourceImpl({
     required FirebaseFirestore data,
     required FirebaseStorage storage,
@@ -121,7 +121,7 @@ class UserInsectRemoteDatasourceImpl implements UserInsectRemoteDatasource {
           .collection(InsectCollectionName.recentSearches)
           // Sort by model id and take fixed number of insects
           .orderBy('modelId', descending: true)
-          .limit(insectListParams.size)
+          .limit(_recentlySearchLimit)
           .get();
 
       final insects = insectsSnapshot.docs
