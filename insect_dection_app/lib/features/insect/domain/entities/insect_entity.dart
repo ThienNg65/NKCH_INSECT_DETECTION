@@ -16,6 +16,9 @@ class Insect extends Equatable {
   final String lifeCycle;
   final String pestControl;
 
+  final String harms;
+  final String harmedObject;
+
   const Insect({
     required this.modelId,
     required this.taxonomy,
@@ -27,6 +30,8 @@ class Insect extends Equatable {
     this.identificationFeatures = '',
     this.lifeCycle = '',
     this.pestControl = '',
+    this.harms = '',
+    this.harmedObject = '',
   });
 
   @override
@@ -42,14 +47,17 @@ class Insect extends Equatable {
       identificationFeatures,
       lifeCycle,
       pestControl,
+      harms,
+      harmedObject,
     ];
   }
 
   static get empty => Insect(
-      modelId: '',
-      taxonomy: Taxonomy.empty,
-      nomenclature: Nomenclature.empty,
-      impacts: Impact.empty);
+        modelId: '',
+        taxonomy: Taxonomy.empty,
+        nomenclature: Nomenclature.empty,
+        impacts: Impact.empty,
+      );
 
   Insect copyWith({
     String? modelId,
@@ -62,6 +70,8 @@ class Insect extends Equatable {
     String? identificationFeatures,
     String? lifeCycle,
     String? pestControl,
+    String? harms,
+    String? harmedObject,
   }) {
     return Insect(
       modelId: modelId ?? this.modelId,
@@ -75,6 +85,8 @@ class Insect extends Equatable {
           identificationFeatures ?? this.identificationFeatures,
       lifeCycle: lifeCycle ?? this.lifeCycle,
       pestControl: pestControl ?? this.pestControl,
+      harmedObject: harmedObject ?? this.harmedObject,
+      harms: harms ?? this.harms,
     );
   }
 

@@ -1,4 +1,3 @@
-export 'insect_entity_ui.dart';
 export 'insect_entity.dart';
 export 'insect_list_entity.dart';
 export 'impact_entity.dart';
