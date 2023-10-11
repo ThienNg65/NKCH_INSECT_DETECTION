@@ -144,7 +144,7 @@ class _InsectPageState extends State<InsectPage> {
                       ),
                       const SizedBox(height: 15),
 
-                      // Côn trùng cùng họ
+                      // Insect with same ordor
                       Padding(
                         padding: const EdgeInsets.only(left: 26, right: 26),
                         child: Text(

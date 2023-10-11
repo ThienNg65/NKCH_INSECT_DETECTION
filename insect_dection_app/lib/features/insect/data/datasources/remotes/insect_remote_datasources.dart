@@ -9,7 +9,7 @@ part 'user_insect_remote_datasource.dart';
 
 final class InsectCollectionName {
   static String users = 'users';
-  static String insects = 'insect_import_test';
+  static String insects = 'for_demo';
   static String bookmarkedInsects = 'favorite_insects';
   static String recentSearches = 'recent_searches';
 }
