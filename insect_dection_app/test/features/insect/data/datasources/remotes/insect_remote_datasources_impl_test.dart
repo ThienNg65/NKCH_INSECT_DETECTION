@@ -53,6 +53,8 @@ void main() {
       lifeCycle:
           'Eggs are laid on rice leaves. Larvae hatch and feed on rice leaves, making them curl up. Larvae go through 5 instars. Pupae form on rice leaves. Adults emerge from pupae and lay eggs.',
       pestControl: '',
+      effect: '',
+      harmedObject: '',
     );
 
     test('should get [Insect Model] in Firestore', () async {

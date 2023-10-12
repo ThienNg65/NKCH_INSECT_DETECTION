@@ -108,7 +108,7 @@ void main() {
 
       // Assert
       expect(json,
-          '{"modelId":"modelId","taxonomy":{"species":"","genus":"","family":"","order":"","class":"","phylum":"","regnum":""},"nomenclature":{"commonName":"","otherName":"","scientificName":""},"impacts":{"benefits":"","harms":""},"origin":null,"predators":null,"photoUrl":null,"identificationFeatures":null,"lifeCycle":null,"pestControl":null,"harms":null,"harmedObject":null}');
+          '{"modelId":"modelId","taxonomy":{"species":"","genus":"","family":"","order":"","class":"","phylum":"","regnum":""},"nomenclature":{"commonName":"","otherName":"","scientificName":""},"impacts":{"benefits":"","harms":""},"origin":null,"predators":null,"photoUrl":null,"identificationFeatures":null,"lifeCycle":null,"pestControl":null,"effect":null,"harmedObject":null}');
     });
 
     test(
@@ -116,7 +116,7 @@ void main() {
         () {
       // Arrange
       const json =
-          '{"modelId":"modelId","taxonomy":{"species":"","genus":"","family":"","order":"","class":"","phylum":"","regnum":""},"nomenclature":{"commonName":"","otherName":"","scientificName":""},"impacts":{"benefits":"","harms":""},"origin":null,"predators":null,"photoUrl":null,"identificationFeatures":null,"lifeCycle":null,"pestControl":null}';
+          '{"modelId":"modelId","taxonomy":{"species":"","genus":"","family":"","order":"","class":"","phylum":"","regnum":""},"nomenclature":{"commonName":"","otherName":"","scientificName":""},"impacts":{"benefits":"","harms":""},"origin":null,"predators":null,"photoUrl":null,"identificationFeatures":null,"lifeCycle":null,"pestControl":null,"effect":null,"harmedObject":null}';
 
       // Act
       final insectModel = InsectModel.fromJson(json);
@@ -177,14 +177,14 @@ void main() {
       expect(insect.taxonomy, Taxonomy.empty);
       expect(insect.nomenclature, Nomenclature.empty);
       expect(insect.impacts, Impact.empty);
-      expect(insectModel.origin, origin);
-      expect(insectModel.predators, predators);
-      expect(insectModel.photoUrl, photoUrl);
-      expect(insectModel.identificationFeatures, identificationFeatures);
-      expect(insectModel.lifeCycle, lifeCycle);
-      expect(insectModel.pestControl, pestControl);
-      expect(insectModel.effect, harms);
-      expect(insectModel.harmedObject, harmedObject);
+      expect(insect.origin, origin);
+      expect(insect.predators, predators);
+      expect(insect.photoUrl, photoUrl);
+      expect(insect.identificationFeatures, identificationFeatures);
+      expect(insect.lifeCycle, lifeCycle);
+      expect(insect.pestControl, pestControl);
+      expect(insect.effect, harms);
+      expect(insect.harmedObject, harmedObject);
     });
 
     test(

@@ -1,18 +1,17 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:insect_dection_app/features/features.dart';
 
-
 void main() {
   group('InsectListParams', () {
-    test('copyWith() should return a new InsectListParams instance with the updated fields', () {
+    test(
+        'copyWith() should return a new InsectListParams instance with the updated fields',
+        () {
       // Arrange
       final insectListParams = InsectListParams(
         hasNextPage: true,
         size: 10,
         previousPage: [Insect.empty],
         currentPage: [Insect.empty],
-        keyword: 'keyword',
-        filterAttribute: 'filterAttribute',
       );
 
       // Act
@@ -21,8 +20,6 @@ void main() {
         size: 20,
         previousPage: [Insect.empty, Insect.empty],
         currentPage: [Insect.empty, Insect.empty],
-        keyword: 'updated keyword',
-        filterAttribute: 'updated filterAttribute',
       );
 
       // Assert
@@ -30,11 +27,11 @@ void main() {
       expect(updatedInsectListParams.size, 20);
       expect(updatedInsectListParams.previousPage.length, 2);
       expect(updatedInsectListParams.currentPage.length, 2);
-      expect(updatedInsectListParams.keyword, 'updated keyword');
-      expect(updatedInsectListParams.filterAttribute, 'updated filterAttribute');
     });
 
-    test('fromEntity() should create a InsectListParams instance from a InsectList entity', () {
+    test(
+        'fromEntity() should create a InsectListParams instance from a InsectList entity',
+        () {
       // Arrange
       final insectListEntity = InsectList(
         hasNextPage: true,
@@ -53,15 +50,15 @@ void main() {
       expect(insectListParams.currentPage.length, 1);
     });
 
-    test('props should return a list of all the properties of the InsectListParams instance', () {
+    test(
+        'props should return a list of all the properties of the InsectListParams instance',
+        () {
       // Arrange
       final insectListParams = InsectListParams(
         hasNextPage: true,
         size: 10,
         previousPage: [Insect.empty],
         currentPage: [Insect.empty],
-        keyword: 'keyword',
-        filterAttribute: 'filterAttribute',
       );
 
       // Act
@@ -73,8 +70,6 @@ void main() {
         10,
         [Insect.empty],
         [Insect.empty],
-        'keyword',
-        'filterAttribute',
       ]);
     });
   });
