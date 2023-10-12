@@ -46,6 +46,16 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
+  void _toggleSearchValueChanged(String keyword) {
+    if (keyword.isNotEmpty) {
+      BlocProvider.of<SearchInsectBloc>(context).add(
+        SearchInsectByKeyword(keyword),
+      );
+    } else {
+      BlocProvider.of<SearchInsectBloc>(context).add(ResetSearchResult());
+    }
+  }
+
   @override
   void initState() {
     BlocProvider.of<SearchInsectBloc>(context).add(
@@ -68,11 +78,7 @@ class _SearchPageState extends State<SearchPage> {
             child: CupertinoSearchTextField(
               padding: const EdgeInsets.all(15.0),
               backgroundColor: Colors.grey[100],
-              onChanged: (value) {
-                BlocProvider.of<SearchInsectBloc>(context).add(
-                  SearchInsectByKeyword(value),
-                );
-              },
+              onChanged: (value) => _toggleSearchValueChanged(value),
             ),
           ),
           Container(
