@@ -179,7 +179,7 @@ class _Harms extends StatelessWidget {
           previous.getDetailInsectProcess != current.getDetailInsectProcess,
       builder: (context, state) {
         final content = state.getDetailInsectProcess is Success
-            ? state.insect.harms
+            ? state.insect.effect
             : "Loading...";
         return MyTextBoxInsect(
           label: "Tác hại",

@@ -34,7 +34,7 @@ void main() {
         lifeCycle: 'lifeCycle',
         pestControl: 'pestControl',
         harmedObject: 'harmedObject',
-        harms: 'harms',
+        effect: 'harms',
       );
 
       // Act
@@ -65,7 +65,7 @@ void main() {
         lifeCycle: 'updatedLifeCycle',
         pestControl: 'updatedPestControl',
         harmedObject: 'updatedharmedObject',
-        harms: 'updatedharms',
+        effect: 'updatedharms',
       );
 
       // Assert
@@ -91,7 +91,7 @@ void main() {
       expect(updatedInsect.lifeCycle, 'updatedLifeCycle');
       expect(updatedInsect.pestControl, 'updatedPestControl');
       expect(updatedInsect.harmedObject, 'updatedharmedObject');
-      expect(updatedInsect.harms, 'updatedharms');
+      expect(updatedInsect.effect, 'updatedharms');
     });
 
     test('toString() should return the identificationFeatures of the Insect',

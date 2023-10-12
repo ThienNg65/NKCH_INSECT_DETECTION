@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 
@@ -14,6 +15,9 @@ class InsectParams extends Equatable {
   final String? lifeCycle;
   final String? pestControl;
 
+  final String? effect;
+  final String? harmedObject;
+
   const InsectParams({
     required this.modelId,
     required this.taxonomy,
@@ -25,6 +29,8 @@ class InsectParams extends Equatable {
     this.identificationFeatures,
     this.lifeCycle,
     this.pestControl,
+    this.effect,
+    this.harmedObject,
   });
 
   InsectParams copyWith({
@@ -38,6 +44,8 @@ class InsectParams extends Equatable {
     String? identificationFeatures,
     String? lifeCycle,
     String? pestControl,
+    String? effect,
+    String? harmedObject,
   }) {
     return InsectParams(
       modelId: modelId ?? this.modelId,
@@ -51,6 +59,8 @@ class InsectParams extends Equatable {
           identificationFeatures ?? this.identificationFeatures,
       lifeCycle: lifeCycle ?? this.lifeCycle,
       pestControl: pestControl ?? this.pestControl,
+      effect: effect ?? this.effect,
+      harmedObject: harmedObject ?? this.harmedObject,
     );
   }
 
@@ -67,6 +77,8 @@ class InsectParams extends Equatable {
       identificationFeatures,
       lifeCycle,
       pestControl,
+      harmedObject,
+      effect,
     ];
   }
 
@@ -81,5 +93,7 @@ class InsectParams extends Equatable {
         identificationFeatures: enitty.identificationFeatures,
         lifeCycle: enitty.lifeCycle,
         pestControl: enitty.pestControl,
+        harmedObject: enitty.harmedObject,
+        effect: enitty.effect,
       );
 }

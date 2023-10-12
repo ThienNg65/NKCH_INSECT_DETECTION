@@ -17,6 +17,9 @@ class InsectModel extends Equatable {
   final String? lifeCycle;
   final String? pestControl;
 
+  final String? effect;
+  final String? harmedObject;
+
   const InsectModel({
     required this.modelId,
     required this.taxonomy,
@@ -28,6 +31,8 @@ class InsectModel extends Equatable {
     this.identificationFeatures,
     this.lifeCycle,
     this.pestControl,
+    this.effect,
+    this.harmedObject,
   });
 
   @override
@@ -43,6 +48,8 @@ class InsectModel extends Equatable {
       identificationFeatures,
       lifeCycle,
       pestControl,
+      effect,
+      harmedObject,
     ];
   }
 
@@ -58,6 +65,8 @@ class InsectModel extends Equatable {
       'identificationFeatures': identificationFeatures,
       'lifeCycle': lifeCycle,
       'pestControl': pestControl,
+      'effect': effect,
+      'harmedObject': harmedObject,
     };
   }
 
@@ -68,12 +77,14 @@ class InsectModel extends Equatable {
             taxonomy: TaxonomyModel.fromMap(map['taxonomy']),
             nomenclature: NomenclatureModel.fromMap(map['nomenclature']),
             impacts: ImpactModel.fromMap(map['impacts'] ?? map['impacts']),
-            origin: map['origin'],
-            predators: map['predators'],
-            photoUrl: map['photoUrl'],
-            identificationFeatures: map['identificationFeatures'],
-            lifeCycle: map['lifeCycle'],
-            pestControl: map['pestControl'],
+            origin: map['origin'] ?? '',
+            predators: map['predators'] ?? '',
+            photoUrl: map['photoUrl'] ?? '',
+            identificationFeatures: map['identificationFeatures'] ?? '',
+            lifeCycle: map['lifeCycle'] ?? '',
+            pestControl: map['pestControl'] ?? '',
+            effect: map['effect'] ?? '',
+            harmedObject: map['harmedObject'] ?? '',
           )
         : InsectModel.empty();
   }
@@ -94,6 +105,8 @@ class InsectModel extends Equatable {
     String? identificationFeatures,
     String? lifeCycle,
     String? pestControl,
+    String? effect,
+    String? harmedObject,
   }) {
     return InsectModel(
       modelId: modelId ?? this.modelId,
@@ -107,6 +120,8 @@ class InsectModel extends Equatable {
           identificationFeatures ?? this.identificationFeatures,
       lifeCycle: lifeCycle ?? this.lifeCycle,
       pestControl: pestControl ?? this.pestControl,
+      effect: effect ?? this.effect,
+      harmedObject: harmedObject ?? this.harmedObject,
     );
   }
 
@@ -121,6 +136,8 @@ class InsectModel extends Equatable {
         identificationFeatures: insectParams.identificationFeatures,
         lifeCycle: insectParams.lifeCycle,
         pestControl: insectParams.pestControl,
+        harmedObject: insectParams.harmedObject,
+        effect: insectParams.effect,
       );
   Insect toEntity() => Insect(
         modelId: modelId,
@@ -133,6 +150,8 @@ class InsectModel extends Equatable {
         identificationFeatures: identificationFeatures ?? '',
         lifeCycle: lifeCycle ?? '',
         pestControl: pestControl ?? '',
+        harmedObject: harmedObject ?? '',
+        effect: effect ?? '',
       );
   static InsectModel fromEntity(Insect enity) => InsectModel(
         modelId: enity.modelId,
@@ -145,6 +164,8 @@ class InsectModel extends Equatable {
         identificationFeatures: enity.identificationFeatures,
         lifeCycle: enity.lifeCycle,
         pestControl: enity.pestControl,
+        harmedObject: enity.harmedObject,
+        effect: enity.effect,
       );
   factory InsectModel.empty() => InsectModel(
         modelId: '',

@@ -16,7 +16,7 @@ class Insect extends Equatable {
   final String lifeCycle;
   final String pestControl;
 
-  final String harms;
+  final String effect;
   final String harmedObject;
 
   const Insect({
@@ -30,7 +30,7 @@ class Insect extends Equatable {
     this.identificationFeatures = '',
     this.lifeCycle = '',
     this.pestControl = '',
-    this.harms = '',
+    this.effect = '',
     this.harmedObject = '',
   });
 
@@ -47,7 +47,7 @@ class Insect extends Equatable {
       identificationFeatures,
       lifeCycle,
       pestControl,
-      harms,
+      effect,
       harmedObject,
     ];
   }
@@ -70,7 +70,7 @@ class Insect extends Equatable {
     String? identificationFeatures,
     String? lifeCycle,
     String? pestControl,
-    String? harms,
+    String? effect,
     String? harmedObject,
   }) {
     return Insect(
@@ -86,7 +86,7 @@ class Insect extends Equatable {
       lifeCycle: lifeCycle ?? this.lifeCycle,
       pestControl: pestControl ?? this.pestControl,
       harmedObject: harmedObject ?? this.harmedObject,
-      harms: harms ?? this.harms,
+      effect: effect ?? this.effect,
     );
   }
 

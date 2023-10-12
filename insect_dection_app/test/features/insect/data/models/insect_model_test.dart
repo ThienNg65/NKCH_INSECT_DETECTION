@@ -6,6 +6,14 @@ void main() {
     final taxonomy = TaxonomyModel.fromEntity(Taxonomy.empty);
     final nomenclature = NomenclatureModel.fromEntity(Nomenclature.empty);
     final impacts = ImpactModel.fromEntity(Impact.empty);
+    const origin = "";
+    const predators = "";
+    const photoUrl = "";
+    const identificationFeatures = "";
+    const lifeCycle = "";
+    const pestControl = "";
+    const harms = "";
+    const harmedObject = "";
     test(
         'copyWith() should return a new InsectModel instance with the updated fields',
         () {
@@ -74,6 +82,14 @@ void main() {
       expect(insectModel.taxonomy, taxonomy);
       expect(insectModel.nomenclature, nomenclature);
       expect(insectModel.impacts, impacts);
+      expect(insectModel.origin, origin);
+      expect(insectModel.predators, predators);
+      expect(insectModel.photoUrl, photoUrl);
+      expect(insectModel.identificationFeatures, identificationFeatures);
+      expect(insectModel.lifeCycle, lifeCycle);
+      expect(insectModel.pestControl, pestControl);
+      expect(insectModel.effect, harms);
+      expect(insectModel.harmedObject, harmedObject);
     });
 
     test(
@@ -92,7 +108,7 @@ void main() {
 
       // Assert
       expect(json,
-          '{"modelId":"modelId","taxonomy":{"species":"","genus":"","family":"","order":"","class":"","phylum":"","regnum":""},"nomenclature":{"commonName":"","otherName":"","scientificName":""},"impacts":{"benefits":"","harms":""},"origin":null,"predators":null,"photoUrl":null,"identificationFeatures":null,"lifeCycle":null,"pestControl":null}');
+          '{"modelId":"modelId","taxonomy":{"species":"","genus":"","family":"","order":"","class":"","phylum":"","regnum":""},"nomenclature":{"commonName":"","otherName":"","scientificName":""},"impacts":{"benefits":"","harms":""},"origin":null,"predators":null,"photoUrl":null,"identificationFeatures":null,"lifeCycle":null,"pestControl":null,"harms":null,"harmedObject":null}');
     });
 
     test(
@@ -110,6 +126,14 @@ void main() {
       expect(insectModel.taxonomy, taxonomy);
       expect(insectModel.nomenclature, nomenclature);
       expect(insectModel.impacts, impacts);
+      expect(insectModel.origin, origin);
+      expect(insectModel.predators, predators);
+      expect(insectModel.photoUrl, photoUrl);
+      expect(insectModel.identificationFeatures, identificationFeatures);
+      expect(insectModel.lifeCycle, lifeCycle);
+      expect(insectModel.pestControl, pestControl);
+      expect(insectModel.effect, harms);
+      expect(insectModel.harmedObject, harmedObject);
     });
 
     test(
@@ -153,6 +177,14 @@ void main() {
       expect(insect.taxonomy, Taxonomy.empty);
       expect(insect.nomenclature, Nomenclature.empty);
       expect(insect.impacts, Impact.empty);
+      expect(insectModel.origin, origin);
+      expect(insectModel.predators, predators);
+      expect(insectModel.photoUrl, photoUrl);
+      expect(insectModel.identificationFeatures, identificationFeatures);
+      expect(insectModel.lifeCycle, lifeCycle);
+      expect(insectModel.pestControl, pestControl);
+      expect(insectModel.effect, harms);
+      expect(insectModel.harmedObject, harmedObject);
     });
 
     test(
@@ -175,6 +207,14 @@ void main() {
       expect(insectModel.nomenclature,
           NomenclatureModel.fromEntity(Nomenclature.empty));
       expect(insectModel.impacts, ImpactModel.fromEntity(Impact.empty));
+      expect(insectModel.origin, origin);
+      expect(insectModel.predators, predators);
+      expect(insectModel.photoUrl, photoUrl);
+      expect(insectModel.identificationFeatures, identificationFeatures);
+      expect(insectModel.lifeCycle, lifeCycle);
+      expect(insectModel.pestControl, pestControl);
+      expect(insectModel.effect, harms);
+      expect(insectModel.harmedObject, harmedObject);
     });
   });
 }
