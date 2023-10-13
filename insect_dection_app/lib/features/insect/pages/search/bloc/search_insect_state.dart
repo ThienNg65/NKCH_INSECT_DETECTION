@@ -8,6 +8,8 @@ class SearchInsectState extends Equatable {
   final InsectList insectList;
   final InsectList searchResulList;
 
+  final String filterAttribute;
+
   final Process getInsectByKeywordProcess;
   final Process getLoadInsectListProcess;
 
@@ -16,6 +18,7 @@ class SearchInsectState extends Equatable {
     required this.isKeywordSearch,
     required this.insectList,
     required this.searchResulList,
+    required this.filterAttribute,
     required this.getInsectByKeywordProcess,
     required this.getLoadInsectListProcess,
   });
@@ -25,6 +28,7 @@ class SearchInsectState extends Equatable {
         isKeywordSearch: false,
         insectList: InsectList.empty,
         searchResulList: InsectList.empty,
+        filterAttribute: NomenclatureName.commonName.attribute,
         getInsectByKeywordProcess: const Initial(),
         getLoadInsectListProcess: const Initial(),
       );
@@ -35,6 +39,7 @@ class SearchInsectState extends Equatable {
       isFirstLoad,
       insectList,
       searchResulList,
+      filterAttribute,
       getInsectByKeywordProcess,
       getLoadInsectListProcess,
     ];
@@ -45,6 +50,7 @@ class SearchInsectState extends Equatable {
     bool? isFirstLoad,
     InsectList? insectList,
     InsectList? searchResulList,
+    String? filterAttribute,
     Process? getInsectByKeywordProcess,
     Process? getLoadInsectListProcess,
   }) {
@@ -53,6 +59,7 @@ class SearchInsectState extends Equatable {
       isFirstLoad: isFirstLoad ?? this.isFirstLoad,
       insectList: insectList ?? this.insectList,
       searchResulList: searchResulList ?? this.searchResulList,
+      filterAttribute: filterAttribute ?? this.filterAttribute,
       getInsectByKeywordProcess:
           getInsectByKeywordProcess ?? this.getInsectByKeywordProcess,
       getLoadInsectListProcess:

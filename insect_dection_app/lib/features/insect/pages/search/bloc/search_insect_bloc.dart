@@ -21,6 +21,7 @@ class SearchInsectBloc extends Bloc<SearchInsectEvent, SearchInsectState> {
     on<LoadMoreLibraryInsectList>(_onLoadLibaryInsectList);
     on<ResetSearchResult>(_onResetSearchResult);
     on<LoadInitalLibraryInsectList>(_onLoadInitalLibraryInsectList);
+    on<SearchFilterAttributeChanged>(_onSearchFilterAttributeChanged);
   }
 
   final GetInitialInsectList _getInitialInsectList;
@@ -41,7 +42,11 @@ class SearchInsectBloc extends Bloc<SearchInsectEvent, SearchInsectState> {
 
       /// Trim the search
       final keyword = event.keyword.trim();
-      final result = await _getInsectByKeyword(keyword);
+      final insectListFilterParams = InsectListFilterParams(
+        keyword: keyword,
+        filterAttribute: state.filterAttribute,
+      );
+      final result = await _getInsectByKeyword(insectListFilterParams);
 
       /// Handle result
       result.fold(
@@ -169,5 +174,12 @@ class SearchInsectBloc extends Bloc<SearchInsectEvent, SearchInsectState> {
     } catch (err) {
       debugPrint(err.toString());
     }
+  }
+
+  Future<void> _onSearchFilterAttributeChanged(
+    SearchFilterAttributeChanged event,
+    Emitter<SearchInsectState> emit,
+  ) async {
+    emit(state.copyWith(filterAttribute: event.filterAttribute));
   }
 }

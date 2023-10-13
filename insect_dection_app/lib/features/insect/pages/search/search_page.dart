@@ -56,6 +56,11 @@ class _SearchPageState extends State<SearchPage> {
     }
   }
 
+  void _toggleSearchFilterChanged(String filterAttribute) {
+    BlocProvider.of<SearchInsectBloc>(context)
+        .add(SearchFilterAttributeChanged(filterAttribute));
+  }
+
   @override
   void initState() {
     BlocProvider.of<SearchInsectBloc>(context).add(
@@ -103,7 +108,10 @@ class _SearchPageState extends State<SearchPage> {
                       IconButton(
                         onPressed: () {
                           // ignore: avoid_print
-                          print("Helo");
+                          debugPrint(TaxonomicRank.family.attribute);
+                          _toggleSearchFilterChanged(
+                            TaxonomicRank.family.attribute,
+                          );
                         },
                         icon: const Icon(Icons.check_box_outline_blank),
                       ),
@@ -116,7 +124,14 @@ class _SearchPageState extends State<SearchPage> {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // ignore: avoid_print
+                          debugPrint(
+                              "Search Filter:${TaxonomicRank.order.attribute}");
+                          _toggleSearchFilterChanged(
+                            TaxonomicRank.order.attribute,
+                          );
+                        },
                         icon: const Icon(Icons.check_box_outline_blank),
                       ),
                       const Text("Bộ"),
@@ -128,7 +143,14 @@ class _SearchPageState extends State<SearchPage> {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // ignore: avoid_print
+                          debugPrint(
+                              "Search Filter:${NomenclatureName.commonName.attribute}");
+                          _toggleSearchFilterChanged(
+                            NomenclatureName.commonName.attribute,
+                          );
+                        },
                         icon: const Icon(Icons.check_box_outline_blank),
                       ),
                       const Text("Loài"),

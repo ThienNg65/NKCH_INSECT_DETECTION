@@ -19,3 +19,8 @@ final class LoadInitalLibraryInsectList extends SearchInsectEvent {
 final class ResetSearchResult extends SearchInsectEvent {
   ResetSearchResult();
 }
+
+final class SearchFilterAttributeChanged extends SearchInsectEvent {
+  final String filterAttribute;
+  SearchFilterAttributeChanged(this.filterAttribute);
+}
