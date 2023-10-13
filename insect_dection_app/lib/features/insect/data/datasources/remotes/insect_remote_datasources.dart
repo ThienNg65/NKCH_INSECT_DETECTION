@@ -19,7 +19,9 @@ abstract class InsectRemoteDatasource {
   Future<Either<Failure, InsectModel>> getInsectByModelId(
     String modelId,
   );
-  Future<Either<Failure, InsectListModel>> getInsectByKeyword(String keyword);
+  Future<Either<Failure, InsectListModel>> getInsectByKeyword(
+    InsectListFilterParams insectListFilterParams,
+  );
 
   Future<Either<Failure, InsectListModel>> getInitialInsectList(
     InsectListParams insectListParams,

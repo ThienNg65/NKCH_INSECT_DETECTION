@@ -32,11 +32,11 @@ class InsectListFilterParams extends Equatable {
   @override
   List<Object?> get props => [keyword, filterAttribute];
 
-  static InsectListFilterParams get empty => InsectListFilterParams(
+  static InsectListFilterParams get defaultOption => InsectListFilterParams(
         keyword: '',
         filterAttribute: NomenclatureName.commonName.attribute,
       );
-  bool get isEmpty => this == InsectListFilterParams.empty;
+  bool get isEmpty => this == InsectListFilterParams.defaultOption;
 
   bool get isNotEmpty => !isEmpty;
   InsectListFilterParams copyWith({

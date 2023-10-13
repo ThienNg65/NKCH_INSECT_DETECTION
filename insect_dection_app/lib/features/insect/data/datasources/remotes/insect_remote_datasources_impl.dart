@@ -53,7 +53,7 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
       return Right(InsectListModel(
         currentPage: insects,
         hasNextPage: true,
-        size: insects.length
+        size: insects.length,
       ));
     } on FirebaseException catch (e) {
       // Return a Failure object if an error occurs.
@@ -113,19 +113,21 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
 
   @override
   Future<Either<Failure, InsectListModel>> getInsectByKeyword(
-      String keyword) async {
+      InsectListFilterParams insectListFilterParams) async {
     // Get the initial page of insects.
     try {
+      final keyword = insectListFilterParams.keyword;
+      final filterAttribute = insectListFilterParams.filterAttribute;
       // Take id
       final insectsDocument = await _data
           .collection(InsectCollectionName.insects)
-          .orderBy("nomenclature.commonName")
+          .orderBy(filterAttribute)
           .where(
-            "nomenclature.commonName",
+            filterAttribute,
             isGreaterThanOrEqualTo: keyword,
           )
           .where(
-            "nomenclature.commonName",
+            filterAttribute,
             isLessThan: _replaceCharactersNext(keyword),
           )
           .limit(10)

@@ -7,7 +7,9 @@ abstract class InsectRepository {
   Future<Either<Failure, Insect>> getInsectByModelId(
     String modelId,
   );
-  Future<Either<Failure, InsectList>> getInsectByKeyword(String keyword);
+  Future<Either<Failure, InsectList>> getInsectByKeyword(
+    InsectListFilterParams insectListFilterParams,
+  );
   Future<Either<Failure, InsectList>> getInitialInsectList(
     InsectListParams insectListParams,
   );
