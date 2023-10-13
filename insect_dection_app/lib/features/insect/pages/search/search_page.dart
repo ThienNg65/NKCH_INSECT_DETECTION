@@ -93,71 +93,89 @@ class _SearchPageState extends State<SearchPage> {
               borderRadius: BorderRadius.circular(16.0),
               color: Colors.grey[200],
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(1.0),
-                  child: Text("Search for:"),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          // ignore: avoid_print
-                          debugPrint(TaxonomicRank.family.attribute);
-                          _toggleSearchFilterChanged(
-                            TaxonomicRank.family.attribute,
-                          );
-                        },
-                        icon: const Icon(Icons.check_box_outline_blank),
+            child: BlocBuilder<SearchInsectBloc, SearchInsectState>(
+              buildWhen: (previous, current) =>
+                  current.filterAttribute.
+                  compareTo(previous.filterAttribute,) !=
+                      0 ||
+                  current.isFirstLoad == true,
+              builder: (context, state) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.all(1.0),
+                      child: Text("Search for:"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              // ignore: avoid_print
+                              debugPrint(TaxonomicRank.family.attribute);
+                              _toggleSearchFilterChanged(
+                                TaxonomicRank.family.attribute,
+                              );
+                            },
+                            icon: state.filterAttribute
+                                    .contains(TaxonomicRank.family.attribute)
+                                ? const Icon(Icons.radio_button_checked)
+                                : const Icon(Icons.radio_button_off),
+                          ),
+                          const Text("Họ"),
+                        ],
                       ),
-                      const Text("Họ"),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          // ignore: avoid_print
-                          debugPrint(
-                              "Search Filter:${TaxonomicRank.order.attribute}");
-                          _toggleSearchFilterChanged(
-                            TaxonomicRank.order.attribute,
-                          );
-                        },
-                        icon: const Icon(Icons.check_box_outline_blank),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              // ignore: avoid_print
+                              debugPrint(
+                                  "Search Filter:${TaxonomicRank.order.attribute}");
+                              _toggleSearchFilterChanged(
+                                TaxonomicRank.order.attribute,
+                              );
+                            },
+                            icon: state.filterAttribute
+                                    .contains(TaxonomicRank.order.attribute)
+                                ? const Icon(Icons.radio_button_checked)
+                                : const Icon(Icons.radio_button_off),
+                          ),
+                          const Text("Bộ"),
+                        ],
                       ),
-                      const Text("Bộ"),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          // ignore: avoid_print
-                          debugPrint(
-                              "Search Filter:${NomenclatureName.commonName.attribute}");
-                          _toggleSearchFilterChanged(
-                            NomenclatureName.commonName.attribute,
-                          );
-                        },
-                        icon: const Icon(Icons.check_box_outline_blank),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              // ignore: avoid_print
+                              debugPrint(
+                                  "Search Filter:${NomenclatureName.commonName.attribute}");
+                              _toggleSearchFilterChanged(
+                                NomenclatureName.commonName.attribute,
+                              );
+                            },
+                            icon: state.filterAttribute.contains(
+                                    NomenclatureName.commonName.attribute)
+                                ? const Icon(Icons.radio_button_checked)
+                                : const Icon(Icons.radio_button_off),
+                          ),
+                          const Text("Loài"),
+                        ],
                       ),
-                      const Text("Loài"),
-                    ],
-                  ),
-                ),
-              ],
+                    ),
+                  ],
+                );
+              },
             ),
           ),
           Expanded(
