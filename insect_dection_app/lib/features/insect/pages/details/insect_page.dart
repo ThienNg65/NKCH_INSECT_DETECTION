@@ -132,11 +132,61 @@ class _InsectPageState extends State<InsectPage> {
                       ),
                       const SizedBox(height: 15),
 
-                      /// Insect in the same level of taxonomy
+                      /// Insect in the same level of familia
                       Padding(
                         padding: const EdgeInsets.only(left: 26, right: 26),
                         child: Text(
                           "Côn trùng cùng họ: ",
+                          style: TextStyle(
+                            color: Colors.grey[900],
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        padding: EdgeInsets.all(15.0),
+                        margin: const EdgeInsets.all(20.0),
+                        height: 170,
+                        width: 400,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: Colors.black,
+                                    radius: 35,
+                                    // backgroundImage: insect.photoUrl.isNotEmpty
+                                    //     ? NetworkImage(insect.photoUrl)
+                                    //     : null,
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    "Naruto Na ",
+                                    overflow: TextOverflow.clip,
+                                    maxLines: 1,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      /// Insect in the same level of familia
+                      Padding(
+                        padding: const EdgeInsets.only(left: 26, right: 26),
+                        child: Text(
+                          "Côn trùng cùng Bộ: ",
                           style: TextStyle(
                             color: Colors.grey[900],
                             fontSize: 20,
