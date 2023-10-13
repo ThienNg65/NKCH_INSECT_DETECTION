@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insect_dection_app/core/core.dart';
@@ -144,6 +144,43 @@ class _InsectPageState extends State<InsectPage> {
                           ),
                         ),
                       ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        padding: EdgeInsets.all(15.0),
+                        margin: const EdgeInsets.all(20.0),
+                        height: 170,
+                        width: 400,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: Colors.black,
+                                    radius: 35,
+                                    // backgroundImage: insect.photoUrl.isNotEmpty
+                                    //     ? NetworkImage(insect.photoUrl)
+                                    //     : null,
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    "Naruto Na ",
+                                    overflow: TextOverflow.clip,
+                                    maxLines: 1,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ],
