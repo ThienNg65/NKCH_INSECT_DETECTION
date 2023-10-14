@@ -26,8 +26,20 @@ class SimilarTaxonomicInsectListView extends StatelessWidget {
         itemBuilder: (context, index) {
           final insect = insectList.currentPage[index];
 
-          return SimilarTaxonomicInsectListTile(insect: insect);
+          return SimilarTaxonomicInsectListTile(
+            insect: insect,
+            onTap: () => toggleInsectPage(context, insect),
+          );
         },
+      ),
+    );
+  }
+
+  void toggleInsectPage(BuildContext context, Insect insect) {
+    Navigator.of(context).push(
+      InsectPage.route(
+        context,
+        modelId: insect.modelId,
       ),
     );
   }
