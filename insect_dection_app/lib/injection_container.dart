@@ -88,6 +88,7 @@ void initInsectDetail() {
       addRecentlySearchInsect: sl<AddRecentlySearchInsect>(),
       getInsectBookmarkedState: sl<GetInsectBookmarkedState>(),
       removeBookmarkedInsect: sl<RemoveBookmarkedInsect>(),
+      getInsectsByTaxnomyRank: sl<GetInsectsByTaxnomyRank>(),
     ),
   );
   sl.registerFactory<BookmarkedInsectsBloc>(
@@ -136,6 +137,9 @@ void initInsectDetail() {
   );
   sl.registerLazySingleton<GetInsectByKeyword>(
     () => GetInsectByKeyword(repo: sl.call()),
+  );
+  sl.registerLazySingleton<GetInsectsByTaxnomyRank>(
+    () => GetInsectsByTaxnomyRank(repo: sl.call()),
   );
 
   /// Recently search

@@ -255,6 +255,13 @@ class _InsectPageState extends State<InsectPage> {
         modelId: state.insect.modelId,
       ),
     );
+    // Load in the same taxonomy
+    BlocProvider.of<InsectDetailBloc>(context).add(
+      LoadInsectListInSameOrdoRankEvent(state.insect),
+    );
+    BlocProvider.of<InsectDetailBloc>(context).add(
+      LoadInsectListInSameFamiliaRankEvent(state.insect),
+    );
   }
 }
 
