@@ -107,6 +107,23 @@ class MockInsectRepository extends _i1.Mock implements _i3.InsectRepository {
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>> getInsectsByTaxnomyRank(
+          _i3.InsectListFilterParams? insectListFilterParams) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getInsectsByTaxnomyRank,
+          [insectListFilterParams],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>.value(
+            _FakeEither_0<_i5.Failure, _i3.InsectList>(
+          this,
+          Invocation.method(
+            #getInsectsByTaxnomyRank,
+            [insectListFilterParams],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
 }
 
 /// A class which mocks [UserInsectDataRepository].
@@ -344,6 +361,25 @@ class MockInsectRemoteDatasource extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>>);
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>>
+      getInsectsByTaxnomyRank(
+              _i3.InsectListFilterParams? insectListFilterParams) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #getInsectsByTaxnomyRank,
+              [insectListFilterParams],
+            ),
+            returnValue:
+                _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>>.value(
+                    _FakeEither_0<_i5.Failure, _i3.InsectListModel>(
+              this,
+              Invocation.method(
+                #getInsectsByTaxnomyRank,
+                [insectListFilterParams],
+              ),
+            )),
+          ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectListModel>>);
 }
 
 /// A class which mocks [UserInsectRemoteDatasource].

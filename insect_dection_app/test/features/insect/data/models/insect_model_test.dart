@@ -158,33 +158,61 @@ void main() {
       expect(insectModel.impacts, ImpactModel.fromEntity(Impact.empty));
     });
 
-    test(
-        'toEntity() should return a new Insect instance from the current InsectModel instance',
-        () {
-      // Arrange
-      final insectModel = InsectModel(
-        modelId: '1',
-        taxonomy: TaxonomyModel.fromEntity(Taxonomy.empty),
-        nomenclature: NomenclatureModel.fromEntity(Nomenclature.empty),
-        impacts: ImpactModel.fromEntity(Impact.empty),
+    test('toEntity() should convert model to entity', () {
+      // Create an InsectModel instance
+      const insectModel = InsectModel(
+        modelId: 'insect-123',
+        taxonomy: TaxonomyModel(
+          species: 'Danaus plexippus',
+          genus: 'Danaus',
+          family: 'Nymphalidae',
+          order: 'Lepidoptera',
+          classical: 'Insecta',
+          phylum: 'Arthropoda',
+          regnum: 'Animalia',
+        ),
+        nomenclature: NomenclatureModel(
+          commonName: 'Monarch Butterfly',
+          otherName: 'Milkweed butterfly',
+          scientificName: 'Danaus plexippus',
+        ),
+        impacts: ImpactModel(),
+        origin: 'North America',
+        predators: 'Birds, spiders, lizards',
+        photoUrl: 'https://example.com/monarch-butterfly.jpg',
+        identificationFeatures: 'Orange and black wings with white spots',
+        lifeCycle: 'Four stages: egg, larva, pupa, adult',
+        pestControl: 'Remove milkweed plants from gardens',
+        effect: 'Feeds on milkweed plants',
+        harmedObject: 'Milkweed plants',
       );
 
-      // Act
-      final insect = insectModel.toEntity();
+      // Convert the model to an entity
+      final insectEntity = insectModel.toEntity();
 
-      // Assert
-      expect(insect.modelId, '1');
-      expect(insect.taxonomy, Taxonomy.empty);
-      expect(insect.nomenclature, Nomenclature.empty);
-      expect(insect.impacts, Impact.empty);
-      expect(insect.origin, origin);
-      expect(insect.predators, predators);
-      expect(insect.photoUrl, photoUrl);
-      expect(insect.identificationFeatures, identificationFeatures);
-      expect(insect.lifeCycle, lifeCycle);
-      expect(insect.pestControl, pestControl);
-      expect(insect.effect, harms);
-      expect(insect.harmedObject, harmedObject);
+      // Verify the entity properties
+      expect(insectEntity.modelId, 'insect-123');
+      expect(insectEntity.taxonomy.species, 'Danaus plexippus');
+      expect(insectEntity.taxonomy.genus, 'Danaus');
+      expect(insectEntity.taxonomy.family, 'Nymphalidae');
+      expect(insectEntity.taxonomy.order, 'Lepidoptera');
+      expect(insectEntity.taxonomy.classical, 'Insecta');
+      expect(insectEntity.taxonomy.phylum, 'Arthropoda');
+      expect(insectEntity.taxonomy.regnum, 'Animalia');
+      expect(insectEntity.nomenclature.commonName, 'Monarch Butterfly');
+      expect(insectEntity.nomenclature.otherName, 'Milkweed butterfly');
+      expect(insectEntity.nomenclature.scientificName, 'Danaus plexippus');
+      expect(insectModel.impacts, ImpactModel.fromEntity(Impact.empty));
+      expect(insectEntity.effect, 'Feeds on milkweed plants');
+      expect(insectEntity.harmedObject, 'Milkweed plants');
+      expect(insectEntity.origin, 'North America');
+      expect(insectEntity.predators, 'Birds, spiders, lizards');
+      expect(
+          insectEntity.photoUrl, 'https://example.com/monarch-butterfly.jpg');
+      expect(insectEntity.identificationFeatures,
+          'Orange and black wings with white spots');
+      expect(insectEntity.lifeCycle, 'Four stages: egg, larva, pupa, adult');
+      expect(insectEntity.pestControl, 'Remove milkweed plants from gardens');
     });
 
     test(
