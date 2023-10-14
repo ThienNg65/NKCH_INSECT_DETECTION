@@ -818,3 +818,31 @@ class MockGetBookmarkedInsectList extends _i1.Mock
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
 }
+
+/// A class which mocks [GetInsectsByTaxnomyRank].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetInsectsByTaxnomyRank extends _i1.Mock
+    implements _i3.GetInsectsByTaxnomyRank {
+  MockGetInsectsByTaxnomyRank() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>> call(
+          _i3.InsectListFilterParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>.value(
+            _FakeEither_0<_i5.Failure, _i3.InsectList>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.InsectList>>);
+}

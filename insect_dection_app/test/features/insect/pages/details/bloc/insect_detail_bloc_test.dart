@@ -14,6 +14,7 @@ void main() {
   late MockRemoveBookmarkedInsect mockRemoveBookmarkedInsect;
   late MockAddRecentlySearchInsect mockAddRecentlySearchInsect;
   late MockGetInsectBookmarkedState mockGetInsectBookmarkedState;
+  late MockGetInsectsByTaxnomyRank mockGetInsectsByTaxnomyRank;
 
   late UserBucketParams userBucketParams;
   const modelId = 'IP000000000';
@@ -56,6 +57,7 @@ void main() {
     mockGetInsectBookmarkedState = MockGetInsectBookmarkedState();
     mockGetInsectByModelId = MockGetInsectByModelId();
     mockRemoveBookmarkedInsect = MockRemoveBookmarkedInsect();
+    mockGetInsectsByTaxnomyRank = MockGetInsectsByTaxnomyRank();
 
     // insectDetailBloc = InsectDetailBloc(
     //   getInsectByModelId: mockGetInsectByModelId,
@@ -86,6 +88,7 @@ void main() {
             addRecentlySearchInsect: mockAddRecentlySearchInsect,
             getInsectBookmarkedState: mockGetInsectBookmarkedState,
             removeBookmarkedInsect: mockRemoveBookmarkedInsect,
+            getInsectsByTaxnomyRank: mockGetInsectsByTaxnomyRank,
           );
         },
         act: (bloc) {

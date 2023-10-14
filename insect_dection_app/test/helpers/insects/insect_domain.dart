@@ -24,5 +24,6 @@ import 'package:mockito/annotations.dart';
   GetInsectBookmarkedState,
   RemoveBookmarkedInsect,
   GetBookmarkedInsectList,
+  GetInsectsByTaxnomyRank,
 ])
 void main() {}
