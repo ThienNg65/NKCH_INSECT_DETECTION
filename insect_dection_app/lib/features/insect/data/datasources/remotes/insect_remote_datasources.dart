@@ -12,7 +12,7 @@ final class InsectCollectionName {
   static String insects = 'for_demo';
   static String bookmarkedInsects = 'favorite_insects';
   static String recentSearches = 'recent_searches';
-  static String taxonomyTree = 'taxonomy_test/info';
+  static String taxonomyTree = 'taxonomy_test';
 }
 
 abstract class InsectRemoteDatasource {

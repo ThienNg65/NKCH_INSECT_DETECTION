@@ -169,14 +169,14 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
     // Get the initial page of insects.
     try {
       final keyword = insectListFilterParams.keyword;
-      final subcollectionPath = insectListFilterParams.taxonomyCollection;
+      final subcollectionPath = insectListFilterParams.filterAttribute;
       // Take id
       final insectsDocument = await _data
           // the root tree: /taxonomy_test/info/Familia
-          .collection("${InsectCollectionName.taxonomyTree}/$subcollectionPath")
-          // the doc : Familia
+          .collection(InsectCollectionName.taxonomyTree)
+          .doc("info")
+          .collection(subcollectionPath)
           .doc(subcollectionPath)
-          // Take the doc
           .collection(keyword)
           .limit(_filterLimt)
           .get();
@@ -201,17 +201,3 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
     }
   }
 }
-
-extension TaxonomyCollectionNameX on InsectListFilterParams {
-  String get taxonomyCollection {
-    String result = '';
-    for (var value in TreeCollectionName.values) {
-      if (filterAttribute.contains(value.name.toLowerCase())) {
-        result = value.name;
-      }
-    }
-    return result;
-  }
-}
-
-enum TreeCollectionName { Order, Familia }
