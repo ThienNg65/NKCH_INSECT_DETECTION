@@ -124,7 +124,7 @@ class _InsectPageState extends State<InsectPage> {
                         child: Text(
                           "Tìm kiếm mở rộng",
                           style: TextStyle(
-                            color: Colors.grey[900],
+                            color: Colors.grey[700],
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                           ),
@@ -138,7 +138,7 @@ class _InsectPageState extends State<InsectPage> {
                         child: Text(
                           "Côn trùng cùng họ: ",
                           style: TextStyle(
-                            color: Colors.grey[900],
+                            color: Colors.grey[600],
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),
@@ -152,7 +152,7 @@ class _InsectPageState extends State<InsectPage> {
                         child: Text(
                           "Côn trùng cùng Bộ: ",
                           style: TextStyle(
-                            color: Colors.grey[900],
+                            color: Colors.grey[600],
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),

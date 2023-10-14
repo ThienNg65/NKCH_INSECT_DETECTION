@@ -66,7 +66,7 @@ class _RecentlyDetectedInsectsPageState
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Recently Detections",
+                      "Đã tra cứu gần đây",
                       style: TextStyle(
                         color: Colors.grey[800],
                         fontSize: 20,

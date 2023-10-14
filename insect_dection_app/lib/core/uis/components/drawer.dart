@@ -110,7 +110,8 @@ class _MyDrawerState extends State<MyDrawer> {
                 padding: const EdgeInsets.only(left: 25.0),
                 child: MyListTile(
                   icon: Icons.home_filled,
-                  text: 'Home',
+                  // text: 'Home',
+                  text: 'Trang chủ',
                   onTap: goToHomePage,
                 ),
               ),
@@ -120,7 +121,8 @@ class _MyDrawerState extends State<MyDrawer> {
                 padding: const EdgeInsets.only(left: 25.0),
                 child: MyListTile(
                   icon: Icons.search_rounded,
-                  text: 'Search',
+                  // text: 'Search',
+                  text: 'Tìm kiếm côn trùng',
                   onTap: goToSearchPage,
                 ),
               ),
@@ -130,7 +132,8 @@ class _MyDrawerState extends State<MyDrawer> {
                 padding: const EdgeInsets.only(left: 25.0),
                 child: MyListTile(
                   icon: Icons.manage_search_rounded,
-                  text: 'Recently Search',
+                  // text: 'Recently Search',
+                  text: 'Tra cứu gần đây',
                   onTap: goToRecentSearchPage,
                 ),
               ),
@@ -140,7 +143,8 @@ class _MyDrawerState extends State<MyDrawer> {
                 padding: const EdgeInsets.only(left: 25.0),
                 child: MyListTile(
                   icon: Icons.star,
-                  text: 'Favourite',
+                  // text: 'Favourite',
+                  text: 'Danh sách yêu thích',
                   onTap: goToBookmarkedPage,
                 ),
               ),
@@ -161,7 +165,8 @@ class _MyDrawerState extends State<MyDrawer> {
             padding: const EdgeInsets.only(left: 25.0, bottom: 25.0),
             child: MyListTile(
               icon: Icons.logout,
-              text: 'Log Out',
+              // text: 'Log Out',
+              text: 'Đăng xuất',
               onTap: signOut,
             ),
           )

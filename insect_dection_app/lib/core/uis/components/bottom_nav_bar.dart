@@ -78,7 +78,8 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
         tabs: const [
           GButton(
             icon: Icons.home,
-            text: 'Home',
+            // text: 'Home',
+            text: 'Trang chủ',
           ),
           GButton(
             icon: Icons.camera_alt_rounded,
@@ -86,7 +87,8 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           ),
           GButton(
             icon: Icons.person,
-            text: 'Profile',
+            // text: 'Profile',
+            text: 'Tài khoản',
           )
         ],
       ),

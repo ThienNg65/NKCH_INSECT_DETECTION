@@ -81,6 +81,7 @@ class _SearchPageState extends State<SearchPage> {
             padding:
                 const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 25.0),
             child: CupertinoSearchTextField(
+              placeholder: "Tìm kiếm",
               padding: const EdgeInsets.all(15.0),
               backgroundColor: Colors.grey[100],
               onChanged: (value) => _toggleSearchValueChanged(value),
@@ -95,8 +96,9 @@ class _SearchPageState extends State<SearchPage> {
             ),
             child: BlocBuilder<SearchInsectBloc, SearchInsectState>(
               buildWhen: (previous, current) =>
-                  current.filterAttribute.
-                  compareTo(previous.filterAttribute,) !=
+                  current.filterAttribute.compareTo(
+                        previous.filterAttribute,
+                      ) !=
                       0 ||
                   current.isFirstLoad == true,
               builder: (context, state) {
@@ -106,7 +108,7 @@ class _SearchPageState extends State<SearchPage> {
                   children: [
                     const Padding(
                       padding: EdgeInsets.all(1.0),
-                      child: Text("Search for:"),
+                      child: Text("Tìm theo:"),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),

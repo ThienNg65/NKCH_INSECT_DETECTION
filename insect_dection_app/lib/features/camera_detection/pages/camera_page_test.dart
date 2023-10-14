@@ -86,7 +86,8 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
                     size: 48,
                     color: Colors.black54,
                   ),
-                  label: const Text("Take a photo"),
+                  // label: const Text("Take a photo"),
+                  label: const Text("Camera"),
                 ),
                 TextButton.icon(
                   key: const Key('detectionPage_takePhotoFromP_textButton'),
@@ -102,7 +103,8 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
                     size: 48,
                     color: Colors.black54,
                   ),
-                  label: const Text("Pick from Library"),
+                  // label: const Text("Pick from Library"),
+                  label: const Text("Chọn từ thư viện"),
                 ),
               ],
             ),
@@ -131,8 +133,12 @@ class _CamaraFormScreenState extends State<CamaraFormScreen> {
         if (state == CamaraDetectionState.initial()) {
           return const Padding(
             padding: EdgeInsets.all(8.0),
+            // child: Text(
+            //   "Take a photo or choose one from the CamaraForm to inference.",
+            //   textAlign: TextAlign.center,
+            // ),
             child: Text(
-              "Take a photo or choose one from the CamaraForm to inference.",
+              "Chụp ảnh từ camera hoặc chọn ảnh từ thư viện",
               textAlign: TextAlign.center,
             ),
           );

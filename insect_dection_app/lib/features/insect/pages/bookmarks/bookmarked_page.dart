@@ -62,7 +62,7 @@ class _BookmarkedInsectsPageState extends State<BookmarkedInsectsPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Bookmarked",
+                  "Danh sách yêu thích",
                   style: TextStyle(
                     color: Colors.grey[800],
                     fontSize: 20,

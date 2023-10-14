@@ -32,12 +32,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-        final userBucketParams = UserBucketParams.fromAuthUserInfo(
+    final userBucketParams = UserBucketParams.fromAuthUserInfo(
       BlocProvider.of<AuthBloc>(context).state.user,
     );
     BlocProvider.of<HomePageBloc>(context).onLoadInit(userBucketParams);
     super.initState();
-
   }
 
   // to the RecentPage page
@@ -92,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Expanded(
             child: Text(
-              "Recently Search",
+              // "Recently Search",
+              "Đã tra cứu gần đây",
               style: TextStyle(
                 color: Colors.grey[800],
                 fontSize: 20,
@@ -109,7 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             onPressed: () => goToRecentSearchPage(),
-            child: const Text("See All"),
+            // child: const Text("See All"),
+            child: const Text("Xem tất cả"),
           ),
         ],
       ),
