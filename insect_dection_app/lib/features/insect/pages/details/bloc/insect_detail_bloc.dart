@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
@@ -16,6 +18,7 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
   final RemoveBookmarkedInsect _removeBookmarkedInsect;
   final AddRecentlySearchInsect _addRecentlySearchInsect;
   final GetInsectBookmarkedState _getInsectBookmarkedState;
+  final GetInsectsByTaxnomyRank _getInsectsByTaxnomyRank;
 
   InsectDetailBloc({
     required GetInsectByModelId getInsectByModelId,
@@ -23,11 +26,13 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
     required RemoveBookmarkedInsect removeBookmarkedInsect,
     required AddRecentlySearchInsect addRecentlySearchInsect,
     required GetInsectBookmarkedState getInsectBookmarkedState,
+    required GetInsectsByTaxnomyRank getInsectsByTaxnomyRank,
   })  : _getInsectByModelId = getInsectByModelId,
         _addBookmarkedInsect = addBookmarkedInsect,
         _removeBookmarkedInsect = removeBookmarkedInsect,
         _addRecentlySearchInsect = addRecentlySearchInsect,
         _getInsectBookmarkedState = getInsectBookmarkedState,
+        _getInsectsByTaxnomyRank = getInsectsByTaxnomyRank,
         super(InsectDetailState.initial()) {
     on<LoadInsectDetailEvent>(
       _onLoadInsectDetailEvent,
@@ -40,6 +45,12 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
     );
     on<ToggleBookmarkedInsectEvent>(
       _onToggleBookmarkedInsectEvent,
+    );
+    on<LoadInsectListInSameFamiliaRankEvent>(
+      _onLoadInsectListInSameFamilaRankEvent,
+    );
+    on<LoadInsectListInSameOrdoRankEvent>(
+      _onLoadInsectListInSameOrdoRankEvent,
     );
   }
 
@@ -169,4 +180,86 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
       debugPrint(e.toString());
     }
   }
+
+  Future<void> _onLoadInsectListInSameFamilaRankEvent(
+    LoadInsectListInSameFamiliaRankEvent event,
+    Emitter<InsectDetailState> emit,
+  ) async {
+    try {
+      emit(state.copyWith(
+        getInsectsByFamiliaRankProcess: const Loading(),
+      ));
+      InsectListFilterParams insectListFilterParams = InsectListFilterParams(
+        filterAttribute: TaxnomyName.Familia.name,
+        keyword: event.insect.taxonomy.family!,
+      );
+
+      /// Loading this after insect was loaded
+      final familiaListResult = await _getInsectsByTaxnomyRank(
+        insectListFilterParams,
+      );
+      familiaListResult.fold(
+        (Failure failure) => emit(
+          state.copyWith(
+            getUserInsectBookmarkStateProcess: Failed(
+              failure.errorMessage,
+            ),
+            isBookmarked: state.isBookmarked,
+          ),
+        ),
+        (InsectList insectList) {
+          emit(
+            state.copyWith(
+              getUserInsectBookmarkStateProcess: const Success(),
+              insectListInOrderRank: insectList,
+            ),
+          );
+        },
+      );
+    } on Exception catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  Future<void> _onLoadInsectListInSameOrdoRankEvent(
+    LoadInsectListInSameOrdoRankEvent event,
+    Emitter<InsectDetailState> emit,
+  ) async {
+    try {
+      emit(state.copyWith(
+        getInsectsByFamiliaRankProcess: const Loading(),
+      ));
+      InsectListFilterParams insectListFilterParams = InsectListFilterParams(
+        filterAttribute: TaxnomyName.Ordo.name,
+        keyword: event.insect.taxonomy.order!,
+      );
+
+      /// Loading this after insect was loaded
+      final ordoListResult = await _getInsectsByTaxnomyRank(
+        insectListFilterParams,
+      );
+      ordoListResult.fold(
+        (Failure failure) => emit(
+          state.copyWith(
+            getUserInsectBookmarkStateProcess: Failed(
+              failure.errorMessage,
+            ),
+            isBookmarked: state.isBookmarked,
+          ),
+        ),
+        (InsectList insectList) {
+          emit(
+            state.copyWith(
+              getUserInsectBookmarkStateProcess: const Success(),
+              insectListInOrderRank: insectList,
+            ),
+          );
+        },
+      );
+    } on Exception catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 }
+
+enum TaxnomyName { Ordo, Familia }

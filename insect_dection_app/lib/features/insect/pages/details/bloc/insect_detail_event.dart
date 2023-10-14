@@ -60,3 +60,15 @@ final class ToggleBookmarkedInsectEvent extends InsectDetailEvent {
   @override
   List<Object?> get props => [userBucketParams, insect, isBookmarked];
 }
+
+final class LoadInsectListInSameFamiliaRankEvent extends InsectDetailEvent {
+  final Insect insect;
+
+  LoadInsectListInSameFamiliaRankEvent(this.insect);
+}
+
+final class LoadInsectListInSameOrdoRankEvent extends InsectDetailEvent {
+  final Insect insect;
+
+  LoadInsectListInSameOrdoRankEvent(this.insect);
+}
