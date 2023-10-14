@@ -1,9 +1,12 @@
+// ignore_for_file: constant_identifier_names
+
 part of 'insect_remote_datasources.dart';
 
 class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
   final FirebaseFirestore _data;
   final _firstSize = 11;
   final _sizeOffset = 14;
+  final _filterLimt = 10;
   final _totalInsect = 102;
   InsectRemoteDatasourceImpl({
     required FirebaseFirestore data,
@@ -130,7 +133,7 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
             filterAttribute,
             isLessThan: _replaceCharactersNext(keyword),
           )
-          .limit(10)
+          .limit(_filterLimt)
           .get();
 
       // Check if date is empty or not
@@ -162,8 +165,53 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
   @override
   Future<Either<Failure, InsectListModel>> getInsectsByTaxnomyRank(
     InsectListFilterParams insectListFilterParams,
-  ) {
-    // TODO: implement getInsectsByTaxnomyRank
-    throw UnimplementedError();
+  ) async {
+    // Get the initial page of insects.
+    try {
+      final keyword = insectListFilterParams.keyword;
+      final subcollectionPath = insectListFilterParams.taxonomyCollection;
+      // Take id
+      final insectsDocument = await _data
+          // the root tree: /taxonomy_test/info/Familia
+          .collection("${InsectCollectionName.taxonomyTree}/$subcollectionPath")
+          // the doc : Familia
+          .doc(subcollectionPath)
+          // Take the doc
+          .collection(keyword)
+          .limit(_filterLimt)
+          .get();
+
+      // Check if date is empty or not
+      if (insectsDocument.docs.isEmpty) {
+        return const Left(DataNotFoundFailure());
+      }
+      // Convert models
+      final insects = insectsDocument.docs
+          .map((doc) => InsectModel.fromMap(doc.data()))
+          .toList();
+
+      return Right(InsectListModel(
+        currentPage: insects,
+        size: insects.length,
+        hasNextPage: false,
+      ));
+    } on FirebaseException catch (e) {
+      // Return a Failure object if an error occurs.
+      return Left(ServerFailure(errorMessage: e.message));
+    }
   }
 }
+
+extension TaxonomyCollectionNameX on InsectListFilterParams {
+  String get taxonomyCollection {
+    String result = '';
+    for (var value in TreeCollectionName.values) {
+      if (filterAttribute.contains(value.name.toLowerCase())) {
+        result = value.name;
+      }
+    }
+    return result;
+  }
+}
+
+enum TreeCollectionName { Order, Familia }
