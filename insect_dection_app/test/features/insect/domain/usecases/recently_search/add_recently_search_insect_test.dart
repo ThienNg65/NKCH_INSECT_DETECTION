@@ -4,7 +4,7 @@ import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../../../helpers/insects/insect_domain.mocks.dart';
+import '../../../../../helpers/insects/insect_domain.mocks.dart';
 
 void main() {
   late AddRecentlySearchInsect addRecentlySearchInsect;

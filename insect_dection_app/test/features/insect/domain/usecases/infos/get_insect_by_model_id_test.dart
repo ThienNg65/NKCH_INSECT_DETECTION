@@ -4,29 +4,23 @@ import 'package:insect_dection_app/core/core.dart';
 import 'package:insect_dection_app/features/insect/insect.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../../../helpers/insects/insect_domain.mocks.dart';
+import '../../../../../helpers/insects/insect_domain.mocks.dart';
 
 void main() {
-  late AddBookmarkedInsect addBookmarkedInsect;
-  late MockUserInsectDataRepository mockRepository;
+  late GetInsectByModelId getInsectByModelId;
+  late MockInsectRepository mockInsectRepository;
 
-  late UserBucketParams userBucketParams;
-  late InsectParams insectParams;
+  const modelId = 'IP000000000';
 
   late Insect insectEntity;
   late InsectModel insectModel;
   setUp(() {
-    mockRepository = MockUserInsectDataRepository();
-    addBookmarkedInsect = AddBookmarkedInsect(repo: mockRepository);
+    mockInsectRepository = MockInsectRepository();
+    getInsectByModelId = GetInsectByModelId(repo: mockInsectRepository);
 
-    userBucketParams = const UserBucketParams(
-      uid: 'test_3@-uid',
-      username: 'nvtt@gmail.com',
-    );
-
-    insectParams = const InsectParams(
+    insectModel = const InsectModel(
       modelId: 'IP000000000',
-      taxonomy: Taxonomy(
+      taxonomy: TaxonomyModel(
         species: 'Cnaphalocrocis medinalis',
         genus: 'Cnaphalococis',
         family: 'Crambidae',
@@ -35,13 +29,13 @@ void main() {
         phylum: 'Arthropoda',
         regnum: 'Animalia',
       ),
-      nomenclature: Nomenclature(
+      nomenclature: NomenclatureModel(
         commonName: 'Rice Leaf Roller',
         otherName:
             'Cnaphalocrocis exigua, Sameaexigua, and Susumia exigua. A moth of the Crambidae',
         scientificName: 'Marasmia exigua/Cnaphalocrocis medinalis',
       ),
-      impacts: Impact(
+      impacts: ImpactModel(
           harms: 'Harm,Feeds on rice leaves, causing damage to the crop'),
       origin: '',
       predators:
@@ -54,26 +48,25 @@ void main() {
       pestControl: '',
     );
 
-    insectModel = InsectModel.fromParams(insectParams);
     insectEntity = insectModel.toEntity();
   });
-  group('[Usecase]: Add favorite insect into user profile', () {
+  group('[Usecase]: Get insect by model id', () {
     test('should get [Insect Entity] from repository', () async {
       // arrange
-      when(mockRepository.addBookmarkedInsect(userBucketParams, insectParams))
-          .thenAnswer((_) async => Right(insectEntity));
+      when(mockInsectRepository.getInsectByModelId(modelId))
+          .thenAnswer((_) async => Right(insectModel.toEntity()));
       // act
-      final result = await addBookmarkedInsect(userBucketParams, insectParams);
+      final result = await getInsectByModelId(modelId);
       // assert
-      verify(mockRepository.addBookmarkedInsect(any, any));
+      verify(mockInsectRepository.getInsectByModelId(any));
       expect(result, equals(Right(insectEntity)));
     });
     test('should get [Failure] from repository', () async {
       // arrange
-      when(mockRepository.addBookmarkedInsect(userBucketParams, insectParams))
+      when(mockInsectRepository.getInsectByModelId(any))
           .thenAnswer((_) async => const Left(ServerFailure()));
       // act
-      final result = await addBookmarkedInsect(userBucketParams, insectParams);
+      final result = await getInsectByModelId(modelId);
       // assert
       expect(result, equals(const Left(ServerFailure())));
     });
