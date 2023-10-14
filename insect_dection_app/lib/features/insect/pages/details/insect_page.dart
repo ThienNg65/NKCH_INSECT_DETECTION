@@ -144,7 +144,7 @@ class _InsectPageState extends State<InsectPage> {
                           ),
                         ),
                       ),
-                      SimilarTaxonomicInsectListView(),
+                      _SimilarFamiliaInsectListView(),
 
                       /// Insect in the same level of familia
                       Padding(
@@ -158,7 +158,7 @@ class _InsectPageState extends State<InsectPage> {
                           ),
                         ),
                       ),
-                      SimilarTaxonomicInsectListView(),
+                      _SimilarOrdoInsectListView(),
                     ],
                   ),
                 ],
@@ -189,6 +189,59 @@ class _InsectPageState extends State<InsectPage> {
     );
     BlocProvider.of<InsectDetailBloc>(context).add(
       LoadInsectListInSameFamiliaRankEvent(state.insect),
+    );
+  }
+}
+
+class _SimilarFamiliaInsectListView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<InsectDetailBloc, InsectDetailState>(
+      buildWhen: (previous, current) =>
+          previous.getInsectsByFamiliaRankProcess !=
+          current.getInsectsByFamiliaRankProcess,
+      builder: (context, state) {
+        if (state.getInsectsByFamiliaRankProcess is Loading) {
+          return LoadingWigget();
+        }
+        if (state.getInsectsByFamiliaRankProcess is Error) {
+          // final message =
+          //     state.getInsectsByFamiliaRankProcess.errorMessage ?? '';
+          return ListTile(
+            title: Text("Chưa có thông tin"),
+          );
+        }
+        final insectList = state.insectListInFamiliaRank;
+        return SimilarTaxonomicInsectListView(
+          insectList: insectList,
+        );
+      },
+    );
+  }
+}
+
+class _SimilarOrdoInsectListView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<InsectDetailBloc, InsectDetailState>(
+      buildWhen: (previous, current) =>
+          previous.getInsectsByOrdoRankProcess !=
+          current.getInsectsByOrdoRankProcess,
+      builder: (context, state) {
+        if (state.getInsectsByOrdoRankProcess is Loading) {
+          return LoadingWigget();
+        }
+        if (state.getInsectsByOrdoRankProcess is Error) {
+          // final message = state.getInsectsByOrdoRankProcess.errorMessage ?? '';
+          return ListTile(
+            title: Text("Chưa có thông tin"),
+          );
+        }
+        final insectList = state.insectListInOrderRank;
+        return SimilarTaxonomicInsectListView(
+          insectList: insectList,
+        );
+      },
     );
   }
 }

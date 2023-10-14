@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../../insect.dart';
+import 'package:insect_dection_app/features/insect/insect.dart';
 
 class SimilarTaxonomicInsectListView extends StatelessWidget {
+  final InsectList insectList;
   const SimilarTaxonomicInsectListView({
     super.key,
+    required this.insectList,
   });
 
   @override
@@ -18,26 +19,26 @@ class SimilarTaxonomicInsectListView extends StatelessWidget {
       margin: const EdgeInsets.all(20.0),
       height: 170,
       width: double.infinity,
-      child: ListView(
+      child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        children: [
-          SimilarTaxonomicInsectListTile(),
-          SimilarTaxonomicInsectListTile(),
-          SimilarTaxonomicInsectListTile(),
-          SimilarTaxonomicInsectListTile(),
-        ],
+        itemCount: insectList.currentPage.length,
+        itemBuilder: (context, index) {
+          final insect = insectList.currentPage[index];
+
+          return SimilarTaxonomicInsectListTile(insect: insect);
+        },
       ),
     );
   }
 }
 
 class SimilarTaxonomicInsectListTile extends StatelessWidget {
-  // final Insect insect;
+  final Insect insect;
   final void Function()? onTap;
   const SimilarTaxonomicInsectListTile({
     super.key,
-    // required this.insect,
+    required this.insect,
     this.onTap,
   });
   @override
@@ -47,18 +48,18 @@ class SimilarTaxonomicInsectListTile extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(10.0),
         padding: const EdgeInsets.all(10.0),
-        child: const Column(
+        child: Column(
           children: [
             CircleAvatar(
               backgroundColor: Colors.black,
               radius: 35,
-              // backgroundImage: insect.photoUrl.isNotEmpty
-              //     ? NetworkImage(insect.photoUrl)
-              //     : null,
+              backgroundImage: insect.photoUrl.isNotEmpty
+                  ? NetworkImage(insect.photoUrl)
+                  : null,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
-              "Hello",
+              insect.nomenclature.commonName,
               overflow: TextOverflow.clip,
               maxLines: 1,
             ),

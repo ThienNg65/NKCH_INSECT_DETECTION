@@ -201,7 +201,7 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
       familiaListResult.fold(
         (Failure failure) => emit(
           state.copyWith(
-            getUserInsectBookmarkStateProcess: Failed(
+            getInsectsByFamiliaRankProcess: Failed(
               failure.errorMessage,
             ),
             isBookmarked: state.isBookmarked,
@@ -210,8 +210,8 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
         (InsectList insectList) {
           emit(
             state.copyWith(
-              getUserInsectBookmarkStateProcess: const Success(),
-              insectListInOrderRank: insectList,
+              getInsectsByFamiliaRankProcess: const Success(),
+              insectListInFamiliaRank: insectList,
             ),
           );
         },
@@ -227,7 +227,7 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
   ) async {
     try {
       emit(state.copyWith(
-        getInsectsByFamiliaRankProcess: const Loading(),
+        getInsectsByOrdoRankProcess: const Loading(),
       ));
       InsectListFilterParams insectListFilterParams = InsectListFilterParams(
         filterAttribute: TaxnomyName.Ordo.name,
@@ -241,7 +241,7 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
       ordoListResult.fold(
         (Failure failure) => emit(
           state.copyWith(
-            getUserInsectBookmarkStateProcess: Failed(
+            getInsectsByOrdoRankProcess: Failed(
               failure.errorMessage,
             ),
             isBookmarked: state.isBookmarked,
@@ -250,7 +250,7 @@ class InsectDetailBloc extends Bloc<InsectDetailEvent, InsectDetailState> {
         (InsectList insectList) {
           emit(
             state.copyWith(
-              getUserInsectBookmarkStateProcess: const Success(),
+              getInsectsByOrdoRankProcess: const Success(),
               insectListInOrderRank: insectList,
             ),
           );
