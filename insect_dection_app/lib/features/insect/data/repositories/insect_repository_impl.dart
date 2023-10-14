@@ -42,7 +42,19 @@ class InsectRepositoryImpl extends InsectRepository {
   @override
   Future<Either<Failure, InsectList>> getInsectByKeyword(
       InsectListFilterParams insectListFilterParams) async {
-    final response = await _remoteDatasource.getInsectByKeyword(insectListFilterParams);
+    final response =
+        await _remoteDatasource.getInsectByKeyword(insectListFilterParams);
+    return response.fold(
+      (Failure failure) => Left(failure),
+      (InsectListModel models) => Right(models.toEntity()),
+    );
+  }
+
+  @override
+  Future<Either<Failure, InsectList>> getInsectsByTaxnomyRank(
+      InsectListFilterParams insectListFilterParams) async {
+    final response =
+        await _remoteDatasource.getInsectsByTaxnomyRank(insectListFilterParams);
     return response.fold(
       (Failure failure) => Left(failure),
       (InsectListModel models) => Right(models.toEntity()),

@@ -16,6 +16,9 @@ abstract class InsectRepository {
   Future<Either<Failure, InsectList>> getMoreInsectList(
     InsectListParams insectListParams,
   );
+  Future<Either<Failure, InsectList>> getInsectsByTaxnomyRank(
+    InsectListFilterParams insectListFilterParams,
+  );
 }
 
 abstract class UserInsectDataRepository {

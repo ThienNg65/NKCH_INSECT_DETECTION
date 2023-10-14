@@ -12,6 +12,7 @@ final class InsectCollectionName {
   static String insects = 'for_demo';
   static String bookmarkedInsects = 'favorite_insects';
   static String recentSearches = 'recent_searches';
+  static String taxonomyTree = 'taxonomy_test/info';
 }
 
 abstract class InsectRemoteDatasource {
@@ -28,6 +29,9 @@ abstract class InsectRemoteDatasource {
   );
   Future<Either<Failure, InsectListModel>> getMoreInsectList(
     InsectListParams insectListParams,
+  );
+  Future<Either<Failure, InsectListModel>> getInsectsByTaxnomyRank(
+    InsectListFilterParams insectListFilterParams,
   );
 }
 

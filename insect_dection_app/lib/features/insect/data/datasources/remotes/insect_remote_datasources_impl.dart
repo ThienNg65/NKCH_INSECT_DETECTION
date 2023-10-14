@@ -158,4 +158,12 @@ class InsectRemoteDatasourceImpl implements InsectRemoteDatasource {
     final result = String.fromCharCodes(runes.map((rune) => rune + 1).toList());
     return result;
   }
+
+  @override
+  Future<Either<Failure, InsectListModel>> getInsectsByTaxnomyRank(
+    InsectListFilterParams insectListFilterParams,
+  ) {
+    // TODO: implement getInsectsByTaxnomyRank
+    throw UnimplementedError();
+  }
 }
