@@ -171,7 +171,7 @@ class _SearchPageState extends State<SearchPage> {
                                 ? const Icon(Icons.radio_button_checked)
                                 : const Icon(Icons.radio_button_off),
                           ),
-                          const Text("Loài"),
+                          const Text("Tên"),
                         ],
                       ),
                     ),
