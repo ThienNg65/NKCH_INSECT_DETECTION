@@ -82,7 +82,7 @@ Hình 11. Đã tra cứu gần đây
 Hình 12. Danh sách mở rộng
 
 5. Tích hợp mô hình nhận diện, cơ sở dữ liệu vào trong ứng dụng
-6. 
+
 ![image](https://github.com/ThienNg65/NKCH_INSECT_DETECTION/assets/112293169/61281bd2-ffd9-4020-8161-c6d6cac21cff)
  
 
