@@ -1,8 +1,5 @@
-# NKCH_INSECT_DETECTION
+# Overview:
 
-# NKCH_INSECT_DETECTION
-
-Overview:
 Tên đề tài: Xây dựng mô hình nhận dạng côn trùng dựa trên hình ảnh
 Mã đề tài: THS2023-54
 1. Nghiên cứu quy trình xây dựng mô hình phát hiện đối tượng trong ảnh
